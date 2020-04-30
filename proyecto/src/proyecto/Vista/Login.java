@@ -28,10 +28,11 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        mensaje = new javax.swing.JOptionPane();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txt_username = new javax.swing.JTextField();
-        tct_password = new javax.swing.JPasswordField();
+        txt_password = new javax.swing.JPasswordField();
         btn_ingresar = new javax.swing.JButton();
         jl_forgot = new javax.swing.JLabel();
 
@@ -66,7 +67,7 @@ public class Login extends javax.swing.JFrame {
                             .addComponent(jl_forgot)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(txt_username)
-                                .addComponent(tct_password, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)))
+                                .addComponent(txt_password, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)))
                         .addGap(23, 23, 23))))
         );
         layout.setVerticalGroup(
@@ -79,7 +80,7 @@ public class Login extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(tct_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addComponent(btn_ingresar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -130,7 +131,8 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     public javax.swing.JLabel jl_forgot;
-    public javax.swing.JPasswordField tct_password;
+    public javax.swing.JOptionPane mensaje;
+    public javax.swing.JPasswordField txt_password;
     public javax.swing.JTextField txt_username;
     // End of variables declaration//GEN-END:variables
 }

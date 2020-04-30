@@ -5,7 +5,10 @@
  */
 package proyecto;
 
+import Controlador.ControllerLogin;
+import Modelo.DatosVO;
 import proyecto.Vista.Administrador;
+import proyecto.Vista.Login;
 import proyecto.Vista.Usuario;
 
 /**
@@ -20,10 +23,20 @@ public class Proyecto {
     public static void main(String[] args) {
         // TODO code application logic here
         
+        //Vista
+        Login login = new Login();
         Administrador admin = new Administrador();
         Usuario user = new Usuario();
         
-        user.setVisible(true);
+        //Modelo
+        DatosVO dvo = new DatosVO();
+        
+        //Controlador
+        ControllerLogin cl = new ControllerLogin(login, dvo, admin, user);
+        
+        //inicio del main
+        login.setVisible(true);
+        login.setLocationRelativeTo(null);
     }
     
 }

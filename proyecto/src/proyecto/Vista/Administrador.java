@@ -44,6 +44,7 @@ public class Administrador extends javax.swing.JFrame {
         tbl_Baja = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         menu = new javax.swing.JMenu();
+        Nuevo = new javax.swing.JMenu();
         bdBaja = new javax.swing.JMenuItem();
         bdAsesores = new javax.swing.JMenuItem();
         bdClientes = new javax.swing.JMenuItem();
@@ -175,7 +176,15 @@ public class Administrador extends javax.swing.JFrame {
 
         menu.setText("Menu");
 
+        Nuevo.setText("Nuevo");
+        menu.add(Nuevo);
+
         bdBaja.setText("Base Datos Clientes");
+        bdBaja.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bdBajaActionPerformed(evt);
+            }
+        });
         menu.add(bdBaja);
 
         bdAsesores.setText("Base Datos Asesores");
@@ -208,6 +217,10 @@ public class Administrador extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bdBajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bdBajaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bdBajaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -245,6 +258,7 @@ public class Administrador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JMenu Nuevo;
     private javax.swing.JMenuItem bdAsesores;
     private javax.swing.JMenuItem bdBaja;
     private javax.swing.JMenuItem bdClientes;

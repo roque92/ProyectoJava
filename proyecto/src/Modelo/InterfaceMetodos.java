@@ -5,10 +5,27 @@
  */
 package Modelo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author jroque
  */
 public interface InterfaceMetodos {
-    
+
+    //Metodo para poder hacer la consulta y validacion de login
+    public ArrayList<DatosVO> validar_login(DatosVO dvo);
+
+//--------------------CRUD
+    //Insertar
+    public void insertar_datos(DatosVO dvo);
+
+    //Modificar
+    public void modificar_datos(DatosVO dvo);
+
+    //Mostrar
+    public ArrayList<DatosVO> mostrar_datos(DatosVO dvo);
+
+    //Eliminar
+    public void borrar_datos(DatosVO dvo);
 }

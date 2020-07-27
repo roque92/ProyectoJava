@@ -10,5 +10,7 @@ package Modelo;
  * @author jroque
  */
 public class MetodosSQL {
-    
+   
+    private String driver = "";
+  
 }

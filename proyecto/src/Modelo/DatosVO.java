@@ -14,7 +14,12 @@ public class DatosVO {
    private String error;
    
    //Variables que vienen de la base de datos
+   //Login
    private String login_user, login_pass, login_telefono, login_correo, login_tipo;
+   //Negociacion
+   private String negociacion_nombre_cliente, negociacion_telefono, negociacion_estado_residencia, negociacion_estado_migratorio,
+           negociacion_tipo_porpiedad, negociacion_correo, negociacion_estado_civil, negociacion_profecion, 
+           negociacion_DPI, negociacion_NIT, negociacion_ID;
    
    //Variables que se van a usar en la aplicacion
    //login

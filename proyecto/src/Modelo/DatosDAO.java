@@ -74,17 +74,65 @@ public class DatosDAO implements InterfaceMetodos{
 
     @Override
     public ArrayList<DatosVO> mostrar_datos_nombre(DatosVO dvo) {
+        Conector c = new Conector();
+        ArrayList <DatosVO> datos = new ArrayList();
         
+        try {
+            c.connect();
+            ResultSet rs = c.obtener_datos("");
+            c.desconectar();
+            
+            while (true) {                
+                
+            }
+            
+        } catch (Exception e) {
+            dvo.setError(e.getMessage());
+        }
+        
+        return datos;
     }
     
     @Override
     public ArrayList<DatosVO> mostrar_datos_telefono(DatosVO dvo) {
+        Conector c = new Conector();
+        ArrayList <DatosVO> datos = new ArrayList();
         
+        try {
+            c.connect();
+            ResultSet rs = c.obtener_datos("");
+            c.desconectar();
+            
+            while (true) {                
+                
+            }
+            
+        } catch (Exception e) {
+            dvo.setError(e.getMessage());
+        }
+        
+        return datos;
     }
     
     @Override
     public ArrayList<DatosVO> mostrar_datos_correo(DatosVO dvo) {
+        Conector c = new Conector();
+        ArrayList <DatosVO> datos = new ArrayList();
         
+        try {
+            c.connect();
+            ResultSet rs = c.obtener_datos("");
+            c.desconectar();
+            
+            while (true) {                
+                
+            }
+            
+        } catch (Exception e) {
+            dvo.setError(e.getMessage());
+        }
+        
+        return datos;
     }
 
     @Override

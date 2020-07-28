@@ -189,7 +189,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="203" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="211" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -265,7 +265,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="283" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="291" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -288,7 +288,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane2" alignment="0" pref="341" max="32767" attributes="0"/>
+                  <Component id="jScrollPane2" alignment="0" pref="349" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -364,7 +364,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jScrollPane3" pref="304" max="32767" attributes="0"/>
+                      <Component id="jScrollPane3" pref="312" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -695,7 +695,7 @@
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel8">
                               <Properties>
-                                <Property name="text" type="java.lang.String" value="Valor Propiedad"/>
+                                <Property name="text" type="java.lang.String" value="Direccion USA"/>
                               </Properties>
                             </Component>
                             <Component class="javax.swing.JTextField" name="f_txt_valorPropiedad">

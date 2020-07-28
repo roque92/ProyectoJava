@@ -150,7 +150,7 @@ public class Usuario extends javax.swing.JFrame {
         );
         if_buscarClienteLayout.setVerticalGroup(
             if_buscarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 203, Short.MAX_VALUE)
+            .addGap(0, 211, Short.MAX_VALUE)
         );
 
         if_baseClientes.setClosable(true);
@@ -198,7 +198,7 @@ public class Usuario extends javax.swing.JFrame {
         );
         if_buscarAsesorLayout.setVerticalGroup(
             if_buscarAsesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
+            .addGap(0, 291, Short.MAX_VALUE)
         );
 
         if_baseAsores.setClosable(true);
@@ -227,7 +227,7 @@ public class Usuario extends javax.swing.JFrame {
         );
         if_baseAsoresLayout.setVerticalGroup(
             if_baseAsoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
         );
 
         if_formulario.setClosable(true);
@@ -322,7 +322,7 @@ public class Usuario extends javax.swing.JFrame {
 
         jLabel7.setText("Honorarios");
 
-        jLabel8.setText("Valor Propiedad");
+        jLabel8.setText("Direccion USA");
 
         jLabel9.setText("Salario");
 
@@ -690,7 +690,7 @@ public class Usuario extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE))
         );
 
         jDesktopPane1.setLayer(if_buscarCliente, javax.swing.JLayeredPane.DEFAULT_LAYER);

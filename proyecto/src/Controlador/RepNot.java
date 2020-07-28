@@ -5,10 +5,24 @@
  */
 package Controlador;
 
+import Modelo.DatosVO;
+import proyecto.Vista.Usuario;
+
 /**
  *
  * @author jroque
  */
 public class RepNot {
+    
+    Usuario usuario = new Usuario();
+    DatosVO dvo = new DatosVO();
+
+    public RepNot(Usuario usuario, DatosVO dvo) {
+        this.usuario = usuario;
+        this.dvo = dvo;        
+    }
+    
+    
+    
     
 }

@@ -40,12 +40,12 @@ public class Conector {
    }
    
    //Metodo para Obtener los datos de la Base de Datos
-   public ResultSet obtener_datos (String consulta){
+   public ResultSet obtener_datos (String consultaSQL){
        try {
            this.connect();
            ResultSet respuesta = null;
            this.st = this.con.createStatement();
-           respuesta = st.executeQuery(consulta);
+           respuesta = st.executeQuery(consultaSQL);
            return respuesta;
        } catch (Exception e) {
            error = e.getMessage();
@@ -63,13 +63,13 @@ public class Conector {
    }
    
    //Metodos para consultas a la Base de Datos ( Insertar Borrar Modificar)
-   public int consulta_general (String consulta){
+   public int consulta_general (String consultaSQL){
        int resultado = 0;
        
        try {
            this.connect();
            this.st = this.con.createStatement();
-           resultado = this.st.executeUpdate(consulta);
+           resultado = this.st.executeUpdate(consultaSQL);
        } catch (Exception e) {
            error = e.getMessage();
            return 0;

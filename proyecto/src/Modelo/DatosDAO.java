@@ -73,7 +73,17 @@ public class DatosDAO implements InterfaceMetodos{
     }
 
     @Override
-    public ArrayList<DatosVO> mostrar_datos(DatosVO dvo) {
+    public ArrayList<DatosVO> mostrar_datos_nombre(DatosVO dvo) {
+        
+    }
+    
+    @Override
+    public ArrayList<DatosVO> mostrar_datos_telefono(DatosVO dvo) {
+        
+    }
+    
+    @Override
+    public ArrayList<DatosVO> mostrar_datos_correo(DatosVO dvo) {
         
     }
 

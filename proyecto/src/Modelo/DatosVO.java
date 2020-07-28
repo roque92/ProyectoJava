@@ -12,9 +12,20 @@ package Modelo;
 public class DatosVO {
     
    private String error;
+   
+   //Variables que vienen de la base de datos 
+   private String nombre_rep, parentezco_rep, direccion_rep, telefono_rep, banco_rep;
+   
+   //Variables que se van a user en la aplicacion
+   
+   //Metodos Setter and Getter
 
     public DatosVO(String error) {
         this.error = error;
+    }
+
+    public DatosVO() {
+       
     }
 
     public String getError() {

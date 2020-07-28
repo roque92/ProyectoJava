@@ -24,7 +24,9 @@ public interface InterfaceMetodos {
     public void modificar_datos(DatosVO dvo);
 
     //Mostrar
-    public ArrayList<DatosVO> mostrar_datos(DatosVO dvo);
+    public ArrayList<DatosVO> mostrar_datos_nombre(DatosVO dvo);
+    public ArrayList<DatosVO> mostrar_datos_telefono(DatosVO dvo);
+    public ArrayList<DatosVO> mostrar_datos_correo(DatosVO dvo);
 
     //Eliminar
     public void borrar_datos(DatosVO dvo);

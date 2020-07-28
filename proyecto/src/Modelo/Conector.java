@@ -5,9 +5,10 @@
  */
 package Modelo;
 
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.Statement;
+import java.sql.Connection;
+import java.sql.Statement;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
@@ -32,9 +33,58 @@ public class Conector {
        
        try {
            Class.forName(this.driver).newInstance();
-           this.con = (Connection) DriverManager.getConnection(this.cadena, this.user, this.password);
+           this.con = DriverManager.getConnection(this.cadena, this.user, this.password);
        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | SQLException e) {
-           System.err.println(e.getMessage());
+           error = e.getMessage();
        }
    }
+   
+   //Metodo para Obtener los datos de la Base de Datos
+   public ResultSet obtener_datos (String consulta){
+       try {
+           this.connect();
+           ResultSet respuesta = null;
+           this.st = this.con.createStatement();
+           respuesta = st.executeQuery(consulta);
+           return respuesta;
+       } catch (Exception e) {
+           error = e.getMessage();
+       }
+       return null;
+   }
+   
+   //Desconectar de la Base de Datos
+   public void desconectar(){
+       try {
+           con.close();
+       } catch (Exception e) {
+           error = e.getMessage();
+       }
+   }
+   
+   //Metodos para consultas a la Base de Datos ( Insertar Borrar Modificar)
+   public int consulta_general (String consulta){
+       int resultado = 0;
+       
+       try {
+           this.connect();
+           this.st = this.con.createStatement();
+           resultado = this.st.executeUpdate(consulta);
+       } catch (Exception e) {
+           error = e.getMessage();
+           return 0;
+       }
+       
+       return resultado;
+   }
+    
+   public String getError() {
+        return error;
+    }
+
+    public void setError(String error) {
+        this.error = error;
+    }
+  
+   
 }

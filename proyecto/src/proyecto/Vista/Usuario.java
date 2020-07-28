@@ -119,6 +119,7 @@ public class Usuario extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         f_txt_notas = new javax.swing.JTextArea();
         f_cb_nuevo = new javax.swing.JCheckBox();
+        Valor_Buscado = new javax.swing.JComboBox<>();
         jMenuBar1 = new javax.swing.JMenuBar();
         archivo = new javax.swing.JMenu();
         clientes = new javax.swing.JMenu();
@@ -149,7 +150,7 @@ public class Usuario extends javax.swing.JFrame {
         );
         if_buscarClienteLayout.setVerticalGroup(
             if_buscarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 175, Short.MAX_VALUE)
+            .addGap(0, 203, Short.MAX_VALUE)
         );
 
         if_baseClientes.setClosable(true);
@@ -197,7 +198,7 @@ public class Usuario extends javax.swing.JFrame {
         );
         if_buscarAsesorLayout.setVerticalGroup(
             if_buscarAsesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 255, Short.MAX_VALUE)
+            .addGap(0, 283, Short.MAX_VALUE)
         );
 
         if_baseAsores.setClosable(true);
@@ -226,7 +227,7 @@ public class Usuario extends javax.swing.JFrame {
         );
         if_baseAsoresLayout.setVerticalGroup(
             if_baseAsoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 313, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
         );
 
         if_formulario.setClosable(true);
@@ -239,6 +240,11 @@ public class Usuario extends javax.swing.JFrame {
         jLabel1.setText("Buscar Cliente");
 
         f_btn_buscarCliente.setText("Buscar");
+        f_btn_buscarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                f_btn_buscarClienteActionPerformed(evt);
+            }
+        });
 
         DefaultTableModel modelSeguimiento = new DefaultTableModel();
         f_tbl_seguimiento.setModel(new javax.swing.table.DefaultTableModel(
@@ -650,6 +656,8 @@ public class Usuario extends javax.swing.JFrame {
 
         f_cb_nuevo.setText("Nuevo");
 
+        Valor_Buscado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nombre", "Telefono", "Correo" }));
+
         javax.swing.GroupLayout if_formularioLayout = new javax.swing.GroupLayout(if_formulario.getContentPane());
         if_formulario.getContentPane().setLayout(if_formularioLayout);
         if_formularioLayout.setHorizontalGroup(
@@ -658,10 +666,12 @@ public class Usuario extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Valor_Buscado, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(f_txt_buscarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(f_btn_buscarCliente)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(111, 111, 111)
                 .addComponent(f_cb_nuevo)
                 .addContainerGap())
             .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -675,11 +685,12 @@ public class Usuario extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(f_txt_buscarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(f_btn_buscarCliente)
-                    .addComponent(f_cb_nuevo))
+                    .addComponent(f_cb_nuevo)
+                    .addComponent(Valor_Buscado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE))
         );
 
         jDesktopPane1.setLayer(if_buscarCliente, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -769,6 +780,10 @@ public class Usuario extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void f_btn_buscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_f_btn_buscarClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_f_btn_buscarClienteActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -805,6 +820,7 @@ public class Usuario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JComboBox<String> Valor_Buscado;
     public javax.swing.JMenuItem a_baseAsesores;
     public javax.swing.JMenuItem a_baseGeneral;
     public javax.swing.JMenu archivo;

@@ -24,6 +24,8 @@ public class DatosVO {
    //Variables que se van a usar en la aplicacion
    //login
    private String user_login, pass_login;
+   //Datos Buscador
+   private String buscar_nombre, buscar_telefono, buscar_correo;
    //Vendedor
    private String nombre_vendedor, telefono_vendedor, constructora_vendedor, correo_vendedor;
    //Representante
@@ -31,7 +33,7 @@ public class DatosVO {
    
     //Contructores
 
-    public DatosVO(String error, String login_user, String login_pass, String login_telefono, String login_correo, String login_tipo, String negociacion_nombre_cliente, String negociacion_telefono, String negociacion_estado_residencia, String negociacion_estado_migratorio, String negociacion_tipo_porpiedad, String negociacion_correo, String negociacion_estado_civil, String negociacion_profecion, String negociacion_DPI, String negociacion_NIT, String negociacion_ID, String user_login, String pass_login, String nombre_vendedor, String telefono_vendedor, String constructora_vendedor, String correo_vendedor, String nombre_representante, String parentezco_representante, String direccion_representante, String telefono_representante, String banco_representante) {
+    public DatosVO(String error, String login_user, String login_pass, String login_telefono, String login_correo, String login_tipo, String negociacion_nombre_cliente, String negociacion_telefono, String negociacion_estado_residencia, String negociacion_estado_migratorio, String negociacion_tipo_porpiedad, String negociacion_correo, String negociacion_estado_civil, String negociacion_profecion, String negociacion_DPI, String negociacion_NIT, String negociacion_ID, String user_login, String pass_login, String buscar_nombre, String buscar_telefono, String buscar_correo, String nombre_vendedor, String telefono_vendedor, String constructora_vendedor, String correo_vendedor, String nombre_representante, String parentezco_representante, String direccion_representante, String telefono_representante, String banco_representante) {
         this.error = error;
         this.login_user = login_user;
         this.login_pass = login_pass;
@@ -51,6 +53,9 @@ public class DatosVO {
         this.negociacion_ID = negociacion_ID;
         this.user_login = user_login;
         this.pass_login = pass_login;
+        this.buscar_nombre = buscar_nombre;
+        this.buscar_telefono = buscar_telefono;
+        this.buscar_correo = buscar_correo;
         this.nombre_vendedor = nombre_vendedor;
         this.telefono_vendedor = telefono_vendedor;
         this.constructora_vendedor = constructora_vendedor;
@@ -62,7 +67,7 @@ public class DatosVO {
         this.banco_representante = banco_representante;
     }
 
-    
+        
     
     
 
@@ -296,6 +301,32 @@ public class DatosVO {
     public void setNegociacion_ID(String negociacion_ID) {
         this.negociacion_ID = negociacion_ID;
     }
+
+    public String getBuscar_nombre() {
+        return buscar_nombre;
+    }
+
+    public void setBuscar_nombre(String buscar_nombre) {
+        this.buscar_nombre = buscar_nombre;
+    }
+
+    public String getBuscar_telefono() {
+        return buscar_telefono;
+    }
+
+    public void setBuscar_telefono(String buscar_telefono) {
+        this.buscar_telefono = buscar_telefono;
+    }
+
+    public String getBuscar_correo() {
+        return buscar_correo;
+    }
+
+    public void setBuscar_correo(String buscar_correo) {
+        this.buscar_correo = buscar_correo;
+    }
+    
+    
     
     
     

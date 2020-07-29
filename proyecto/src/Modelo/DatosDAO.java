@@ -94,11 +94,36 @@ public class DatosDAO implements InterfaceMetodos {
                     + "WHERE cl.nombre = '" + dvo.getBuscar_nombre() + "')");
             c.desconectar();
 
-            while (true) {
+            while (rs.next()) {
+                dvo.setNombre_vendedor(rs.getString(1));
+                dvo.setTelefono_vendedor(rs.getString(2));
+                dvo.setConstructora_vendedor(rs.getString(3));
+                dvo.setHonorarios_casos(rs.getString(4));
+                dvo.setSalario_casos(rs.getString(5));
+                dvo.setDireccion_cliente(rs.getString(6));
+                dvo.setNombre_cliente(rs.getString(7));
+                dvo.setTelefono_cliente(rs.getString(8));
+                dvo.setCorreo_cliente(rs.getString(9));
+                dvo.setProfecion_cliente(rs.getString(10));
+                dvo.setEstadoCivil_cliente(rs.getString(11));
+                dvo.setEstadoMigratorio_cliente(rs.getString(12));
+                dvo.setEstadoResidencia_cliente(rs.getString(13));
+                dvo.setDpi_cliente(rs.getString(14));
+                dvo.setNit_cliente(rs.getString(15));
+                dvo.setUsaId_cliente(rs.getString(16));
+                dvo.setTipo_propiedad(rs.getString(17));
+                dvo.setNombre_representante(rs.getString(18));
+                dvo.setParentezco_representante(rs.getString(19));
+                dvo.setDireccion_representante(rs.getString(20));
+                dvo.setTelefono_representante(rs.getString(21));
+                dvo.setBanco_representante(rs.getString(22));
+                dvo.setNotas_casos(rs.getString(23));
+                
+                datos.add(dvo);
 
             }
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
             dvo.setError(e.getMessage());
         }
 
@@ -127,11 +152,36 @@ public class DatosDAO implements InterfaceMetodos {
                     + "WHERE cl.nombre = '" + dvo.getBuscar_telefono() + "')");
             c.desconectar();
 
-            while (true) {
+            while (rs.next()) {
+                dvo.setNombre_vendedor(rs.getString(1));
+                dvo.setTelefono_vendedor(rs.getString(2));
+                dvo.setConstructora_vendedor(rs.getString(3));
+                dvo.setHonorarios_casos(rs.getString(4));
+                dvo.setSalario_casos(rs.getString(5));
+                dvo.setDireccion_cliente(rs.getString(6));
+                dvo.setNombre_cliente(rs.getString(7));
+                dvo.setTelefono_cliente(rs.getString(8));
+                dvo.setCorreo_cliente(rs.getString(9));
+                dvo.setProfecion_cliente(rs.getString(10));
+                dvo.setEstadoCivil_cliente(rs.getString(11));
+                dvo.setEstadoMigratorio_cliente(rs.getString(12));
+                dvo.setEstadoResidencia_cliente(rs.getString(13));
+                dvo.setDpi_cliente(rs.getString(14));
+                dvo.setNit_cliente(rs.getString(15));
+                dvo.setUsaId_cliente(rs.getString(16));
+                dvo.setTipo_propiedad(rs.getString(17));
+                dvo.setNombre_representante(rs.getString(18));
+                dvo.setParentezco_representante(rs.getString(19));
+                dvo.setDireccion_representante(rs.getString(20));
+                dvo.setTelefono_representante(rs.getString(21));
+                dvo.setBanco_representante(rs.getString(22));
+                dvo.setNotas_casos(rs.getString(23));
+                
+                datos.add(dvo);
 
             }
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
             dvo.setError(e.getMessage());
         }
 
@@ -160,11 +210,36 @@ public class DatosDAO implements InterfaceMetodos {
                     + "WHERE cl.nombre = '" + dvo.getBuscar_correo() + "')");
             c.desconectar();
 
-            while (true) {
+            while (rs.next()) {
+                dvo.setNombre_vendedor(rs.getString(1));
+                dvo.setTelefono_vendedor(rs.getString(2));
+                dvo.setConstructora_vendedor(rs.getString(3));
+                dvo.setHonorarios_casos(rs.getString(4));
+                dvo.setSalario_casos(rs.getString(5));
+                dvo.setDireccion_cliente(rs.getString(6));
+                dvo.setNombre_cliente(rs.getString(7));
+                dvo.setTelefono_cliente(rs.getString(8));
+                dvo.setCorreo_cliente(rs.getString(9));
+                dvo.setProfecion_cliente(rs.getString(10));
+                dvo.setEstadoCivil_cliente(rs.getString(11));
+                dvo.setEstadoMigratorio_cliente(rs.getString(12));
+                dvo.setEstadoResidencia_cliente(rs.getString(13));
+                dvo.setDpi_cliente(rs.getString(14));
+                dvo.setNit_cliente(rs.getString(15));
+                dvo.setUsaId_cliente(rs.getString(16));
+                dvo.setTipo_propiedad(rs.getString(17));
+                dvo.setNombre_representante(rs.getString(18));
+                dvo.setParentezco_representante(rs.getString(19));
+                dvo.setDireccion_representante(rs.getString(20));
+                dvo.setTelefono_representante(rs.getString(21));
+                dvo.setBanco_representante(rs.getString(22));
+                dvo.setNotas_casos(rs.getString(23));
+                
+                datos.add(dvo);
 
             }
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
             dvo.setError(e.getMessage());
         }
 

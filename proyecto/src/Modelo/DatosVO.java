@@ -30,10 +30,15 @@ public class DatosVO {
    private String nombre_vendedor, telefono_vendedor, constructora_vendedor, correo_vendedor;
    //Representante
    private String nombre_representante, parentezco_representante, direccion_representante, telefono_representante, banco_representante;
+   //Cliente
+   private String nombre_cliente, telefono_cliente, correo_cliente, estatus_cliente, direccion_cliente, estadoCivil_cliente, estadoMigratorio_cliente, profecion_cliente, estadoResidencia_cliente, dpi_cliente, nit_cliente,usaId_cliente;
+   //Casos
+   private String honorarios_casos, salario_casos, notas_casos;
+   //Propiedad
+   private String tipo_propiedad;
    
-    //Contructores
-
-    public DatosVO(String error, String login_user, String login_pass, String login_telefono, String login_correo, String login_tipo, String negociacion_nombre_cliente, String negociacion_telefono, String negociacion_estado_residencia, String negociacion_estado_migratorio, String negociacion_tipo_porpiedad, String negociacion_correo, String negociacion_estado_civil, String negociacion_profecion, String negociacion_DPI, String negociacion_NIT, String negociacion_ID, String user_login, String pass_login, String buscar_nombre, String buscar_telefono, String buscar_correo, String nombre_vendedor, String telefono_vendedor, String constructora_vendedor, String correo_vendedor, String nombre_representante, String parentezco_representante, String direccion_representante, String telefono_representante, String banco_representante) {
+   //Contructores
+    public DatosVO(String error, String login_user, String login_pass, String login_telefono, String login_correo, String login_tipo, String negociacion_nombre_cliente, String negociacion_telefono, String negociacion_estado_residencia, String negociacion_estado_migratorio, String negociacion_tipo_porpiedad, String negociacion_correo, String negociacion_estado_civil, String negociacion_profecion, String negociacion_DPI, String negociacion_NIT, String negociacion_ID, String user_login, String pass_login, String buscar_nombre, String buscar_telefono, String buscar_correo, String nombre_vendedor, String telefono_vendedor, String constructora_vendedor, String correo_vendedor, String nombre_representante, String parentezco_representante, String direccion_representante, String telefono_representante, String banco_representante, String nombre_cliente, String telefono_cliente, String correo_cliente, String estatus_cliente, String direccion_cliente, String estadoCivil_cliente, String estadoMigratorio_cliente, String profecion_cliente, String estadoResidencia_cliente, String dpi_cliente, String nit_cliente, String usaId_cliente, String honorarios_casos, String salario_casos, String notas_casos, String tipo_propiedad) {
         this.error = error;
         this.login_user = login_user;
         this.login_pass = login_pass;
@@ -65,19 +70,33 @@ public class DatosVO {
         this.direccion_representante = direccion_representante;
         this.telefono_representante = telefono_representante;
         this.banco_representante = banco_representante;
+        this.nombre_cliente = nombre_cliente;
+        this.telefono_cliente = telefono_cliente;
+        this.correo_cliente = correo_cliente;
+        this.estatus_cliente = estatus_cliente;
+        this.direccion_cliente = direccion_cliente;
+        this.estadoCivil_cliente = estadoCivil_cliente;
+        this.estadoMigratorio_cliente = estadoMigratorio_cliente;
+        this.profecion_cliente = profecion_cliente;
+        this.estadoResidencia_cliente = estadoResidencia_cliente;
+        this.dpi_cliente = dpi_cliente;
+        this.nit_cliente = nit_cliente;
+        this.usaId_cliente = usaId_cliente;
+        this.honorarios_casos = honorarios_casos;
+        this.salario_casos = salario_casos;
+        this.notas_casos = notas_casos;
+        this.tipo_propiedad = tipo_propiedad;
     }
-
-        
     
     
-
     
+     
+   
     public DatosVO() {
        
     }
 
     //Metodos Setter and Getter
-
     public String getError() {
         return error;
     }
@@ -325,8 +344,134 @@ public class DatosVO {
     public void setBuscar_correo(String buscar_correo) {
         this.buscar_correo = buscar_correo;
     }
-    
-    
+
+    public String getNombre_cliente() {
+        return nombre_cliente;
+    }
+
+    public void setNombre_cliente(String nombre_cliente) {
+        this.nombre_cliente = nombre_cliente;
+    }
+
+    public String getTelefono_cliente() {
+        return telefono_cliente;
+    }
+
+    public void setTelefono_cliente(String telefono_cliente) {
+        this.telefono_cliente = telefono_cliente;
+    }
+
+    public String getCorreo_cliente() {
+        return correo_cliente;
+    }
+
+    public void setCorreo_cliente(String correo_cliente) {
+        this.correo_cliente = correo_cliente;
+    }
+
+    public String getEstatus_cliente() {
+        return estatus_cliente;
+    }
+
+    public void setEstatus_cliente(String estatus_cliente) {
+        this.estatus_cliente = estatus_cliente;
+    }
+
+    public String getDireccion_cliente() {
+        return direccion_cliente;
+    }
+
+    public void setDireccion_cliente(String direccion_cliente) {
+        this.direccion_cliente = direccion_cliente;
+    }
+
+    public String getEstadoCivil_cliente() {
+        return estadoCivil_cliente;
+    }
+
+    public void setEstadoCivil_cliente(String estadoCivil_cliente) {
+        this.estadoCivil_cliente = estadoCivil_cliente;
+    }
+
+    public String getEstadoMigratorio_cliente() {
+        return estadoMigratorio_cliente;
+    }
+
+    public void setEstadoMigratorio_cliente(String estadoMigratorio_cliente) {
+        this.estadoMigratorio_cliente = estadoMigratorio_cliente;
+    }
+
+    public String getProfecion_cliente() {
+        return profecion_cliente;
+    }
+
+    public void setProfecion_cliente(String profecion_cliente) {
+        this.profecion_cliente = profecion_cliente;
+    }
+
+    public String getEstadoResidencia_cliente() {
+        return estadoResidencia_cliente;
+    }
+
+    public void setEstadoResidencia_cliente(String estadoResidencia_cliente) {
+        this.estadoResidencia_cliente = estadoResidencia_cliente;
+    }
+
+    public String getDpi_cliente() {
+        return dpi_cliente;
+    }
+
+    public void setDpi_cliente(String dpi_cliente) {
+        this.dpi_cliente = dpi_cliente;
+    }
+
+    public String getNit_cliente() {
+        return nit_cliente;
+    }
+
+    public void setNit_cliente(String nit_cliente) {
+        this.nit_cliente = nit_cliente;
+    }
+
+    public String getUsaId_cliente() {
+        return usaId_cliente;
+    }
+
+    public void setUsaId_cliente(String usaId_cliente) {
+        this.usaId_cliente = usaId_cliente;
+    }
+
+    public String getHonorarios_casos() {
+        return honorarios_casos;
+    }
+
+    public void setHonorarios_casos(String honorarios_casos) {
+        this.honorarios_casos = honorarios_casos;
+    }
+
+    public String getSalario_casos() {
+        return salario_casos;
+    }
+
+    public void setSalario_casos(String salario_casos) {
+        this.salario_casos = salario_casos;
+    }
+
+    public String getTipo_propiedad() {
+        return tipo_propiedad;
+    }
+
+    public void setTipo_propiedad(String tipo_propiedad) {
+        this.tipo_propiedad = tipo_propiedad;
+    }
+
+    public String getNotas_casos() {
+        return notas_casos;
+    }
+
+    public void setNotas_casos(String notas_casos) {
+        this.notas_casos = notas_casos;
+    }
     
     
     

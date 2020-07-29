@@ -31,13 +31,24 @@ public class DatosVO {
    
     //Contructores
 
-    public DatosVO(String error, String login_user, String login_pass, String login_telefono, String login_correo, String login_tipo, String user_login, String pass_login, String nombre_vendedor, String telefono_vendedor, String constructora_vendedor, String correo_vendedor, String nombre_representante, String parentezco_representante, String direccion_representante, String telefono_representante, String banco_representante) {
+    public DatosVO(String error, String login_user, String login_pass, String login_telefono, String login_correo, String login_tipo, String negociacion_nombre_cliente, String negociacion_telefono, String negociacion_estado_residencia, String negociacion_estado_migratorio, String negociacion_tipo_porpiedad, String negociacion_correo, String negociacion_estado_civil, String negociacion_profecion, String negociacion_DPI, String negociacion_NIT, String negociacion_ID, String user_login, String pass_login, String nombre_vendedor, String telefono_vendedor, String constructora_vendedor, String correo_vendedor, String nombre_representante, String parentezco_representante, String direccion_representante, String telefono_representante, String banco_representante) {
         this.error = error;
         this.login_user = login_user;
         this.login_pass = login_pass;
         this.login_telefono = login_telefono;
         this.login_correo = login_correo;
         this.login_tipo = login_tipo;
+        this.negociacion_nombre_cliente = negociacion_nombre_cliente;
+        this.negociacion_telefono = negociacion_telefono;
+        this.negociacion_estado_residencia = negociacion_estado_residencia;
+        this.negociacion_estado_migratorio = negociacion_estado_migratorio;
+        this.negociacion_tipo_porpiedad = negociacion_tipo_porpiedad;
+        this.negociacion_correo = negociacion_correo;
+        this.negociacion_estado_civil = negociacion_estado_civil;
+        this.negociacion_profecion = negociacion_profecion;
+        this.negociacion_DPI = negociacion_DPI;
+        this.negociacion_NIT = negociacion_NIT;
+        this.negociacion_ID = negociacion_ID;
         this.user_login = user_login;
         this.pass_login = pass_login;
         this.nombre_vendedor = nombre_vendedor;
@@ -50,6 +61,8 @@ public class DatosVO {
         this.telefono_representante = telefono_representante;
         this.banco_representante = banco_representante;
     }
+
+    
     
     
 
@@ -194,6 +207,94 @@ public class DatosVO {
 
     public void setBanco_representante(String banco_representante) {
         this.banco_representante = banco_representante;
+    }
+
+    public String getNegociacion_nombre_cliente() {
+        return negociacion_nombre_cliente;
+    }
+
+    public void setNegociacion_nombre_cliente(String negociacion_nombre_cliente) {
+        this.negociacion_nombre_cliente = negociacion_nombre_cliente;
+    }
+
+    public String getNegociacion_telefono() {
+        return negociacion_telefono;
+    }
+
+    public void setNegociacion_telefono(String negociacion_telefono) {
+        this.negociacion_telefono = negociacion_telefono;
+    }
+
+    public String getNegociacion_estado_residencia() {
+        return negociacion_estado_residencia;
+    }
+
+    public void setNegociacion_estado_residencia(String negociacion_estado_residencia) {
+        this.negociacion_estado_residencia = negociacion_estado_residencia;
+    }
+
+    public String getNegociacion_estado_migratorio() {
+        return negociacion_estado_migratorio;
+    }
+
+    public void setNegociacion_estado_migratorio(String negociacion_estado_migratorio) {
+        this.negociacion_estado_migratorio = negociacion_estado_migratorio;
+    }
+
+    public String getNegociacion_tipo_porpiedad() {
+        return negociacion_tipo_porpiedad;
+    }
+
+    public void setNegociacion_tipo_porpiedad(String negociacion_tipo_porpiedad) {
+        this.negociacion_tipo_porpiedad = negociacion_tipo_porpiedad;
+    }
+
+    public String getNegociacion_correo() {
+        return negociacion_correo;
+    }
+
+    public void setNegociacion_correo(String negociacion_correo) {
+        this.negociacion_correo = negociacion_correo;
+    }
+
+    public String getNegociacion_estado_civil() {
+        return negociacion_estado_civil;
+    }
+
+    public void setNegociacion_estado_civil(String negociacion_estado_civil) {
+        this.negociacion_estado_civil = negociacion_estado_civil;
+    }
+
+    public String getNegociacion_profecion() {
+        return negociacion_profecion;
+    }
+
+    public void setNegociacion_profecion(String negociacion_profecion) {
+        this.negociacion_profecion = negociacion_profecion;
+    }
+
+    public String getNegociacion_DPI() {
+        return negociacion_DPI;
+    }
+
+    public void setNegociacion_DPI(String negociacion_DPI) {
+        this.negociacion_DPI = negociacion_DPI;
+    }
+
+    public String getNegociacion_NIT() {
+        return negociacion_NIT;
+    }
+
+    public void setNegociacion_NIT(String negociacion_NIT) {
+        this.negociacion_NIT = negociacion_NIT;
+    }
+
+    public String getNegociacion_ID() {
+        return negociacion_ID;
+    }
+
+    public void setNegociacion_ID(String negociacion_ID) {
+        this.negociacion_ID = negociacion_ID;
     }
     
     

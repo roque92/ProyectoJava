@@ -10,9 +10,7 @@ package Modelo;
  * @author jroque
  */
 public class DatosVO {
-    
-   private String error;
-   
+      
    //----------------------Variables que vienen de la base de datos
    //-------Login
    private String login_user, login_pass, login_telefono, login_correo, login_tipo;
@@ -37,6 +35,7 @@ public class DatosVO {
    ///-------
    
    //----------------------Variables que se van a usar en la aplicacion
+   private String error;
    ///-------login
    private String user_login, pass_login;
    

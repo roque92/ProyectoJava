@@ -47,7 +47,7 @@ public class DatosDAO implements InterfaceMetodos {
     @Override
     public void insertar_datos(DatosVO dvo) {
         Conector c = new Conector();
-        //Tabla Vendedor
+        //-----------Tabla Vendedor
         try {
             c.connect();
             c.consulta_general("INSERT INTO tbl_vendedor (nombre, telefono, constructora, correo)\n"
@@ -56,7 +56,7 @@ public class DatosDAO implements InterfaceMetodos {
         } catch (Exception e) {
             dvo.setError(e.getMessage());
         }
-        //Tabla Representante
+        //-----------Tabla Representante
         try {
             c.connect();
             c.consulta_general("INSERT INTO tbl_representante (nombre, parentezco, direccion, telefono, banco)\n"

@@ -27,7 +27,7 @@ public class Conector {
     Connection con;
     Statement st;
     
-    //Metodo que habilita la conexion con la base de datos
+    //----------------------Metodo que habilita la conexion con la base de datos
    public void connect(){
        this.cadena = "jdbc:mysql://" +  this.server + "/" + this.baseDatos;
        
@@ -39,7 +39,7 @@ public class Conector {
        }
    }
    
-   //Metodo para Obtener los datos de la Base de Datos
+   //----------------------Metodo para Obtener los datos de la Base de Datos
    public ResultSet obtener_datos (String consultaSQL){
        try {
            this.connect();
@@ -47,22 +47,22 @@ public class Conector {
            this.st = this.con.createStatement();
            respuesta = st.executeQuery(consultaSQL);
            return respuesta;
-       } catch (Exception e) {
+       } catch (SQLException e) {
            error = e.getMessage();
        }
        return null;
    }
    
-   //Desconectar de la Base de Datos
+   //----------------------Desconectar de la Base de Datos
    public void desconectar(){
        try {
            con.close();
-       } catch (Exception e) {
+       } catch (SQLException e) {
            error = e.getMessage();
        }
    }
    
-   //Metodos para consultas a la Base de Datos ( Insertar Borrar Modificar)
+   //----------------------Metodos para consultas a la Base de Datos ( Insertar Borrar Modificar)
    public int consulta_general (String consultaSQL){
        int resultado = 0;
        
@@ -70,7 +70,7 @@ public class Conector {
            this.connect();
            this.st = this.con.createStatement();
            resultado = this.st.executeUpdate(consultaSQL);
-       } catch (Exception e) {
+       } catch (SQLException e) {
            error = e.getMessage();
            return 0;
        }

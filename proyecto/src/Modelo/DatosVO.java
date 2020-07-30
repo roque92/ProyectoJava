@@ -13,31 +13,35 @@ public class DatosVO {
     
    private String error;
    
-   //Variables que vienen de la base de datos
-   //Login
+   //----------------------Variables que vienen de la base de datos
+   //-------Login
    private String login_user, login_pass, login_telefono, login_correo, login_tipo;
-   //Negociacion
+   //-------Negociacion
    private String negociacion_nombre_cliente, negociacion_telefono, negociacion_estado_residencia, negociacion_estado_migratorio,
            negociacion_tipo_porpiedad, negociacion_correo, negociacion_estado_civil, negociacion_profecion, 
            negociacion_DPI, negociacion_NIT, negociacion_ID;
-   
-   //Variables que se van a usar en la aplicacion
-   //login
-   private String user_login, pass_login;
-   //Datos Buscador
+   //-------Datos Buscador
    private String buscar_nombre, buscar_telefono, buscar_correo;
-   //Vendedor
+   //-------Vendedor
    private String nombre_vendedor, telefono_vendedor, constructora_vendedor, correo_vendedor;
-   //Representante
+   //-------Representante
    private String nombre_representante, parentezco_representante, direccion_representante, telefono_representante, banco_representante;
-   //Cliente
+   //-------Cliente
    private String nombre_cliente, telefono_cliente, correo_cliente, estatus_cliente, direccion_cliente, estadoCivil_cliente, estadoMigratorio_cliente, profecion_cliente, estadoResidencia_cliente, dpi_cliente, nit_cliente,usaId_cliente;
-   //Casos
+   //-------Casos
    private String honorarios_casos, salario_casos, notas_casos;
-   //Propiedad
+   //-------Propiedad
    private String tipo_propiedad;
    
-   //Contructores
+   //----------------------Variables que se van a usar en la aplicacion
+   ///-------login
+   private String user_login, pass_login;
+   
+   
+   //----------------------Variables que van a ser almancenadas en la Base de datos
+   ///-------
+   
+   //----------------------Contructores
     public DatosVO(String error, String login_user, String login_pass, String login_telefono, String login_correo, String login_tipo, String negociacion_nombre_cliente, String negociacion_telefono, String negociacion_estado_residencia, String negociacion_estado_migratorio, String negociacion_tipo_porpiedad, String negociacion_correo, String negociacion_estado_civil, String negociacion_profecion, String negociacion_DPI, String negociacion_NIT, String negociacion_ID, String user_login, String pass_login, String buscar_nombre, String buscar_telefono, String buscar_correo, String nombre_vendedor, String telefono_vendedor, String constructora_vendedor, String correo_vendedor, String nombre_representante, String parentezco_representante, String direccion_representante, String telefono_representante, String banco_representante, String nombre_cliente, String telefono_cliente, String correo_cliente, String estatus_cliente, String direccion_cliente, String estadoCivil_cliente, String estadoMigratorio_cliente, String profecion_cliente, String estadoResidencia_cliente, String dpi_cliente, String nit_cliente, String usaId_cliente, String honorarios_casos, String salario_casos, String notas_casos, String tipo_propiedad) {
         this.error = error;
         this.login_user = login_user;
@@ -96,7 +100,7 @@ public class DatosVO {
        
     }
 
-    //Metodos Setter and Getter
+    //----------------------Metodos Setter and Getter
     public String getError() {
         return error;
     }

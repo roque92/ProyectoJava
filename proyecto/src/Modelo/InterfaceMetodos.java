@@ -29,5 +29,5 @@ public interface InterfaceMetodos {
     public ArrayList<DatosVO> mostrar_datos_correo(DatosVO dvo);
 
     //Eliminar
-    public void borrar_datos(DatosVO dvo);
+    public void borrar_datos(DatosVO dvo);    
 }

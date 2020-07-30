@@ -98,7 +98,7 @@ public class DatosVO {
        
     }
 
-    //----------------------Metodos Setter and Getter
+    //----------------------Setter and Getter
     public String getError() {
         return error;
     }

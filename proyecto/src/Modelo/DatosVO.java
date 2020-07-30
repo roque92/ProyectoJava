@@ -33,13 +33,12 @@ public class DatosVO {
    //-------Propiedad
    private String tipo_propiedad;
    
+   //----------------------Variables que van a ser almancenadas en la Base de datos
+   ///-------
+   
    //----------------------Variables que se van a usar en la aplicacion
    ///-------login
    private String user_login, pass_login;
-   
-   
-   //----------------------Variables que van a ser almancenadas en la Base de datos
-   ///-------
    
    //----------------------Contructores
     public DatosVO(String error, String login_user, String login_pass, String login_telefono, String login_correo, String login_tipo, String negociacion_nombre_cliente, String negociacion_telefono, String negociacion_estado_residencia, String negociacion_estado_migratorio, String negociacion_tipo_porpiedad, String negociacion_correo, String negociacion_estado_civil, String negociacion_profecion, String negociacion_DPI, String negociacion_NIT, String negociacion_ID, String user_login, String pass_login, String buscar_nombre, String buscar_telefono, String buscar_correo, String nombre_vendedor, String telefono_vendedor, String constructora_vendedor, String correo_vendedor, String nombre_representante, String parentezco_representante, String direccion_representante, String telefono_representante, String banco_representante, String nombre_cliente, String telefono_cliente, String correo_cliente, String estatus_cliente, String direccion_cliente, String estadoCivil_cliente, String estadoMigratorio_cliente, String profecion_cliente, String estadoResidencia_cliente, String dpi_cliente, String nit_cliente, String usaId_cliente, String honorarios_casos, String salario_casos, String notas_casos, String tipo_propiedad) {

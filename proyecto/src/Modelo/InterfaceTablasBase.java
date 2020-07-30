@@ -18,7 +18,6 @@ public interface InterfaceTablasBase {
      public ArrayList<StringsBaseDatos> TablaVendedor(StringsBaseDatos sbd);
      public ArrayList<StringsBaseDatos> TablaUsuario(StringsBaseDatos sbd);
      public ArrayList<StringsBaseDatos> TablaPropiedad(StringsBaseDatos sbd);
-     public ArrayList<StringsBaseDatos> TablaRoles(StringsBaseDatos sbd);
      public ArrayList<StringsBaseDatos> TablaRepresentante(StringsBaseDatos sbd);
      public ArrayList<StringsBaseDatos> TablaRegistros(StringsBaseDatos sbd);
      public ArrayList<StringsBaseDatos> TablaMigratorio(StringsBaseDatos sbd);

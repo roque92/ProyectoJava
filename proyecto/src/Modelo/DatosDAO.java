@@ -23,7 +23,7 @@ public class DatosDAO implements InterfaceMetodos {
         try {
             c.connect();
             ResultSet rs = c.obtener_datos("SELECT u.username, u.pass, u.telefono, u.correo, r.tipo\n"
-                    + " FROM tbl_usuarios AS u INNER JOIN tbl_roles AS r ON u.id_roles = r.id WHERE username = '" + dvo.getUser_login() + "'");
+                    + " FROM tbl_usuarios AS u INNER JOIN tbl_roles AS r ON u.id_roles = r.id WHERE username = '" + dvo.getUser_login() + "';");
 
             while (rs.next()) {
                 dvo.setLogin_user(rs.getString(1));
@@ -51,7 +51,7 @@ public class DatosDAO implements InterfaceMetodos {
         try {
             c.connect();
             c.consulta_general("INSERT INTO tbl_vendedor (nombre, telefono, constructora, correo)\n"
-                    + "VALUES ('" + dvo.getNombre_vendedor() + "','" + dvo.getTelefono_vendedor() + "','" + dvo.getConstructora_vendedor() + "','" + dvo.getCorreo_vendedor() + "')");
+                    + "VALUES ('" + dvo.getNombre_vendedor() + "','" + dvo.getTelefono_vendedor() + "','" + dvo.getConstructora_vendedor() + "','" + dvo.getCorreo_vendedor() + "');");
             c.desconectar();
         } catch (Exception e) {
             dvo.setError(e.getMessage());
@@ -60,7 +60,7 @@ public class DatosDAO implements InterfaceMetodos {
         try {
             c.connect();
             c.consulta_general("INSERT INTO tbl_representante (nombre, parentezco, direccion, telefono, banco)\n"
-                    + "VALUES ('" + dvo.getNombre_representante() + "','" + dvo.getParentezco_representante() + "','" + dvo.getDireccion_representante() + "','" + dvo.getTelefono_representante() + "','" + dvo.getBanco_representante() + "')");
+                    + "VALUES ('" + dvo.getNombre_representante() + "','" + dvo.getParentezco_representante() + "','" + dvo.getDireccion_representante() + "','" + dvo.getTelefono_representante() + "','" + dvo.getBanco_representante() + "');");
             c.desconectar();
         } catch (Exception e) {
             dvo.setError(e.getMessage());
@@ -91,8 +91,7 @@ public class DatosDAO implements InterfaceMetodos {
                     + "INNER JOIN tbl_migratorio AS m ON cl.id_migratorio = m.id\n"
                     + "INNER JOIN tbl_representante AS r ON c.id_representante = r.id\n"
                     + "INNER JOIN tbl_tipo_propiedad AS tp ON c.id_tipo_propiedad = tp.id\n"
-                    + "WHERE cl.nombre = '" + dvo.getBuscar_nombre() + "')");
-            c.desconectar();
+                    + "WHERE cl.nombre = '" + dvo.getBuscar_nombre() + "';");
 
             while (rs.next()) {
                 dvo.setNombre_vendedor(rs.getString(1));
@@ -118,10 +117,11 @@ public class DatosDAO implements InterfaceMetodos {
                 dvo.setTelefono_representante(rs.getString(21));
                 dvo.setBanco_representante(rs.getString(22));
                 dvo.setNotas_casos(rs.getString(23));
-                
-                datos.add(dvo);
 
+                datos.add(dvo);
             }
+
+            c.desconectar();
 
         } catch (SQLException e) {
             dvo.setError(e.getMessage());
@@ -149,8 +149,7 @@ public class DatosDAO implements InterfaceMetodos {
                     + "INNER JOIN tbl_migratorio AS m ON cl.id_migratorio = m.id\n"
                     + "INNER JOIN tbl_representante AS r ON c.id_representante = r.id\n"
                     + "INNER JOIN tbl_tipo_propiedad AS tp ON c.id_tipo_propiedad = tp.id\n"
-                    + "WHERE cl.nombre = '" + dvo.getBuscar_telefono() + "')");
-            c.desconectar();
+                    + "WHERE cl.nombre = '" + dvo.getBuscar_telefono() + "';");
 
             while (rs.next()) {
                 dvo.setNombre_vendedor(rs.getString(1));
@@ -176,10 +175,11 @@ public class DatosDAO implements InterfaceMetodos {
                 dvo.setTelefono_representante(rs.getString(21));
                 dvo.setBanco_representante(rs.getString(22));
                 dvo.setNotas_casos(rs.getString(23));
-                
-                datos.add(dvo);
 
+                datos.add(dvo);
             }
+
+            c.desconectar();
 
         } catch (SQLException e) {
             dvo.setError(e.getMessage());
@@ -207,8 +207,7 @@ public class DatosDAO implements InterfaceMetodos {
                     + "INNER JOIN tbl_migratorio AS m ON cl.id_migratorio = m.id\n"
                     + "INNER JOIN tbl_representante AS r ON c.id_representante = r.id\n"
                     + "INNER JOIN tbl_tipo_propiedad AS tp ON c.id_tipo_propiedad = tp.id\n"
-                    + "WHERE cl.nombre = '" + dvo.getBuscar_correo() + "')");
-            c.desconectar();
+                    + "WHERE cl.nombre = '" + dvo.getBuscar_correo() + "';");
 
             while (rs.next()) {
                 dvo.setNombre_vendedor(rs.getString(1));
@@ -234,10 +233,11 @@ public class DatosDAO implements InterfaceMetodos {
                 dvo.setTelefono_representante(rs.getString(21));
                 dvo.setBanco_representante(rs.getString(22));
                 dvo.setNotas_casos(rs.getString(23));
-                
-                datos.add(dvo);
 
+                datos.add(dvo);
             }
+
+            c.desconectar();
 
         } catch (SQLException e) {
             dvo.setError(e.getMessage());

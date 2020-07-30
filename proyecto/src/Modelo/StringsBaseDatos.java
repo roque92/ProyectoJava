@@ -30,7 +30,7 @@ public class StringsBaseDatos {
     
     //----Tabla registros
     private int id_registros_sbd, id_usuarios_registros_sbd, id_casos_registros_sbd;
-    private String notas_registros_sbd;
+    private String fecha_registros_sbd, notas_registros_sbd;
     
     //----Tabla migratorio
     private int id_migratorio_sbd;
@@ -54,7 +54,7 @@ public class StringsBaseDatos {
     private double honorario_casos_sbd, salario_casos_sbd;
     private String notas_casos_sbd;
 
-    public StringsBaseDatos(int id_vendedor_sbd, String nombre_vendedor_sbd, String telefono_vendedor_sbd, String constructora_vendedor_sbd, String correo_vendedor_sbd, int id_usuario_sbd, String nombre_usuario_sbd, String telefono_usuario_sbd, String correo_usuario_sbd, int id_propiedad_sbd, String descripcion_propiedad_sbd, int id_representante_sbd, String nombre_representante_sbd, String parentezco_representante_sbd, String direccion_representante_sbd, String telefono_representante_sbd, String banco_representante_sbd, int id_registros_sbd, int id_usuarios_registros_sbd, int id_casos_registros_sbd, String notas_registros_sbd, int id_migratorio_sbd, String descripcion_migratorio_sbd, int id_EstadoCivil_sbd, String descripcion_EstadoCivil_sbd, int id_estado_sbd, String tipo_estdo_sbd, String descripcion_estdo_sbd, int id_clientes_sbd, int id_EstadoCivil_clientes_sbd, int id_migratorio_clientes_sbd, String nombre_clientes_sbd, String telefono_clientes_sbd, String correo_clientes_sbd, String estatus_clientes_sbd, String direccion_clientes_sbd, String profecion_clientes_sbd, String EstadoResidencia_clientes_sbd, String dpi_clientes_sbd, String nit_clientes_sbd, String usaId_clientes_sbd, int id_casos_sbd, int id_clientes_casos_sbd, int id_vendedor_casos_sbd, int id_usuario_casos_sbd, int id_estado_casos_sbd, int id_propiedad_casos_sbd, int id_representante_casos_sbd, double honorario_casos_sbd, double salario_casos_sbd, String notas_casos_sbd) {
+    public StringsBaseDatos(int id_vendedor_sbd, String nombre_vendedor_sbd, String telefono_vendedor_sbd, String constructora_vendedor_sbd, String correo_vendedor_sbd, int id_usuario_sbd, String nombre_usuario_sbd, String telefono_usuario_sbd, String correo_usuario_sbd, int id_propiedad_sbd, String descripcion_propiedad_sbd, int id_representante_sbd, String nombre_representante_sbd, String parentezco_representante_sbd, String direccion_representante_sbd, String telefono_representante_sbd, String banco_representante_sbd, int id_registros_sbd, int id_usuarios_registros_sbd, int id_casos_registros_sbd, String fecha_registros_sbd, String notas_registros_sbd, int id_migratorio_sbd, String descripcion_migratorio_sbd, int id_EstadoCivil_sbd, String descripcion_EstadoCivil_sbd, int id_estado_sbd, String tipo_estdo_sbd, String descripcion_estdo_sbd, int id_clientes_sbd, int id_EstadoCivil_clientes_sbd, int id_migratorio_clientes_sbd, String nombre_clientes_sbd, String telefono_clientes_sbd, String correo_clientes_sbd, String estatus_clientes_sbd, String direccion_clientes_sbd, String profecion_clientes_sbd, String EstadoResidencia_clientes_sbd, String dpi_clientes_sbd, String nit_clientes_sbd, String usaId_clientes_sbd, int id_casos_sbd, int id_clientes_casos_sbd, int id_vendedor_casos_sbd, int id_usuario_casos_sbd, int id_estado_casos_sbd, int id_propiedad_casos_sbd, int id_representante_casos_sbd, double honorario_casos_sbd, double salario_casos_sbd, String notas_casos_sbd) {
         this.id_vendedor_sbd = id_vendedor_sbd;
         this.nombre_vendedor_sbd = nombre_vendedor_sbd;
         this.telefono_vendedor_sbd = telefono_vendedor_sbd;
@@ -75,6 +75,7 @@ public class StringsBaseDatos {
         this.id_registros_sbd = id_registros_sbd;
         this.id_usuarios_registros_sbd = id_usuarios_registros_sbd;
         this.id_casos_registros_sbd = id_casos_registros_sbd;
+        this.fecha_registros_sbd = fecha_registros_sbd;
         this.notas_registros_sbd = notas_registros_sbd;
         this.id_migratorio_sbd = id_migratorio_sbd;
         this.descripcion_migratorio_sbd = descripcion_migratorio_sbd;
@@ -108,10 +109,9 @@ public class StringsBaseDatos {
         this.notas_casos_sbd = notas_casos_sbd;
     }
 
+    public StringsBaseDatos() {
+    }
     
-
-    
-
     public int getId_vendedor_sbd() {
         return id_vendedor_sbd;
     }
@@ -519,7 +519,14 @@ public class StringsBaseDatos {
     public void setId_usuario_sbd(int id_usuario_sbd) {
         this.id_usuario_sbd = id_usuario_sbd;
     }
+
+    public String getFecha_registros_sbd() {
+        return fecha_registros_sbd;
+    }
+
+    public void setFecha_registros_sbd(String fecha_registros_sbd) {
+        this.fecha_registros_sbd = fecha_registros_sbd;
+    }
     
-    
-            
+         
 }

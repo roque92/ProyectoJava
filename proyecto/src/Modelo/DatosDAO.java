@@ -95,7 +95,27 @@ public class DatosDAO implements InterfaceMetodos {
     }
 
     @Override
-    public void modificar_datos(DatosVO dvo) {
+    public void modificar_datos_vendedor(DatosVO dvo) {
+
+    }
+    
+    @Override
+    public void modificar_datos_representante(DatosVO dvo) {
+
+    }
+    
+    @Override
+    public void modificar_datos_registros(DatosVO dvo) {
+
+    }
+    
+    @Override
+    public void modificar_datos_clientes(DatosVO dvo) {
+
+    }
+    
+    @Override
+    public void modificar_datos_casos(DatosVO dvo) {
 
     }
 

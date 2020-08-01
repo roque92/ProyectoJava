@@ -21,7 +21,11 @@ public interface InterfaceMetodos {
     public void insertar_datos(DatosVO dvo);
 
     //Modificar
-    public void modificar_datos(DatosVO dvo);
+    public void modificar_datos_vendedor(DatosVO dvo);
+    public void modificar_datos_representante(DatosVO dvo);
+    public void modificar_datos_registros(DatosVO dvo);
+    public void modificar_datos_clientes(DatosVO dvo);
+    public void modificar_datos_casos(DatosVO dvo);
 
     //Mostrar
     public ArrayList<DatosVO> mostrar_datos_nombre(DatosVO dvo);

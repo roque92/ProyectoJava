@@ -44,12 +44,12 @@ public class DatosVO {
    ///-------Registros
    private String toRegistros_id_usuarios, toRegistros_fecha, toRegistros_notas, toRegistros_id_casos;
    
-   ///-------Registros
+   ///-------Clientes
    private String toClientes_nombre, toClientes_telefono, toClientes_correo, toClientes_status, toClientes_direccion;
    private int toClientes_id_EstadoCivil, toClientes_id_migratorio;
    private String toClientes_profesion, toClientes_EstadoResidencia, toClientes_dpi, toClientes_nit, toClientes_UsaId;
    
-   ///-------Registros
+   ///-------Casos
    private int toCasos_idCliente, toCasos_idVendedor, toCasos_idUsuario;
    private double toCasos_honorarios, toCasos_salario;
    private String toCasos_notas;

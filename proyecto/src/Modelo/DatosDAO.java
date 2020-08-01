@@ -83,6 +83,15 @@ public class DatosDAO implements InterfaceMetodos {
         } catch (Exception e) {
             dvo.setError(e.getMessage());
         }
+        //-----------Tabla Casos
+        try {
+            c.connect();
+            c.consulta_general("INSERT INTO tbl_casos (id_cliente, id_vendedor, id_usuario,  honorarios, salarios, notas, id_estado, id_tipo_propiedad, id_representante)\n"
+                    + "VALUES ("+dvo.getToCasos_idCliente()+", "+dvo.getToCasos_idVendedor()+", "+dvo.getToCasos_idUsuario()+", "+dvo.getToCasos_honorarios()+", "+dvo.getToCasos_salario()+", '"+dvo.getToCasos_notas()+"', "+dvo.getToCasos_idEstado()+", "+dvo.getToCasos_idPropiedad()+", "+dvo.getToCasos_idRepresentante()+");");
+            c.desconectar();
+        } catch (Exception e) {
+            dvo.setError(e.getMessage());
+        }
     }
 
     @Override

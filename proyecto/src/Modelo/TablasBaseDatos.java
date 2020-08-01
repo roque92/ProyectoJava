@@ -212,10 +212,22 @@ public class TablasBaseDatos implements InterfaceTablasBase {
         
         try {
             c.connect();
-            ResultSet rs = c.obtener_datos(consultaSQL);
+            ResultSet rs = c.obtener_datos("SELECT * FROM tbl_clientes WHERE nombre = '"+dvo.getNombre_cliente()+"';");
                     
-            while (rs.next()) {                
-                
+            while (rs.next()) {  
+                sbd.setId_clientes_sbd(rs.getInt(0));
+                sbd.setNombre_clientes_sbd(rs.getString(1));
+                sbd.setTelefono_clientes_sbd(rs.getString(2));
+                sbd.setCorreo_clientes_sbd(rs.getString(3));
+                sbd.setEstatus_clientes_sbd(rs.getString(4));
+                sbd.setDireccion_clientes_sbd(rs.getString(5));
+                sbd.setId_EstadoCivil_clientes_sbd(rs.getInt(6));
+                sbd.setId_migratorio_clientes_sbd(rs.getInt(7));
+                sbd.setProfecion_clientes_sbd(rs.getString(8));
+                sbd.setEstadoResidencia_clientes_sbd(rs.getString(9));
+                sbd.setDpi_clientes_sbd(rs.getString(10));
+                sbd.setNit_clientes_sbd(rs.getString(11));
+                sbd.setUsaId_clientes_sbd(rs.getString(12));
             }
             c.desconectar();
         } catch (SQLException e) {
@@ -233,10 +245,19 @@ public class TablasBaseDatos implements InterfaceTablasBase {
         
         try {
             c.connect();
-            ResultSet rs = c.obtener_datos(consultaSQL);
+            ResultSet rs = c.obtener_datos("SELECT * FROM tbl_casos WHERE id_cliente = "+sbd.getId_clientes_sbd()+";");
                     
             while (rs.next()) {                
-                
+                sbd.setId_casos_sbd(rs.getInt(0));
+                sbd.setId_clientes_casos_sbd(rs.getInt(1));
+                sbd.setId_vendedor_casos_sbd(rs.getInt(2));
+                sbd.setId_usuario_casos_sbd(rs.getInt(3));
+                sbd.setHonorario_casos_sbd(rs.getDouble(4));
+                sbd.setSalario_casos_sbd(rs.getDouble(5));
+                sbd.setNotas_casos_sbd(rs.getString(6));
+                sbd.setId_estado_casos_sbd(rs.getInt(7));
+                sbd.setId_propiedad_casos_sbd(rs.getInt(8));
+                sbd.setId_representante_casos_sbd(rs.getInt(9));
             }
             c.desconectar();
         } catch (SQLException e) {

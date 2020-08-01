@@ -32,7 +32,28 @@ public class DatosVO {
    private String tipo_propiedad;
    
    //----------------------Variables que van a ser almancenadas en la Base de datos
-   ///-------
+   ///-------Venedor
+   private String toVendedor_nombre, toVendedor_telefono, toVendedor_constructora, toVendedor_correo;
+   
+   ///-------Usuarios
+   private String toUsuarios_nombre,  toUsuarios_telefono, toUsuarios_correo;
+   
+   ///-------Representante
+   private String toRepresentante_nombre, toRepresentante_parentezco, toRepresentante_direccion, toRepresentante_telefono, toRepresentante_banco;
+   
+   ///-------Registros
+   private String toRegistros_id_usuarios, toRegistros_fecha, toRegistros_notas, toRegistros_id_casos;
+   
+   ///-------Registros
+   private String toClientes_nombre, toClientes_telefono, toClientes_correo, toClientes_status, toClientes_direccion;
+   private int toClientes_id_EstadoCivil, toClientes_id_migratorio;
+   private String toClientes_profesion, toClientes_EstadoResidencia, toClientes_dpi, toClientes_nit, toClientes_UsaId;
+   
+   ///-------Registros
+   private int toCasos_idCliente, toCasos_idVendedor, toCasos_idUsuario;
+   private double toCasos_honorarios, toCasos_salario;
+   private String toCasos_notas;
+   private int toCasos_idEstado, toCasos_idPropiedad, toCasos_idRepresentante;
    
    //----------------------Variables que se van a usar en la aplicacion
    private String error;
@@ -40,8 +61,8 @@ public class DatosVO {
    private String user_login, pass_login;
    
    //----------------------Contructores
-    public DatosVO(String error, String login_user, String login_pass, String login_telefono, String login_correo, String login_tipo, String negociacion_nombre_cliente, String negociacion_telefono, String negociacion_estado_residencia, String negociacion_estado_migratorio, String negociacion_tipo_porpiedad, String negociacion_correo, String negociacion_estado_civil, String negociacion_profecion, String negociacion_DPI, String negociacion_NIT, String negociacion_ID, String user_login, String pass_login, String buscar_nombre, String buscar_telefono, String buscar_correo, String nombre_vendedor, String telefono_vendedor, String constructora_vendedor, String correo_vendedor, String nombre_representante, String parentezco_representante, String direccion_representante, String telefono_representante, String banco_representante, String nombre_cliente, String telefono_cliente, String correo_cliente, String estatus_cliente, String direccion_cliente, String estadoCivil_cliente, String estadoMigratorio_cliente, String profecion_cliente, String estadoResidencia_cliente, String dpi_cliente, String nit_cliente, String usaId_cliente, String honorarios_casos, String salario_casos, String notas_casos, String tipo_propiedad) {
-        this.error = error;
+
+    public DatosVO(String login_user, String login_pass, String login_telefono, String login_correo, String login_tipo, String negociacion_nombre_cliente, String negociacion_telefono, String negociacion_estado_residencia, String negociacion_estado_migratorio, String negociacion_tipo_porpiedad, String negociacion_correo, String negociacion_estado_civil, String negociacion_profecion, String negociacion_DPI, String negociacion_NIT, String negociacion_ID, String buscar_nombre, String buscar_telefono, String buscar_correo, String nombre_vendedor, String telefono_vendedor, String constructora_vendedor, String correo_vendedor, String nombre_representante, String parentezco_representante, String direccion_representante, String telefono_representante, String banco_representante, String nombre_cliente, String telefono_cliente, String correo_cliente, String estatus_cliente, String direccion_cliente, String estadoCivil_cliente, String estadoMigratorio_cliente, String profecion_cliente, String estadoResidencia_cliente, String dpi_cliente, String nit_cliente, String usaId_cliente, String honorarios_casos, String salario_casos, String notas_casos, String tipo_propiedad, String toVendedor_nombre, String toVendedor_telefono, String toVendedor_constructora, String toVendedor_correo, String toUsuarios_nombre, String toUsuarios_telefono, String toUsuarios_correo, String toRepresentante_nombre, String toRepresentante_parentezco, String toRepresentante_direccion, String toRepresentante_telefono, String toRepresentante_banco, String toRegistros_id_usuarios, String toRegistros_fecha, String toRegistros_notas, String toRegistros_id_casos, String toClientes_nombre, String toClientes_telefono, String toClientes_correo, String toClientes_status, String toClientes_direccion, int toClientes_id_EstadoCivil, int toClientes_id_migratorio, String toClientes_profesion, String toClientes_EstadoResidencia, String toClientes_dpi, String toClientes_nit, String toClientes_UsaId, int toCasos_idCliente, int toCasos_idVendedor, int toCasos_idUsuario, double toCasos_honorarios, double toCasos_salario, String toCasos_notas, int toCasos_idEstado, int toCasos_idPropiedad, int toCasos_idRepresentante, String error, String user_login, String pass_login) {
         this.login_user = login_user;
         this.login_pass = login_pass;
         this.login_telefono = login_telefono;
@@ -58,8 +79,6 @@ public class DatosVO {
         this.negociacion_DPI = negociacion_DPI;
         this.negociacion_NIT = negociacion_NIT;
         this.negociacion_ID = negociacion_ID;
-        this.user_login = user_login;
-        this.pass_login = pass_login;
         this.buscar_nombre = buscar_nombre;
         this.buscar_telefono = buscar_telefono;
         this.buscar_correo = buscar_correo;
@@ -88,10 +107,47 @@ public class DatosVO {
         this.salario_casos = salario_casos;
         this.notas_casos = notas_casos;
         this.tipo_propiedad = tipo_propiedad;
+        this.toVendedor_nombre = toVendedor_nombre;
+        this.toVendedor_telefono = toVendedor_telefono;
+        this.toVendedor_constructora = toVendedor_constructora;
+        this.toVendedor_correo = toVendedor_correo;
+        this.toUsuarios_nombre = toUsuarios_nombre;
+        this.toUsuarios_telefono = toUsuarios_telefono;
+        this.toUsuarios_correo = toUsuarios_correo;
+        this.toRepresentante_nombre = toRepresentante_nombre;
+        this.toRepresentante_parentezco = toRepresentante_parentezco;
+        this.toRepresentante_direccion = toRepresentante_direccion;
+        this.toRepresentante_telefono = toRepresentante_telefono;
+        this.toRepresentante_banco = toRepresentante_banco;
+        this.toRegistros_id_usuarios = toRegistros_id_usuarios;
+        this.toRegistros_fecha = toRegistros_fecha;
+        this.toRegistros_notas = toRegistros_notas;
+        this.toRegistros_id_casos = toRegistros_id_casos;
+        this.toClientes_nombre = toClientes_nombre;
+        this.toClientes_telefono = toClientes_telefono;
+        this.toClientes_correo = toClientes_correo;
+        this.toClientes_status = toClientes_status;
+        this.toClientes_direccion = toClientes_direccion;
+        this.toClientes_id_EstadoCivil = toClientes_id_EstadoCivil;
+        this.toClientes_id_migratorio = toClientes_id_migratorio;
+        this.toClientes_profesion = toClientes_profesion;
+        this.toClientes_EstadoResidencia = toClientes_EstadoResidencia;
+        this.toClientes_dpi = toClientes_dpi;
+        this.toClientes_nit = toClientes_nit;
+        this.toClientes_UsaId = toClientes_UsaId;
+        this.toCasos_idCliente = toCasos_idCliente;
+        this.toCasos_idVendedor = toCasos_idVendedor;
+        this.toCasos_idUsuario = toCasos_idUsuario;
+        this.toCasos_honorarios = toCasos_honorarios;
+        this.toCasos_salario = toCasos_salario;
+        this.toCasos_notas = toCasos_notas;
+        this.toCasos_idEstado = toCasos_idEstado;
+        this.toCasos_idPropiedad = toCasos_idPropiedad;
+        this.toCasos_idRepresentante = toCasos_idRepresentante;
+        this.error = error;
+        this.user_login = user_login;
+        this.pass_login = pass_login;
     }
-    
-    
-    
      
    
     public DatosVO() {
@@ -473,6 +529,302 @@ public class DatosVO {
 
     public void setNotas_casos(String notas_casos) {
         this.notas_casos = notas_casos;
+    }
+
+    public String getToVendedor_nombre() {
+        return toVendedor_nombre;
+    }
+
+    public void setToVendedor_nombre(String toVendedor_nombre) {
+        this.toVendedor_nombre = toVendedor_nombre;
+    }
+
+    public String getToVendedor_telefono() {
+        return toVendedor_telefono;
+    }
+
+    public void setToVendedor_telefono(String toVendedor_telefono) {
+        this.toVendedor_telefono = toVendedor_telefono;
+    }
+
+    public String getToVendedor_constructora() {
+        return toVendedor_constructora;
+    }
+
+    public void setToVendedor_constructora(String toVendedor_constructora) {
+        this.toVendedor_constructora = toVendedor_constructora;
+    }
+
+    public String getToVendedor_correo() {
+        return toVendedor_correo;
+    }
+
+    public void setToVendedor_correo(String toVendedor_correo) {
+        this.toVendedor_correo = toVendedor_correo;
+    }
+
+    public String getToUsuarios_nombre() {
+        return toUsuarios_nombre;
+    }
+
+    public void setToUsuarios_nombre(String toUsuarios_nombre) {
+        this.toUsuarios_nombre = toUsuarios_nombre;
+    }
+
+    public String getToUsuarios_telefono() {
+        return toUsuarios_telefono;
+    }
+
+    public void setToUsuarios_telefono(String toUsuarios_telefono) {
+        this.toUsuarios_telefono = toUsuarios_telefono;
+    }
+
+    public String getToUsuarios_correo() {
+        return toUsuarios_correo;
+    }
+
+    public void setToUsuarios_correo(String toUsuarios_correo) {
+        this.toUsuarios_correo = toUsuarios_correo;
+    }
+
+    public String getToRepresentante_nombre() {
+        return toRepresentante_nombre;
+    }
+
+    public void setToRepresentante_nombre(String toRepresentante_nombre) {
+        this.toRepresentante_nombre = toRepresentante_nombre;
+    }
+
+    public String getToRepresentante_parentezco() {
+        return toRepresentante_parentezco;
+    }
+
+    public void setToRepresentante_parentezco(String toRepresentante_parentezco) {
+        this.toRepresentante_parentezco = toRepresentante_parentezco;
+    }
+
+    public String getToRepresentante_direccion() {
+        return toRepresentante_direccion;
+    }
+
+    public void setToRepresentante_direccion(String toRepresentante_direccion) {
+        this.toRepresentante_direccion = toRepresentante_direccion;
+    }
+
+    public String getToRepresentante_telefono() {
+        return toRepresentante_telefono;
+    }
+
+    public void setToRepresentante_telefono(String toRepresentante_telefono) {
+        this.toRepresentante_telefono = toRepresentante_telefono;
+    }
+
+    public String getToRepresentante_banco() {
+        return toRepresentante_banco;
+    }
+
+    public void setToRepresentante_banco(String toRepresentante_banco) {
+        this.toRepresentante_banco = toRepresentante_banco;
+    }
+
+    public String getToRegistros_id_usuarios() {
+        return toRegistros_id_usuarios;
+    }
+
+    public void setToRegistros_id_usuarios(String toRegistros_id_usuarios) {
+        this.toRegistros_id_usuarios = toRegistros_id_usuarios;
+    }
+
+    public String getToRegistros_fecha() {
+        return toRegistros_fecha;
+    }
+
+    public void setToRegistros_fecha(String toRegistros_fecha) {
+        this.toRegistros_fecha = toRegistros_fecha;
+    }
+
+    public String getToRegistros_notas() {
+        return toRegistros_notas;
+    }
+
+    public void setToRegistros_notas(String toRegistros_notas) {
+        this.toRegistros_notas = toRegistros_notas;
+    }
+
+    public String getToRegistros_id_casos() {
+        return toRegistros_id_casos;
+    }
+
+    public void setToRegistros_id_casos(String toRegistros_id_casos) {
+        this.toRegistros_id_casos = toRegistros_id_casos;
+    }
+
+    public String getToClientes_nombre() {
+        return toClientes_nombre;
+    }
+
+    public void setToClientes_nombre(String toClientes_nombre) {
+        this.toClientes_nombre = toClientes_nombre;
+    }
+
+    public String getToClientes_telefono() {
+        return toClientes_telefono;
+    }
+
+    public void setToClientes_telefono(String toClientes_telefono) {
+        this.toClientes_telefono = toClientes_telefono;
+    }
+
+    public String getToClientes_correo() {
+        return toClientes_correo;
+    }
+
+    public void setToClientes_correo(String toClientes_correo) {
+        this.toClientes_correo = toClientes_correo;
+    }
+
+    public String getToClientes_status() {
+        return toClientes_status;
+    }
+
+    public void setToClientes_status(String toClientes_status) {
+        this.toClientes_status = toClientes_status;
+    }
+
+    public String getToClientes_direccion() {
+        return toClientes_direccion;
+    }
+
+    public void setToClientes_direccion(String toClientes_direccion) {
+        this.toClientes_direccion = toClientes_direccion;
+    }
+
+    public int getToClientes_id_EstadoCivil() {
+        return toClientes_id_EstadoCivil;
+    }
+
+    public void setToClientes_id_EstadoCivil(int toClientes_id_EstadoCivil) {
+        this.toClientes_id_EstadoCivil = toClientes_id_EstadoCivil;
+    }
+
+    public int getToClientes_id_migratorio() {
+        return toClientes_id_migratorio;
+    }
+
+    public void setToClientes_id_migratorio(int toClientes_id_migratorio) {
+        this.toClientes_id_migratorio = toClientes_id_migratorio;
+    }
+
+    public String getToClientes_profesion() {
+        return toClientes_profesion;
+    }
+
+    public void setToClientes_profesion(String toClientes_profesion) {
+        this.toClientes_profesion = toClientes_profesion;
+    }
+
+    public String getToClientes_EstadoResidencia() {
+        return toClientes_EstadoResidencia;
+    }
+
+    public void setToClientes_EstadoResidencia(String toClientes_EstadoResidencia) {
+        this.toClientes_EstadoResidencia = toClientes_EstadoResidencia;
+    }
+
+    public String getToClientes_dpi() {
+        return toClientes_dpi;
+    }
+
+    public void setToClientes_dpi(String toClientes_dpi) {
+        this.toClientes_dpi = toClientes_dpi;
+    }
+
+    public String getToClientes_nit() {
+        return toClientes_nit;
+    }
+
+    public void setToClientes_nit(String toClientes_nit) {
+        this.toClientes_nit = toClientes_nit;
+    }
+
+    public String getToClientes_UsaId() {
+        return toClientes_UsaId;
+    }
+
+    public void setToClientes_UsaId(String toClientes_UsaId) {
+        this.toClientes_UsaId = toClientes_UsaId;
+    }
+
+    public int getToCasos_idCliente() {
+        return toCasos_idCliente;
+    }
+
+    public void setToCasos_idCliente(int toCasos_idCliente) {
+        this.toCasos_idCliente = toCasos_idCliente;
+    }
+
+    public int getToCasos_idVendedor() {
+        return toCasos_idVendedor;
+    }
+
+    public void setToCasos_idVendedor(int toCasos_idVendedor) {
+        this.toCasos_idVendedor = toCasos_idVendedor;
+    }
+
+    public int getToCasos_idUsuario() {
+        return toCasos_idUsuario;
+    }
+
+    public void setToCasos_idUsuario(int toCasos_idUsuario) {
+        this.toCasos_idUsuario = toCasos_idUsuario;
+    }
+
+    public double getToCasos_honorarios() {
+        return toCasos_honorarios;
+    }
+
+    public void setToCasos_honorarios(double toCasos_honorarios) {
+        this.toCasos_honorarios = toCasos_honorarios;
+    }
+
+    public double getToCasos_salario() {
+        return toCasos_salario;
+    }
+
+    public void setToCasos_salario(double toCasos_salario) {
+        this.toCasos_salario = toCasos_salario;
+    }
+
+    public String getToCasos_notas() {
+        return toCasos_notas;
+    }
+
+    public void setToCasos_notas(String toCasos_notas) {
+        this.toCasos_notas = toCasos_notas;
+    }
+
+    public int getToCasos_idEstado() {
+        return toCasos_idEstado;
+    }
+
+    public void setToCasos_idEstado(int toCasos_idEstado) {
+        this.toCasos_idEstado = toCasos_idEstado;
+    }
+
+    public int getToCasos_idPropiedad() {
+        return toCasos_idPropiedad;
+    }
+
+    public void setToCasos_idPropiedad(int toCasos_idPropiedad) {
+        this.toCasos_idPropiedad = toCasos_idPropiedad;
+    }
+
+    public int getToCasos_idRepresentante() {
+        return toCasos_idRepresentante;
+    }
+
+    public void setToCasos_idRepresentante(int toCasos_idRepresentante) {
+        this.toCasos_idRepresentante = toCasos_idRepresentante;
     }
     
     

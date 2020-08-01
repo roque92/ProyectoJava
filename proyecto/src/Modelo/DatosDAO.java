@@ -121,19 +121,6 @@ public class DatosDAO implements InterfaceMetodos {
     }
 
     @Override
-    public void modificar_datos_registros(DatosVO dvo) {
-        Conector c = new Conector();
-        try {
-            c.connect();
-            c.consulta_general(consultaSQL);
-
-            c.desconectar();
-        } catch (Exception e) {
-            dvo.setError(e.getMessage());
-        }
-    }
-
-    @Override
     public void modificar_datos_clientes(DatosVO dvo) {
         Conector c = new Conector();
         try {

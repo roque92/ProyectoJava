@@ -51,7 +51,7 @@ public class DatosDAO implements InterfaceMetodos {
         try {
             c.connect();
             c.consulta_general("INSERT INTO tbl_vendedor (nombre, telefono, constructora, correo)\n"
-                    + "VALUES ('" + dvo.getToVendedor_nombre()+ "','" + dvo.getToVendedor_telefono()+ "','" + dvo.getToVendedor_constructora()+ "','" + dvo.getToVendedor_correo()+ "');");
+                    + "VALUES ('" + dvo.getToVendedor_nombre() + "','" + dvo.getToVendedor_telefono() + "','" + dvo.getToVendedor_constructora() + "','" + dvo.getToVendedor_correo() + "');");
             c.desconectar();
         } catch (Exception e) {
             dvo.setError(e.getMessage());
@@ -60,7 +60,7 @@ public class DatosDAO implements InterfaceMetodos {
         try {
             c.connect();
             c.consulta_general("INSERT INTO tbl_representante (nombre, parentezco, direccion, telefono, banco)\n"
-                    + "VALUES ('" + dvo.getToRepresentante_nombre()+ "','" + dvo.getToRepresentante_parentezco()+ "','" + dvo.getToRepresentante_direccion()+ "','" + dvo.getToRepresentante_telefono()+ "','" + dvo.getToRepresentante_banco()+ "');");
+                    + "VALUES ('" + dvo.getToRepresentante_nombre() + "','" + dvo.getToRepresentante_parentezco() + "','" + dvo.getToRepresentante_direccion() + "','" + dvo.getToRepresentante_telefono() + "','" + dvo.getToRepresentante_banco() + "');");
             c.desconectar();
         } catch (Exception e) {
             dvo.setError(e.getMessage());
@@ -69,7 +69,7 @@ public class DatosDAO implements InterfaceMetodos {
         try {
             c.connect();
             c.consulta_general("INSERT INTO tbl_registros (id_usuario, fecha, notas, id_casos)\n"
-                    + "VALUES (" + dvo.getToRegistros_id_usuarios()+ ",'" + dvo.getToRegistros_fecha()+ "','" + dvo.getToRegistros_notas()+ "'," + dvo.getToRegistros_id_casos()+ ");");
+                    + "VALUES (" + dvo.getToRegistros_id_usuarios() + ",'" + dvo.getToRegistros_fecha() + "','" + dvo.getToRegistros_notas() + "'," + dvo.getToRegistros_id_casos() + ");");
             c.desconectar();
         } catch (Exception e) {
             dvo.setError(e.getMessage());
@@ -78,7 +78,7 @@ public class DatosDAO implements InterfaceMetodos {
         try {
             c.connect();
             c.consulta_general("INSERT INTO tbl_clientes (nombre, telefono, correo, estatus, direccion, id_estado_civil, id_migratorio, profesion, estado_residencia, dpi, nit, usa_id)\n"
-                    + "VALUES ('"+dvo.getToClientes_nombre()+"', '"+dvo.getToClientes_telefono()+"', '"+dvo.getToClientes_correo()+"', '"+dvo.getToClientes_status()+"' , '"+dvo.getToClientes_direccion()+"', "+dvo.getToClientes_id_EstadoCivil()+", "+dvo.getToClientes_id_migratorio()+", '"+dvo.getToClientes_profesion()+"', '"+dvo.getToClientes_EstadoResidencia()+"', '"+dvo.getToClientes_dpi()+"', '"+dvo.getToClientes_nit()+"', '"+dvo.getToClientes_UsaId()+"');");
+                    + "VALUES ('" + dvo.getToClientes_nombre() + "', '" + dvo.getToClientes_telefono() + "', '" + dvo.getToClientes_correo() + "', '" + dvo.getToClientes_status() + "' , '" + dvo.getToClientes_direccion() + "', " + dvo.getToClientes_id_EstadoCivil() + ", " + dvo.getToClientes_id_migratorio() + ", '" + dvo.getToClientes_profesion() + "', '" + dvo.getToClientes_EstadoResidencia() + "', '" + dvo.getToClientes_dpi() + "', '" + dvo.getToClientes_nit() + "', '" + dvo.getToClientes_UsaId() + "');");
             c.desconectar();
         } catch (Exception e) {
             dvo.setError(e.getMessage());
@@ -87,7 +87,7 @@ public class DatosDAO implements InterfaceMetodos {
         try {
             c.connect();
             c.consulta_general("INSERT INTO tbl_casos (id_cliente, id_vendedor, id_usuario,  honorarios, salarios, notas, id_estado, id_tipo_propiedad, id_representante)\n"
-                    + "VALUES ("+dvo.getToCasos_idCliente()+", "+dvo.getToCasos_idVendedor()+", "+dvo.getToCasos_idUsuario()+", "+dvo.getToCasos_honorarios()+", "+dvo.getToCasos_salario()+", '"+dvo.getToCasos_notas()+"', "+dvo.getToCasos_idEstado()+", "+dvo.getToCasos_idPropiedad()+", "+dvo.getToCasos_idRepresentante()+");");
+                    + "VALUES (" + dvo.getToCasos_idCliente() + ", " + dvo.getToCasos_idVendedor() + ", " + dvo.getToCasos_idUsuario() + ", " + dvo.getToCasos_honorarios() + ", " + dvo.getToCasos_salario() + ", '" + dvo.getToCasos_notas() + "', " + dvo.getToCasos_idEstado() + ", " + dvo.getToCasos_idPropiedad() + ", " + dvo.getToCasos_idRepresentante() + ");");
             c.desconectar();
         } catch (Exception e) {
             dvo.setError(e.getMessage());
@@ -96,27 +96,67 @@ public class DatosDAO implements InterfaceMetodos {
 
     @Override
     public void modificar_datos_vendedor(DatosVO dvo) {
+        Conector c = new Conector();
+        try {
+            c.connect();
+            c.consulta_general("UPDATE tbl_vendedor SET nombre = '"+dvo.getToVendedor_nombre()+"', telefono = '"+dvo.getToVendedor_telefono()+"', constructora ='"+dvo.getToVendedor_constructora()+"', correo = '"+dvo.getToVendedor_correo()+"' WHERE nombre = '"+dvo.getNombre_vendedor()+"';");
 
+            c.desconectar();
+        } catch (Exception e) {
+            dvo.setError(e.getMessage());
+        }
     }
-    
+
     @Override
     public void modificar_datos_representante(DatosVO dvo) {
+        Conector c = new Conector();
+        try {
+            c.connect();
+            c.consulta_general("UPDATE tbl_representante SET nombre = '"+dvo.getToRepresentante_nombre()+"', parentezco = '"+dvo.getToRepresentante_parentezco()+"', direccion ='"+dvo.getToRepresentante_direccion()+"', telefono = '"+dvo.getToRepresentante_telefono()+"', banco = '"+dvo.getToRepresentante_banco()+"' WHERE nombre = '"+dvo.getNombre_representante()+"';");
 
+            c.desconectar();
+        } catch (Exception e) {
+            dvo.setError(e.getMessage());
+        }
     }
-    
+
     @Override
     public void modificar_datos_registros(DatosVO dvo) {
+        Conector c = new Conector();
+        try {
+            c.connect();
+            c.consulta_general(consultaSQL);
 
+            c.desconectar();
+        } catch (Exception e) {
+            dvo.setError(e.getMessage());
+        }
     }
-    
+
     @Override
     public void modificar_datos_clientes(DatosVO dvo) {
+        Conector c = new Conector();
+        try {
+            c.connect();
+            c.consulta_general(consultaSQL);
 
+            c.desconectar();
+        } catch (Exception e) {
+            dvo.setError(e.getMessage());
+        }
     }
-    
+
     @Override
     public void modificar_datos_casos(DatosVO dvo) {
+        Conector c = new Conector();
+        try {
+            c.connect();
+            c.consulta_general(consultaSQL);
 
+            c.desconectar();
+        } catch (Exception e) {
+            dvo.setError(e.getMessage());
+        }
     }
 
     @Override

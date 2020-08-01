@@ -16,6 +16,7 @@ import java.util.ArrayList;
 //---------------- Aqui se encuentan los metodo que traen toda la informcion de las tablas
 public class TablasBaseDatos implements InterfaceTablasBase {
 
+ ///------------ORDEN DE EJECUCION 8
     @Override
     public ArrayList<StringsBaseDatos> TablaVendedor(StringsBaseDatos sbd) {
         Conector c = new Conector();
@@ -40,7 +41,7 @@ public class TablasBaseDatos implements InterfaceTablasBase {
 
         return datos;
     }
-
+///------------ORDEN DE EJECUCION 1
     @Override
     public ArrayList<StringsBaseDatos> TablaUsuario(StringsBaseDatos sbd) {
         Conector c = new Conector();
@@ -66,7 +67,7 @@ public class TablasBaseDatos implements InterfaceTablasBase {
 
         return datos;
     }
-
+///------------ORDEN DE EJECUCION 2
     @Override
     public ArrayList<StringsBaseDatos> TablaPropiedad(StringsBaseDatos sbd) {
         Conector c = new Conector();
@@ -88,7 +89,7 @@ public class TablasBaseDatos implements InterfaceTablasBase {
 
         return datos;
     }
-
+///------------ORDEN DE EJECUCION 3
     @Override
     public ArrayList<StringsBaseDatos> TablaRepresentante(StringsBaseDatos sbd) {
         Conector c = new Conector();
@@ -97,7 +98,7 @@ public class TablasBaseDatos implements InterfaceTablasBase {
         
         try {
             c.connect();
-            ResultSet rs = c.obtener_datos("SELECT * FROM tbl_representante;");
+            ResultSet rs = c.obtener_datos("SELECT * FROM tbl_representante ;");
             
             while (rs.next()) {                
                 sbd.setId_representante_sbd(rs.getInt(0));
@@ -114,7 +115,7 @@ public class TablasBaseDatos implements InterfaceTablasBase {
 
         return datos;
     }
-
+///------------ORDEN DE EJECUCION 10
     @Override
     public ArrayList<StringsBaseDatos> TablaRegistros(StringsBaseDatos sbd) {
         Conector c = new Conector();
@@ -137,7 +138,7 @@ public class TablasBaseDatos implements InterfaceTablasBase {
 
         return datos;
     }
-
+///------------ORDEN DE EJECUCION 4
     @Override
     public ArrayList<StringsBaseDatos> TablaMigratorio(StringsBaseDatos sbd) {
         Conector c = new Conector();
@@ -159,7 +160,7 @@ public class TablasBaseDatos implements InterfaceTablasBase {
 
         return datos;
     }
-
+///------------ORDEN DE EJECUCION 5
     @Override
     public ArrayList<StringsBaseDatos> TablaEstadoCivil(StringsBaseDatos sbd) {
         Conector c = new Conector();
@@ -181,7 +182,7 @@ public class TablasBaseDatos implements InterfaceTablasBase {
 
         return datos;
     }
-
+///------------ORDEN DE EJECUCION 6
     @Override
     public ArrayList<StringsBaseDatos> TablaEstado(StringsBaseDatos sbd) {
         Conector c = new Conector();
@@ -203,7 +204,7 @@ public class TablasBaseDatos implements InterfaceTablasBase {
 
         return datos;
     }
-
+///------------ORDEN DE EJECUCION 7
     @Override
     public ArrayList<StringsBaseDatos> TablaClientes(StringsBaseDatos sbd) {
         Conector c = new Conector();
@@ -236,7 +237,7 @@ public class TablasBaseDatos implements InterfaceTablasBase {
 
         return datos;
     }
-
+///------------ORDEN DE EJECUCION 9
     @Override
     public ArrayList<StringsBaseDatos> TablaCasos(StringsBaseDatos sbd) {
         Conector c = new Conector();

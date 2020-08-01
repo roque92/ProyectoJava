@@ -125,7 +125,7 @@ public class DatosDAO implements InterfaceMetodos {
         Conector c = new Conector();
         try {
             c.connect();
-            c.consulta_general(consultaSQL);
+            c.consulta_general("UPDATE tbl_clientes SET nombre = '"+dvo.getToClientes_nombre()+"', telefono = '"+dvo.getToClientes_telefono()+"', correo = '"+dvo.getToClientes_correo()+"', direccion = '"+dvo.getToClientes_direccion()+"', id_estado_civil = "+dvo.getToClientes_id_EstadoCivil()+", id_migratorio = "+dvo.getToClientes_id_migratorio()+", profesion = '"+dvo.getToClientes_profesion()+"', estado_residencia = '"+dvo.getToClientes_EstadoResidencia()+"', dpi = '"+dvo.getToClientes_dpi()+"', nit = '"+dvo.getToClientes_nit()+"', usa_id ='"+dvo.getToClientes_UsaId()+"' WHERE nombre = '"+dvo.getNombre_cliente()+"';");
 
             c.desconectar();
         } catch (Exception e) {
@@ -138,7 +138,7 @@ public class DatosDAO implements InterfaceMetodos {
         Conector c = new Conector();
         try {
             c.connect();
-            c.consulta_general(consultaSQL);
+            c.consulta_general("UPDATE tbl_casos SET id_cliente = "+dvo.getToCasos_idCliente()+", id_vendedor = "+dvo.getToCasos_idVendedor()+", id_usuario = "+dvo.getToCasos_idUsuario()+", honorarios = "+dvo.getToCasos_honorarios()+", salarios = "+dvo.getToCasos_salario()+", notas = '"+dvo.getToCasos_notas()+"', id_estado = "+dvo.getToCasos_idEstado()+", id_tipo_propiedad = "+dvo.getToCasos_idPropiedad()+", id_representante = "+dvo.getToCasos_idRepresentante()+" WHERE id_cliente = 1;");
 
             c.desconectar();
         } catch (Exception e) {

@@ -6,6 +6,7 @@
 package Controlador;
 
 import Modelo.DatosVO;
+import Modelo.StringsBaseDatos;
 import proyecto.Vista.Usuario;
 
 /**
@@ -13,9 +14,11 @@ import proyecto.Vista.Usuario;
  * @author jroque
  */
 public class RepNot {
-    
+    //Vista
     Usuario usuario = new Usuario();
+    //Modelo
     DatosVO dvo = new DatosVO();
+    StringsBaseDatos sbd = new StringsBaseDatos();
 
     public RepNot(Usuario usuario, DatosVO dvo) {
         this.usuario = usuario;

@@ -51,7 +51,7 @@ public class DatosDAO implements InterfaceMetodos {
         try {
             c.connect();
             c.consulta_general("INSERT INTO tbl_vendedor (nombre, telefono, constructora, correo)\n"
-                    + "VALUES ('" + dvo.getNombre_vendedor() + "','" + dvo.getTelefono_vendedor() + "','" + dvo.getConstructora_vendedor() + "','" + dvo.getCorreo_vendedor() + "');");
+                    + "VALUES ('" + dvo.getToVendedor_nombre()+ "','" + dvo.getToVendedor_telefono()+ "','" + dvo.getToVendedor_constructora()+ "','" + dvo.getToVendedor_correo()+ "');");
             c.desconectar();
         } catch (Exception e) {
             dvo.setError(e.getMessage());
@@ -60,7 +60,25 @@ public class DatosDAO implements InterfaceMetodos {
         try {
             c.connect();
             c.consulta_general("INSERT INTO tbl_representante (nombre, parentezco, direccion, telefono, banco)\n"
-                    + "VALUES ('" + dvo.getNombre_representante() + "','" + dvo.getParentezco_representante() + "','" + dvo.getDireccion_representante() + "','" + dvo.getTelefono_representante() + "','" + dvo.getBanco_representante() + "');");
+                    + "VALUES ('" + dvo.getToRepresentante_nombre()+ "','" + dvo.getToRepresentante_parentezco()+ "','" + dvo.getToRepresentante_direccion()+ "','" + dvo.getToRepresentante_telefono()+ "','" + dvo.getToRepresentante_banco()+ "');");
+            c.desconectar();
+        } catch (Exception e) {
+            dvo.setError(e.getMessage());
+        }
+        //-----------Tabla Registros
+        try {
+            c.connect();
+            c.consulta_general("INSERT INTO tbl_registros (id_usuario, fecha, notas, id_casos)\n"
+                    + "VALUES (" + dvo.getToRegistros_id_usuarios()+ ",'" + dvo.getToRegistros_fecha()+ "','" + dvo.getToRegistros_notas()+ "'," + dvo.getToRegistros_id_casos()+ ");");
+            c.desconectar();
+        } catch (Exception e) {
+            dvo.setError(e.getMessage());
+        }
+        //-----------Tabla Clientes
+        try {
+            c.connect();
+            c.consulta_general("INSERT INTO tbl_clientes (nombre, telefono, correo, estatus, direccion, id_estado_civil, id_migratorio, profesion, estado_residencia, dpi, nit, usa_id)\n"
+                    + "VALUES ('"+dvo.getToClientes_nombre()+"', '"+dvo.getToClientes_telefono()+"', '"+dvo.getToClientes_correo()+"', '"+dvo.getToClientes_status()+"' , '"+dvo.getToClientes_direccion()+"', "+dvo.getToClientes_id_EstadoCivil()+", "+dvo.getToClientes_id_migratorio()+", '"+dvo.getToClientes_profesion()+"', '"+dvo.getToClientes_EstadoResidencia()+"', '"+dvo.getToClientes_dpi()+"', '"+dvo.getToClientes_nit()+"', '"+dvo.getToClientes_UsaId()+"');");
             c.desconectar();
         } catch (Exception e) {
             dvo.setError(e.getMessage());

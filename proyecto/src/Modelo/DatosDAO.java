@@ -45,7 +45,7 @@ public class DatosDAO implements InterfaceMetodos {
     }
 
     @Override
-    public void insertar_datos(DatosVO dvo) {
+    public void insertar_datos_vendedor(DatosVO dvo) {
         Conector c = new Conector();
         //-----------Tabla Vendedor
         try {
@@ -56,7 +56,13 @@ public class DatosDAO implements InterfaceMetodos {
         } catch (Exception e) {
             dvo.setError(e.getMessage());
         }
-        //-----------Tabla Representante
+  
+    }
+    
+    @Override
+    public void insertar_datos_representante(DatosVO dvo) {
+        Conector c = new Conector();
+       //-----------Tabla Representante
         try {
             c.connect();
             c.consulta_general("INSERT INTO tbl_representante (nombre, parentezco, direccion, telefono, banco)\n"
@@ -65,6 +71,12 @@ public class DatosDAO implements InterfaceMetodos {
         } catch (Exception e) {
             dvo.setError(e.getMessage());
         }
+        
+    }
+    
+    @Override
+    public void insertar_datos_registros(DatosVO dvo) {
+        Conector c = new Conector();
         //-----------Tabla Registros
         try {
             c.connect();
@@ -74,6 +86,12 @@ public class DatosDAO implements InterfaceMetodos {
         } catch (Exception e) {
             dvo.setError(e.getMessage());
         }
+        
+    }
+    
+    @Override
+    public void insertar_datos_clientes(DatosVO dvo) {
+        Conector c = new Conector();
         //-----------Tabla Clientes
         try {
             c.connect();
@@ -83,6 +101,12 @@ public class DatosDAO implements InterfaceMetodos {
         } catch (Exception e) {
             dvo.setError(e.getMessage());
         }
+        
+    }
+    
+    @Override
+    public void insertar_datos_casos(DatosVO dvo) {
+        Conector c = new Conector();
         //-----------Tabla Casos
         try {
             c.connect();

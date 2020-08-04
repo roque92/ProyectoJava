@@ -18,7 +18,11 @@ public interface InterfaceMetodos {
 
 //--------------------CRUD
     //Insertar
-    public void insertar_datos(DatosVO dvo);
+    public void insertar_datos_vendedor(DatosVO dvo);
+    public void insertar_datos_representante(DatosVO dvo);
+    public void insertar_datos_registros(DatosVO dvo);
+    public void insertar_datos_clientes(DatosVO dvo);
+    public void insertar_datos_casos(DatosVO dvo);
 
     //Modificar
     public void modificar_datos_vendedor(DatosVO dvo);

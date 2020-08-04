@@ -27,9 +27,10 @@ public class RepNot implements ActionListener, ItemListener{
     DatosDAO ddao = new DatosDAO();
     StringsBaseDatos sbd = new StringsBaseDatos();
 
-    public RepNot(Usuario usuario, DatosVO dvo) {
+    public RepNot(Usuario usuario, DatosVO dvo, DatosDAO ddao) {
         this.usuario = usuario;
         this.dvo = dvo;   
+        this.ddao = ddao;
         
         usuario.f_btn_buscarCliente.addActionListener(this);
         usuario.f_cb_nuevo.addItemListener(this);
@@ -71,7 +72,7 @@ public class RepNot implements ActionListener, ItemListener{
     }
     
     private void buscarNombre(){
-        
+        ddao.mostrar_datos_nombre(dvo);
     }
     
     private void buscarTelefono(){

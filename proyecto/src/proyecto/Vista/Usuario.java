@@ -119,8 +119,8 @@ public class Usuario extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         f_txt_notas = new javax.swing.JTextArea();
         f_cb_nuevo = new javax.swing.JCheckBox();
-        f_valor_buscado = new javax.swing.JComboBox<>();
         f_cb_editar = new javax.swing.JCheckBox();
+        f_valor_buscado = new javax.swing.JComboBox<>();
         jMenuBar1 = new javax.swing.JMenuBar();
         archivo = new javax.swing.JMenu();
         clientes = new javax.swing.JMenu();
@@ -151,7 +151,7 @@ public class Usuario extends javax.swing.JFrame {
         );
         if_buscarClienteLayout.setVerticalGroup(
             if_buscarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 275, Short.MAX_VALUE)
+            .addGap(0, 287, Short.MAX_VALUE)
         );
 
         if_baseClientes.setClosable(true);
@@ -199,7 +199,7 @@ public class Usuario extends javax.swing.JFrame {
         );
         if_buscarAsesorLayout.setVerticalGroup(
             if_buscarAsesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 355, Short.MAX_VALUE)
+            .addGap(0, 367, Short.MAX_VALUE)
         );
 
         if_baseAsores.setClosable(true);
@@ -228,7 +228,7 @@ public class Usuario extends javax.swing.JFrame {
         );
         if_baseAsoresLayout.setVerticalGroup(
             if_baseAsoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 413, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 425, Short.MAX_VALUE)
         );
 
         if_formulario.setClosable(true);
@@ -628,6 +628,8 @@ public class Usuario extends javax.swing.JFrame {
 
         f_cb_nuevo.setText("Nuevo");
 
+        f_cb_editar.setText("Editar");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -644,6 +646,8 @@ public class Usuario extends javax.swing.JFrame {
                         .addComponent(f_txt_tramite, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(f_btn_guardar)
+                        .addGap(18, 18, 18)
+                        .addComponent(f_cb_editar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(f_cb_nuevo)
                         .addGap(19, 19, 19))))
@@ -656,15 +660,14 @@ public class Usuario extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(f_txt_tramite, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(f_btn_guardar)
-                    .addComponent(f_cb_nuevo))
+                    .addComponent(f_cb_nuevo)
+                    .addComponent(f_cb_editar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTabbedPane1)
                 .addGap(0, 0, 0))
         );
 
         f_valor_buscado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nombre", "Telefono", "Correo" }));
-
-        f_cb_editar.setText("Editar");
 
         javax.swing.GroupLayout if_formularioLayout = new javax.swing.GroupLayout(if_formulario.getContentPane());
         if_formulario.getContentPane().setLayout(if_formularioLayout);
@@ -679,9 +682,7 @@ public class Usuario extends javax.swing.JFrame {
                 .addComponent(f_txt_buscarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(f_btn_buscarCliente)
-                .addGap(107, 107, 107)
-                .addComponent(f_cb_editar)
-                .addContainerGap())
+                .addGap(166, 166, 166))
             .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -693,12 +694,11 @@ public class Usuario extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(f_txt_buscarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(f_btn_buscarCliente)
-                    .addComponent(f_valor_buscado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(f_cb_editar))
+                    .addComponent(f_valor_buscado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE))
         );
 
         jDesktopPane1.setLayer(if_buscarCliente, javax.swing.JLayeredPane.DEFAULT_LAYER);

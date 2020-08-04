@@ -59,8 +59,28 @@ public class RepNot implements ActionListener, ItemListener{
     }
     
     private void obtenerDatos(){
-        String combo = usuario.f_
-    };
+        String combo = (String) usuario.f_valor_buscado.getSelectedItem();
+        
+        if(combo.equals("Nombre")){
+            buscarNombre();
+        } else if (combo.equals("Telefono")){
+            buscarTelefono();
+        } else {
+            buscarCorreo();
+        }
+    }
+    
+    private void buscarNombre(){
+        
+    }
+    
+    private void buscarTelefono(){
+        
+    }
+    
+    private void buscarCorreo(){
+        
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {

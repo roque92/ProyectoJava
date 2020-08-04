@@ -57,9 +57,16 @@ public class RepNot implements ActionListener, ItemListener{
         usuario.f_txt_repBanco.setEditable(false);
         usuario.f_txt_notas.setEditable(false);
     }
+    
+    private void obtenerDatos(){
+        String combo = usuario.f_
+    };
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == usuario.f_btn_buscarCliente){
+            obtenerDatos();
+        }
         
     }
 

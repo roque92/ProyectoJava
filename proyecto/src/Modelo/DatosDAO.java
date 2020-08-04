@@ -14,6 +14,8 @@ import java.util.ArrayList;
  * @author jroque
  */
 public class DatosDAO implements InterfaceMetodos {
+    
+    
 
     @Override
     public ArrayList<DatosVO> validar_login(DatosVO dvo) {
@@ -134,9 +136,10 @@ public class DatosDAO implements InterfaceMetodos {
     @Override
     public void modificar_datos_representante(DatosVO dvo) {
         Conector c = new Conector();
+        StringsBaseDatos sbd = new StringsBaseDatos();
         try {
             c.connect();
-            c.consulta_general("UPDATE tbl_representante SET nombre = '"+dvo.getToRepresentante_nombre()+"', parentezco = '"+dvo.getToRepresentante_parentezco()+"', direccion ='"+dvo.getToRepresentante_direccion()+"', telefono = '"+dvo.getToRepresentante_telefono()+"', banco = '"+dvo.getToRepresentante_banco()+"' WHERE nombre = '"+dvo.getNombre_representante()+"';");
+            c.consulta_general("UPDATE tbl_representante SET nombre = '"+dvo.getToRepresentante_nombre()+"', parentezco = '"+dvo.getToRepresentante_parentezco()+"', direccion ='"+dvo.getToRepresentante_direccion()+"', telefono = '"+dvo.getToRepresentante_telefono()+"', banco = '"+dvo.getToRepresentante_banco()+"' WHERE id = '"+sbd.getId_representante_sbd()+"';");
 
             c.desconectar();
         } catch (Exception e) {

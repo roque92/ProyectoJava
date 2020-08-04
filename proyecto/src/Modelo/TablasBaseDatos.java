@@ -98,7 +98,7 @@ public class TablasBaseDatos implements InterfaceTablasBase {
         
         try {
             c.connect();
-            ResultSet rs = c.obtener_datos("SELECT * FROM tbl_representante ;");
+            ResultSet rs = c.obtener_datos("SELECT * FROM tbl_representante WHERE nombre = '" + dvo.getNombre_representante()+ " ;");
             
             while (rs.next()) {                
                 sbd.setId_representante_sbd(rs.getInt(0));

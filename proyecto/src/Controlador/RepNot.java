@@ -33,7 +33,24 @@ public class RepNot implements ActionListener, ItemListener{
         
         usuario.f_btn_buscarCliente.addActionListener(this);
         usuario.f_cb_nuevo.addItemListener(this);
+        usuario.f_cb_editar.addItemListener(this);
         usuario.f_txt_repNombre.setEditable(false);
+        usuario.f_txt_repParentezco.setEditable(false);
+        usuario.f_txt_repDireccion.setEditable(false);
+        usuario.f_txt_repTelefono.setEditable(false);
+        usuario.f_txt_repBanco.setEditable(false);
+        usuario.f_txt_notas.setEditable(false);
+    }
+    
+    private void enableEdit(){
+        usuario.f_txt_repParentezco.setEditable(true);
+        usuario.f_txt_repDireccion.setEditable(true);
+        usuario.f_txt_repTelefono.setEditable(true);
+        usuario.f_txt_repBanco.setEditable(true);
+        usuario.f_txt_notas.setEditable(true);
+    }
+    
+    private void disableEdit(){
         usuario.f_txt_repParentezco.setEditable(false);
         usuario.f_txt_repDireccion.setEditable(false);
         usuario.f_txt_repTelefono.setEditable(false);
@@ -48,6 +65,17 @@ public class RepNot implements ActionListener, ItemListener{
 
     @Override
     public void itemStateChanged(ItemEvent e) {
+        if(usuario.f_cb_nuevo.isSelected()){
+            enableEdit();
+        } else {
+            disableEdit();
+        }
+        
+        if(usuario.f_cb_editar.isSelected()){
+            enableEdit();
+        } else {
+            disableEdit();
+        }
         
     }
     

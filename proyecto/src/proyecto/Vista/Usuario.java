@@ -151,7 +151,7 @@ public class Usuario extends javax.swing.JFrame {
         );
         if_buscarClienteLayout.setVerticalGroup(
             if_buscarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 287, Short.MAX_VALUE)
+            .addGap(0, 295, Short.MAX_VALUE)
         );
 
         if_baseClientes.setClosable(true);
@@ -199,14 +199,14 @@ public class Usuario extends javax.swing.JFrame {
         );
         if_buscarAsesorLayout.setVerticalGroup(
             if_buscarAsesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 367, Short.MAX_VALUE)
+            .addGap(0, 375, Short.MAX_VALUE)
         );
 
         if_baseAsores.setClosable(true);
         if_baseAsores.setIconifiable(true);
         if_baseAsores.setMaximizable(true);
         if_baseAsores.setResizable(true);
-        if_baseAsores.setTitle("Base General Clientes");
+        if_baseAsores.setTitle("Base General Asesores");
         if_baseAsores.setVisible(true);
 
         tbl_baseGeneralAsesores.setModel(new javax.swing.table.DefaultTableModel(
@@ -228,7 +228,7 @@ public class Usuario extends javax.swing.JFrame {
         );
         if_baseAsoresLayout.setVerticalGroup(
             if_baseAsoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 425, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 433, Short.MAX_VALUE)
         );
 
         if_formulario.setClosable(true);
@@ -698,7 +698,7 @@ public class Usuario extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 408, Short.MAX_VALUE))
         );
 
         jDesktopPane1.setLayer(if_buscarCliente, javax.swing.JLayeredPane.DEFAULT_LAYER);

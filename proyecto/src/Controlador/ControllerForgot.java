@@ -7,6 +7,8 @@ package Controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import javax.swing.JOptionPane;
 import proyecto.Vista.Forgot;
 import proyecto.Vista.Login;
@@ -15,7 +17,7 @@ import proyecto.Vista.Login;
  *
  * @author jroque
  */
-public class ControllerForgot implements ActionListener{
+public class ControllerForgot implements ActionListener, WindowListener{
     Login login = new Login();
     Forgot forgot = new Forgot();
 
@@ -24,6 +26,8 @@ public class ControllerForgot implements ActionListener{
         this.forgot = forgot;
         
         forgot.f_cambiar.addActionListener(this);
+        
+        forgot.addWindowListener(this);
     }
     
     private void validarCambioContra() {
@@ -60,7 +64,46 @@ public class ControllerForgot implements ActionListener{
             validarCambioContra();
         }
     }
+    
+    @Override
+    public void windowOpened(WindowEvent e) {
+        
+    }
 
+    @Override
+    public void windowClosing(WindowEvent e) {
+        int seleccion = login.mensaje.showConfirmDialog(null, "Desea regresar?", "Regresar", login.mensaje.YES_NO_OPTION);
+        
+        if(seleccion == login.mensaje.YES_OPTION){
+            forgot.setVisible(false);
+            login.setVisible(true);
+        } 
+    }
+
+    @Override
+    public void windowClosed(WindowEvent e) {
+       
+    }
+
+    @Override
+    public void windowIconified(WindowEvent e) {
+        
+    }
+
+    @Override
+    public void windowDeiconified(WindowEvent e) {
+       
+    }
+
+    @Override
+    public void windowActivated(WindowEvent e) {
+        
+    }
+
+    @Override
+    public void windowDeactivated(WindowEvent e) {
+        
+    }
     
     
     

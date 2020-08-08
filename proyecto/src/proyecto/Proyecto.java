@@ -7,6 +7,7 @@ package proyecto;
 
 import Controlador.ControllerForgot;
 import Controlador.ControllerLogin;
+import Controlador.ControllerUsuario;
 import proyecto.Vista.Administrador;
 import proyecto.Vista.Forgot;
 import proyecto.Vista.Login;
@@ -31,8 +32,10 @@ public class Proyecto {
         
         ControllerLogin controllerLogin = new ControllerLogin(login, usuario, admin, forgot);
         ControllerForgot controllerForgot = new ControllerForgot(login, forgot);
+        ControllerUsuario controllerUsuario = new ControllerUsuario(usuario, login);
         
         login.setVisible(true);
+        //usuario.setVisible(true);
     }
     
 }

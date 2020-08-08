@@ -35,7 +35,8 @@ public class Forgot extends javax.swing.JFrame {
         f_username = new javax.swing.JTextField();
         f_cambiar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setTitle("Recuperar contraseña");
 
         jLabel1.setText("Usuario");
 
@@ -45,7 +46,7 @@ public class Forgot extends javax.swing.JFrame {
 
         f_cb_frase.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        f_cambiar.setText("Cambiar");
+        f_cambiar.setText("Recuperar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

@@ -37,7 +37,8 @@ public class Login extends javax.swing.JFrame {
         btn_ingresar = new javax.swing.JButton();
         jl_forgot = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setTitle("Inicio de Sesion");
 
         jLabel1.setText("Usuario");
         jLabel1.setToolTipText("");

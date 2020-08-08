@@ -20,6 +20,7 @@ public class Usuario extends javax.swing.JFrame {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
         this.setLocationRelativeTo(null);
+        this.setTitle("Area de Trabajo");
         f_txt_asesorContructora.setEnabled(false);
         f_txt_asesorCorreo.setEnabled(false);
         f_txt_asesorNombre.setEnabled(false);
@@ -43,9 +44,6 @@ public class Usuario extends javax.swing.JFrame {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
         if_buscarCliente = new javax.swing.JInternalFrame();
-        if_baseClientes = new javax.swing.JInternalFrame();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tbl_baseGeneralClientes = new javax.swing.JTable();
         if_buscarAsesor = new javax.swing.JInternalFrame();
         if_baseAsores = new javax.swing.JInternalFrame();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -121,72 +119,36 @@ public class Usuario extends javax.swing.JFrame {
         f_cb_nuevo = new javax.swing.JCheckBox();
         f_cb_editar = new javax.swing.JCheckBox();
         f_valor_buscado = new javax.swing.JComboBox<>();
+        if_baseClientes = new javax.swing.JInternalFrame();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tbl_baseGeneralClientes = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         archivo = new javax.swing.JMenu();
         clientes = new javax.swing.JMenu();
-        c_baseCliente = new javax.swing.JMenuItem();
+        c_buscarCliente = new javax.swing.JMenuItem();
         c_baseGeneral = new javax.swing.JMenuItem();
         asesores = new javax.swing.JMenu();
-        a_baseAsesores = new javax.swing.JMenuItem();
+        a_buscarAsesores = new javax.swing.JMenuItem();
         a_baseGeneral = new javax.swing.JMenuItem();
         formulario = new javax.swing.JMenu();
         opciones = new javax.swing.JMenu();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setTitle("Area de Trabajo");
 
-        jDesktopPane1.setBackground(new java.awt.Color(255, 255, 255));
+        jDesktopPane1.setBackground(new java.awt.Color(77, 208, 225));
 
         if_buscarCliente.setClosable(true);
+        if_buscarCliente.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
         if_buscarCliente.setIconifiable(true);
-        if_buscarCliente.setMaximizable(true);
         if_buscarCliente.setResizable(true);
         if_buscarCliente.setTitle("Buscar Cliente");
+        if_buscarCliente.setAutoscrolls(true);
         if_buscarCliente.setVisible(true);
 
-        javax.swing.GroupLayout if_buscarClienteLayout = new javax.swing.GroupLayout(if_buscarCliente.getContentPane());
-        if_buscarCliente.getContentPane().setLayout(if_buscarClienteLayout);
-        if_buscarClienteLayout.setHorizontalGroup(
-            if_buscarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        if_buscarClienteLayout.setVerticalGroup(
-            if_buscarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 295, Short.MAX_VALUE)
-        );
-
-        if_baseClientes.setClosable(true);
-        if_baseClientes.setIconifiable(true);
-        if_baseClientes.setMaximizable(true);
-        if_baseClientes.setResizable(true);
-        if_baseClientes.setTitle("Base General Clientes");
-        if_baseClientes.setPreferredSize(new java.awt.Dimension(255, 479));
-        if_baseClientes.setVisible(true);
-
-        DefaultTableModel modelClientes = new DefaultTableModel();
-        tbl_baseGeneralClientes.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-
-            }
-        ));
-        jScrollPane1.setViewportView(tbl_baseGeneralClientes);
-
-        javax.swing.GroupLayout if_baseClientesLayout = new javax.swing.GroupLayout(if_baseClientes.getContentPane());
-        if_baseClientes.getContentPane().setLayout(if_baseClientesLayout);
-        if_baseClientesLayout.setHorizontalGroup(
-            if_baseClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 508, Short.MAX_VALUE)
-        );
-        if_baseClientesLayout.setVerticalGroup(
-            if_baseClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
-        );
-
         if_buscarAsesor.setClosable(true);
+        if_buscarAsesor.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
         if_buscarAsesor.setIconifiable(true);
-        if_buscarAsesor.setMaximizable(true);
         if_buscarAsesor.setResizable(true);
         if_buscarAsesor.setTitle("Buscar Asesor");
         if_buscarAsesor.setVisible(true);
@@ -195,16 +157,16 @@ public class Usuario extends javax.swing.JFrame {
         if_buscarAsesor.getContentPane().setLayout(if_buscarAsesorLayout);
         if_buscarAsesorLayout.setHorizontalGroup(
             if_buscarAsesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 614, Short.MAX_VALUE)
         );
         if_buscarAsesorLayout.setVerticalGroup(
             if_buscarAsesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 375, Short.MAX_VALUE)
+            .addGap(0, 439, Short.MAX_VALUE)
         );
 
         if_baseAsores.setClosable(true);
+        if_baseAsores.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
         if_baseAsores.setIconifiable(true);
-        if_baseAsores.setMaximizable(true);
         if_baseAsores.setResizable(true);
         if_baseAsores.setTitle("Base General Asesores");
         if_baseAsores.setVisible(true);
@@ -224,16 +186,16 @@ public class Usuario extends javax.swing.JFrame {
         if_baseAsores.getContentPane().setLayout(if_baseAsoresLayout);
         if_baseAsoresLayout.setHorizontalGroup(
             if_baseAsoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 524, Short.MAX_VALUE)
         );
         if_baseAsoresLayout.setVerticalGroup(
             if_baseAsoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 433, Short.MAX_VALUE)
+            .addComponent(jScrollPane2)
         );
 
         if_formulario.setClosable(true);
+        if_formulario.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
         if_formulario.setIconifiable(true);
-        if_formulario.setMaximizable(true);
         if_formulario.setResizable(true);
         if_formulario.setTitle("Formulario");
         if_formulario.setVisible(true);
@@ -452,7 +414,7 @@ public class Usuario extends javax.swing.JFrame {
                         .addComponent(jLabel20)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(f_cb_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 139, Short.MAX_VALUE)))
+                        .addGap(0, 117, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         datosLayout.setVerticalGroup(
@@ -544,7 +506,7 @@ public class Usuario extends javax.swing.JFrame {
                         .addComponent(jLabel24)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(f_txt_repTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
                         .addComponent(jLabel25)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(f_txt_repBanco, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -600,7 +562,7 @@ public class Usuario extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 551, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -683,8 +645,8 @@ public class Usuario extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(f_btn_buscarCliente)
                 .addGap(166, 166, 166))
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jScrollPane3)
         );
         if_formularioLayout.setVerticalGroup(
             if_formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -698,46 +660,79 @@ public class Usuario extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 408, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 564, Short.MAX_VALUE))
+        );
+
+        if_baseClientes.setClosable(true);
+        if_baseClientes.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
+        if_baseClientes.setIconifiable(true);
+        if_baseClientes.setResizable(true);
+        if_baseClientes.setTitle("Base General Clientes");
+        if_baseClientes.setPreferredSize(new java.awt.Dimension(255, 479));
+        if_baseClientes.setVisible(true);
+
+        DefaultTableModel modelClientes = new DefaultTableModel();
+        tbl_baseGeneralClientes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane1.setViewportView(tbl_baseGeneralClientes);
+
+        javax.swing.GroupLayout if_baseClientesLayout = new javax.swing.GroupLayout(if_baseClientes.getContentPane());
+        if_baseClientes.getContentPane().setLayout(if_baseClientesLayout);
+        if_baseClientesLayout.setHorizontalGroup(
+            if_baseClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1)
+        );
+        if_baseClientesLayout.setVerticalGroup(
+            if_baseClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1)
         );
 
         jDesktopPane1.setLayer(if_buscarCliente, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(if_baseClientes, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(if_buscarAsesor, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(if_baseAsores, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(if_formulario, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(if_baseClientes, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(if_buscarAsesor)
+                .addGap(7, 7, 7)
+                .addComponent(if_buscarCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 595, Short.MAX_VALUE)
+                .addContainerGap())
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addComponent(if_formulario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGap(27, 27, 27)
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(if_baseAsores)
-                    .addComponent(if_baseClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 524, Short.MAX_VALUE)
-                    .addComponent(if_buscarCliente)
-                    .addComponent(if_buscarAsesor))
-                .addContainerGap(44, Short.MAX_VALUE))
+                    .addComponent(if_baseClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE))
+                .addGap(67, 67, 67))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jDesktopPane1Layout.createSequentialGroup()
+                        .addComponent(if_baseAsores)
+                        .addGap(18, 18, 18)
+                        .addComponent(if_baseClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 481, Short.MAX_VALUE))
+                    .addComponent(if_formulario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGap(106, 106, 106)
-                        .addComponent(if_baseAsores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(if_baseClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(if_formulario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(if_buscarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(if_buscarAsesor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(if_buscarCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 469, Short.MAX_VALUE)
+                    .addComponent(if_buscarAsesor))
+                .addContainerGap())
         );
 
         jMenuBar1.setMaximumSize(new java.awt.Dimension(114, 769));
@@ -746,8 +741,8 @@ public class Usuario extends javax.swing.JFrame {
 
         clientes.setText("Clientes");
 
-        c_baseCliente.setText("Buscar Cliente");
-        clientes.add(c_baseCliente);
+        c_buscarCliente.setText("Buscar Cliente");
+        clientes.add(c_buscarCliente);
 
         c_baseGeneral.setText("Base General");
         clientes.add(c_baseGeneral);
@@ -756,8 +751,8 @@ public class Usuario extends javax.swing.JFrame {
 
         asesores.setText("Asesores");
 
-        a_baseAsesores.setText("Buscar Asesor");
-        asesores.add(a_baseAsesores);
+        a_buscarAsesores.setText("Buscar Asesor");
+        asesores.add(a_buscarAsesores);
 
         a_baseGeneral.setText("Base General");
         asesores.add(a_baseGeneral);
@@ -828,13 +823,13 @@ public class Usuario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JMenuItem a_baseAsesores;
     public javax.swing.JMenuItem a_baseGeneral;
+    public javax.swing.JMenuItem a_buscarAsesores;
     public javax.swing.JMenu archivo;
     private javax.swing.JPanel asesor;
     public javax.swing.JMenu asesores;
-    public javax.swing.JMenuItem c_baseCliente;
     public javax.swing.JMenuItem c_baseGeneral;
+    public javax.swing.JMenuItem c_buscarCliente;
     public javax.swing.JMenu clientes;
     private javax.swing.JPanel datos;
     public javax.swing.JButton f_btn_buscarCliente;
@@ -870,10 +865,10 @@ public class Usuario extends javax.swing.JFrame {
     public javax.swing.JComboBox<String> f_valor_buscado;
     private javax.swing.JPanel financiera;
     public javax.swing.JMenu formulario;
-    private javax.swing.JInternalFrame if_baseAsores;
-    private javax.swing.JInternalFrame if_baseClientes;
-    private javax.swing.JInternalFrame if_buscarAsesor;
-    private javax.swing.JInternalFrame if_buscarCliente;
+    public javax.swing.JInternalFrame if_baseAsores;
+    public javax.swing.JInternalFrame if_baseClientes;
+    public javax.swing.JInternalFrame if_buscarAsesor;
+    public javax.swing.JInternalFrame if_buscarCliente;
     private javax.swing.JInternalFrame if_formulario;
     private javax.swing.JPanel informacion;
     private javax.swing.JDesktopPane jDesktopPane1;

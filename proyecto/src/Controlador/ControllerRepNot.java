@@ -18,7 +18,7 @@ import proyecto.Vista.Usuario;
  *
  * @author jroque
  */
-public class RepNot implements ActionListener, ItemListener {
+public class ControllerRepNot implements ActionListener, ItemListener {
 
     //Vista
     Usuario usuario = new Usuario();
@@ -27,7 +27,7 @@ public class RepNot implements ActionListener, ItemListener {
     DatosDAO ddao = new DatosDAO();
     StringsBaseDatos sbd = new StringsBaseDatos();
 
-    public RepNot(Usuario usuario, DatosVO dvo, DatosDAO ddao) {
+    public ControllerRepNot(Usuario usuario, DatosVO dvo, DatosDAO ddao) {
         this.usuario = usuario;
         this.dvo = dvo;
         this.ddao = ddao;

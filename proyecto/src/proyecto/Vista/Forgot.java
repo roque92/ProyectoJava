@@ -15,6 +15,7 @@ public class Forgot extends javax.swing.JFrame {
     /** Creates new form Forgot */
     public Forgot() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /** This method is called from within the constructor to
@@ -30,7 +31,7 @@ public class Forgot extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         f_cb_frase = new javax.swing.JComboBox<>();
-        f_password = new javax.swing.JTextField();
+        f_telefono = new javax.swing.JTextField();
         f_username = new javax.swing.JTextField();
         f_cambiar = new javax.swing.JButton();
 
@@ -42,7 +43,7 @@ public class Forgot extends javax.swing.JFrame {
 
         jLabel3.setText("Frase de recuperacion");
 
-        f_cb_frase.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        f_cb_frase.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         f_cambiar.setText("Cambiar");
 
@@ -61,7 +62,7 @@ public class Forgot extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(f_cb_frase, 0, 107, Short.MAX_VALUE)
-                            .addComponent(f_password)
+                            .addComponent(f_telefono)
                             .addComponent(f_username)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(79, 79, 79)
@@ -78,7 +79,7 @@ public class Forgot extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(f_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(f_telefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
@@ -129,7 +130,7 @@ public class Forgot extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton f_cambiar;
     public javax.swing.JComboBox<String> f_cb_frase;
-    public javax.swing.JTextField f_password;
+    public javax.swing.JTextField f_telefono;
     public javax.swing.JTextField f_username;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

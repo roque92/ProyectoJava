@@ -5,7 +5,10 @@
  */
 package proyecto;
 
+import Controlador.ControllerForgot;
+import Controlador.ControllerLogin;
 import proyecto.Vista.Administrador;
+import proyecto.Vista.Forgot;
 import proyecto.Vista.Login;
 import proyecto.Vista.Usuario;
 
@@ -22,8 +25,12 @@ public class Proyecto {
         // TODO code application logic here
         
         Administrador admin = new Administrador();
-        Usuario user = new Usuario();
+        Usuario usuario = new Usuario();
         Login login = new Login();
+        Forgot forgot = new Forgot();
+        
+        ControllerLogin controllerLogin = new ControllerLogin(login, usuario, admin, forgot);
+        ControllerForgot controllerForgot = new ControllerForgot(login, forgot);
         
         login.setVisible(true);
     }

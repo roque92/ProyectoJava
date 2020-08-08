@@ -29,6 +29,7 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        mensaje = new javax.swing.JOptionPane();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txt_username = new javax.swing.JTextField();
@@ -46,7 +47,7 @@ public class Login extends javax.swing.JFrame {
 
         btn_ingresar.setText("Ingresar");
 
-        jl_forgot.setText("Olvidaste la contraseña");
+        jl_forgot.setText("Olvidaste la contraseña?");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -131,6 +132,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     public javax.swing.JLabel jl_forgot;
+    public javax.swing.JOptionPane mensaje;
     public javax.swing.JPasswordField txt_password;
     public javax.swing.JTextField txt_username;
     // End of variables declaration//GEN-END:variables

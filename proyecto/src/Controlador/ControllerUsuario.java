@@ -29,6 +29,8 @@ public class ControllerUsuario implements ActionListener, WindowListener{
         usuario.c_baseGeneral.addActionListener(this);
         usuario.a_buscarAsesores.addActionListener(this);
         usuario.a_baseGeneral.addActionListener(this);
+        usuario.f_AbrirFormulario.addActionListener(this);
+        usuario.o_Salir.addActionListener(this);
         
         usuario.addWindowListener(this);
     }
@@ -50,6 +52,23 @@ public class ControllerUsuario implements ActionListener, WindowListener{
         if(e.getSource() == usuario.a_baseGeneral){
             usuario.if_baseAsores.setVisible(true);
         }
+        
+        if(e.getSource() == usuario.f_AbrirFormulario){
+            usuario.if_formulario.setVisible(true);
+        }
+        
+        if(e.getSource() == usuario.o_Salir){
+            closeWindows();
+        }
+    }
+    
+    private void closeWindows(){
+        int seleccion = login.mensaje.showConfirmDialog(null, "Desea cerrar sesion", "Cerrar Sesion", login.mensaje.YES_NO_OPTION);
+        
+        if(seleccion == login.mensaje.YES_OPTION){
+            usuario.setVisible(false);
+            login.setVisible(true);
+        } 
     }
 
     @Override
@@ -59,12 +78,7 @@ public class ControllerUsuario implements ActionListener, WindowListener{
 
     @Override
     public void windowClosing(WindowEvent e) {
-        int seleccion = login.mensaje.showConfirmDialog(null, "Desea cerrar sesion", "Cerrar Sesion", login.mensaje.YES_NO_OPTION);
-        
-        if(seleccion == login.mensaje.YES_OPTION){
-            usuario.setVisible(false);
-            login.setVisible(true);
-        } 
+        closeWindows();
     }
 
     @Override

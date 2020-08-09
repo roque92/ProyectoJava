@@ -34,8 +34,8 @@ public class Proyecto {
         ControllerForgot controllerForgot = new ControllerForgot(login, forgot);
         ControllerUsuario controllerUsuario = new ControllerUsuario(usuario, login);
         
-        login.setVisible(true);
-        //usuario.setVisible(true);
+        //login.setVisible(true);
+        usuario.setVisible(true);
     }
     
 }

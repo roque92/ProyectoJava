@@ -76,6 +76,16 @@
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
+              <SubComponents>
+                <MenuItem class="javax.swing.JMenuItem" name="f_principal">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Buscar Asesor"/>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
+                </MenuItem>
+              </SubComponents>
             </Menu>
           </SubComponents>
         </Menu>
@@ -161,7 +171,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="if_baseAsores" max="32767" attributes="0"/>
                           <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                          <Component id="if_baseClientes" pref="481" max="32767" attributes="0"/>
+                          <Component id="if_baseClientes" pref="502" max="32767" attributes="0"/>
                       </Group>
                       <Component id="if_formulario" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -234,7 +244,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane2" pref="524" max="32767" attributes="0"/>
+                  <Component id="jScrollPane2" alignment="1" pref="538" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -265,6 +275,7 @@
                   </Properties>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="DefaultTableModel modelAsesores = new DefaultTableModel();"/>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                   </AuxValues>
                 </Component>
               </SubComponents>
@@ -280,6 +291,9 @@
             <Property name="title" type="java.lang.String" value="Formulario"/>
             <Property name="visible" type="boolean" value="true"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
 
           <Layout>
             <DimensionLayout dim="0">
@@ -1281,6 +1295,7 @@
                   </Properties>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="DefaultTableModel modelClientes = new DefaultTableModel();"/>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                   </AuxValues>
                 </Component>
               </SubComponents>

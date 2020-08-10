@@ -43,8 +43,8 @@ public class Conector {
    public ResultSet obtener_datos (String consultaSQL){
        try {
            this.connect();
-           ResultSet respuesta = null;
            this.st = this.con.createStatement();
+           ResultSet respuesta = null;
            respuesta = st.executeQuery(consultaSQL);
            return respuesta;
        } catch (SQLException e) {

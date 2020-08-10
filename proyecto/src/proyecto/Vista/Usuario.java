@@ -131,6 +131,7 @@ public class Usuario extends javax.swing.JFrame {
         a_buscarAsesores = new javax.swing.JMenuItem();
         a_baseGeneral = new javax.swing.JMenuItem();
         formulario = new javax.swing.JMenu();
+        f_principal = new javax.swing.JMenuItem();
         opciones = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
@@ -186,7 +187,7 @@ public class Usuario extends javax.swing.JFrame {
         if_baseAsores.getContentPane().setLayout(if_baseAsoresLayout);
         if_baseAsoresLayout.setHorizontalGroup(
             if_baseAsoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 524, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 538, Short.MAX_VALUE)
         );
         if_baseAsoresLayout.setVerticalGroup(
             if_baseAsoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -726,7 +727,7 @@ public class Usuario extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jDesktopPane1Layout.createSequentialGroup()
                         .addComponent(if_baseAsores)
                         .addGap(18, 18, 18)
-                        .addComponent(if_baseClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 481, Short.MAX_VALUE))
+                        .addComponent(if_baseClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 502, Short.MAX_VALUE))
                     .addComponent(if_formulario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -760,6 +761,10 @@ public class Usuario extends javax.swing.JFrame {
         archivo.add(asesores);
 
         formulario.setText("Formulario");
+
+        f_principal.setText("Buscar Asesor");
+        formulario.add(f_principal);
+
         archivo.add(formulario);
 
         jMenuBar1.add(archivo);
@@ -839,6 +844,7 @@ public class Usuario extends javax.swing.JFrame {
     public javax.swing.JComboBox<String> f_cb_id;
     public javax.swing.JComboBox<String> f_cb_nit;
     public javax.swing.JCheckBox f_cb_nuevo;
+    public javax.swing.JMenuItem f_principal;
     private javax.swing.JTable f_tbl_seguimiento;
     public javax.swing.JTextField f_txt_asesorContructora;
     public javax.swing.JTextField f_txt_asesorCorreo;
@@ -869,7 +875,7 @@ public class Usuario extends javax.swing.JFrame {
     public javax.swing.JInternalFrame if_baseClientes;
     public javax.swing.JInternalFrame if_buscarAsesor;
     public javax.swing.JInternalFrame if_buscarCliente;
-    private javax.swing.JInternalFrame if_formulario;
+    public javax.swing.JInternalFrame if_formulario;
     private javax.swing.JPanel informacion;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
@@ -911,7 +917,7 @@ public class Usuario extends javax.swing.JFrame {
     private javax.swing.JPanel notas;
     public javax.swing.JMenu opciones;
     private javax.swing.JPanel repLegal;
-    private javax.swing.JTable tbl_baseGeneralAsesores;
-    private javax.swing.JTable tbl_baseGeneralClientes;
+    public javax.swing.JTable tbl_baseGeneralAsesores;
+    public javax.swing.JTable tbl_baseGeneralClientes;
     // End of variables declaration//GEN-END:variables
 }

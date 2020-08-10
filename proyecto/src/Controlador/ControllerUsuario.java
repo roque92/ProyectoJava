@@ -5,10 +5,13 @@
  */
 package Controlador;
 
+import Modelo.ModelAsesores;
+import Modelo.ModelClientes;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import javax.swing.JTable;
 import proyecto.Vista.Login;
 import proyecto.Vista.Usuario;
 
@@ -20,6 +23,7 @@ public class ControllerUsuario implements ActionListener, WindowListener{
     
     Usuario usuario = new Usuario();
     Login login = new Login();
+    JTable jTableAsesores, jTableClientes;
 
     public ControllerUsuario(Usuario usuario, Login login) {
         this.usuario = usuario;
@@ -29,7 +33,9 @@ public class ControllerUsuario implements ActionListener, WindowListener{
         usuario.c_baseGeneral.addActionListener(this);
         usuario.a_buscarAsesores.addActionListener(this);
         usuario.a_baseGeneral.addActionListener(this);
-        
+        usuario.f_principal.addActionListener(this);
+        jTableAsesores = usuario.tbl_baseGeneralAsesores;
+        jTableClientes = usuario.tbl_baseGeneralClientes;
         usuario.addWindowListener(this);
     }
 
@@ -41,6 +47,8 @@ public class ControllerUsuario implements ActionListener, WindowListener{
         
         if(e.getSource() == usuario.c_baseGeneral){
             usuario.if_baseClientes.setVisible(true);
+            ModelClientes modelClientes = new ModelClientes();
+            modelClientes.LoadTable(jTableClientes);
         }
         
         if(e.getSource() == usuario.a_buscarAsesores){
@@ -49,6 +57,11 @@ public class ControllerUsuario implements ActionListener, WindowListener{
         
         if(e.getSource() == usuario.a_baseGeneral){
             usuario.if_baseAsores.setVisible(true);
+            ModelAsesores modelAsesores = new ModelAsesores();
+            modelAsesores.LoadTable(jTableAsesores);
+        }
+        if(e.getSource() == usuario.f_principal) {
+            usuario.if_formulario.setVisible(true);
         }
     }
 
@@ -91,7 +104,6 @@ public class ControllerUsuario implements ActionListener, WindowListener{
     public void windowDeactivated(WindowEvent e) {
         
     }
-    
     
     
 }

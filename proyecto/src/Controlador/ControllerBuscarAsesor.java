@@ -5,15 +5,11 @@
  */
 package Controlador;
 
-import Modelo.DatosDAO;
 import Modelo.DatosVO;
 import Modelo.StringsBaseDatos;
 import Modelo.TablasBaseDatos;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import proyecto.Vista.Login;
 import proyecto.Vista.Usuario;
@@ -22,7 +18,7 @@ import proyecto.Vista.Usuario;
  *
  * @author jroque
  */
-public class ControllerBuscarAsesor implements ActionListener, KeyListener {
+public class ControllerBuscarAsesor implements KeyListener {
 
     Usuario usuario = new Usuario();
     Login login = new Login();
@@ -37,50 +33,37 @@ public class ControllerBuscarAsesor implements ActionListener, KeyListener {
         this.tbd = tbd;
         this.dvo = dvo;
 
-        usuario.ba_btn_buscar.addActionListener(this);
-        usuario.ba_txt_valorBuscado.addKeyListener(this);
+       usuario.ba_txt_valorBuscado.addKeyListener(this);
     }
 
     private void buscarAsesor() {
-        
-        if (usuario.ba_txt_valorBuscado.getText().isEmpty()) {
-            usuario.ba_tbl_datos.removeAll();
-            
-        } else {
-            
-            sbd.setNombre_vendedor_buscador_sbd(usuario.ba_txt_valorBuscado.getText());
-            DefaultTableModel m = new DefaultTableModel();
-            m.setColumnCount(0);
-            m.addColumn("Nombe");
-            m.addColumn("Telefono");
-            m.addColumn("Constructora");
-            m.addColumn("Correo Electronico");
 
-            for (StringsBaseDatos sbd : this.tbd.TablaVendedor(sbd)) {
-                
-                m.addRow(new Object[]{sbd.getNombre_vendedor_sbd(), sbd.getTelefono_vendedor_sbd(), sbd.getConstructora_vendedor_sbd(), sbd.getCorreo_vendedor_sbd()});
-            }
+        sbd.setNombre_vendedor_buscador_sbd(usuario.ba_txt_valorBuscado.getText());
+        DefaultTableModel m = new DefaultTableModel();
+        m.setColumnCount(0);
+        m.addColumn("Nombe");
+        m.addColumn("Telefono");
+        m.addColumn("Constructora");
+        m.addColumn("Correo Electronico");
 
-            usuario.ba_tbl_datos.setModel(m);
+        for (StringsBaseDatos sbd : this.tbd.TablaVendedor(sbd)) {
+
+            m.addRow(new Object[]{sbd.getNombre_vendedor_sbd(), sbd.getTelefono_vendedor_sbd(), sbd.getConstructora_vendedor_sbd(), sbd.getCorreo_vendedor_sbd()});
         }
-    }
-    
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == usuario.ba_btn_buscar) {
-            buscarAsesor();
-        }
+        usuario.ba_tbl_datos.setModel(m);
+
     }
+
 
     @Override
     public void keyTyped(KeyEvent e) {
-        
+
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
-       
+
     }
 
     @Override

@@ -43,8 +43,6 @@ public class Usuario extends javax.swing.JFrame {
         if_buscarCliente = new javax.swing.JInternalFrame();
         if_buscarAsesor = new javax.swing.JInternalFrame();
         jLabel26 = new javax.swing.JLabel();
-        ba_cb_tipoBusqueda = new javax.swing.JComboBox<>();
-        ba_btn_buscar = new javax.swing.JButton();
         ba_txt_valorBuscado = new javax.swing.JTextField();
         jScrollPane5 = new javax.swing.JScrollPane();
         ba_tbl_datos = new javax.swing.JTable();
@@ -156,16 +154,14 @@ public class Usuario extends javax.swing.JFrame {
         if_buscarAsesor.setClosable(true);
         if_buscarAsesor.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
         if_buscarAsesor.setIconifiable(true);
+        if_buscarAsesor.setMaximizable(true);
+        if_buscarAsesor.setResizable(true);
         if_buscarAsesor.setTitle("Buscar Asesor");
+        if_buscarAsesor.setPreferredSize(new java.awt.Dimension(468, 485));
         if_buscarAsesor.setVisible(true);
 
-        jLabel26.setText("Buscar Informacion");
+        jLabel26.setText("Buscar Nombre del Asesor");
 
-        ba_cb_tipoBusqueda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccinar", "Nombre", "Telefono", "Correo" }));
-
-        ba_btn_buscar.setText("Buscar");
-
-        DefaultTableModel modelBuscarCliente = new DefaultTableModel();
         ba_tbl_datos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -184,12 +180,8 @@ public class Usuario extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel26)
                 .addGap(18, 18, 18)
-                .addComponent(ba_cb_tipoBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(ba_txt_valorBuscado, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(ba_btn_buscar)
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addComponent(ba_txt_valorBuscado, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jScrollPane5)
         );
         if_buscarAsesorLayout.setVerticalGroup(
@@ -198,11 +190,9 @@ public class Usuario extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(if_buscarAsesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel26)
-                    .addComponent(ba_cb_tipoBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ba_btn_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ba_txt_valorBuscado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 291, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE))
         );
 
         if_baseAsores.setClosable(true);
@@ -228,11 +218,11 @@ public class Usuario extends javax.swing.JFrame {
         if_baseAsores.getContentPane().setLayout(if_baseAsoresLayout);
         if_baseAsoresLayout.setHorizontalGroup(
             if_baseAsoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 524, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE)
         );
         if_baseAsoresLayout.setVerticalGroup(
             if_baseAsoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 530, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE)
         );
 
         if_formulario.setClosable(true);
@@ -451,7 +441,7 @@ public class Usuario extends javax.swing.JFrame {
                         .addComponent(jLabel20)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(f_cb_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 139, Short.MAX_VALUE)))
+                        .addGap(0, 34, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         datosLayout.setVerticalGroup(
@@ -543,7 +533,7 @@ public class Usuario extends javax.swing.JFrame {
                         .addComponent(jLabel24)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(f_txt_repTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel25)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(f_txt_repBanco, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -599,7 +589,7 @@ public class Usuario extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 551, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 446, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -662,15 +652,11 @@ public class Usuario extends javax.swing.JFrame {
                     .addComponent(f_cb_nuevo)
                     .addComponent(f_cb_editar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane1))
+                .addComponent(jTabbedPane1)
+                .addGap(0, 0, 0))
         );
 
         f_valor_buscado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nombre", "Telefono", "Correo" }));
-        f_valor_buscado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                f_valor_buscadoActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout if_formularioLayout = new javax.swing.GroupLayout(if_formulario.getContentPane());
         if_formulario.getContentPane().setLayout(if_formularioLayout);
@@ -680,7 +666,7 @@ public class Usuario extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(f_valor_buscado, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(f_valor_buscado, 0, 1, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(f_txt_buscarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -701,7 +687,7 @@ public class Usuario extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE))
         );
 
         if_baseClientes.setClosable(true);
@@ -728,7 +714,7 @@ public class Usuario extends javax.swing.JFrame {
         if_baseClientes.getContentPane().setLayout(if_baseClientesLayout);
         if_baseClientesLayout.setHorizontalGroup(
             if_baseClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
         if_baseClientesLayout.setVerticalGroup(
             if_baseClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -749,16 +735,17 @@ public class Usuario extends javax.swing.JFrame {
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addGap(12, 12, 12)
-                        .addComponent(if_formulario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addComponent(if_formulario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(if_buscarAsesor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(27, 27, 27)
+                        .addComponent(if_buscarAsesor, javax.swing.GroupLayout.DEFAULT_SIZE, 542, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(if_baseAsores)
-                            .addComponent(if_baseClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE))
+                            .addComponent(if_baseClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 398, Short.MAX_VALUE))
                         .addGap(67, 67, 67))
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addGap(12, 12, 12)
@@ -840,10 +827,6 @@ public class Usuario extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void f_valor_buscadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_f_valor_buscadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_f_valor_buscadoActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -885,8 +868,6 @@ public class Usuario extends javax.swing.JFrame {
     public javax.swing.JMenu archivo;
     private javax.swing.JPanel asesor;
     public javax.swing.JMenu asesores;
-    public javax.swing.JButton ba_btn_buscar;
-    public javax.swing.JComboBox<String> ba_cb_tipoBusqueda;
     public javax.swing.JTable ba_tbl_datos;
     public javax.swing.JTextField ba_txt_valorBuscado;
     public javax.swing.JMenuItem c_baseGeneral;

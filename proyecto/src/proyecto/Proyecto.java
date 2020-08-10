@@ -5,9 +5,13 @@
  */
 package proyecto;
 
+import Controlador.ControllerBuscarAsesor;
 import Controlador.ControllerForgot;
 import Controlador.ControllerLogin;
 import Controlador.ControllerUsuario;
+import Modelo.DatosVO;
+import Modelo.StringsBaseDatos;
+import Modelo.TablasBaseDatos;
 import proyecto.Vista.Administrador;
 import proyecto.Vista.Forgot;
 import proyecto.Vista.Login;
@@ -29,10 +33,14 @@ public class Proyecto {
         Usuario usuario = new Usuario();
         Login login = new Login();
         Forgot forgot = new Forgot();
+        StringsBaseDatos sbd = new StringsBaseDatos();
+        TablasBaseDatos tbd = new TablasBaseDatos();
+        DatosVO dvo = new DatosVO();
         
         ControllerLogin controllerLogin = new ControllerLogin(login, usuario, admin, forgot);
         ControllerForgot controllerForgot = new ControllerForgot(login, forgot);
         ControllerUsuario controllerUsuario = new ControllerUsuario(usuario, login);
+        ControllerBuscarAsesor controllerBuscarAsesor = new ControllerBuscarAsesor(usuario, login, sbd, tbd, dvo);
         
         //login.setVisible(true);
         usuario.setVisible(true);

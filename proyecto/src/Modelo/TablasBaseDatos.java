@@ -26,20 +26,20 @@ public class TablasBaseDatos implements InterfaceTablasBase {
             ResultSet rs = c.obtener_datos("SELECT * FROM tbl_vendedor WHERE nombre LIKE '%" + sbd.getNombre_vendedor_buscador_sbd()+ "%';");
 
             while (rs.next()) {
-                System.out.println("Adentro del While");
-                sbd.setId_vendedor_sbd(rs.getInt(0));
-                sbd.setNombre_vendedor_sbd(rs.getString(1));
-                sbd.setTelefono_vendedor_sbd(rs.getString(2));
-                sbd.setConstructora_vendedor_sbd(rs.getString(3));
-                sbd.setCorreo_vendedor_sbd(rs.getString(4));
+                StringsBaseDatos sbd1 = new StringsBaseDatos();
+                sbd1.setId_vendedor_sbd(rs.getInt(1));
+                sbd1.setNombre_vendedor_sbd(rs.getString(2));
+                sbd1.setTelefono_vendedor_sbd(rs.getString(3));
+                sbd1.setConstructora_vendedor_sbd(rs.getString(4));
+                sbd1.setCorreo_vendedor_sbd(rs.getString(5));
 
-                datos.add(sbd);
+                datos.add(sbd1);
 
             }
-            System.out.println("despues del fuera del while");
+            
             c.desconectar();
 
-            System.out.println("Desconectado");
+            
         } catch (SQLException e) {
             //dvo.setError(e.getMessage());
         }

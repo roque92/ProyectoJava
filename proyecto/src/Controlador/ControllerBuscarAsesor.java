@@ -42,11 +42,13 @@ public class ControllerBuscarAsesor implements ActionListener, KeyListener {
     }
 
     private void buscarAsesor() {
+        
         if (usuario.ba_txt_valorBuscado.getText().isEmpty()) {
-            login.mensaje.showMessageDialog(null, "No se ha ingresado un valor a buscar", "Datos Incorrectos", JOptionPane.ERROR_MESSAGE);
+            usuario.ba_tbl_datos.removeAll();
+            
         } else {
+            
             sbd.setNombre_vendedor_buscador_sbd(usuario.ba_txt_valorBuscado.getText());
-
             DefaultTableModel m = new DefaultTableModel();
             m.setColumnCount(0);
             m.addColumn("Nombe");
@@ -55,13 +57,14 @@ public class ControllerBuscarAsesor implements ActionListener, KeyListener {
             m.addColumn("Correo Electronico");
 
             for (StringsBaseDatos sbd : this.tbd.TablaVendedor(sbd)) {
-                System.out.println("Dentro del for Each");
+                
                 m.addRow(new Object[]{sbd.getNombre_vendedor_sbd(), sbd.getTelefono_vendedor_sbd(), sbd.getConstructora_vendedor_sbd(), sbd.getCorreo_vendedor_sbd()});
             }
 
             usuario.ba_tbl_datos.setModel(m);
         }
     }
+    
 
     @Override
     public void actionPerformed(ActionEvent e) {

@@ -10,6 +10,7 @@ import Modelo.StringsBaseDatos;
 import Modelo.TablasBaseDatos;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import proyecto.Vista.Login;
 import proyecto.Vista.Usuario;
@@ -33,28 +34,31 @@ public class ControllerBuscarAsesor implements KeyListener {
         this.tbd = tbd;
         this.dvo = dvo;
 
-       usuario.ba_txt_valorBuscado.addKeyListener(this);
+        usuario.ba_txt_valorBuscado.addKeyListener(this);
     }
 
     private void buscarAsesor() {
 
-        sbd.setNombre_vendedor_buscador_sbd(usuario.ba_txt_valorBuscado.getText());
-        DefaultTableModel m = new DefaultTableModel();
-        m.setColumnCount(0);
-        m.addColumn("Nombe");
-        m.addColumn("Telefono");
-        m.addColumn("Constructora");
-        m.addColumn("Correo Electronico");
+        try {
+            sbd.setNombre_vendedor_buscador_sbd(usuario.ba_txt_valorBuscado.getText());
+            DefaultTableModel m = new DefaultTableModel();
+            m.setColumnCount(0);
+            m.addColumn("Nombe");
+            m.addColumn("Telefono");
+            m.addColumn("Constructora");
+            m.addColumn("Correo Electronico");
 
-        for (StringsBaseDatos sbd : this.tbd.TablaVendedor(sbd)) {
+            for (StringsBaseDatos sbd : this.tbd.TablaVendedor(sbd)) {
 
-            m.addRow(new Object[]{sbd.getNombre_vendedor_sbd(), sbd.getTelefono_vendedor_sbd(), sbd.getConstructora_vendedor_sbd(), sbd.getCorreo_vendedor_sbd()});
+                m.addRow(new Object[]{sbd.getNombre_vendedor_sbd(), sbd.getTelefono_vendedor_sbd(), sbd.getConstructora_vendedor_sbd(), sbd.getCorreo_vendedor_sbd()});
+            }
+
+            usuario.ba_tbl_datos.setModel(m);
+        } catch (Exception e) {
+            login.mensaje.showMessageDialog(null, "No se puede conectar con la base de datos Contacte con su Administrador", "Problemas de Conexion", JOptionPane.ERROR_MESSAGE);
         }
 
-        usuario.ba_tbl_datos.setModel(m);
-
     }
-
 
     @Override
     public void keyTyped(KeyEvent e) {

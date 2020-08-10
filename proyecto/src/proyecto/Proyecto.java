@@ -45,8 +45,8 @@ public class Proyecto {
         ControllerBuscarAsesor controllerBuscarAsesor = new ControllerBuscarAsesor(usuario, login, sbd, tbd, dvo);
         
         //login.setVisible(true);
-        //usuario.setVisible(true);
-        admin.setVisible(true);
+        usuario.setVisible(true);
+        //admin.setVisible(true);
     }
     
 }

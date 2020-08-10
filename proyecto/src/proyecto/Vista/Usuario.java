@@ -42,6 +42,12 @@ public class Usuario extends javax.swing.JFrame {
         jDesktopPane1 = new javax.swing.JDesktopPane();
         if_buscarCliente = new javax.swing.JInternalFrame();
         if_buscarAsesor = new javax.swing.JInternalFrame();
+        jLabel26 = new javax.swing.JLabel();
+        ba_cb_tipoBusqueda = new javax.swing.JComboBox<>();
+        ba_btn_buscar = new javax.swing.JButton();
+        ba_txt_valorBuscado = new javax.swing.JTextField();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        ba_tbl_datos = new javax.swing.JTable();
         if_baseAsores = new javax.swing.JInternalFrame();
         jScrollPane2 = new javax.swing.JScrollPane();
         tbl_baseGeneralAsesores = new javax.swing.JTable();
@@ -150,20 +156,53 @@ public class Usuario extends javax.swing.JFrame {
         if_buscarAsesor.setClosable(true);
         if_buscarAsesor.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
         if_buscarAsesor.setIconifiable(true);
-        if_buscarAsesor.setMaximizable(true);
-        if_buscarAsesor.setResizable(true);
         if_buscarAsesor.setTitle("Buscar Asesor");
         if_buscarAsesor.setVisible(true);
+
+        jLabel26.setText("Buscar Informacion");
+
+        ba_cb_tipoBusqueda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccinar", "Nombre", "Telefono", "Correo" }));
+
+        ba_btn_buscar.setText("Buscar");
+
+        DefaultTableModel modelBuscarCliente = new DefaultTableModel();
+        ba_tbl_datos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane5.setViewportView(ba_tbl_datos);
 
         javax.swing.GroupLayout if_buscarAsesorLayout = new javax.swing.GroupLayout(if_buscarAsesor.getContentPane());
         if_buscarAsesor.getContentPane().setLayout(if_buscarAsesorLayout);
         if_buscarAsesorLayout.setHorizontalGroup(
             if_buscarAsesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(if_buscarAsesorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel26)
+                .addGap(18, 18, 18)
+                .addComponent(ba_cb_tipoBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(ba_txt_valorBuscado, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(ba_btn_buscar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jScrollPane5)
         );
         if_buscarAsesorLayout.setVerticalGroup(
             if_buscarAsesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 520, Short.MAX_VALUE)
+            .addGroup(if_buscarAsesorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(if_buscarAsesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel26)
+                    .addComponent(ba_cb_tipoBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ba_btn_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ba_txt_valorBuscado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE))
         );
 
         if_baseAsores.setClosable(true);
@@ -193,7 +232,7 @@ public class Usuario extends javax.swing.JFrame {
         );
         if_baseAsoresLayout.setVerticalGroup(
             if_baseAsoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 526, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 530, Short.MAX_VALUE)
         );
 
         if_formulario.setClosable(true);
@@ -623,11 +662,15 @@ public class Usuario extends javax.swing.JFrame {
                     .addComponent(f_cb_nuevo)
                     .addComponent(f_cb_editar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane1)
-                .addGap(0, 0, 0))
+                .addComponent(jTabbedPane1))
         );
 
         f_valor_buscado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nombre", "Telefono", "Correo" }));
+        f_valor_buscado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                f_valor_buscadoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout if_formularioLayout = new javax.swing.GroupLayout(if_formulario.getContentPane());
         if_formulario.getContentPane().setLayout(if_formularioLayout);
@@ -706,12 +749,11 @@ public class Usuario extends javax.swing.JFrame {
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addGap(12, 12, 12)
-                        .addComponent(if_formulario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                        .addComponent(if_formulario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(if_buscarAsesor)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                        .addComponent(if_buscarAsesor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(27, 27, 27)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -798,6 +840,10 @@ public class Usuario extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void f_valor_buscadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_f_valor_buscadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_f_valor_buscadoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -839,6 +885,10 @@ public class Usuario extends javax.swing.JFrame {
     public javax.swing.JMenu archivo;
     private javax.swing.JPanel asesor;
     public javax.swing.JMenu asesores;
+    public javax.swing.JButton ba_btn_buscar;
+    public javax.swing.JComboBox<String> ba_cb_tipoBusqueda;
+    public javax.swing.JTable ba_tbl_datos;
+    public javax.swing.JTextField ba_txt_valorBuscado;
     public javax.swing.JMenuItem c_baseGeneral;
     public javax.swing.JMenuItem c_buscarCliente;
     public javax.swing.JMenu clientes;
@@ -902,6 +952,7 @@ public class Usuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -917,6 +968,7 @@ public class Usuario extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     public javax.swing.JTabbedPane jTabbedPane1;
     public javax.swing.JTextField jTextField1;
     private javax.swing.JPanel negociacion;

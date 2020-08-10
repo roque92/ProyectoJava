@@ -16,16 +16,17 @@ import java.util.ArrayList;
 //---------------- Aqui se encuentan los metodo que traen toda la informcion de las tablas
 public class TablasBaseDatos implements InterfaceTablasBase {
 
- ///------------ORDEN DE EJECUCION 8
+    ///------------ORDEN DE EJECUCION 8
     @Override
     public ArrayList<StringsBaseDatos> TablaVendedor(StringsBaseDatos sbd) {
         Conector c = new Conector();
-        DatosVO dvo = new DatosVO();
         ArrayList<StringsBaseDatos> datos = new ArrayList();
         try {
-            ResultSet rs = c.obtener_datos("SELECT * FROM tbl_vendedor WHERE nombre = '" + dvo.getNombre_vendedor() + ";");
-            c.desconectar();
+
+            ResultSet rs = c.obtener_datos("SELECT * FROM tbl_vendedor WHERE nombre LIKE '%" + sbd.getNombre_vendedor_buscador_sbd()+ "%';");
+
             while (rs.next()) {
+                System.out.println("Adentro del While");
                 sbd.setId_vendedor_sbd(rs.getInt(0));
                 sbd.setNombre_vendedor_sbd(rs.getString(1));
                 sbd.setTelefono_vendedor_sbd(rs.getString(2));
@@ -33,15 +34,20 @@ public class TablasBaseDatos implements InterfaceTablasBase {
                 sbd.setCorreo_vendedor_sbd(rs.getString(4));
 
                 datos.add(sbd);
+
             }
-            c.connect();
+            System.out.println("despues del fuera del while");
+            c.desconectar();
+
+            System.out.println("Desconectado");
         } catch (SQLException e) {
-            dvo.setError(e.getMessage());
+            //dvo.setError(e.getMessage());
         }
 
         return datos;
     }
 ///------------ORDEN DE EJECUCION 1
+
     @Override
     public ArrayList<StringsBaseDatos> TablaUsuario(StringsBaseDatos sbd) {
         Conector c = new Conector();
@@ -68,6 +74,7 @@ public class TablasBaseDatos implements InterfaceTablasBase {
         return datos;
     }
 ///------------ORDEN DE EJECUCION 2
+
     @Override
     public ArrayList<StringsBaseDatos> TablaPropiedad(StringsBaseDatos sbd) {
         Conector c = new Conector();
@@ -90,17 +97,18 @@ public class TablasBaseDatos implements InterfaceTablasBase {
         return datos;
     }
 ///------------ORDEN DE EJECUCION 3
+
     @Override
     public ArrayList<StringsBaseDatos> TablaRepresentante(StringsBaseDatos sbd) {
         Conector c = new Conector();
         DatosVO dvo = new DatosVO();
         ArrayList<StringsBaseDatos> datos = new ArrayList();
-        
+
         try {
             c.connect();
-            ResultSet rs = c.obtener_datos("SELECT * FROM tbl_representante WHERE nombre = '" + dvo.getNombre_representante()+ " ;");
-            
-            while (rs.next()) {                
+            ResultSet rs = c.obtener_datos("SELECT * FROM tbl_representante WHERE nombre = '" + dvo.getNombre_representante() + " ;");
+
+            while (rs.next()) {
                 sbd.setId_representante_sbd(rs.getInt(0));
                 sbd.setNombre_representante_sbd(rs.getString(1));
                 sbd.setParentezco_representante_sbd(rs.getString(2));
@@ -116,17 +124,18 @@ public class TablasBaseDatos implements InterfaceTablasBase {
         return datos;
     }
 ///------------ORDEN DE EJECUCION 10
+
     @Override
     public ArrayList<StringsBaseDatos> TablaRegistros(StringsBaseDatos sbd) {
         Conector c = new Conector();
         DatosVO dvo = new DatosVO();
         ArrayList<StringsBaseDatos> datos = new ArrayList();
-        
+
         try {
             c.connect();
-            ResultSet rs = c.obtener_datos("SELECT id_usuario, fecha, notas FROM tbl_registros WHERE id_casos = "+sbd.getId_casos_sbd()+";");
-            
-            while (rs.next()) {                
+            ResultSet rs = c.obtener_datos("SELECT id_usuario, fecha, notas FROM tbl_registros WHERE id_casos = " + sbd.getId_casos_sbd() + ";");
+
+            while (rs.next()) {
                 sbd.setId_usuarios_registros_sbd(rs.getInt(1));
                 sbd.setFecha_registros_sbd(rs.getString(2));
                 sbd.setNotas_registros_sbd(rs.getString(3));
@@ -139,17 +148,18 @@ public class TablasBaseDatos implements InterfaceTablasBase {
         return datos;
     }
 ///------------ORDEN DE EJECUCION 4
+
     @Override
     public ArrayList<StringsBaseDatos> TablaMigratorio(StringsBaseDatos sbd) {
         Conector c = new Conector();
         DatosVO dvo = new DatosVO();
         ArrayList<StringsBaseDatos> datos = new ArrayList();
-        
+
         try {
             c.connect();
             ResultSet rs = c.obtener_datos("SELECT * FROM tbl_migratorio;");
-                    
-            while (rs.next()) {                
+
+            while (rs.next()) {
                 sbd.setId_migratorio_sbd(rs.getInt(0));
                 sbd.setDescripcion_migratorio_sbd(rs.getString(1));
             }
@@ -161,17 +171,18 @@ public class TablasBaseDatos implements InterfaceTablasBase {
         return datos;
     }
 ///------------ORDEN DE EJECUCION 5
+
     @Override
     public ArrayList<StringsBaseDatos> TablaEstadoCivil(StringsBaseDatos sbd) {
         Conector c = new Conector();
         DatosVO dvo = new DatosVO();
         ArrayList<StringsBaseDatos> datos = new ArrayList();
-        
+
         try {
             c.connect();
             ResultSet rs = c.obtener_datos("SELECT * FROM tbl_estado_civil;");
-                    
-            while (rs.next()) {                
+
+            while (rs.next()) {
                 sbd.setId_EstadoCivil_sbd(rs.getInt(0));
                 sbd.setDescripcion_EstadoCivil_sbd(rs.getString(1));
             }
@@ -183,17 +194,18 @@ public class TablasBaseDatos implements InterfaceTablasBase {
         return datos;
     }
 ///------------ORDEN DE EJECUCION 6
+
     @Override
     public ArrayList<StringsBaseDatos> TablaEstado(StringsBaseDatos sbd) {
         Conector c = new Conector();
         DatosVO dvo = new DatosVO();
         ArrayList<StringsBaseDatos> datos = new ArrayList();
-        
+
         try {
             c.connect();
             ResultSet rs = c.obtener_datos("SELECT * FROM tbl_estado;");
-                    
-            while (rs.next()) {                
+
+            while (rs.next()) {
                 sbd.setId_estado_sbd(rs.getInt(0));
                 sbd.setDescripcion_estdo_sbd(rs.getString(1));
             }
@@ -205,17 +217,18 @@ public class TablasBaseDatos implements InterfaceTablasBase {
         return datos;
     }
 ///------------ORDEN DE EJECUCION 7
+
     @Override
     public ArrayList<StringsBaseDatos> TablaClientes(StringsBaseDatos sbd) {
         Conector c = new Conector();
         DatosVO dvo = new DatosVO();
         ArrayList<StringsBaseDatos> datos = new ArrayList();
-        
+
         try {
             c.connect();
-            ResultSet rs = c.obtener_datos("SELECT * FROM tbl_clientes WHERE nombre = '"+dvo.getNombre_cliente()+"';");
-                    
-            while (rs.next()) {  
+            ResultSet rs = c.obtener_datos("SELECT * FROM tbl_clientes WHERE nombre = '" + dvo.getNombre_cliente() + "';");
+
+            while (rs.next()) {
                 sbd.setId_clientes_sbd(rs.getInt(0));
                 sbd.setNombre_clientes_sbd(rs.getString(1));
                 sbd.setTelefono_clientes_sbd(rs.getString(2));
@@ -238,17 +251,18 @@ public class TablasBaseDatos implements InterfaceTablasBase {
         return datos;
     }
 ///------------ORDEN DE EJECUCION 9
+
     @Override
     public ArrayList<StringsBaseDatos> TablaCasos(StringsBaseDatos sbd) {
         Conector c = new Conector();
         DatosVO dvo = new DatosVO();
         ArrayList<StringsBaseDatos> datos = new ArrayList();
-        
+
         try {
             c.connect();
-            ResultSet rs = c.obtener_datos("SELECT * FROM tbl_casos WHERE id_cliente = "+sbd.getId_clientes_sbd()+";");
-                    
-            while (rs.next()) {                
+            ResultSet rs = c.obtener_datos("SELECT * FROM tbl_casos WHERE id_cliente = " + sbd.getId_clientes_sbd() + ";");
+
+            while (rs.next()) {
                 sbd.setId_casos_sbd(rs.getInt(0));
                 sbd.setId_clientes_casos_sbd(rs.getInt(1));
                 sbd.setId_vendedor_casos_sbd(rs.getInt(2));
@@ -267,4 +281,6 @@ public class TablasBaseDatos implements InterfaceTablasBase {
 
         return datos;
     }
+
+   
 }

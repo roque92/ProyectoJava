@@ -14,6 +14,7 @@ import javax.swing.table.DefaultTableModel;
  * @author alexr
  */
 public class ModelClientes extends Models{
+    private static ModelClientes model = new ModelClientes();
     private String columna1 = "nombre";
     private String columna2 = "telefono";
     private String columna3 = "correo";
@@ -26,6 +27,10 @@ public class ModelClientes extends Models{
     private String columna10 = "dpi";
     private String columna11 = "nit";
     private String columna12 = "usa";
+    
+    public static void loadTable(JTable table){
+        model.LoadTable(table);
+    }
     
     public void LoadTable(JTable table){
         String consultaSQL = "SELECT "

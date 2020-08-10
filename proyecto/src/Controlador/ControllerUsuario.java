@@ -19,7 +19,7 @@ import proyecto.Vista.Usuario;
  *
  * @author jroque
  */
-public class ControllerUsuario implements ActionListener, WindowListener{
+public class ControllerUsuario extends Controllers implements ActionListener, WindowListener {
     
     Usuario usuario = new Usuario();
     Login login = new Login();
@@ -49,8 +49,7 @@ public class ControllerUsuario implements ActionListener, WindowListener{
         
         if(e.getSource() == usuario.c_baseGeneral){
             usuario.if_baseClientes.setVisible(true);
-            ModelClientes modelClientes = new ModelClientes();
-            modelClientes.LoadTable(jTableClientes);
+            ModelClientes.loadTable(jTableClientes);
         }
         
         if(e.getSource() == usuario.a_buscarAsesores){
@@ -59,8 +58,7 @@ public class ControllerUsuario implements ActionListener, WindowListener{
         
         if(e.getSource() == usuario.a_baseGeneral){
             usuario.if_baseAsores.setVisible(true);
-            ModelAsesores modelAsesores = new ModelAsesores();
-            modelAsesores.LoadTable(jTableAsesores);
+            ModelAsesores.loadTable(jTableAsesores);
         }
         if(e.getSource() == usuario.f_principal) {
             usuario.if_formulario.setVisible(true);
@@ -119,5 +117,8 @@ public class ControllerUsuario implements ActionListener, WindowListener{
         
     }
     
+    private void saveAsesor(){
+        
+    }
     
 }

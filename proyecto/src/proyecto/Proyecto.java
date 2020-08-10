@@ -5,6 +5,7 @@
  */
 package proyecto;
 
+import Controlador.ControllerAdmin;
 import Controlador.ControllerBuscarAsesor;
 import Controlador.ControllerForgot;
 import Controlador.ControllerLogin;
@@ -40,6 +41,7 @@ public class Proyecto {
         ControllerLogin controllerLogin = new ControllerLogin(login, usuario, admin, forgot);
         ControllerForgot controllerForgot = new ControllerForgot(login, forgot);
         ControllerUsuario controllerUsuario = new ControllerUsuario(usuario, login);
+        ControllerAdmin controllerAdmin = new ControllerAdmin(login, admin);
         ControllerBuscarAsesor controllerBuscarAsesor = new ControllerBuscarAsesor(usuario, login, sbd, tbd, dvo);
         
         //login.setVisible(true);

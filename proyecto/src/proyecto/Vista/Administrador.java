@@ -57,6 +57,7 @@ public class Administrador extends javax.swing.JFrame {
         setTitle("Panel Administrador");
 
         jDesktopPane1.setBackground(new java.awt.Color(255, 255, 255));
+        jDesktopPane1.setAutoscrolls(true);
 
         if_Clientes.setClosable(true);
         if_Clientes.setIconifiable(true);

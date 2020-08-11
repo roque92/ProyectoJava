@@ -41,6 +41,10 @@ public class Usuario extends javax.swing.JFrame {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
         if_buscarCliente = new javax.swing.JInternalFrame();
+        jLabel27 = new javax.swing.JLabel();
+        bc_txt_valorBuscado = new javax.swing.JTextField();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        bc_tbl_datos = new javax.swing.JTable();
         if_buscarAsesor = new javax.swing.JInternalFrame();
         jLabel26 = new javax.swing.JLabel();
         ba_txt_valorBuscado = new javax.swing.JTextField();
@@ -151,6 +155,42 @@ public class Usuario extends javax.swing.JFrame {
         if_buscarCliente.setAutoscrolls(true);
         if_buscarCliente.setVisible(true);
 
+        jLabel27.setText("Buscar Nombre del Cliente");
+
+        DefaultTableModel modelBuscarCliente = new DefaultTableModel();
+        bc_tbl_datos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane6.setViewportView(bc_tbl_datos);
+
+        javax.swing.GroupLayout if_buscarClienteLayout = new javax.swing.GroupLayout(if_buscarCliente.getContentPane());
+        if_buscarCliente.getContentPane().setLayout(if_buscarClienteLayout);
+        if_buscarClienteLayout.setHorizontalGroup(
+            if_buscarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(if_buscarClienteLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel27)
+                .addGap(18, 18, 18)
+                .addComponent(bc_txt_valorBuscado, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jScrollPane6)
+        );
+        if_buscarClienteLayout.setVerticalGroup(
+            if_buscarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(if_buscarClienteLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(if_buscarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel27)
+                    .addComponent(bc_txt_valorBuscado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE))
+        );
+
         if_buscarAsesor.setClosable(true);
         if_buscarAsesor.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
         if_buscarAsesor.setIconifiable(true);
@@ -162,6 +202,7 @@ public class Usuario extends javax.swing.JFrame {
 
         jLabel26.setText("Buscar Nombre del Asesor");
 
+        DefaultTableModel modelBuscarAsesores = new DefaultTableModel();
         ba_tbl_datos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -218,11 +259,11 @@ public class Usuario extends javax.swing.JFrame {
         if_baseAsores.getContentPane().setLayout(if_baseAsoresLayout);
         if_baseAsoresLayout.setHorizontalGroup(
             if_baseAsoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 427, Short.MAX_VALUE)
         );
         if_baseAsoresLayout.setVerticalGroup(
             if_baseAsoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 307, Short.MAX_VALUE)
         );
 
         if_formulario.setClosable(true);
@@ -745,7 +786,7 @@ public class Usuario extends javax.swing.JFrame {
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(if_baseAsores)
-                            .addComponent(if_baseClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 398, Short.MAX_VALUE))
+                            .addComponent(if_baseClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE))
                         .addGap(67, 67, 67))
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addGap(12, 12, 12)
@@ -762,7 +803,7 @@ public class Usuario extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(if_baseClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(if_buscarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(if_buscarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addComponent(if_formulario)
@@ -870,6 +911,8 @@ public class Usuario extends javax.swing.JFrame {
     public javax.swing.JMenu asesores;
     public javax.swing.JTable ba_tbl_datos;
     public javax.swing.JTextField ba_txt_valorBuscado;
+    public javax.swing.JTable bc_tbl_datos;
+    public javax.swing.JTextField bc_txt_valorBuscado;
     public javax.swing.JMenuItem c_baseGeneral;
     public javax.swing.JMenuItem c_buscarCliente;
     public javax.swing.JMenu clientes;
@@ -882,7 +925,6 @@ public class Usuario extends javax.swing.JFrame {
     public javax.swing.JComboBox<String> f_cb_id;
     public javax.swing.JComboBox<String> f_cb_nit;
     public javax.swing.JCheckBox f_cb_nuevo;
-    public javax.swing.JMenuItem f_principal;
     private javax.swing.JTable f_tbl_seguimiento;
     public javax.swing.JTextField f_txt_asesorContructora;
     public javax.swing.JTextField f_txt_asesorCorreo;
@@ -935,6 +977,7 @@ public class Usuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -951,6 +994,7 @@ public class Usuario extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     public javax.swing.JTabbedPane jTabbedPane1;
     public javax.swing.JTextField jTextField1;
     private javax.swing.JPanel negociacion;

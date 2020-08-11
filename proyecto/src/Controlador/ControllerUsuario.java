@@ -71,9 +71,6 @@ public class ControllerUsuario extends Controllers implements ActionListener, Wi
             usuario.if_baseAsores.setVisible(true);
             modelAsesores.loadTable(jTableAsesores, null);
         }
-        if(e.getSource() == usuario.f_principal) {
-            usuario.if_formulario.setVisible(true);
-        }
         
         if(e.getSource() == usuario.f_AbrirFormulario){
             usuario.if_formulario.setVisible(true);

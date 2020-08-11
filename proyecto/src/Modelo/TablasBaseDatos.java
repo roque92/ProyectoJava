@@ -226,22 +226,25 @@ public class TablasBaseDatos implements InterfaceTablasBase {
 
         try {
             c.connect();
-            ResultSet rs = c.obtener_datos("SELECT * FROM tbl_clientes WHERE nombre = '" + dvo.getNombre_cliente() + "';");
+            ResultSet rs = c.obtener_datos("SELECT * FROM tbl_clientes WHERE nombre LIKE '%" + sbd.getNombre_cliente_buscador_sbd()+ "%';");
 
             while (rs.next()) {
-                sbd.setId_clientes_sbd(rs.getInt(0));
-                sbd.setNombre_clientes_sbd(rs.getString(1));
-                sbd.setTelefono_clientes_sbd(rs.getString(2));
-                sbd.setCorreo_clientes_sbd(rs.getString(3));
-                sbd.setEstatus_clientes_sbd(rs.getString(4));
-                sbd.setDireccion_clientes_sbd(rs.getString(5));
-                sbd.setId_EstadoCivil_clientes_sbd(rs.getInt(6));
-                sbd.setId_migratorio_clientes_sbd(rs.getInt(7));
-                sbd.setProfecion_clientes_sbd(rs.getString(8));
-                sbd.setEstadoResidencia_clientes_sbd(rs.getString(9));
-                sbd.setDpi_clientes_sbd(rs.getString(10));
-                sbd.setNit_clientes_sbd(rs.getString(11));
-                sbd.setUsaId_clientes_sbd(rs.getString(12));
+                StringsBaseDatos sbd1 = new StringsBaseDatos();
+                sbd1.setId_clientes_sbd(rs.getInt(1));
+                sbd1.setNombre_clientes_sbd(rs.getString(2));
+                sbd1.setTelefono_clientes_sbd(rs.getString(3));
+                sbd1.setCorreo_clientes_sbd(rs.getString(4));
+                sbd1.setEstatus_clientes_sbd(rs.getString(5));
+                sbd1.setDireccion_clientes_sbd(rs.getString(6));
+                sbd1.setId_EstadoCivil_clientes_sbd(rs.getInt(7));
+                sbd1.setId_migratorio_clientes_sbd(rs.getInt(8));
+                sbd1.setProfecion_clientes_sbd(rs.getString(9));
+                sbd1.setEstadoResidencia_clientes_sbd(rs.getString(10));
+                sbd1.setDpi_clientes_sbd(rs.getString(11));
+                sbd1.setNit_clientes_sbd(rs.getString(12));
+                sbd1.setUsaId_clientes_sbd(rs.getString(13));
+                
+                datos.add(sbd1);
             }
             c.desconectar();
         } catch (SQLException e) {

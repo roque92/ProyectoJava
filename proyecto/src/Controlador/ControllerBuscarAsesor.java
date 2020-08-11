@@ -50,7 +50,8 @@ public class ControllerBuscarAsesor implements KeyListener {
 
             for (StringsBaseDatos sbd : this.tbd.TablaVendedor(sbd)) {
 
-                m.addRow(new Object[]{sbd.getNombre_vendedor_sbd(), sbd.getTelefono_vendedor_sbd(), sbd.getConstructora_vendedor_sbd(), sbd.getCorreo_vendedor_sbd()});
+                m.addRow(new Object[]{sbd.getNombre_vendedor_sbd(), sbd.getTelefono_vendedor_sbd(), sbd.getConstructora_vendedor_sbd(),
+                    sbd.getCorreo_vendedor_sbd()});
             }
 
             usuario.ba_tbl_datos.setModel(m);

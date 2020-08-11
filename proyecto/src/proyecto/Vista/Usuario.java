@@ -28,6 +28,7 @@ public class Usuario extends javax.swing.JFrame {
         this.if_baseClientes.setVisible(false);
         this.if_baseAsores.setVisible(false);
         this.if_formulario.setVisible(false);
+        this.if_casosAsignados.setVisible(false);
     }
 
     /**
@@ -127,7 +128,7 @@ public class Usuario extends javax.swing.JFrame {
         if_baseClientes = new javax.swing.JInternalFrame();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbl_baseGeneralClientes = new javax.swing.JTable();
-        jInternalFrame1 = new javax.swing.JInternalFrame();
+        if_casosAsignados = new javax.swing.JInternalFrame();
         jScrollPane7 = new javax.swing.JScrollPane();
         ca_tbl_datos = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -192,7 +193,7 @@ public class Usuario extends javax.swing.JFrame {
                     .addComponent(jLabel27)
                     .addComponent(bc_txt_valorBuscado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 298, Short.MAX_VALUE))
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE))
         );
 
         if_buscarAsesor.setClosable(true);
@@ -267,7 +268,7 @@ public class Usuario extends javax.swing.JFrame {
         );
         if_baseAsoresLayout.setVerticalGroup(
             if_baseAsoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
         );
 
         if_formulario.setClosable(true);
@@ -732,7 +733,7 @@ public class Usuario extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE))
         );
 
         if_baseClientes.setClosable(true);
@@ -766,11 +767,11 @@ public class Usuario extends javax.swing.JFrame {
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
         );
 
-        jInternalFrame1.setClosable(true);
-        jInternalFrame1.setIconifiable(true);
-        jInternalFrame1.setResizable(true);
-        jInternalFrame1.setTitle("Casos Asignados");
-        jInternalFrame1.setVisible(true);
+        if_casosAsignados.setClosable(true);
+        if_casosAsignados.setIconifiable(true);
+        if_casosAsignados.setResizable(true);
+        if_casosAsignados.setTitle("Casos Asignados");
+        if_casosAsignados.setVisible(true);
 
         ca_tbl_datos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -782,15 +783,15 @@ public class Usuario extends javax.swing.JFrame {
         ));
         jScrollPane7.setViewportView(ca_tbl_datos);
 
-        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
-        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
-        jInternalFrame1Layout.setHorizontalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout if_casosAsignadosLayout = new javax.swing.GroupLayout(if_casosAsignados.getContentPane());
+        if_casosAsignados.getContentPane().setLayout(if_casosAsignadosLayout);
+        if_casosAsignadosLayout.setHorizontalGroup(
+            if_casosAsignadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane7)
         );
-        jInternalFrame1Layout.setVerticalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+        if_casosAsignadosLayout.setVerticalGroup(
+            if_casosAsignadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
 
         jDesktopPane1.setLayer(if_buscarCliente, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -798,7 +799,7 @@ public class Usuario extends javax.swing.JFrame {
         jDesktopPane1.setLayer(if_baseAsores, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(if_formulario, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(if_baseClientes, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jInternalFrame1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(if_casosAsignados, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -807,7 +808,7 @@ public class Usuario extends javax.swing.JFrame {
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jInternalFrame1)
+                    .addComponent(if_casosAsignados)
                     .addComponent(if_buscarAsesor, javax.swing.GroupLayout.DEFAULT_SIZE, 613, Short.MAX_VALUE)
                     .addComponent(if_formulario))
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -840,7 +841,7 @@ public class Usuario extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(if_buscarAsesor, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(69, 69, 69)
-                        .addComponent(jInternalFrame1)
+                        .addComponent(if_casosAsignados)
                         .addGap(102, 102, 102))))
         );
 
@@ -992,10 +993,10 @@ public class Usuario extends javax.swing.JFrame {
     public javax.swing.JInternalFrame if_baseClientes;
     public javax.swing.JInternalFrame if_buscarAsesor;
     public javax.swing.JInternalFrame if_buscarCliente;
+    public javax.swing.JInternalFrame if_casosAsignados;
     public javax.swing.JInternalFrame if_formulario;
     private javax.swing.JPanel informacion;
     private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

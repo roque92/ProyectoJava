@@ -86,7 +86,7 @@ public class Usuario extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         f_txt_nombreCliente = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        f_txt_tipoPropiedad = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         f_txt_telefonoCliente = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
@@ -469,7 +469,7 @@ public class Usuario extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(f_txt_correoCliente)
-                            .addComponent(jTextField1)
+                            .addComponent(f_txt_tipoPropiedad)
                             .addComponent(f_txt_estadoCivil)
                             .addComponent(f_txt_profesion)))
                     .addGroup(datosLayout.createSequentialGroup()
@@ -493,7 +493,7 @@ public class Usuario extends javax.swing.JFrame {
                     .addComponent(jLabel10)
                     .addComponent(f_txt_nombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(f_txt_tipoPropiedad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
@@ -946,6 +946,7 @@ public class Usuario extends javax.swing.JFrame {
     public javax.swing.JTextField f_txt_repTelefono;
     public javax.swing.JTextField f_txt_salario;
     public javax.swing.JTextField f_txt_telefonoCliente;
+    public javax.swing.JTextField f_txt_tipoPropiedad;
     public javax.swing.JTextField f_txt_tramite;
     public javax.swing.JTextField f_txt_valorPropiedad;
     public javax.swing.JComboBox<String> f_valor_buscado;
@@ -996,7 +997,6 @@ public class Usuario extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     public javax.swing.JTabbedPane jTabbedPane1;
-    public javax.swing.JTextField jTextField1;
     private javax.swing.JPanel negociacion;
     private javax.swing.JPanel notas;
     public javax.swing.JMenuItem o_Salir;

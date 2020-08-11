@@ -904,7 +904,7 @@
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="f_txt_correoCliente" max="32767" attributes="0"/>
-                                                  <Component id="jTextField1" max="32767" attributes="0"/>
+                                                  <Component id="f_txt_tipoPropiedad" max="32767" attributes="0"/>
                                                   <Component id="f_txt_estadoCivil" alignment="0" max="32767" attributes="0"/>
                                                   <Component id="f_txt_profesion" alignment="0" max="32767" attributes="0"/>
                                               </Group>
@@ -934,7 +934,7 @@
                                           <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="f_txt_nombreCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="f_txt_tipoPropiedad" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
@@ -987,7 +987,7 @@
                                 <Property name="text" type="java.lang.String" value="Tipo de Propiedad"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JTextField" name="jTextField1">
+                            <Component class="javax.swing.JTextField" name="f_txt_tipoPropiedad">
                               <AuxValues>
                                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                               </AuxValues>

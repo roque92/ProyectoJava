@@ -7,6 +7,7 @@ package proyecto;
 
 import Controlador.ControllerAdmin;
 import Controlador.ControllerBuscarAsesor;
+import Controlador.ControllerBuscarCliente;
 import Controlador.ControllerForgot;
 import Controlador.ControllerLogin;
 import Controlador.ControllerUsuario;
@@ -43,6 +44,7 @@ public class Proyecto {
         ControllerUsuario controllerUsuario = new ControllerUsuario(usuario, login);
         ControllerAdmin controllerAdmin = new ControllerAdmin(login, admin);
         ControllerBuscarAsesor controllerBuscarAsesor = new ControllerBuscarAsesor(usuario, login, sbd, tbd, dvo);
+        ControllerBuscarCliente controllerBuscarCliente = new ControllerBuscarCliente(usuario, login, sbd, tbd, dvo);
         
         //login.setVisible(true);
         usuario.setVisible(true);

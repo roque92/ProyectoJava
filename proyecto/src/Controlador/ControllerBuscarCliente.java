@@ -41,7 +41,7 @@ public class ControllerBuscarCliente implements KeyListener {
     private void buscarCliente() {
 
         try {
-            validarEstdoCivil();
+            //validarEstdoCivil();
             //validarEStdoMigratorio();
             sbd.setNombre_cliente_buscador_sbd(usuario.bc_txt_valorBuscado.getText());
             DefaultTableModel m = new DefaultTableModel();
@@ -59,7 +59,7 @@ public class ControllerBuscarCliente implements KeyListener {
             m.addColumn("NIT");
             m.addColumn("ID USA");
 
-            for (StringsBaseDatos sbd : this.tbd.TablaVendedor(sbd)) {
+            for (StringsBaseDatos sbd : this.tbd.TablaClientes(sbd)) {
                 m.addRow(new Object[]{sbd.getNombre_clientes_sbd(), sbd.getTelefono_clientes_sbd(), sbd.getCorreo_clientes_sbd(), sbd.getEstatus_clientes_sbd(),
                     sbd.getDireccion_clientes_sbd(), estadoCivil, estadoMigratorio, sbd.getProfecion_clientes_sbd(), sbd.getEstadoResidencia_clientes_sbd(),
                     sbd.getDpi_clientes_sbd(), sbd.getNit_clientes_sbd(), sbd.getUsaId_clientes_sbd()});
@@ -73,8 +73,13 @@ public class ControllerBuscarCliente implements KeyListener {
     }
 
     private void validarEstdoCivil() {
+        System.out.println("Entrada Validar EstadoCivil");
+        
         StringsBaseDatos sbd = new StringsBaseDatos();
         try {
+            
+            System.out.println(sbd.getId_EstadoCivil_clientes_sbd());
+            
             this.tbd.TablaEstadoCivil(sbd);
             
             switch (sbd.getId_EstadoCivil_clientes_sbd()) {
@@ -95,6 +100,7 @@ public class ControllerBuscarCliente implements KeyListener {
                     break;
 
                 default:
+                    login.mensaje.showMessageDialog(null, "Error al validar informacion", "Error EC", JOptionPane.ERROR_MESSAGE);
                     break;
             }
 

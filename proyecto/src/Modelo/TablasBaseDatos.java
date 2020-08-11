@@ -147,52 +147,6 @@ public class TablasBaseDatos implements InterfaceTablasBase {
 
         return datos;
     }
-///------------ORDEN DE EJECUCION 4
-
-    @Override
-    public ArrayList<StringsBaseDatos> TablaMigratorio(StringsBaseDatos sbd) {
-        Conector c = new Conector();
-        DatosVO dvo = new DatosVO();
-        ArrayList<StringsBaseDatos> datos = new ArrayList();
-
-        try {
-            c.connect();
-            ResultSet rs = c.obtener_datos("SELECT * FROM tbl_migratorio;");
-
-            while (rs.next()) {
-                sbd.setId_migratorio_sbd(rs.getInt(0));
-                sbd.setDescripcion_migratorio_sbd(rs.getString(1));
-            }
-            c.desconectar();
-        } catch (SQLException e) {
-            dvo.setError(e.getMessage());
-        }
-
-        return datos;
-    }
-///------------ORDEN DE EJECUCION 5
-
-    @Override
-    public ArrayList<StringsBaseDatos> TablaEstadoCivil(StringsBaseDatos sbd) {
-        Conector c = new Conector();
-        DatosVO dvo = new DatosVO();
-        ArrayList<StringsBaseDatos> datos = new ArrayList();
-
-        try {
-            c.connect();
-            ResultSet rs = c.obtener_datos("SELECT * FROM tbl_estado_civil;");
-
-            while (rs.next()) {
-                sbd.setId_EstadoCivil_sbd(rs.getInt(0));
-                sbd.setDescripcion_EstadoCivil_sbd(rs.getString(1));
-            }
-            c.desconectar();
-        } catch (SQLException e) {
-            dvo.setError(e.getMessage());
-        }
-
-        return datos;
-    }
 ///------------ORDEN DE EJECUCION 6
 
     @Override
@@ -226,7 +180,7 @@ public class TablasBaseDatos implements InterfaceTablasBase {
 
         try {
             c.connect();
-            ResultSet rs = c.obtener_datos("SELECT * FROM tbl_clientes WHERE nombre LIKE '%" + sbd.getNombre_cliente_buscador_sbd()+ "%';");
+            ResultSet rs = c.obtener_datos("SELECT * FROM tbl_clientes INNER JOIN tbl_estado_civil INNER JOIN tbl_migratorio WHERE nombre LIKE '%" + sbd.getNombre_cliente_buscador_sbd()+ "%';");
 
             while (rs.next()) {
                 StringsBaseDatos sbd1 = new StringsBaseDatos();
@@ -243,6 +197,10 @@ public class TablasBaseDatos implements InterfaceTablasBase {
                 sbd1.setDpi_clientes_sbd(rs.getString(11));
                 sbd1.setNit_clientes_sbd(rs.getString(12));
                 sbd1.setUsaId_clientes_sbd(rs.getString(13));
+                sbd1.setId_EstadoCivil_sbd(rs.getInt(14));
+                sbd1.setDescripcion_EstadoCivil_sbd(rs.getString(15));
+                sbd1.setId_migratorio_sbd(rs.getInt(16));
+                sbd1.setDescripcion_migratorio_sbd(rs.getString(17));
                 
                 datos.add(sbd1);
             }

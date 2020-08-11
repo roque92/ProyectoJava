@@ -26,7 +26,6 @@ public class ControllerBuscarCliente implements KeyListener {
     StringsBaseDatos sbd = new StringsBaseDatos();
     TablasBaseDatos tbd = new TablasBaseDatos();
     DatosVO dvo = new DatosVO();
-    String estadoCivil, estadoMigratorio;
 
     public ControllerBuscarCliente(Usuario usuario, Login login, StringsBaseDatos sbd, TablasBaseDatos tbd, DatosVO dvo) {
         this.usuario = usuario;
@@ -41,8 +40,6 @@ public class ControllerBuscarCliente implements KeyListener {
     private void buscarCliente() {
 
         try {
-            //validarEstdoCivil();
-            //validarEStdoMigratorio();
             sbd.setNombre_cliente_buscador_sbd(usuario.bc_txt_valorBuscado.getText());
             DefaultTableModel m = new DefaultTableModel();
             m.setColumnCount(0);
@@ -61,7 +58,7 @@ public class ControllerBuscarCliente implements KeyListener {
 
             for (StringsBaseDatos sbd : this.tbd.TablaClientes(sbd)) {
                 m.addRow(new Object[]{sbd.getNombre_clientes_sbd(), sbd.getTelefono_clientes_sbd(), sbd.getCorreo_clientes_sbd(), sbd.getEstatus_clientes_sbd(),
-                    sbd.getDireccion_clientes_sbd(), estadoCivil, estadoMigratorio, sbd.getProfecion_clientes_sbd(), sbd.getEstadoResidencia_clientes_sbd(),
+                    sbd.getDireccion_clientes_sbd(), sbd.getDescripcion_EstadoCivil_sbd(), sbd.getDescripcion_migratorio_sbd(), sbd.getProfecion_clientes_sbd(), sbd.getEstadoResidencia_clientes_sbd(),
                     sbd.getDpi_clientes_sbd(), sbd.getNit_clientes_sbd(), sbd.getUsaId_clientes_sbd()});
             }
 
@@ -72,43 +69,7 @@ public class ControllerBuscarCliente implements KeyListener {
 
     }
 
-    private void validarEstdoCivil() {
-        System.out.println("Entrada Validar EstadoCivil");
-        
-        StringsBaseDatos sbd = new StringsBaseDatos();
-        try {
-            
-            System.out.println(sbd.getId_EstadoCivil_clientes_sbd());
-            
-            this.tbd.TablaEstadoCivil(sbd);
-            
-            switch (sbd.getId_EstadoCivil_clientes_sbd()) {
-
-                case 1:
-                    estadoCivil = sbd.getDescripcion_EstadoCivil_sbd();
-                    break;
-
-                case 2:
-                    estadoCivil = sbd.getDescripcion_EstadoCivil_sbd();
-                    break;
-
-                case 3:
-                    estadoCivil = sbd.getDescripcion_EstadoCivil_sbd();
-                    break;
-                case 4:
-                    estadoCivil = sbd.getDescripcion_EstadoCivil_sbd();
-                    break;
-
-                default:
-                    login.mensaje.showMessageDialog(null, "Error al validar informacion", "Error EC", JOptionPane.ERROR_MESSAGE);
-                    break;
-            }
-
-        } catch (Exception e) {
-            login.mensaje.showMessageDialog(null, "No se puede conectar con la base de datos Contacte con su Administrador", "Problemas de Conexion", JOptionPane.ERROR_MESSAGE);
-        }
-    }
-
+    
     @Override
     public void keyTyped(KeyEvent e) {
     }

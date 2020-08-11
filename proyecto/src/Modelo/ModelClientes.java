@@ -102,4 +102,9 @@ public class ModelClientes extends Models{
 
     }
     
+    public void searhCampos(String string, JTextField jTextField) {
+        
+    }
+    
+    
 }

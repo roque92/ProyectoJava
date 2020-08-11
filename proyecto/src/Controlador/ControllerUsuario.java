@@ -11,6 +11,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -26,6 +28,7 @@ public class ControllerUsuario extends Controllers implements ActionListener, Wi
     private ModelClientes modelClientes = new ModelClientes();
     private JTable jTableAsesores, jTableClientes;
     private JTextField jTextFieldAsesor, jTextFieldCliente;
+    private JButton jButtonBuscarCliente;
     
     Usuario usuario = new Usuario();
     Login login = new Login();
@@ -34,16 +37,18 @@ public class ControllerUsuario extends Controllers implements ActionListener, Wi
         this.usuario = usuario;
         this.login = login;
         
-        usuario.c_buscarCliente.addActionListener(this);
-        usuario.c_baseGeneral.addActionListener(this);
-        usuario.a_buscarAsesores.addActionListener(this);
-        usuario.a_baseGeneral.addActionListener(this);
-        usuario.f_AbrirFormulario.addActionListener(this);
         usuario.o_Salir.addActionListener(this);
+        usuario.a_baseGeneral.addActionListener(this);
+        usuario.c_baseGeneral.addActionListener(this);
+        usuario.c_buscarCliente.addActionListener(this);
+        usuario.a_buscarAsesores.addActionListener(this);
+        usuario.f_AbrirFormulario.addActionListener(this);
+        usuario.f_btn_buscarCliente.addActionListener(this);
         jTableAsesores = usuario.tbl_baseGeneralAsesores;
         jTableClientes = usuario.tbl_baseGeneralClientes;
         jTextFieldAsesor = usuario.ba_txt_valorBuscado;
         jTextFieldCliente = usuario.ba_txt_valorBuscado;
+        
         usuario.addWindowListener(this);
     }
 
@@ -76,6 +81,10 @@ public class ControllerUsuario extends Controllers implements ActionListener, Wi
         
         if(e.getSource() == usuario.o_Salir){
             closeWindows();
+        }
+        
+        if(e.getSource() == usuario.f_btn_buscarCliente){
+            searchClienteForm();
         }
     }
     
@@ -137,4 +146,11 @@ public class ControllerUsuario extends Controllers implements ActionListener, Wi
         }
     }
     
+    private void searchClienteForm(){
+        JComboBox jComboBox = usuario.f_valor_buscado;
+        String selectedItem = (String) jComboBox.getSelectedItem().toString();
+        
+        modelClientes.searhCampos(selectedItem, usuario.f_txt_buscarCliente);
+    }
+
 }

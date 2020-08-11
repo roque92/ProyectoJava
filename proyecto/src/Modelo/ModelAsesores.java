@@ -39,7 +39,7 @@ public class ModelAsesores extends Models{
     
     public void loadTable(JTable table, String string){
         String consultaSQL = "SELECT * FROM tbl_vendedor ";
-        if(string.equals(null)){
+        if(string.equals("")){
             consultaSQL += string;
         }
         DefaultTableModel defaultTableModel = new DefaultTableModel();

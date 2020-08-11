@@ -5,6 +5,8 @@
  */
 package Controlador;
 
+import Modelo.DatosDAO;
+import Modelo.DatosVO;
 import Modelo.ModelAsesores;
 import Modelo.ModelClientes;
 import java.awt.event.ActionEvent;
@@ -47,7 +49,7 @@ public class ControllerUsuario extends Controllers implements ActionListener, Wi
         jTableAsesores = usuario.tbl_baseGeneralAsesores;
         jTableClientes = usuario.tbl_baseGeneralClientes;
         jTextFieldAsesor = usuario.ba_txt_valorBuscado;
-        jTextFieldCliente = usuario.ba_txt_valorBuscado;
+        jTextFieldCliente = usuario.bc_txt_valorBuscado;
         
         usuario.addWindowListener(this);
     }
@@ -60,7 +62,7 @@ public class ControllerUsuario extends Controllers implements ActionListener, Wi
         
         if(e.getSource() == usuario.c_baseGeneral){
             usuario.if_baseClientes.setVisible(true);
-            modelClientes.loadTable(jTableClientes, null);
+            modelClientes.loadTable(jTableClientes, "");
         }
         
         if(e.getSource() == usuario.a_buscarAsesores){
@@ -69,7 +71,7 @@ public class ControllerUsuario extends Controllers implements ActionListener, Wi
         
         if(e.getSource() == usuario.a_baseGeneral){
             usuario.if_baseAsores.setVisible(true);
-            modelAsesores.loadTable(jTableAsesores, null);
+            modelAsesores.loadTable(jTableAsesores, "");
         }
         
         if(e.getSource() == usuario.f_AbrirFormulario){
@@ -137,7 +139,7 @@ public class ControllerUsuario extends Controllers implements ActionListener, Wi
     }
     
     private void searchCliente(){
-        boolean result = modelClientes.searchServer(jTableAsesores, jTextFieldAsesor);
+        boolean result = modelClientes.searchServer(jTableAsesores, jTextFieldCliente);
         if(!result){
             JOptionPane.showMessageDialog(null, "No ha rellenado el campo correctamente");
         }
@@ -146,8 +148,41 @@ public class ControllerUsuario extends Controllers implements ActionListener, Wi
     private void searchClienteForm(){
         JComboBox jComboBox = usuario.f_valor_buscado;
         String selectedItem = (String) jComboBox.getSelectedItem().toString();
+        DatosDAO datosDAO = new DatosDAO();
+        DatosVO datosVO = new DatosVO();
         
-        modelClientes.searhCampos(selectedItem, usuario.f_txt_buscarCliente);
-    }
-
+        if (selectedItem.equals("Nombre")) {
+            datosVO.setBuscar_nombre(selectedItem);
+            datosDAO.mostrar_datos_nombre(datosVO);
+        }else if (selectedItem.equals("Telefono")) {
+            datosVO.setBuscar_telefono(selectedItem);
+            datosDAO.mostrar_datos_telefono(datosVO);
+        }else if (selectedItem.equals("Correo")) {
+            datosVO.setBuscar_correo(selectedItem);
+            datosDAO.mostrar_datos_correo(datosVO);
+        }
+        
+        
+        usuario.f_txt_tramite.setText("");
+        
+        //Informacion.Asesor
+        usuario.f_txt_asesorNombre.setText("");
+        usuario.f_txt_asesorTelefono.setText("");
+        usuario.f_txt_asesorContructora.setText("");
+        usuario.f_txt_asesorCorreo.setText("");
+        
+        //Informacion.Financiera
+        usuario.f_txt_honorarios.setText("");
+        usuario.f_txt_valorPropiedad.setText("");
+        usuario.f_txt_valorPropiedad.setText("");
+        
+        
+        /*
+        
+        
+        */
+        
+        
+        
+    } 
 }

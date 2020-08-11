@@ -56,7 +56,7 @@ public class ModelClientes extends Models{
         + " FROM tbl_clientes "
         + " INNER JOIN tbl_estado_civil      ON tbl_clientes.id_estado_civil = tbl_estado_civil.id "
         + " INNER JOIN tbl_migratorio ON tbl_clientes.id_migratorio   = tbl_migratorio.id";
-        if(string.equals(null)){
+        if(string.equals("")){
             consultaSQL += string;
         }
         

@@ -77,6 +77,14 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
               <SubComponents>
+                <MenuItem class="javax.swing.JMenuItem" name="f_casosAsignados">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Casos asignados"/>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
+                </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="f_AbrirFormulario">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Abrir Formulario"/>
@@ -247,7 +255,7 @@
                           <Component id="bc_txt_valorBuscado" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane6" pref="356" max="32767" attributes="0"/>
+                      <Component id="jScrollPane6" pref="396" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -330,7 +338,7 @@
                           <Component id="ba_txt_valorBuscado" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane5" pref="427" max="32767" attributes="0"/>
+                      <Component id="jScrollPane5" pref="418" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -396,7 +404,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane2" alignment="0" pref="307" max="32767" attributes="0"/>
+                  <Component id="jScrollPane2" alignment="0" pref="275" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -1414,7 +1422,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane1" alignment="0" pref="318" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" alignment="0" pref="310" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>

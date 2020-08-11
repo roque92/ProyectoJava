@@ -136,6 +136,7 @@ public class Usuario extends javax.swing.JFrame {
         a_buscarAsesores = new javax.swing.JMenuItem();
         a_baseGeneral = new javax.swing.JMenuItem();
         formulario = new javax.swing.JMenu();
+        f_casosAsignados = new javax.swing.JMenuItem();
         f_AbrirFormulario = new javax.swing.JMenuItem();
         opciones = new javax.swing.JMenu();
         o_Salir = new javax.swing.JMenuItem();
@@ -188,7 +189,7 @@ public class Usuario extends javax.swing.JFrame {
                     .addComponent(jLabel27)
                     .addComponent(bc_txt_valorBuscado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE))
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE))
         );
 
         if_buscarAsesor.setClosable(true);
@@ -233,7 +234,7 @@ public class Usuario extends javax.swing.JFrame {
                     .addComponent(jLabel26)
                     .addComponent(ba_txt_valorBuscado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 427, Short.MAX_VALUE))
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE))
         );
 
         if_baseAsores.setClosable(true);
@@ -263,7 +264,7 @@ public class Usuario extends javax.swing.JFrame {
         );
         if_baseAsoresLayout.setVerticalGroup(
             if_baseAsoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 307, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE)
         );
 
         if_formulario.setClosable(true);
@@ -759,7 +760,7 @@ public class Usuario extends javax.swing.JFrame {
         );
         if_baseClientesLayout.setVerticalGroup(
             if_baseClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
         );
 
         jDesktopPane1.setLayer(if_buscarCliente, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -837,6 +838,9 @@ public class Usuario extends javax.swing.JFrame {
         archivo.add(asesores);
 
         formulario.setText("Formulario");
+
+        f_casosAsignados.setText("Casos asignados");
+        formulario.add(f_casosAsignados);
 
         f_AbrirFormulario.setText("Abrir Formulario");
         formulario.add(f_AbrirFormulario);
@@ -920,6 +924,7 @@ public class Usuario extends javax.swing.JFrame {
     public javax.swing.JMenuItem f_AbrirFormulario;
     public javax.swing.JButton f_btn_buscarCliente;
     public javax.swing.JButton f_btn_guardar;
+    public javax.swing.JMenuItem f_casosAsignados;
     public javax.swing.JComboBox<String> f_cb_dpi;
     public javax.swing.JCheckBox f_cb_editar;
     public javax.swing.JComboBox<String> f_cb_id;

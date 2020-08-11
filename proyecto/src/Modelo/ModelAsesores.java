@@ -8,6 +8,7 @@ package Modelo;
 import java.sql.ResultSet;
 import java.util.Map;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -15,26 +16,32 @@ import javax.swing.table.DefaultTableModel;
  * @author alexr
  */
 public class ModelAsesores extends Models{
-    private static ModelAsesores model = new ModelAsesores();
+    public  boolean erros = false;
+    public  String getError = "";
     private String columna1 = "nombre";
     private String columna2 = "telefono";
     private String columna3 = "constructora";
     private String columna4 = "correo";
     
-    public static void dataServer(Map<String,String> map){
-        model.DataServer(map);
+    public boolean searchServer(JTable table, JTextField textField){
+        String string = textField.getText().toString().trim();
+        if (string.equals("")) {
+            return false;
+        }
+        this.loadTable(table, "WHERE " + columna1 + " LIKE%'" + string + "'%");
+        return true;
     }
-
-    public void DataServer(Map<String,String> map){
+    
+ 
+    public void dataServer(Map<String,String> map){
         
     }
     
-    public static void loadTable(JTable table){
-        model.LoadTable(table);
-    }
-    
-    public void LoadTable(JTable table){
-        String consultaSQL = "SELECT * FROM tbl_vendedor";
+    public void loadTable(JTable table, String string){
+        String consultaSQL = "SELECT * FROM tbl_vendedor ";
+        if(string.equals(null)){
+            consultaSQL += string;
+        }
         DefaultTableModel defaultTableModel = new DefaultTableModel();
         ResultSet resultSet;
         resultSet = conector.obtener_datos(consultaSQL);
@@ -52,6 +59,8 @@ public class ModelAsesores extends Models{
             table.setModel(defaultTableModel);
         }catch(Exception exception){
             System.err.println(exception.getMessage());
+            this.getError = exception.getMessage();
+            this.erros = true;
         }
     }
     

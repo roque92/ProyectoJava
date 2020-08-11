@@ -7,6 +7,7 @@ package Modelo;
 
 import java.sql.ResultSet;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -14,7 +15,6 @@ import javax.swing.table.DefaultTableModel;
  * @author alexr
  */
 public class ModelClientes extends Models{
-    private static ModelClientes model = new ModelClientes();
     private String columna1 = "nombre";
     private String columna2 = "telefono";
     private String columna3 = "correo";
@@ -28,11 +28,17 @@ public class ModelClientes extends Models{
     private String columna11 = "nit";
     private String columna12 = "usa";
     
-    public static void loadTable(JTable table){
-        model.LoadTable(table);
+    public boolean searchServer(JTable table, JTextField textField){
+        String string = textField.getText().toString().trim();
+        if (string.equals("")) {
+            return false;
+        }
+        this.loadTable(table, "WHERE " + columna1 + " LIKE%'" + string + "'%");
+        return true;
     }
+
     
-    public void LoadTable(JTable table){
+    public void loadTable(JTable table, String string){
         String consultaSQL = "SELECT "
         + " tbl_clientes.id                  AS id, "
         + " tbl_clientes.nombre              AS nombre, "
@@ -50,7 +56,9 @@ public class ModelClientes extends Models{
         + " FROM tbl_clientes "
         + " INNER JOIN tbl_estado_civil      ON tbl_clientes.id_estado_civil = tbl_estado_civil.id "
         + " INNER JOIN tbl_migratorio ON tbl_clientes.id_migratorio   = tbl_migratorio.id";
-        System.out.println(consultaSQL);
+        if(string.equals(null)){
+            consultaSQL += string;
+        }
         
         DefaultTableModel defaultTableModel = new DefaultTableModel();
         ResultSet resultSet = conector.obtener_datos(consultaSQL);

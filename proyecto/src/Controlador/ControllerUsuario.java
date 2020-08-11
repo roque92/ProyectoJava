@@ -62,9 +62,6 @@ public class ControllerUsuario implements ActionListener, WindowListener{
             ModelAsesores modelAsesores = new ModelAsesores();
             modelAsesores.LoadTable(jTableAsesores);
         }
-        if(e.getSource() == usuario.f_principal) {
-            usuario.if_formulario.setVisible(true);
-        }
         
         if(e.getSource() == usuario.f_AbrirFormulario){
             usuario.if_formulario.setVisible(true);

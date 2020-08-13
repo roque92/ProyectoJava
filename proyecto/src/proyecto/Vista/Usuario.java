@@ -193,7 +193,7 @@ public class Usuario extends javax.swing.JFrame {
                     .addComponent(jLabel27)
                     .addComponent(bc_txt_valorBuscado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE))
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 326, Short.MAX_VALUE))
         );
 
         if_buscarAsesor.setClosable(true);
@@ -268,7 +268,7 @@ public class Usuario extends javax.swing.JFrame {
         );
         if_baseAsoresLayout.setVerticalGroup(
             if_baseAsoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 444, Short.MAX_VALUE)
         );
 
         if_formulario.setClosable(true);
@@ -733,7 +733,7 @@ public class Usuario extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE))
         );
 
         if_baseClientes.setClosable(true);
@@ -838,11 +838,11 @@ public class Usuario extends javax.swing.JFrame {
                         .addGap(154, 154, 154))
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addComponent(if_formulario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(44, 44, 44)
                         .addComponent(if_buscarAsesor, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(69, 69, 69)
+                        .addGap(18, 18, 18)
                         .addComponent(if_casosAsignados)
-                        .addGap(102, 102, 102))))
+                        .addGap(20, 20, 20))))
         );
 
         jMenuBar1.setMaximumSize(new java.awt.Dimension(114, 769));

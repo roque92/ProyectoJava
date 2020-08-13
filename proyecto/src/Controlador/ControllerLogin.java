@@ -51,7 +51,7 @@ public class ControllerLogin implements ActionListener, MouseListener, WindowLis
 
         if (login.txt_username.getText().isEmpty() || password.equals("")) {
             login.mensaje.showMessageDialog(null, "Por favor ingresar usuario y/o contraseña", "Atencion", JOptionPane.WARNING_MESSAGE);
-        } else if (username.equals("usuario") && password.equals("usuario") || username.equals("usuario2") && password.equals("usuario2")) {
+        } else if (username.equals("ssoto") && password.equals("ssoto") || username.equals("ririarte") && password.equals("ririarte")) {
             login.setVisible(false);
             usuario.setVisible(true);
             clearText();

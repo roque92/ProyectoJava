@@ -20,10 +20,11 @@ public class TablasBaseDatos implements InterfaceTablasBase {
     @Override
     public ArrayList<StringsBaseDatos> TablaVendedor(StringsBaseDatos sbd) {
         Conector c = new Conector();
+        DatosVO dvo = new DatosVO();
         ArrayList<StringsBaseDatos> datos = new ArrayList();
         try {
 
-            ResultSet rs = c.obtener_datos("SELECT * FROM tbl_vendedor WHERE nombre LIKE '%" + sbd.getNombre_vendedor_buscador_sbd()+ "%';");
+            ResultSet rs = c.obtener_datos("SELECT * FROM tbl_vendedor WHERE nombre LIKE '%" + sbd.getNombre_vendedor_buscador_sbd() + "%';");
 
             while (rs.next()) {
                 StringsBaseDatos sbd1 = new StringsBaseDatos();
@@ -36,12 +37,11 @@ public class TablasBaseDatos implements InterfaceTablasBase {
                 datos.add(sbd1);
 
             }
-            
+
             c.desconectar();
 
-            
         } catch (SQLException e) {
-            //dvo.setError(e.getMessage());
+            dvo.setError(e.getMessage());
         }
 
         return datos;
@@ -180,7 +180,7 @@ public class TablasBaseDatos implements InterfaceTablasBase {
 
         try {
             c.connect();
-            ResultSet rs = c.obtener_datos("SELECT * FROM tbl_clientes INNER JOIN tbl_estado_civil INNER JOIN tbl_migratorio WHERE nombre LIKE '%" + sbd.getNombre_cliente_buscador_sbd()+ "%';");
+            ResultSet rs = c.obtener_datos("SELECT * FROM tbl_clientes INNER JOIN tbl_estado_civil INNER JOIN tbl_migratorio WHERE nombre LIKE '%" + sbd.getNombre_cliente_buscador_sbd() + "%';");
 
             while (rs.next()) {
                 StringsBaseDatos sbd1 = new StringsBaseDatos();
@@ -201,7 +201,7 @@ public class TablasBaseDatos implements InterfaceTablasBase {
                 sbd1.setDescripcion_EstadoCivil_sbd(rs.getString(15));
                 sbd1.setId_migratorio_sbd(rs.getInt(16));
                 sbd1.setDescripcion_migratorio_sbd(rs.getString(17));
-                
+
                 datos.add(sbd1);
             }
             c.desconectar();
@@ -243,5 +243,45 @@ public class TablasBaseDatos implements InterfaceTablasBase {
         return datos;
     }
 
-   
+    @Override
+    public ArrayList<StringsBaseDatos> CasosAsignados(StringsBaseDatos sbd) {
+        Conector c = new Conector();
+        DatosVO dvo = new DatosVO();
+        ArrayList<StringsBaseDatos> datos = new ArrayList();
+
+        try {
+            ResultSet rs = c.obtener_datos("SELECT c.id, cl.nombre, v.nombre, u.username, c.honorarios, c.salarios, c.notas, e.tipo, p.descripcion, r.nombre \n"
+                    + "FROM tbl_casos AS c\n"
+                    + "INNER JOIN tbl_clientes AS cl\n"
+                    + "INNER JOIN tbl_vendedor AS v\n"
+                    + "INNER JOIN tbl_usuarios AS u\n"
+                    + "INNER JOIN tbl_estado AS e\n"
+                    + "INNER JOIN tbl_tipo_propiedad AS p\n"
+                    + "INNER JOIN tbl_representante AS r \n"
+                    + "WHERE u.username = '" + dvo.getUser_login() + ";");
+
+            while (rs.next()) {
+                StringsBaseDatos sbd1 = new StringsBaseDatos();
+                sbd1.setId_casos_sbd(rs.getInt(1));
+                sbd1.setNombre_clientes_sbd(rs.getString(2));
+                sbd1.setNombre_vendedor_sbd(rs.getString(3));
+                sbd1.setUsername_usuario_sbd(rs.getString(4));
+                sbd1.setHonorario_casos_sbd(rs.getDouble(5));
+                sbd1.setSalario_casos_sbd(rs.getDouble(6));
+                sbd1.setNotas_casos_sbd(rs.getString(7));
+                sbd1.setEstatus_clientes_sbd(rs.getString(8));
+                sbd1.setDescripcion_propiedad_sbd(rs.getString(9));
+                sbd1.setNombre_representante_sbd(rs.getString(10));
+
+                datos.add(sbd1);
+            }
+
+            c.desconectar();
+
+        } catch (Exception e) {
+            dvo.setError(e.getMessage());
+        }
+        return null;
+    }
+
 }

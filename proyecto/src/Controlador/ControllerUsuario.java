@@ -46,6 +46,7 @@ public class ControllerUsuario extends Controllers implements ActionListener, Wi
         usuario.a_buscarAsesores.addActionListener(this);
         usuario.f_AbrirFormulario.addActionListener(this);
         usuario.f_btn_buscarCliente.addActionListener(this);
+        usuario.f_casosAsignados.addActionListener(this);
         jTableAsesores = usuario.tbl_baseGeneralAsesores;
         jTableClientes = usuario.tbl_baseGeneralClientes;
         jTextFieldAsesor = usuario.ba_txt_valorBuscado;
@@ -84,6 +85,10 @@ public class ControllerUsuario extends Controllers implements ActionListener, Wi
         
         if(e.getSource() == usuario.f_btn_buscarCliente){
             searchClienteForm();
+        }
+        
+        if(e.getSource() == usuario.f_casosAsignados){
+            usuario.if_casosAsignados.setVisible(true);
         }
     }
     

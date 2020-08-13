@@ -19,8 +19,8 @@ import proyecto.Vista.Usuario;
  *
  * @author Jose Roque
  */
-public class ControllerCasosAsignados implements InternalFrameListener{
-    
+public class ControllerCasosAsignados implements InternalFrameListener {
+
     Usuario usuario = new Usuario();
     Login login = new Login();
     StringsBaseDatos sbd = new StringsBaseDatos();
@@ -33,11 +33,13 @@ public class ControllerCasosAsignados implements InternalFrameListener{
         this.sbd = sbd;
         this.tbd = tbd;
         this.dvo = dvo;
-        
+
         usuario.if_casosAsignados.addInternalFrameListener(this);
     }
-    
-    private void casosAsignados(){
+
+    private void casosAsignados() {
+        
+        
         try {
             DefaultTableModel m = new DefaultTableModel();
             m.setColumnCount(0);
@@ -50,23 +52,22 @@ public class ControllerCasosAsignados implements InternalFrameListener{
             m.addColumn("Estatus Caso");
             m.addColumn("Tipo Propiedad");
             m.addColumn("Nomre Representante Legal");
-            
+
             for (StringsBaseDatos sbd : this.tbd.CasosAsignados(sbd)) {
-                m.addRow(new Object[]{sbd.getNombre_clientes_sbd(), sbd.getNombre_vendedor_sbd(), sbd.getUsername_usuario_sbd(), 
+                m.addRow(new Object[]{sbd.getNombre_clientes_sbd(), sbd.getNombre_vendedor_sbd(), sbd.getUsername_usuario_sbd(),
                     sbd.getHonorario_casos_sbd(), sbd.getSalario_casos_sbd(), sbd.getNotas_casos_sbd(), sbd.getDescripcion_estdo_sbd(),
-                sbd.getDescripcion_propiedad_sbd(), sbd.getNombre_representante_sbd()});
-            }
+                    sbd.getDescripcion_propiedad_sbd(), sbd.getNombre_representante_sbd()});
+            } 
             
             usuario.ca_tbl_datos.setModel(m);
         } catch (Exception e) {
             login.mensaje.showMessageDialog(null, "No se puede conectar con la base de datos Contacte con su Administrador", "Problemas de Conexion", JOptionPane.ERROR_MESSAGE);
         }
-        
+
     }
 
     @Override
     public void internalFrameOpened(InternalFrameEvent e) {
-        casosAsignados();
     }
 
     @Override
@@ -87,13 +88,11 @@ public class ControllerCasosAsignados implements InternalFrameListener{
 
     @Override
     public void internalFrameActivated(InternalFrameEvent e) {
+        casosAsignados();
     }
 
     @Override
     public void internalFrameDeactivated(InternalFrameEvent e) {
     }
-    
-    
-    
-    
+
 }

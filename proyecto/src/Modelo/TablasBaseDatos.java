@@ -258,7 +258,7 @@ public class TablasBaseDatos implements InterfaceTablasBase {
                     + "INNER JOIN tbl_estado AS e\n"
                     + "INNER JOIN tbl_tipo_propiedad AS p\n"
                     + "INNER JOIN tbl_representante AS r \n"
-                    + "WHERE u.username = '" + dvo.getUser_login() + ";");
+                    + "WHERE u.username = '" + sbd.getUsername_login_sbd() + "';");
 
             while (rs.next()) {
                 StringsBaseDatos sbd1 = new StringsBaseDatos();
@@ -281,7 +281,7 @@ public class TablasBaseDatos implements InterfaceTablasBase {
         } catch (Exception e) {
             dvo.setError(e.getMessage());
         }
-        return null;
+        return datos;
     }
 
 }

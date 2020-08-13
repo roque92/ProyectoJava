@@ -8,6 +8,7 @@ package proyecto;
 import Controlador.ControllerAdmin;
 import Controlador.ControllerBuscarAsesor;
 import Controlador.ControllerBuscarCliente;
+import Controlador.ControllerCasosAsignados;
 import Controlador.ControllerForgot;
 import Controlador.ControllerLogin;
 import Controlador.ControllerUsuario;
@@ -39,12 +40,13 @@ public class Proyecto {
         TablasBaseDatos tbd = new TablasBaseDatos();
         DatosVO dvo = new DatosVO();
         
-        ControllerLogin controllerLogin = new ControllerLogin(login, usuario, admin, forgot);
+        ControllerLogin controllerLogin = new ControllerLogin(login, usuario, admin, forgot, dvo, sbd);
         ControllerForgot controllerForgot = new ControllerForgot(login, forgot);
         ControllerUsuario controllerUsuario = new ControllerUsuario(usuario, login);
         ControllerAdmin controllerAdmin = new ControllerAdmin(login, admin);
         ControllerBuscarAsesor controllerBuscarAsesor = new ControllerBuscarAsesor(usuario, login, sbd, tbd, dvo);
         ControllerBuscarCliente controllerBuscarCliente = new ControllerBuscarCliente(usuario, login, sbd, tbd, dvo);
+        ControllerCasosAsignados controllerCasosAsignados = new ControllerCasosAsignados(usuario, login, sbd, tbd, dvo);
         
         //login.setVisible(true);
         usuario.setVisible(true);

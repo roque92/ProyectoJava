@@ -55,8 +55,11 @@ public class StringsBaseDatos {
     private int id_casos_sbd, id_clientes_casos_sbd, id_vendedor_casos_sbd, id_usuario_casos_sbd, id_estado_casos_sbd, id_propiedad_casos_sbd, id_representante_casos_sbd;
     private double honorario_casos_sbd, salario_casos_sbd;
     private String notas_casos_sbd;
+    
+    //----Variable de login
+    private String username_login_sbd;
 
-    public StringsBaseDatos(int id_vendedor_sbd, String nombre_vendedor_sbd, String telefono_vendedor_sbd, String constructora_vendedor_sbd, String correo_vendedor_sbd, String nombre_vendedor_buscador_sbd, int id_usuario_sbd, String nombre_usuario_sbd, String username_usuario_sbd, String telefono_usuario_sbd, String correo_usuario_sbd, int id_propiedad_sbd, String descripcion_propiedad_sbd, int id_representante_sbd, String nombre_representante_sbd, String parentezco_representante_sbd, String direccion_representante_sbd, String telefono_representante_sbd, String banco_representante_sbd, int id_registros_sbd, int id_usuarios_registros_sbd, int id_casos_registros_sbd, String fecha_registros_sbd, String notas_registros_sbd, int id_migratorio_sbd, String descripcion_migratorio_sbd, int id_EstadoCivil_sbd, String descripcion_EstadoCivil_sbd, int id_estado_sbd, String tipo_estdo_sbd, String descripcion_estdo_sbd, int id_clientes_sbd, int id_EstadoCivil_clientes_sbd, int id_migratorio_clientes_sbd, String nombre_clientes_sbd, String telefono_clientes_sbd, String correo_clientes_sbd, String estatus_clientes_sbd, String direccion_clientes_sbd, String profecion_clientes_sbd, String EstadoResidencia_clientes_sbd, String dpi_clientes_sbd, String nit_clientes_sbd, String usaId_clientes_sbd, String nombre_cliente_buscador_sbd, int id_casos_sbd, int id_clientes_casos_sbd, int id_vendedor_casos_sbd, int id_usuario_casos_sbd, int id_estado_casos_sbd, int id_propiedad_casos_sbd, int id_representante_casos_sbd, double honorario_casos_sbd, double salario_casos_sbd, String notas_casos_sbd) {
+    public StringsBaseDatos(int id_vendedor_sbd, String nombre_vendedor_sbd, String telefono_vendedor_sbd, String constructora_vendedor_sbd, String correo_vendedor_sbd, String nombre_vendedor_buscador_sbd, int id_usuario_sbd, String nombre_usuario_sbd, String username_usuario_sbd, String telefono_usuario_sbd, String correo_usuario_sbd, int id_propiedad_sbd, String descripcion_propiedad_sbd, int id_representante_sbd, String nombre_representante_sbd, String parentezco_representante_sbd, String direccion_representante_sbd, String telefono_representante_sbd, String banco_representante_sbd, int id_registros_sbd, int id_usuarios_registros_sbd, int id_casos_registros_sbd, String fecha_registros_sbd, String notas_registros_sbd, int id_migratorio_sbd, String descripcion_migratorio_sbd, int id_EstadoCivil_sbd, String descripcion_EstadoCivil_sbd, int id_estado_sbd, String tipo_estdo_sbd, String descripcion_estdo_sbd, int id_clientes_sbd, int id_EstadoCivil_clientes_sbd, int id_migratorio_clientes_sbd, String nombre_clientes_sbd, String telefono_clientes_sbd, String correo_clientes_sbd, String estatus_clientes_sbd, String direccion_clientes_sbd, String profecion_clientes_sbd, String EstadoResidencia_clientes_sbd, String dpi_clientes_sbd, String nit_clientes_sbd, String usaId_clientes_sbd, String nombre_cliente_buscador_sbd, int id_casos_sbd, int id_clientes_casos_sbd, int id_vendedor_casos_sbd, int id_usuario_casos_sbd, int id_estado_casos_sbd, int id_propiedad_casos_sbd, int id_representante_casos_sbd, double honorario_casos_sbd, double salario_casos_sbd, String notas_casos_sbd, String username_login_sbd) {
         this.id_vendedor_sbd = id_vendedor_sbd;
         this.nombre_vendedor_sbd = nombre_vendedor_sbd;
         this.telefono_vendedor_sbd = telefono_vendedor_sbd;
@@ -112,10 +115,10 @@ public class StringsBaseDatos {
         this.honorario_casos_sbd = honorario_casos_sbd;
         this.salario_casos_sbd = salario_casos_sbd;
         this.notas_casos_sbd = notas_casos_sbd;
+        this.username_login_sbd = username_login_sbd;
     }
 
-      
-    
+     
 
     public StringsBaseDatos() {
     }
@@ -558,6 +561,14 @@ public class StringsBaseDatos {
 
     public void setUsername_usuario_sbd(String username_usuario_sbd) {
         this.username_usuario_sbd = username_usuario_sbd;
+    }
+
+    public String getUsername_login_sbd() {
+        return username_login_sbd;
+    }
+
+    public void setUsername_login_sbd(String username_login_sbd) {
+        this.username_login_sbd = username_login_sbd;
     }
     
         

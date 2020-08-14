@@ -250,14 +250,14 @@ public class TablasBaseDatos implements InterfaceTablasBase {
         ArrayList<StringsBaseDatos> datos = new ArrayList();
 
         try {
-            ResultSet rs = c.obtener_datos("SELECT c.id, cl.nombre, v.nombre, u.username, c.honorarios, c.salarios, c.notas, e.tipo, p.descripcion, r.nombre \n"
+            ResultSet rs = c.obtener_datos("SELECT c.id, cl.nombre, v.nombre, u.username, c.honorarios, c.salarios, c.notas, e.tipo, p.descripcion, r.nombre\n"
                     + "FROM tbl_casos AS c\n"
-                    + "INNER JOIN tbl_clientes AS cl\n"
-                    + "INNER JOIN tbl_vendedor AS v\n"
-                    + "INNER JOIN tbl_usuarios AS u\n"
-                    + "INNER JOIN tbl_estado AS e\n"
-                    + "INNER JOIN tbl_tipo_propiedad AS p\n"
-                    + "INNER JOIN tbl_representante AS r \n"
+                    + "INNER JOIN tbl_clientes AS cl ON c.id_cliente = cl.id\n"
+                    + "INNER JOIN tbl_vendedor AS v ON c.id_vendedor = v.id\n"
+                    + "INNER JOIN tbl_usuarios AS u ON c.id_usuario = u.id\n"
+                    + "INNER JOIN tbl_estado AS e ON c.id_estado = e.id\n"
+                    + "INNER JOIN tbl_tipo_propiedad AS p ON c.id_tipo_propiedad = p.id\n"
+                    + "INNER JOIN tbl_representante AS r ON c.id_representante = r.id\n"
                     + "WHERE u.username = '" + sbd.getUsername_login_sbd() + "';");
 
             while (rs.next()) {

@@ -193,7 +193,7 @@ public class Usuario extends javax.swing.JFrame {
                     .addComponent(jLabel27)
                     .addComponent(bc_txt_valorBuscado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE))
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE))
         );
 
         if_buscarAsesor.setClosable(true);
@@ -268,7 +268,7 @@ public class Usuario extends javax.swing.JFrame {
         );
         if_baseAsoresLayout.setVerticalGroup(
             if_baseAsoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 444, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 432, Short.MAX_VALUE)
         );
 
         if_formulario.setClosable(true);
@@ -297,6 +297,8 @@ public class Usuario extends javax.swing.JFrame {
 
         jLabel2.setText("Clase Tramite");
 
+        f_txt_tramite.setEditable(false);
+
         f_btn_guardar.setText("Guardar");
 
         asesor.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Asesor"));
@@ -308,6 +310,14 @@ public class Usuario extends javax.swing.JFrame {
         jLabel5.setText("Telefono");
 
         jLabel6.setText("Correo Electronico");
+
+        f_txt_vendedorNombre.setEditable(false);
+
+        f_txt_vendedorContructora.setEditable(false);
+
+        f_txt_vendedorTelefono.setEditable(false);
+
+        f_txt_vendedorCorreo.setEditable(false);
 
         javax.swing.GroupLayout asesorLayout = new javax.swing.GroupLayout(asesor);
         asesor.setLayout(asesorLayout);
@@ -358,9 +368,15 @@ public class Usuario extends javax.swing.JFrame {
 
         jLabel7.setText("Honorarios");
 
+        f_txt_honorarios.setEditable(false);
+
         jLabel8.setText("Direccion USA");
 
+        f_txt_direccionUSA.setEditable(false);
+
         jLabel9.setText("Salario");
+
+        f_txt_salario.setEditable(false);
 
         javax.swing.GroupLayout financieraLayout = new javax.swing.GroupLayout(financiera);
         financiera.setLayout(financieraLayout);
@@ -418,19 +434,35 @@ public class Usuario extends javax.swing.JFrame {
 
         jLabel10.setText("Nombre Cliente");
 
+        f_txt_nombreCliente.setEditable(false);
+
         jLabel11.setText("Tipo de Propiedad");
+
+        f_txt_tipoPropiedad.setEditable(false);
 
         jLabel12.setText("Telefonos");
 
+        f_txt_telefonoCliente.setEditable(false);
+
         jLabel13.setText("Correo Electonico");
+
+        f_txt_correoCliente.setEditable(false);
 
         jLabel14.setText("Estado Residencia");
 
+        f_txt_estadoResidencia.setEditable(false);
+
         jLabel15.setText("Estado Civil");
+
+        f_txt_estadoCivil.setEditable(false);
 
         jLabel16.setText("Estado Migratorio");
 
+        f_txt_estadoMigratorio.setEditable(false);
+
         jLabel17.setText("Profesion");
+
+        f_txt_profesion.setEditable(false);
 
         jLabel18.setText("DPI?");
 
@@ -548,11 +580,21 @@ public class Usuario extends javax.swing.JFrame {
 
         jLabel21.setText("Nombre");
 
+        f_txt_repNombre.setEditable(false);
+
         jLabel22.setText("Parentezco");
+
+        f_txt_repParentezco.setEditable(false);
 
         jLabel23.setText("Direccion");
 
+        f_txt_repDireccion.setEditable(false);
+
         jLabel24.setText("Telefono");
+
+        f_txt_repTelefono.setEditable(false);
+
+        f_txt_repBanco.setEditable(false);
 
         jLabel25.setText("Entidad Bancaria");
 
@@ -625,6 +667,7 @@ public class Usuario extends javax.swing.JFrame {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Notas Extras"));
 
+        f_txt_notas.setEditable(false);
         f_txt_notas.setColumns(20);
         f_txt_notas.setRows(5);
         jScrollPane4.setViewportView(f_txt_notas);
@@ -733,7 +776,7 @@ public class Usuario extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 326, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE))
         );
 
         if_baseClientes.setClosable(true);

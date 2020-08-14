@@ -77,9 +77,17 @@ public class ControllerFormulario implements ActionListener {
         usuario.f_txt_correoCliente.setText(dvo.getCorreo_cliente());
         usuario.f_txt_estadoCivil.setText(dvo.getEstadoCivil_cliente());
         usuario.f_txt_profesion.setText(dvo.getProfecion_cliente());
-        usuario.f_cb_dpi.getEditor().setItem(dvo.getDpi_cliente());
-        usuario.f_cb_nit.getEditor().setItem(dvo.getNit_cliente());
-        usuario.f_cb_id.setToolTipText(dvo.getUsaId_cliente());
+        usuario.f_cb_dpi.setSelectedItem(dvo.getDpi_cliente());
+        usuario.f_cb_nit.setSelectedItem(dvo.getNit_cliente());
+        usuario.f_cb_id.setSelectedItem(dvo.getUsaId_cliente());
+//Asignacion de datos Representante Legal
+        usuario.f_txt_repNombre.setText(dvo.getNombre_representante());
+        usuario.f_txt_repDireccion.setText(dvo.getDireccion_representante());
+        usuario.f_txt_repTelefono.setText(dvo.getTelefono_representante());
+        usuario.f_txt_repParentezco.setText(dvo.getParentezco_representante());
+        usuario.f_txt_repBanco.setText(dvo.getBanco_representante());
+//Asignacion de datos Notas
+        usuario.f_txt_notas.setText(dvo.getNotas_casos());
     }
     
     private void buscarTelefono() {

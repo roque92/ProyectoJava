@@ -39,21 +39,22 @@ public class ControllerFormulario implements ActionListener {
         switch (valorBuscado) {
             case "Nombre":
                 buscarNombre();
+                registroDetallado();
                 break;
             case "Telefono":
                 buscarTelefono();
+                registroDetallado();
                 break;
             case "Correo":
                 buscarCorreo();
+                registroDetallado();
                 break;
             default:
                 login.mensaje.showMessageDialog(null, "Por favor indicar el tipo de busqueda");
                 usuario.f_txt_buscarCliente.setText("");
                 break;
         }
-        
-        registroDetallado();
-        
+                
     }
     
     private void buscarNombre() {

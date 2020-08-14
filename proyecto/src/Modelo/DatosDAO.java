@@ -254,7 +254,7 @@ public class DatosDAO implements InterfaceMetodos {
                     + "INNER JOIN tbl_migratorio AS m ON cl.id_migratorio = m.id\n"
                     + "INNER JOIN tbl_representante AS r ON c.id_representante = r.id\n"
                     + "INNER JOIN tbl_tipo_propiedad AS tp ON c.id_tipo_propiedad = tp.id\n"
-                    + "WHERE cl.nombre = '" + dvo.getBuscar_telefono() + "';");
+                    + "WHERE cl.telefono = '" + dvo.getBuscar_telefono() + "';");
 
             while (rs.next()) {
                 dvo.setNombre_vendedor(rs.getString(1));
@@ -314,7 +314,7 @@ public class DatosDAO implements InterfaceMetodos {
                     + "INNER JOIN tbl_migratorio AS m ON cl.id_migratorio = m.id\n"
                     + "INNER JOIN tbl_representante AS r ON c.id_representante = r.id\n"
                     + "INNER JOIN tbl_tipo_propiedad AS tp ON c.id_tipo_propiedad = tp.id\n"
-                    + "WHERE cl.nombre = '" + dvo.getBuscar_correo() + "';");
+                    + "WHERE cl.correo = '" + dvo.getBuscar_correo() + "';");
 
             while (rs.next()) {
                 dvo.setNombre_vendedor(rs.getString(1));

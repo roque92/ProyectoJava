@@ -254,7 +254,7 @@
                           <Component id="bc_txt_valorBuscado" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane6" pref="390" max="32767" attributes="0"/>
+                      <Component id="jScrollPane6" pref="394" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -403,7 +403,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane2" alignment="0" pref="432" max="32767" attributes="0"/>
+                  <Component id="jScrollPane2" alignment="0" pref="428" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -480,7 +480,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jScrollPane3" pref="354" max="32767" attributes="0"/>
+                      <Component id="jScrollPane3" pref="358" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1429,6 +1429,7 @@
                 <Component class="javax.swing.JCheckBox" name="f_cb_nuevo">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Nuevo"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1437,6 +1438,7 @@
                 <Component class="javax.swing.JCheckBox" name="f_cb_editar">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Editar"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>

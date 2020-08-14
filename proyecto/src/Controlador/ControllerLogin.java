@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import Modelo.DatosDAO;
 import Modelo.DatosVO;
 import Modelo.StringsBaseDatos;
 import java.awt.event.ActionEvent;
@@ -31,14 +32,16 @@ public class ControllerLogin implements ActionListener, MouseListener, WindowLis
     Forgot forgot = new Forgot();
     DatosVO dvo = new DatosVO();
     StringsBaseDatos sbd = new StringsBaseDatos();
+    DatosDAO ddao = new DatosDAO();
 
-    public ControllerLogin(Login login, Usuario usuario, Administrador admin, Forgot forgot, DatosVO dvo, StringsBaseDatos sbd) {
+    public ControllerLogin(Login login, Usuario usuario, Administrador admin, Forgot forgot, DatosVO dvo, StringsBaseDatos sbd, DatosDAO ddao) {
         this.login = login;
         this.usuario = usuario;
         this.admin = admin;
         this.forgot = forgot;
         this.dvo = dvo;
         this.sbd = sbd;
+        this.ddao = ddao;
 
         login.btn_ingresar.addActionListener(this);
         login.jl_forgot.addMouseListener(this);
@@ -57,17 +60,19 @@ public class ControllerLogin implements ActionListener, MouseListener, WindowLis
         for (int i = 0; i < pass.length; i++) {
             password += pass[i];
         }
+        
+        ddao.validar_login(dvo);
 
         if (login.txt_username.getText().isEmpty() || password.equals("")) {
             login.mensaje.showMessageDialog(null, "Por favor ingresar usuario y/o contraseña", "Atencion", JOptionPane.WARNING_MESSAGE);
-        } else if (username.equals("ssoto") && password.equals("ssoto") || username.equals("ririarte") && password.equals("ririarte")) {
-            login.setVisible(false);
-            usuario.setVisible(true);
-            clearText();
-
-        } else if (username.equals("administrador") && password.equals("administrador") || username.equals("administrador2") && password.equals("administrador2")) {
+        } else if (dvo.getUser_login().equals(dvo.getLogin_user()) && dvo.getLogin_tipo().equals("administrador")) {
             login.setVisible(false);
             admin.setVisible(true);
+            clearText();
+
+        } else if (dvo.getUser_login().equals(dvo.getLogin_user()) && dvo.getLogin_tipo().equals("usuario")) {
+            login.setVisible(false);
+            usuario.setVisible(true);
             clearText();
 
         } else {

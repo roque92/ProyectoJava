@@ -43,7 +43,7 @@ public class Proyecto {
         DatosVO dvo = new DatosVO();
         DatosDAO ddao = new DatosDAO();
         
-        ControllerLogin controllerLogin = new ControllerLogin(login, usuario, admin, forgot, dvo, sbd);
+        ControllerLogin controllerLogin = new ControllerLogin(login, usuario, admin, forgot, dvo, sbd, ddao);
         ControllerForgot controllerForgot = new ControllerForgot(login, forgot);
         ControllerUsuario controllerUsuario = new ControllerUsuario(usuario, login);
         ControllerAdmin controllerAdmin = new ControllerAdmin(login, admin);
@@ -52,8 +52,8 @@ public class Proyecto {
         ControllerCasosAsignados controllerCasosAsignados = new ControllerCasosAsignados(usuario, login, sbd, tbd, dvo);
         ControllerFormulario controllerFormulario = new ControllerFormulario(usuario, login, dvo, ddao);
         
-        //login.setVisible(true);
-        usuario.setVisible(true);
+        login.setVisible(true);
+        //usuario.setVisible(true);
         //admin.setVisible(true);
     }
     

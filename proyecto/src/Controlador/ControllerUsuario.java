@@ -41,9 +41,9 @@ public class ControllerUsuario extends Controllers implements ActionListener, Wi
         
         usuario.o_Salir.addActionListener(this);
         usuario.a_baseGeneral.addActionListener(this);
+        usuario.a_buscarAsesores.addActionListener(this);
         usuario.c_baseGeneral.addActionListener(this);
         usuario.c_buscarCliente.addActionListener(this);
-        usuario.a_buscarAsesores.addActionListener(this);
         usuario.f_AbrirFormulario.addActionListener(this);
         usuario.f_btn_buscarCliente.addActionListener(this);
         usuario.f_casosAsignados.addActionListener(this);
@@ -81,10 +81,6 @@ public class ControllerUsuario extends Controllers implements ActionListener, Wi
         
         if(e.getSource() == usuario.o_Salir){
             closeWindows();
-        }
-        
-        if(e.getSource() == usuario.f_btn_buscarCliente){
-            searchClienteForm();
         }
         
         if(e.getSource() == usuario.f_casosAsignados){
@@ -150,60 +146,4 @@ public class ControllerUsuario extends Controllers implements ActionListener, Wi
         }
     }
     
-    private void searchClienteForm(){
-        JComboBox jComboBox = usuario.f_valor_buscado;
-        String selectedItem = (String) jComboBox.getSelectedItem().toString();
-        DatosDAO datosDAO = new DatosDAO();
-        DatosVO datosVO = new DatosVO();
-        
-        if (selectedItem.equals("Nombre")) {
-            datosVO.setBuscar_nombre(selectedItem);
-            datosDAO.mostrar_datos_nombre(datosVO);
-        }else if (selectedItem.equals("Telefono")) {
-            datosVO.setBuscar_telefono(selectedItem);
-            datosDAO.mostrar_datos_telefono(datosVO);
-        }else if (selectedItem.equals("Correo")) {
-            datosVO.setBuscar_correo(selectedItem);
-            datosDAO.mostrar_datos_correo(datosVO);
-        }
-        
-//      dvo.setDireccion_cliente(rs.getString(6));
-        
-        usuario.f_txt_tramite.setText("");
-        
-        //Informacion.Asesor
-        usuario.f_txt_asesorNombre.setText(datosVO.getNombre_vendedor());
-        usuario.f_txt_asesorTelefono.setText(datosVO.getTelefono_vendedor());
-        usuario.f_txt_asesorContructora.setText(datosVO.getConstructora_vendedor());
-        usuario.f_txt_asesorCorreo.setText(datosVO.getCorreo_vendedor());
-        
-        //Informacion.Financiera
-        usuario.f_txt_honorarios.setText(datosVO.getHonorarios_casos());
-        usuario.f_txt_valorPropiedad.setText("");
-        usuario.f_txt_salario.setText(datosVO.getSalario_casos());
-        
-        //Negociacion.Datos
-        usuario.f_txt_nombreCliente.setText(datosVO.getNombre_cliente());
-        usuario.f_txt_telefonoCliente.setText(datosVO.getTelefono_cliente());
-        usuario.f_txt_estadoResidencia.setText(datosVO.getEstadoResidencia_cliente());
-        usuario.f_txt_estadoMigratorio.setText(datosVO.getEstadoMigratorio_cliente());
-        usuario.f_txt_tipoPropiedad.setText(datosVO.getTipo_propiedad());
-        usuario.f_txt_estadoCivil.setText(datosVO.getEstadoCivil_cliente());
-        usuario.f_txt_correoCliente.setText(datosVO.getCorreo_cliente());
-        usuario.f_txt_profesion.setText(datosVO.getProfecion_cliente());
-        
-        usuario.f_cb_dpi.addItem(datosVO.getDpi_cliente());
-        usuario.f_cb_nit.addItem(datosVO.getNit_cliente());
-        usuario.f_cb_id.addItem(datosVO.getUsaId_cliente());
-        
-        //RepresentanteLegal.RepresentanteLegal
-        usuario.f_txt_repNombre.setText(datosVO.getNombre_representante());
-        usuario.f_txt_repParentezco.setText(datosVO.getParentezco_representante());
-        usuario.f_txt_repDireccion.setText(datosVO.getDireccion_representante());
-        usuario.f_txt_repTelefono.setText(datosVO.getTelefono_representante());
-        usuario.f_txt_repBanco.setText(datosVO.getBanco_representante());
-        
-        //Notas
-        usuario.f_txt_notas.setText(datosVO.getNotas_casos());
-    } 
 }

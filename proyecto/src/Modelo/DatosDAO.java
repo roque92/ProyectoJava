@@ -8,6 +8,7 @@ package Modelo;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -184,7 +185,7 @@ public class DatosDAO implements InterfaceMetodos {
                     + "c.honorarios, c.salarios, cl.direccion, \n"
                     + "cl.nombre, cl.telefono, cl.correo, cl.profesion, ec.descripcion, m.descripcion, cl.estado_residencia, cl.dpi, cl.nit, cl.usa_id, \n"
                     + "tp.descripcion,\n"
-                    + "r.Nombre, r.parentezco, r.direccion, r.telefono, r.banco, c.notas\n"
+                    + "r.Nombre, r.parentezco, r.direccion, r.telefono, r.banco, c.notas, cl.clase_tramite\n"
                     + "FROM tbl_casos AS c\n"
                     + "INNER JOIN tbl_vendedor AS v ON c.id_vendedor = v.id \n"
                     + "INNER JOIN tbl_clientes AS cl ON c.id_cliente = cl.id \n"
@@ -193,31 +194,34 @@ public class DatosDAO implements InterfaceMetodos {
                     + "INNER JOIN tbl_representante AS r ON c.id_representante = r.id\n"
                     + "INNER JOIN tbl_tipo_propiedad AS tp ON c.id_tipo_propiedad = tp.id\n"
                     + "WHERE cl.nombre = '" + dvo.getBuscar_nombre() + "';");
-
+            
             while (rs.next()) {
+           
                 dvo.setNombre_vendedor(rs.getString(1));
                 dvo.setTelefono_vendedor(rs.getString(2));
                 dvo.setConstructora_vendedor(rs.getString(3));
-                dvo.setHonorarios_casos(rs.getString(4));
-                dvo.setSalario_casos(rs.getString(5));
-                dvo.setDireccion_cliente(rs.getString(6));
-                dvo.setNombre_cliente(rs.getString(7));
-                dvo.setTelefono_cliente(rs.getString(8));
-                dvo.setCorreo_cliente(rs.getString(9));
-                dvo.setProfecion_cliente(rs.getString(10));
-                dvo.setEstadoCivil_cliente(rs.getString(11));
-                dvo.setEstadoMigratorio_cliente(rs.getString(12));
-                dvo.setEstadoResidencia_cliente(rs.getString(13));
-                dvo.setDpi_cliente(rs.getString(14));
-                dvo.setNit_cliente(rs.getString(15));
-                dvo.setUsaId_cliente(rs.getString(16));
-                dvo.setTipo_propiedad(rs.getString(17));
-                dvo.setNombre_representante(rs.getString(18));
-                dvo.setParentezco_representante(rs.getString(19));
-                dvo.setDireccion_representante(rs.getString(20));
-                dvo.setTelefono_representante(rs.getString(21));
-                dvo.setBanco_representante(rs.getString(22));
-                dvo.setNotas_casos(rs.getString(23));
+                dvo.setCorreo_vendedor(rs.getString(4));
+                dvo.setHonorarios_casos(rs.getDouble(5));
+                dvo.setSalario_casos(rs.getDouble(6));
+                dvo.setDireccion_cliente(rs.getString(7));
+                dvo.setNombre_cliente(rs.getString(8));
+                dvo.setTelefono_cliente(rs.getString(9));
+                dvo.setCorreo_cliente(rs.getString(10));
+                dvo.setProfecion_cliente(rs.getString(11));
+                dvo.setEstadoCivil_cliente(rs.getString(12));
+                dvo.setEstadoMigratorio_cliente(rs.getString(13));
+                dvo.setEstadoResidencia_cliente(rs.getString(14));
+                dvo.setDpi_cliente(rs.getString(15));
+                dvo.setNit_cliente(rs.getString(16));
+                dvo.setUsaId_cliente(rs.getString(17));
+                dvo.setTipo_propiedad(rs.getString(18));
+                dvo.setNombre_representante(rs.getString(19));
+                dvo.setParentezco_representante(rs.getString(20));
+                dvo.setDireccion_representante(rs.getString(21));
+                dvo.setTelefono_representante(rs.getString(22));
+                dvo.setBanco_representante(rs.getString(23));
+                dvo.setNotas_casos(rs.getString(24));
+                dvo.setClaseTramite_cliente(rs.getString(25));
 
                 datos.add(dvo);
             }
@@ -225,7 +229,7 @@ public class DatosDAO implements InterfaceMetodos {
             c.desconectar();
 
         } catch (SQLException e) {
-            dvo.setError(e.getMessage());
+            System.out.println(e.getMessage());
         }
 
         return datos;
@@ -242,7 +246,7 @@ public class DatosDAO implements InterfaceMetodos {
                     + "c.honorarios, c.salarios, cl.direccion, \n"
                     + "cl.nombre, cl.telefono, cl.correo, cl.profesion, ec.descripcion, m.descripcion, cl.estado_residencia, cl.dpi, cl.nit, cl.usa_id, \n"
                     + "tp.descripcion,\n"
-                    + "r.Nombre, r.parentezco, r.direccion, r.telefono, r.banco, c.notas\n"
+                    + "r.Nombre, r.parentezco, r.direccion, r.telefono, r.banco, c.notas, cl.clase_tramite\n"
                     + "FROM tbl_casos AS c\n"
                     + "INNER JOIN tbl_vendedor AS v ON c.id_vendedor = v.id \n"
                     + "INNER JOIN tbl_clientes AS cl ON c.id_cliente = cl.id \n"
@@ -256,26 +260,28 @@ public class DatosDAO implements InterfaceMetodos {
                 dvo.setNombre_vendedor(rs.getString(1));
                 dvo.setTelefono_vendedor(rs.getString(2));
                 dvo.setConstructora_vendedor(rs.getString(3));
-                dvo.setHonorarios_casos(rs.getString(4));
-                dvo.setSalario_casos(rs.getString(5));
-                dvo.setDireccion_cliente(rs.getString(6));
-                dvo.setNombre_cliente(rs.getString(7));
-                dvo.setTelefono_cliente(rs.getString(8));
-                dvo.setCorreo_cliente(rs.getString(9));
-                dvo.setProfecion_cliente(rs.getString(10));
-                dvo.setEstadoCivil_cliente(rs.getString(11));
-                dvo.setEstadoMigratorio_cliente(rs.getString(12));
-                dvo.setEstadoResidencia_cliente(rs.getString(13));
-                dvo.setDpi_cliente(rs.getString(14));
-                dvo.setNit_cliente(rs.getString(15));
-                dvo.setUsaId_cliente(rs.getString(16));
-                dvo.setTipo_propiedad(rs.getString(17));
-                dvo.setNombre_representante(rs.getString(18));
-                dvo.setParentezco_representante(rs.getString(19));
-                dvo.setDireccion_representante(rs.getString(20));
-                dvo.setTelefono_representante(rs.getString(21));
-                dvo.setBanco_representante(rs.getString(22));
-                dvo.setNotas_casos(rs.getString(23));
+                dvo.setCorreo_vendedor(rs.getString(4));
+                dvo.setHonorarios_casos(rs.getDouble(5));
+                dvo.setSalario_casos(rs.getDouble(6));
+                dvo.setDireccion_cliente(rs.getString(7));
+                dvo.setNombre_cliente(rs.getString(8));
+                dvo.setTelefono_cliente(rs.getString(9));
+                dvo.setCorreo_cliente(rs.getString(10));
+                dvo.setProfecion_cliente(rs.getString(11));
+                dvo.setEstadoCivil_cliente(rs.getString(12));
+                dvo.setEstadoMigratorio_cliente(rs.getString(13));
+                dvo.setEstadoResidencia_cliente(rs.getString(14));
+                dvo.setDpi_cliente(rs.getString(15));
+                dvo.setNit_cliente(rs.getString(16));
+                dvo.setUsaId_cliente(rs.getString(17));
+                dvo.setTipo_propiedad(rs.getString(18));
+                dvo.setNombre_representante(rs.getString(19));
+                dvo.setParentezco_representante(rs.getString(20));
+                dvo.setDireccion_representante(rs.getString(21));
+                dvo.setTelefono_representante(rs.getString(22));
+                dvo.setBanco_representante(rs.getString(23));
+                dvo.setNotas_casos(rs.getString(24));
+                dvo.setClaseTramite_cliente(rs.getString(25));
 
                 datos.add(dvo);
             }
@@ -300,7 +306,7 @@ public class DatosDAO implements InterfaceMetodos {
                     + "c.honorarios, c.salarios, cl.direccion, \n"
                     + "cl.nombre, cl.telefono, cl.correo, cl.profesion, ec.descripcion, m.descripcion, cl.estado_residencia, cl.dpi, cl.nit, cl.usa_id, \n"
                     + "tp.descripcion,\n"
-                    + "r.Nombre, r.parentezco, r.direccion, r.telefono, r.banco, c.notas\n"
+                    + "r.Nombre, r.parentezco, r.direccion, r.telefono, r.banco, c.notas, cl.clase_tramite\n"
                     + "FROM tbl_casos AS c\n"
                     + "INNER JOIN tbl_vendedor AS v ON c.id_vendedor = v.id \n"
                     + "INNER JOIN tbl_clientes AS cl ON c.id_cliente = cl.id \n"
@@ -314,26 +320,28 @@ public class DatosDAO implements InterfaceMetodos {
                 dvo.setNombre_vendedor(rs.getString(1));
                 dvo.setTelefono_vendedor(rs.getString(2));
                 dvo.setConstructora_vendedor(rs.getString(3));
-                dvo.setHonorarios_casos(rs.getString(4));
-                dvo.setSalario_casos(rs.getString(5));
-                dvo.setDireccion_cliente(rs.getString(6));
-                dvo.setNombre_cliente(rs.getString(7));
-                dvo.setTelefono_cliente(rs.getString(8));
-                dvo.setCorreo_cliente(rs.getString(9));
-                dvo.setProfecion_cliente(rs.getString(10));
-                dvo.setEstadoCivil_cliente(rs.getString(11));
-                dvo.setEstadoMigratorio_cliente(rs.getString(12));
-                dvo.setEstadoResidencia_cliente(rs.getString(13));
-                dvo.setDpi_cliente(rs.getString(14));
-                dvo.setNit_cliente(rs.getString(15));
-                dvo.setUsaId_cliente(rs.getString(16));
-                dvo.setTipo_propiedad(rs.getString(17));
-                dvo.setNombre_representante(rs.getString(18));
-                dvo.setParentezco_representante(rs.getString(19));
-                dvo.setDireccion_representante(rs.getString(20));
-                dvo.setTelefono_representante(rs.getString(21));
-                dvo.setBanco_representante(rs.getString(22));
-                dvo.setNotas_casos(rs.getString(23));
+                dvo.setCorreo_vendedor(rs.getString(4));
+                dvo.setHonorarios_casos(rs.getDouble(5));
+                dvo.setSalario_casos(rs.getDouble(6));
+                dvo.setDireccion_cliente(rs.getString(7));
+                dvo.setNombre_cliente(rs.getString(8));
+                dvo.setTelefono_cliente(rs.getString(9));
+                dvo.setCorreo_cliente(rs.getString(10));
+                dvo.setProfecion_cliente(rs.getString(11));
+                dvo.setEstadoCivil_cliente(rs.getString(12));
+                dvo.setEstadoMigratorio_cliente(rs.getString(13));
+                dvo.setEstadoResidencia_cliente(rs.getString(14));
+                dvo.setDpi_cliente(rs.getString(15));
+                dvo.setNit_cliente(rs.getString(16));
+                dvo.setUsaId_cliente(rs.getString(17));
+                dvo.setTipo_propiedad(rs.getString(18));
+                dvo.setNombre_representante(rs.getString(19));
+                dvo.setParentezco_representante(rs.getString(20));
+                dvo.setDireccion_representante(rs.getString(21));
+                dvo.setTelefono_representante(rs.getString(22));
+                dvo.setBanco_representante(rs.getString(23));
+                dvo.setNotas_casos(rs.getString(24));
+                dvo.setClaseTramite_cliente(rs.getString(25));
 
                 datos.add(dvo);
             }

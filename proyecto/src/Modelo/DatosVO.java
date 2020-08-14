@@ -25,9 +25,10 @@ public class DatosVO {
    //-------Representante
    private String nombre_representante, parentezco_representante, direccion_representante, telefono_representante, banco_representante;
    //-------Cliente
-   private String nombre_cliente, telefono_cliente, correo_cliente, estatus_cliente, direccion_cliente, estadoCivil_cliente, estadoMigratorio_cliente, profecion_cliente, estadoResidencia_cliente, dpi_cliente, nit_cliente,usaId_cliente;
+   private String nombre_cliente, telefono_cliente, correo_cliente, estatus_cliente, direccion_cliente, estadoCivil_cliente, estadoMigratorio_cliente, profecion_cliente, estadoResidencia_cliente, dpi_cliente, nit_cliente, usaId_cliente, claseTramite_cliente;
    //-------Casos
-   private String honorarios_casos, salario_casos, notas_casos;
+   private String notas_casos;
+   private double honorarios_casos, salario_casos;
    //-------Propiedad
    private String tipo_propiedad;
    
@@ -62,7 +63,7 @@ public class DatosVO {
    
    //----------------------Contructores
 
-    public DatosVO(String login_user, String login_pass, String login_telefono, String login_correo, String login_tipo, String negociacion_nombre_cliente, String negociacion_telefono, String negociacion_estado_residencia, String negociacion_estado_migratorio, String negociacion_tipo_porpiedad, String negociacion_correo, String negociacion_estado_civil, String negociacion_profecion, String negociacion_DPI, String negociacion_NIT, String negociacion_ID, String buscar_nombre, String buscar_telefono, String buscar_correo, String nombre_vendedor, String telefono_vendedor, String constructora_vendedor, String correo_vendedor, String nombre_representante, String parentezco_representante, String direccion_representante, String telefono_representante, String banco_representante, String nombre_cliente, String telefono_cliente, String correo_cliente, String estatus_cliente, String direccion_cliente, String estadoCivil_cliente, String estadoMigratorio_cliente, String profecion_cliente, String estadoResidencia_cliente, String dpi_cliente, String nit_cliente, String usaId_cliente, String honorarios_casos, String salario_casos, String notas_casos, String tipo_propiedad, String toVendedor_nombre, String toVendedor_telefono, String toVendedor_constructora, String toVendedor_correo, String toUsuarios_nombre, String toUsuarios_telefono, String toUsuarios_correo, String toRepresentante_nombre, String toRepresentante_parentezco, String toRepresentante_direccion, String toRepresentante_telefono, String toRepresentante_banco, String toRegistros_id_usuarios, String toRegistros_fecha, String toRegistros_notas, String toRegistros_id_casos, String toClientes_nombre, String toClientes_telefono, String toClientes_correo, String toClientes_status, String toClientes_direccion, int toClientes_id_EstadoCivil, int toClientes_id_migratorio, String toClientes_profesion, String toClientes_EstadoResidencia, String toClientes_dpi, String toClientes_nit, String toClientes_UsaId, int toCasos_idCliente, int toCasos_idVendedor, int toCasos_idUsuario, double toCasos_honorarios, double toCasos_salario, String toCasos_notas, int toCasos_idEstado, int toCasos_idPropiedad, int toCasos_idRepresentante, String error, String user_login, String pass_login) {
+    public DatosVO(String login_user, String login_pass, String login_telefono, String login_correo, String login_tipo, String negociacion_nombre_cliente, String negociacion_telefono, String negociacion_estado_residencia, String negociacion_estado_migratorio, String negociacion_tipo_porpiedad, String negociacion_correo, String negociacion_estado_civil, String negociacion_profecion, String negociacion_DPI, String negociacion_NIT, String negociacion_ID, String buscar_nombre, String buscar_telefono, String buscar_correo, String nombre_vendedor, String telefono_vendedor, String constructora_vendedor, String correo_vendedor, String nombre_representante, String parentezco_representante, String direccion_representante, String telefono_representante, String banco_representante, String nombre_cliente, String telefono_cliente, String correo_cliente, String estatus_cliente, String direccion_cliente, String estadoCivil_cliente, String estadoMigratorio_cliente, String profecion_cliente, String estadoResidencia_cliente, String dpi_cliente, String nit_cliente, String usaId_cliente, String claseTramite_cliente, String notas_casos, double honorarios_casos, double salario_casos, String tipo_propiedad, String toVendedor_nombre, String toVendedor_telefono, String toVendedor_constructora, String toVendedor_correo, String toUsuarios_nombre, String toUsuarios_telefono, String toUsuarios_correo, String toRepresentante_nombre, String toRepresentante_parentezco, String toRepresentante_direccion, String toRepresentante_telefono, String toRepresentante_banco, String toRegistros_id_usuarios, String toRegistros_fecha, String toRegistros_notas, String toRegistros_id_casos, String toClientes_nombre, String toClientes_telefono, String toClientes_correo, String toClientes_status, String toClientes_direccion, int toClientes_id_EstadoCivil, int toClientes_id_migratorio, String toClientes_profesion, String toClientes_EstadoResidencia, String toClientes_dpi, String toClientes_nit, String toClientes_UsaId, int toCasos_idCliente, int toCasos_idVendedor, int toCasos_idUsuario, double toCasos_honorarios, double toCasos_salario, String toCasos_notas, int toCasos_idEstado, int toCasos_idPropiedad, int toCasos_idRepresentante, String error, String user_login, String pass_login) {
         this.login_user = login_user;
         this.login_pass = login_pass;
         this.login_telefono = login_telefono;
@@ -103,9 +104,10 @@ public class DatosVO {
         this.dpi_cliente = dpi_cliente;
         this.nit_cliente = nit_cliente;
         this.usaId_cliente = usaId_cliente;
+        this.claseTramite_cliente = claseTramite_cliente;
+        this.notas_casos = notas_casos;
         this.honorarios_casos = honorarios_casos;
         this.salario_casos = salario_casos;
-        this.notas_casos = notas_casos;
         this.tipo_propiedad = tipo_propiedad;
         this.toVendedor_nombre = toVendedor_nombre;
         this.toVendedor_telefono = toVendedor_telefono;
@@ -148,7 +150,8 @@ public class DatosVO {
         this.user_login = user_login;
         this.pass_login = pass_login;
     }
-     
+
+   
    
     public DatosVO() {
        
@@ -499,22 +502,6 @@ public class DatosVO {
         this.usaId_cliente = usaId_cliente;
     }
 
-    public String getHonorarios_casos() {
-        return honorarios_casos;
-    }
-
-    public void setHonorarios_casos(String honorarios_casos) {
-        this.honorarios_casos = honorarios_casos;
-    }
-
-    public String getSalario_casos() {
-        return salario_casos;
-    }
-
-    public void setSalario_casos(String salario_casos) {
-        this.salario_casos = salario_casos;
-    }
-
     public String getTipo_propiedad() {
         return tipo_propiedad;
     }
@@ -825,6 +812,30 @@ public class DatosVO {
 
     public void setToCasos_idRepresentante(int toCasos_idRepresentante) {
         this.toCasos_idRepresentante = toCasos_idRepresentante;
+    }
+
+    public double getHonorarios_casos() {
+        return honorarios_casos;
+    }
+
+    public void setHonorarios_casos(double honorarios_casos) {
+        this.honorarios_casos = honorarios_casos;
+    }
+
+    public double getSalario_casos() {
+        return salario_casos;
+    }
+
+    public void setSalario_casos(double salario_casos) {
+        this.salario_casos = salario_casos;
+    }
+
+    public String getClaseTramite_cliente() {
+        return claseTramite_cliente;
+    }
+
+    public void setClaseTramite_cliente(String claseTramite_cliente) {
+        this.claseTramite_cliente = claseTramite_cliente;
     }
     
     

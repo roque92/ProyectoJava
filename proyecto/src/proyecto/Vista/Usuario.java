@@ -71,15 +71,15 @@ public class Usuario extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        f_txt_asesorNombre = new javax.swing.JTextField();
-        f_txt_asesorContructora = new javax.swing.JTextField();
-        f_txt_asesorTelefono = new javax.swing.JTextField();
-        f_txt_asesorCorreo = new javax.swing.JTextField();
+        f_txt_vendedorNombre = new javax.swing.JTextField();
+        f_txt_vendedorContructora = new javax.swing.JTextField();
+        f_txt_vendedorTelefono = new javax.swing.JTextField();
+        f_txt_vendedorCorreo = new javax.swing.JTextField();
         financiera = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         f_txt_honorarios = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        f_txt_valorPropiedad = new javax.swing.JTextField();
+        f_txt_direccionUSA = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         f_txt_salario = new javax.swing.JTextField();
         negociacion = new javax.swing.JPanel();
@@ -193,7 +193,7 @@ public class Usuario extends javax.swing.JFrame {
                     .addComponent(jLabel27)
                     .addComponent(bc_txt_valorBuscado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE))
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE))
         );
 
         if_buscarAsesor.setClosable(true);
@@ -268,7 +268,7 @@ public class Usuario extends javax.swing.JFrame {
         );
         if_baseAsoresLayout.setVerticalGroup(
             if_baseAsoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 448, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 444, Short.MAX_VALUE)
         );
 
         if_formulario.setClosable(true);
@@ -320,16 +320,16 @@ public class Usuario extends javax.swing.JFrame {
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(asesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(f_txt_asesorNombre)
-                    .addComponent(f_txt_asesorContructora, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE))
+                    .addComponent(f_txt_vendedorNombre)
+                    .addComponent(f_txt_vendedorContructora, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(asesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(asesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(f_txt_asesorTelefono)
-                    .addComponent(f_txt_asesorCorreo, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE))
+                    .addComponent(f_txt_vendedorTelefono)
+                    .addComponent(f_txt_vendedorCorreo, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         asesorLayout.setVerticalGroup(
@@ -339,18 +339,18 @@ public class Usuario extends javax.swing.JFrame {
                 .addGroup(asesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(asesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel3)
-                        .addComponent(f_txt_asesorNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(f_txt_vendedorNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(asesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel5)
-                        .addComponent(f_txt_asesorTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(f_txt_vendedorTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(asesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(asesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel4)
-                        .addComponent(f_txt_asesorContructora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(f_txt_vendedorContructora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(asesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel6)
-                        .addComponent(f_txt_asesorCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(f_txt_vendedorCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
@@ -378,7 +378,7 @@ public class Usuario extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(f_txt_valorPropiedad)
+                .addComponent(f_txt_direccionUSA)
                 .addContainerGap())
         );
         financieraLayout.setVerticalGroup(
@@ -389,7 +389,7 @@ public class Usuario extends javax.swing.JFrame {
                     .addComponent(jLabel7)
                     .addComponent(f_txt_honorarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8)
-                    .addComponent(f_txt_valorPropiedad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(f_txt_direccionUSA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(financieraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -702,7 +702,7 @@ public class Usuario extends javax.swing.JFrame {
                 .addGap(0, 0, 0))
         );
 
-        f_valor_buscado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nombre", "Telefono", "Correo" }));
+        f_valor_buscado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Nombre", "Telefono", "Correo" }));
 
         javax.swing.GroupLayout if_formularioLayout = new javax.swing.GroupLayout(if_formulario.getContentPane());
         if_formulario.getContentPane().setLayout(if_formularioLayout);
@@ -733,7 +733,7 @@ public class Usuario extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 298, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 326, Short.MAX_VALUE))
         );
 
         if_baseClientes.setClosable(true);
@@ -966,12 +966,9 @@ public class Usuario extends javax.swing.JFrame {
     public javax.swing.JComboBox<String> f_cb_nit;
     public javax.swing.JCheckBox f_cb_nuevo;
     private javax.swing.JTable f_tbl_seguimiento;
-    public javax.swing.JTextField f_txt_asesorContructora;
-    public javax.swing.JTextField f_txt_asesorCorreo;
-    public javax.swing.JTextField f_txt_asesorNombre;
-    public javax.swing.JTextField f_txt_asesorTelefono;
     public javax.swing.JTextField f_txt_buscarCliente;
     public javax.swing.JTextField f_txt_correoCliente;
+    public javax.swing.JTextField f_txt_direccionUSA;
     public javax.swing.JTextField f_txt_estadoCivil;
     public javax.swing.JTextField f_txt_estadoMigratorio;
     public javax.swing.JTextField f_txt_estadoResidencia;
@@ -988,7 +985,10 @@ public class Usuario extends javax.swing.JFrame {
     public javax.swing.JTextField f_txt_telefonoCliente;
     public javax.swing.JTextField f_txt_tipoPropiedad;
     public javax.swing.JTextField f_txt_tramite;
-    public javax.swing.JTextField f_txt_valorPropiedad;
+    public javax.swing.JTextField f_txt_vendedorContructora;
+    public javax.swing.JTextField f_txt_vendedorCorreo;
+    public javax.swing.JTextField f_txt_vendedorNombre;
+    public javax.swing.JTextField f_txt_vendedorTelefono;
     public javax.swing.JComboBox<String> f_valor_buscado;
     private javax.swing.JPanel financiera;
     public javax.swing.JMenu formulario;

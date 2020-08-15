@@ -8,8 +8,11 @@ package Controlador;
 import Modelo.DatosDAO;
 import Modelo.DatosVO;
 import Modelo.StringsBaseDatos;
+import Modelo.TablasBaseDatos;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import proyecto.Vista.Login;
 import proyecto.Vista.Usuario;
 
@@ -18,27 +21,29 @@ import proyecto.Vista.Usuario;
  * @author Jose Roque
  */
 public class ControllerFormulario implements ActionListener {
-    
+
     Usuario usuario = new Usuario();
     Login login = new Login();
     DatosVO dvo = new DatosVO();
     DatosDAO ddao = new DatosDAO();
     StringsBaseDatos sbd = new StringsBaseDatos();
-    
-    public ControllerFormulario(Usuario usuario, Login login, DatosVO dvo, DatosDAO ddao, StringsBaseDatos sbd) {
+    TablasBaseDatos tbd = new TablasBaseDatos();
+
+    public ControllerFormulario(Usuario usuario, Login login, DatosVO dvo, DatosDAO ddao, StringsBaseDatos sbd, TablasBaseDatos tbd) {
         this.usuario = usuario;
         this.login = login;
         this.dvo = dvo;
         this.ddao = ddao;
         this.sbd = sbd;
-        
+        this.tbd = tbd;
+
         usuario.f_btn_buscarCliente.addActionListener(this);
     }
-    
+
     private void buscarCliente() {
-        
+
         String valorBuscado = (String) usuario.f_valor_buscado.getSelectedItem();
-        
+
         switch (valorBuscado) {
             case "Nombre":
                 buscarNombre();
@@ -57,9 +62,9 @@ public class ControllerFormulario implements ActionListener {
                 usuario.f_txt_buscarCliente.setText("");
                 break;
         }
-                
+
     }
-    
+
     private void buscarNombre() {
         dvo.setBuscar_nombre(usuario.f_txt_buscarCliente.getText().trim());
         ddao.mostrar_datos_nombre(dvo);
@@ -95,7 +100,7 @@ public class ControllerFormulario implements ActionListener {
 //Asignacion de datos Notas
         usuario.f_txt_notas.setText(dvo.getNotas_casos());
     }
-    
+
     private void buscarTelefono() {
         dvo.setBuscar_telefono(usuario.f_txt_buscarCliente.getText());
         ddao.mostrar_datos_telefono(dvo);
@@ -131,7 +136,7 @@ public class ControllerFormulario implements ActionListener {
 //Asignacion de datos Notas
         usuario.f_txt_notas.setText(dvo.getNotas_casos());
     }
-    
+
     private void buscarCorreo() {
         dvo.setBuscar_correo(usuario.f_txt_buscarCliente.getText().trim());
         ddao.mostrar_datos_correo(dvo);
@@ -167,18 +172,31 @@ public class ControllerFormulario implements ActionListener {
 //Asignacion de datos Notas
         usuario.f_txt_notas.setText(dvo.getNotas_casos());
     }
-    
-    private void registroDetallado(){
-        
-        
+
+    private void registroDetallado() {
+        try {
+            DefaultTableModel m = new DefaultTableModel();
+            m.setColumnCount(0);
+            m.addColumn("Fecha");
+            m.addColumn("Usuario");
+            m.addColumn("Informacion");
+
+            for (StringsBaseDatos sbd : this.tbd.RegistroDetallado(sbd)) {
+                m.addRow(new Object[]{sbd.getFecha_registros_sbd(), sbd.getUsuario_registros_sbd(), sbd.getNotas_registros_sbd()});
+            }
+            usuario.ca_tbl_datos.setModel(m);
+        } catch (Exception e) {
+            login.mensaje.showMessageDialog(null, "No se puede conectar con la base de datos Contacte con su Administrador", "Problemas de Conexion", JOptionPane.ERROR_MESSAGE);
+        }
+
     }
-    
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == usuario.f_btn_buscarCliente) {
             buscarCliente();
         }
-        
+
     }
-    
+
 }

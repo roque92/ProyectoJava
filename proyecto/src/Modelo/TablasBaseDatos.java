@@ -119,29 +119,6 @@ public class TablasBaseDatos implements InterfaceTablasBase {
 
         return datos;
     }
-///------------ORDEN DE EJECUCION 10
-
-    @Override
-    public ArrayList<StringsBaseDatos> TablaRegistros(StringsBaseDatos sbd) {
-        Conector c = new Conector();
-        ArrayList<StringsBaseDatos> datos = new ArrayList();
-
-        try {
-            c.connect();
-            ResultSet rs = c.obtener_datos("SELECT id_usuario, fecha, notas FROM tbl_registros WHERE id_casos = " + sbd.getId_casos_sbd() + ";");
-
-            while (rs.next()) {
-                sbd.setId_usuarios_registros_sbd(rs.getInt(1));
-                sbd.setFecha_registros_sbd(rs.getString(2));
-                sbd.setNotas_registros_sbd(rs.getString(3));
-            }
-            c.desconectar();
-        } catch (SQLException e) {
-            System.out.println("Error " + e.getMessage());
-        }
-
-        return datos;
-    }
 ///------------ORDEN DE EJECUCION 6
 
     @Override
@@ -291,7 +268,9 @@ public class TablasBaseDatos implements InterfaceTablasBase {
         
         while (rs.next()) {
                 StringsBaseDatos sbd1 = new StringsBaseDatos();
-                
+                sbd1.setFecha_registros_sbd(rs.getString(1));
+                sbd1.setUsuario_registros_sbd(rs.getString(2));
+                sbd1.setNotas_registros_sbd(rs.getString(3));
 
                 datos.add(sbd1);
             }

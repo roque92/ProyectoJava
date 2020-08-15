@@ -50,7 +50,7 @@ public class Proyecto {
         ControllerBuscarAsesor controllerBuscarAsesor = new ControllerBuscarAsesor(usuario, login, sbd, tbd, dvo);
         ControllerBuscarCliente controllerBuscarCliente = new ControllerBuscarCliente(usuario, login, sbd, tbd, dvo);
         ControllerCasosAsignados controllerCasosAsignados = new ControllerCasosAsignados(usuario, login, sbd, tbd, dvo);
-        ControllerFormulario controllerFormulario = new ControllerFormulario(usuario, login, dvo, ddao, sbd);
+        ControllerFormulario controllerFormulario = new ControllerFormulario(usuario, login, dvo, ddao, sbd, tbd);
         
         //login.setVisible(true);
         usuario.setVisible(true);

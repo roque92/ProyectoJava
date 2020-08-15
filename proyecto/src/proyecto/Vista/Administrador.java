@@ -20,6 +20,9 @@ public class Administrador extends javax.swing.JFrame {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
         this.setLocationRelativeTo(null);
+        
+        this.if_Asesores.setVisible(false);
+        this.if_Clientes.setVisible(false);
     }
 
     /**
@@ -39,12 +42,11 @@ public class Administrador extends javax.swing.JFrame {
         if_Asesores = new javax.swing.JInternalFrame();
         jScrollPane2 = new javax.swing.JScrollPane();
         tbl_Asesores = new javax.swing.JTable();
-        if_Baja = new javax.swing.JInternalFrame();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        tbl_Baja = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         menu = new javax.swing.JMenu();
         Nuevo = new javax.swing.JMenu();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
         m_baseGeneralClientes = new javax.swing.JMenuItem();
         m_baseGeneralAsesores = new javax.swing.JMenuItem();
         opciones = new javax.swing.JMenu();
@@ -55,15 +57,16 @@ public class Administrador extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Panel Administrador");
 
-        jDesktopPane1.setBackground(new java.awt.Color(255, 255, 255));
+        jDesktopPane1.setBackground(new java.awt.Color(204, 0, 255));
         jDesktopPane1.setAutoscrolls(true);
 
         if_Clientes.setClosable(true);
+        if_Clientes.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
         if_Clientes.setIconifiable(true);
         if_Clientes.setMaximizable(true);
         if_Clientes.setResizable(true);
         if_Clientes.setTitle("Base Datos Clientes");
-        if_Clientes.setVisible(false);
+        if_Clientes.setVisible(true);
 
         DefaultTableModel modelClientes = new DefaultTableModel();
         tbl_Clientes.setModel(new javax.swing.table.DefaultTableModel(
@@ -84,15 +87,16 @@ public class Administrador extends javax.swing.JFrame {
         );
         if_ClientesLayout.setVerticalGroup(
             if_ClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)
         );
 
         if_Asesores.setClosable(true);
+        if_Asesores.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
         if_Asesores.setIconifiable(true);
         if_Asesores.setMaximizable(true);
         if_Asesores.setResizable(true);
         if_Asesores.setTitle("Base Datos Asesores");
-        if_Asesores.setVisible(false);
+        if_Asesores.setVisible(true);
 
         DefaultTableModel modelAsesores = new DefaultTableModel();
         tbl_Asesores.setModel(new javax.swing.table.DefaultTableModel(
@@ -109,74 +113,47 @@ public class Administrador extends javax.swing.JFrame {
         if_Asesores.getContentPane().setLayout(if_AsesoresLayout);
         if_AsesoresLayout.setHorizontalGroup(
             if_AsesoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 413, Short.MAX_VALUE)
         );
         if_AsesoresLayout.setVerticalGroup(
             if_AsesoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-        );
-
-        if_Baja.setClosable(true);
-        if_Baja.setIconifiable(true);
-        if_Baja.setMaximizable(true);
-        if_Baja.setResizable(true);
-        if_Baja.setTitle("Base Datos Baja");
-        if_Baja.setVisible(false);
-
-        DefaultTableModel modelBaja = new DefaultTableModel();
-        tbl_Baja.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-
-            }
-        ));
-        jScrollPane3.setViewportView(tbl_Baja);
-
-        javax.swing.GroupLayout if_BajaLayout = new javax.swing.GroupLayout(if_Baja.getContentPane());
-        if_Baja.getContentPane().setLayout(if_BajaLayout);
-        if_BajaLayout.setHorizontalGroup(
-            if_BajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-        );
-        if_BajaLayout.setVerticalGroup(
-            if_BajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)
         );
 
         jDesktopPane1.setLayer(if_Clientes, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(if_Asesores, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(if_Baja, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGap(38, 38, 38)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                .addContainerGap(639, Short.MAX_VALUE)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(if_Baja, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(if_Asesores, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(if_Clientes, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1007, Short.MAX_VALUE))
+                    .addComponent(if_Asesores)
+                    .addComponent(if_Clientes))
+                .addGap(28, 28, 28))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(if_Asesores, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(if_Clientes, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGap(39, 39, 39)
+                .addComponent(if_Clientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(if_Baja, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(459, Short.MAX_VALUE))
+                .addComponent(if_Asesores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         menu.setText("Menu");
 
         Nuevo.setText("Nuevo");
+
+        jMenu1.setText("Nueva Asignacion");
+        Nuevo.add(jMenu1);
+
+        jMenu2.setText("Nuevo Formulario");
+        Nuevo.add(jMenu2);
+
         menu.add(Nuevo);
 
         m_baseGeneralClientes.setText("Base Datos Clientes");
@@ -256,22 +233,21 @@ public class Administrador extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JMenu Nuevo;
-    private javax.swing.JInternalFrame if_Asesores;
-    private javax.swing.JInternalFrame if_Baja;
-    private javax.swing.JInternalFrame if_Clientes;
+    public javax.swing.JInternalFrame if_Asesores;
+    public javax.swing.JInternalFrame if_Clientes;
     private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     public javax.swing.JMenuItem m_baseGeneralAsesores;
     public javax.swing.JMenuItem m_baseGeneralClientes;
     private javax.swing.JMenu menu;
     public javax.swing.JMenuItem o_salir;
     private javax.swing.JMenu opciones;
     public javax.swing.JTable tbl_Asesores;
-    public javax.swing.JTable tbl_Baja;
     public javax.swing.JTable tbl_Clientes;
     // End of variables declaration//GEN-END:variables
 }

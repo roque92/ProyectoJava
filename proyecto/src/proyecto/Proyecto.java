@@ -46,7 +46,7 @@ public class Proyecto {
         ControllerLogin controllerLogin = new ControllerLogin(login, usuario, admin, forgot, dvo, sbd, ddao);
         ControllerForgot controllerForgot = new ControllerForgot(login, forgot);
         ControllerUsuario controllerUsuario = new ControllerUsuario(usuario, login);
-        ControllerAdmin controllerAdmin = new ControllerAdmin(login, admin);
+        ControllerAdmin controllerAdmin = new ControllerAdmin(login, admin, usuario);
         ControllerBuscarAsesor controllerBuscarAsesor = new ControllerBuscarAsesor(usuario, login, sbd, tbd, dvo);
         ControllerBuscarCliente controllerBuscarCliente = new ControllerBuscarCliente(usuario, login, sbd, tbd, dvo);
         ControllerCasosAsignados controllerCasosAsignados = new ControllerCasosAsignados(usuario, login, sbd, tbd, dvo);

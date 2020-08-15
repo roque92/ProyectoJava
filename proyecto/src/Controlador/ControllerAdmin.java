@@ -11,6 +11,7 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import proyecto.Vista.Administrador;
 import proyecto.Vista.Login;
+import proyecto.Vista.Usuario;
 
 /**
  *
@@ -20,12 +21,16 @@ public class ControllerAdmin implements WindowListener, ActionListener {
 
     Administrador admin = new Administrador();
     Login login = new Login();
+    Usuario usuario = new Usuario();
 
-    public ControllerAdmin(Login login, Administrador admin) {
+    public ControllerAdmin(Login login, Administrador admin, Usuario usuario) {
         this.admin = admin;
         this.login = login;
+        this.usuario = usuario;
 
         admin.o_salir.addActionListener(this);
+        admin.m_baseGeneralClientes.addActionListener(this);
+        admin.m_baseGeneralAsesores.addActionListener(this);
         admin.addWindowListener(this);
     }
 
@@ -42,6 +47,12 @@ public class ControllerAdmin implements WindowListener, ActionListener {
     public void actionPerformed(ActionEvent e) {
       if(e.getSource() == admin.o_salir){
           closeWindows();
+      }
+      if(e.getSource() == admin.m_baseGeneralClientes){
+          admin.if_Clientes.setVisible(true);
+      }
+      if(e.getSource() == admin.m_baseGeneralAsesores){
+          admin.if_Asesores.setVisible(true);
       }
     }
 

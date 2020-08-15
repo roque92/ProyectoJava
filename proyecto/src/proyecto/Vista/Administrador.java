@@ -45,11 +45,10 @@ public class Administrador extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         menu = new javax.swing.JMenu();
         Nuevo = new javax.swing.JMenu();
-        bdBaja = new javax.swing.JMenuItem();
-        bdAsesores = new javax.swing.JMenuItem();
-        bdClientes = new javax.swing.JMenuItem();
+        m_baseGeneralClientes = new javax.swing.JMenuItem();
+        m_baseGeneralAsesores = new javax.swing.JMenuItem();
         opciones = new javax.swing.JMenu();
-        salir = new javax.swing.JMenuItem();
+        o_salir = new javax.swing.JMenuItem();
 
         jMenuItem2.setText("jMenuItem2");
 
@@ -180,26 +179,23 @@ public class Administrador extends javax.swing.JFrame {
         Nuevo.setText("Nuevo");
         menu.add(Nuevo);
 
-        bdBaja.setText("Base Datos Clientes");
-        bdBaja.addActionListener(new java.awt.event.ActionListener() {
+        m_baseGeneralClientes.setText("Base Datos Clientes");
+        m_baseGeneralClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bdBajaActionPerformed(evt);
+                m_baseGeneralClientesActionPerformed(evt);
             }
         });
-        menu.add(bdBaja);
+        menu.add(m_baseGeneralClientes);
 
-        bdAsesores.setText("Base Datos Asesores");
-        menu.add(bdAsesores);
-
-        bdClientes.setText("Base Datos Baja");
-        menu.add(bdClientes);
+        m_baseGeneralAsesores.setText("Base Datos Asesores");
+        menu.add(m_baseGeneralAsesores);
 
         jMenuBar1.add(menu);
 
         opciones.setText("Opciones");
 
-        salir.setText("Salir");
-        opciones.add(salir);
+        o_salir.setText("Salir");
+        opciones.add(o_salir);
 
         jMenuBar1.add(opciones);
 
@@ -219,9 +215,9 @@ public class Administrador extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void bdBajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bdBajaActionPerformed
+    private void m_baseGeneralClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_baseGeneralClientesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_bdBajaActionPerformed
+    }//GEN-LAST:event_m_baseGeneralClientesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -260,9 +256,6 @@ public class Administrador extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JMenu Nuevo;
-    private javax.swing.JMenuItem bdAsesores;
-    private javax.swing.JMenuItem bdBaja;
-    private javax.swing.JMenuItem bdClientes;
     private javax.swing.JInternalFrame if_Asesores;
     private javax.swing.JInternalFrame if_Baja;
     private javax.swing.JInternalFrame if_Clientes;
@@ -272,9 +265,11 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    public javax.swing.JMenuItem m_baseGeneralAsesores;
+    public javax.swing.JMenuItem m_baseGeneralClientes;
     private javax.swing.JMenu menu;
+    public javax.swing.JMenuItem o_salir;
     private javax.swing.JMenu opciones;
-    private javax.swing.JMenuItem salir;
     public javax.swing.JTable tbl_Asesores;
     public javax.swing.JTable tbl_Baja;
     public javax.swing.JTable tbl_Clientes;

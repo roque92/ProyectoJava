@@ -31,6 +31,7 @@ public class ControllerAdmin implements WindowListener, ActionListener {
         admin.o_salir.addActionListener(this);
         admin.m_baseGeneralClientes.addActionListener(this);
         admin.m_baseGeneralAsesores.addActionListener(this);
+        admin.m_NuevoFormulario.addActionListener(this);
         admin.addWindowListener(this);
     }
 
@@ -53,6 +54,9 @@ public class ControllerAdmin implements WindowListener, ActionListener {
       }
       if(e.getSource() == admin.m_baseGeneralAsesores){
           admin.if_Asesores.setVisible(true);
+      }
+      if(e.getSource() == admin.m_NuevoFormulario){
+          admin.if_formulario.setVisible(true);
       }
     }
 

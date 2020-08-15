@@ -291,16 +291,7 @@ public class TablasBaseDatos implements InterfaceTablasBase {
         
         while (rs.next()) {
                 StringsBaseDatos sbd1 = new StringsBaseDatos();
-                sbd1.setId_casos_sbd(rs.getInt(1));
-                sbd1.setNombre_clientes_sbd(rs.getString(2));
-                sbd1.setNombre_vendedor_sbd(rs.getString(3));
-                sbd1.setUsername_usuario_sbd(rs.getString(4));
-                sbd1.setHonorario_casos_sbd(rs.getDouble(5));
-                sbd1.setSalario_casos_sbd(rs.getDouble(6));
-                sbd1.setNotas_casos_sbd(rs.getString(7));
-                sbd1.setEstatus_clientes_sbd(rs.getString(8));
-                sbd1.setDescripcion_propiedad_sbd(rs.getString(9));
-                sbd1.setNombre_representante_sbd(rs.getString(10));
+                
 
                 datos.add(sbd1);
             }

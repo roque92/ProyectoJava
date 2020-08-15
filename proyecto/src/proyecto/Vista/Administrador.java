@@ -117,8 +117,8 @@ public class Administrador extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         menu = new javax.swing.JMenu();
         Nuevo = new javax.swing.JMenu();
-        jMenu1 = new javax.swing.JMenu();
-        m_NuevoFormulario = new javax.swing.JMenu();
+        m_NuevoFormulario = new javax.swing.JMenuItem();
+        m_NuevaAsignacion = new javax.swing.JMenuItem();
         m_baseGeneralClientes = new javax.swing.JMenuItem();
         m_baseGeneralAsesores = new javax.swing.JMenuItem();
         opciones = new javax.swing.JMenu();
@@ -737,11 +737,11 @@ public class Administrador extends javax.swing.JFrame {
 
         Nuevo.setText("Nuevo");
 
-        jMenu1.setText("Nueva Asignacion");
-        Nuevo.add(jMenu1);
-
         m_NuevoFormulario.setText("Nuevo Formulario");
         Nuevo.add(m_NuevoFormulario);
+
+        m_NuevaAsignacion.setText("Nueva Asignacion");
+        Nuevo.add(m_NuevaAsignacion);
 
         menu.add(Nuevo);
 
@@ -887,7 +887,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
@@ -898,7 +897,8 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     public javax.swing.JTabbedPane jTabbedPane1;
-    public javax.swing.JMenu m_NuevoFormulario;
+    public javax.swing.JMenuItem m_NuevaAsignacion;
+    public javax.swing.JMenuItem m_NuevoFormulario;
     public javax.swing.JMenuItem m_baseGeneralAsesores;
     public javax.swing.JMenuItem m_baseGeneralClientes;
     private javax.swing.JMenu menu;

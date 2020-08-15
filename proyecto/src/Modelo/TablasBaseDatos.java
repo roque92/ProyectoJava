@@ -54,7 +54,7 @@ public class TablasBaseDatos implements InterfaceTablasBase {
 
         try {
             c.connect();
-            ResultSet rs = c.obtener_datos("SELECT id, nombre, telefono, correo FROM tbl_usuarios WHERE nombre = '" + sbd.getUsername_login_sbd()+ ";");
+            ResultSet rs = c.obtener_datos("SELECT id, nombre, telefono, correo FROM tbl_usuarios WHERE nombre = '" + sbd.getUsername_login_sbd() + ";");
 
             while (rs.next()) {
                 sbd.setId_usuario_sbd(rs.getInt(1));
@@ -102,7 +102,7 @@ public class TablasBaseDatos implements InterfaceTablasBase {
 
         try {
             c.connect();
-            ResultSet rs = c.obtener_datos("SELECT * FROM tbl_representante WHERE nombre = '" + sbd.getNombre_representante_sbd()+ " ;");
+            ResultSet rs = c.obtener_datos("SELECT * FROM tbl_representante WHERE nombre = '" + sbd.getNombre_representante_sbd() + " ;");
 
             while (rs.next()) {
                 sbd.setId_representante_sbd(rs.getInt(0));
@@ -164,13 +164,13 @@ public class TablasBaseDatos implements InterfaceTablasBase {
                 sbd1.setId_migratorio_clientes_sbd(rs.getInt(8));
                 sbd1.setProfecion_clientes_sbd(rs.getString(9));
                 sbd1.setEstadoResidencia_clientes_sbd(rs.getString(10));
-                sbd1.setDpi_clientes_sbd(rs.getString(11));
-                sbd1.setNit_clientes_sbd(rs.getString(12));
-                sbd1.setUsaId_clientes_sbd(rs.getString(13));
-                sbd1.setId_EstadoCivil_sbd(rs.getInt(14));
-                sbd1.setDescripcion_EstadoCivil_sbd(rs.getString(15));
-                sbd1.setId_migratorio_sbd(rs.getInt(16));
-                sbd1.setDescripcion_migratorio_sbd(rs.getString(17));
+                sbd1.setDpi_clientes_sbd(rs.getString(12));
+                sbd1.setNit_clientes_sbd(rs.getString(13));
+                sbd1.setUsaId_clientes_sbd(rs.getString(14));
+                sbd1.setId_EstadoCivil_sbd(rs.getInt(15));
+                sbd1.setDescripcion_EstadoCivil_sbd(rs.getString(16));
+                sbd1.setId_migratorio_sbd(rs.getInt(17));
+                sbd1.setDescripcion_migratorio_sbd(rs.getString(18));
 
                 datos.add(sbd1);
             }
@@ -256,36 +256,34 @@ public class TablasBaseDatos implements InterfaceTablasBase {
     public ArrayList<StringsBaseDatos> RegistroDetallado(StringsBaseDatos sbd) {
         Conector c = new Conector();
         ArrayList<StringsBaseDatos> datos = new ArrayList();
-        
-        
+
         try {
             ResultSet rs = c.obtener_datos("SELECT u.username, r.fecha, r.notas \n"
                     + "FROM tbl_registros AS r \n"
                     + "INNER JOIN tbl_casos AS c ON r.id_casos = c.id\n"
                     + "INNER JOIN tbl_clientes as cl ON c.id_cliente = cl.id\n"
                     + "INNER JOIN tbl_usuarios AS u ON r.id_usuario = u.id\n"
-                    + "where cl.nombre = '"+sbd.getNombre_clientes_sbd()+";");
-        
-        while (rs.next()) {
+                    + "where cl.nombre = '" + sbd.getBuscar_cliente_registros_sbd() + "';");
+
+            while (rs.next()) {
                 StringsBaseDatos sbd1 = new StringsBaseDatos();
-                sbd1.setFecha_registros_sbd(rs.getString(1));
-                sbd1.setUsuario_registros_sbd(rs.getString(2));
+                sbd1.setUsuario_registros_sbd(rs.getString(1));
+                sbd1.setFecha_registros_sbd(rs.getString(2));
                 sbd1.setNotas_registros_sbd(rs.getString(3));
 
                 datos.add(sbd1);
+
             }
-        
-        c.desconectar();
-        
+
+            c.desconectar();
+
         } catch (Exception e) {
-            
+
             System.out.println("Error " + e.getMessage());
         }
-        
+
         return datos;
-    
+
     }
-    
-    
 
 }

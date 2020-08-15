@@ -174,6 +174,8 @@ public class ControllerFormulario implements ActionListener {
     }
 
     private void registroDetallado() {
+        sbd.setBuscar_cliente_registros_sbd(dvo.getNombre_cliente());
+
         try {
             DefaultTableModel m = new DefaultTableModel();
             m.setColumnCount(0);
@@ -184,7 +186,9 @@ public class ControllerFormulario implements ActionListener {
             for (StringsBaseDatos sbd : this.tbd.RegistroDetallado(sbd)) {
                 m.addRow(new Object[]{sbd.getFecha_registros_sbd(), sbd.getUsuario_registros_sbd(), sbd.getNotas_registros_sbd()});
             }
-            usuario.ca_tbl_datos.setModel(m);
+
+            usuario.f_tbl_seguimiento.setModel(m);
+ 
         } catch (Exception e) {
             login.mensaje.showMessageDialog(null, "No se puede conectar con la base de datos Contacte con su Administrador", "Problemas de Conexion", JOptionPane.ERROR_MESSAGE);
         }

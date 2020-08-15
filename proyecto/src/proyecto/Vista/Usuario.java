@@ -193,7 +193,7 @@ public class Usuario extends javax.swing.JFrame {
                     .addComponent(jLabel27)
                     .addComponent(bc_txt_valorBuscado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 394, Short.MAX_VALUE))
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 398, Short.MAX_VALUE))
         );
 
         if_buscarAsesor.setClosable(true);
@@ -779,7 +779,7 @@ public class Usuario extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 358, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE))
         );
 
         if_baseClientes.setClosable(true);
@@ -1011,7 +1011,7 @@ public class Usuario extends javax.swing.JFrame {
     public javax.swing.JComboBox<String> f_cb_id;
     public javax.swing.JComboBox<String> f_cb_nit;
     public javax.swing.JCheckBox f_cb_nuevo;
-    private javax.swing.JTable f_tbl_seguimiento;
+    public javax.swing.JTable f_tbl_seguimiento;
     public javax.swing.JTextField f_txt_buscarCliente;
     public javax.swing.JTextField f_txt_correoCliente;
     public javax.swing.JTextField f_txt_direccionUSA;

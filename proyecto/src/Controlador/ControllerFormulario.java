@@ -7,6 +7,7 @@ package Controlador;
 
 import Modelo.DatosDAO;
 import Modelo.DatosVO;
+import Modelo.StringsBaseDatos;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import proyecto.Vista.Login;
@@ -22,12 +23,14 @@ public class ControllerFormulario implements ActionListener {
     Login login = new Login();
     DatosVO dvo = new DatosVO();
     DatosDAO ddao = new DatosDAO();
+    StringsBaseDatos sbd = new StringsBaseDatos();
     
-    public ControllerFormulario(Usuario usuario, Login login, DatosVO dvo, DatosDAO ddao) {
+    public ControllerFormulario(Usuario usuario, Login login, DatosVO dvo, DatosDAO ddao, StringsBaseDatos sbd) {
         this.usuario = usuario;
         this.login = login;
         this.dvo = dvo;
         this.ddao = ddao;
+        this.sbd = sbd;
         
         usuario.f_btn_buscarCliente.addActionListener(this);
     }
@@ -166,6 +169,7 @@ public class ControllerFormulario implements ActionListener {
     }
     
     private void registroDetallado(){
+        
         
     }
     

@@ -34,7 +34,6 @@ public interface InterfaceMetodos {
     public ArrayList<DatosVO> mostrar_datos_nombre(DatosVO dvo);
     public ArrayList<DatosVO> mostrar_datos_telefono(DatosVO dvo);
     public ArrayList<DatosVO> mostrar_datos_correo(DatosVO dvo);
-    public ArrayList<DatosVO> mostrar_regiistro_detallado(DatosVO dvo);
 
     //Eliminar
     public void borrar_datos(DatosVO dvo);    

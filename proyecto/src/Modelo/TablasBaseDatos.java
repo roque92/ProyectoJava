@@ -20,7 +20,6 @@ public class TablasBaseDatos implements InterfaceTablasBase {
     @Override
     public ArrayList<StringsBaseDatos> TablaVendedor(StringsBaseDatos sbd) {
         Conector c = new Conector();
-        DatosVO dvo = new DatosVO();
         ArrayList<StringsBaseDatos> datos = new ArrayList();
         try {
 
@@ -41,7 +40,7 @@ public class TablasBaseDatos implements InterfaceTablasBase {
             c.desconectar();
 
         } catch (SQLException e) {
-            dvo.setError(e.getMessage());
+            System.out.println("Error " + e.getMessage());
         }
 
         return datos;
@@ -51,12 +50,11 @@ public class TablasBaseDatos implements InterfaceTablasBase {
     @Override
     public ArrayList<StringsBaseDatos> TablaUsuario(StringsBaseDatos sbd) {
         Conector c = new Conector();
-        DatosVO dvo = new DatosVO();
         ArrayList<StringsBaseDatos> datos = new ArrayList();
 
         try {
             c.connect();
-            ResultSet rs = c.obtener_datos("SELECT id, nombre, telefono, correo FROM tbl_usuarios WHERE nombre = '" + dvo.getUser_login() + ";");
+            ResultSet rs = c.obtener_datos("SELECT id, nombre, telefono, correo FROM tbl_usuarios WHERE nombre = '" + sbd.getUsername_login_sbd()+ ";");
 
             while (rs.next()) {
                 sbd.setId_usuario_sbd(rs.getInt(1));
@@ -68,7 +66,7 @@ public class TablasBaseDatos implements InterfaceTablasBase {
             }
             c.desconectar();
         } catch (SQLException e) {
-            dvo.setError(e.getMessage());
+            System.out.println("Error " + e.getMessage());
         }
 
         return datos;
@@ -78,7 +76,6 @@ public class TablasBaseDatos implements InterfaceTablasBase {
     @Override
     public ArrayList<StringsBaseDatos> TablaPropiedad(StringsBaseDatos sbd) {
         Conector c = new Conector();
-        DatosVO dvo = new DatosVO();
         ArrayList<StringsBaseDatos> datos = new ArrayList();
 
         try {
@@ -91,7 +88,7 @@ public class TablasBaseDatos implements InterfaceTablasBase {
             }
             c.desconectar();
         } catch (SQLException e) {
-            dvo.setError(e.getMessage());
+            System.out.println("Error " + e.getMessage());
         }
 
         return datos;
@@ -101,12 +98,11 @@ public class TablasBaseDatos implements InterfaceTablasBase {
     @Override
     public ArrayList<StringsBaseDatos> TablaRepresentante(StringsBaseDatos sbd) {
         Conector c = new Conector();
-        DatosVO dvo = new DatosVO();
         ArrayList<StringsBaseDatos> datos = new ArrayList();
 
         try {
             c.connect();
-            ResultSet rs = c.obtener_datos("SELECT * FROM tbl_representante WHERE nombre = '" + dvo.getNombre_representante() + " ;");
+            ResultSet rs = c.obtener_datos("SELECT * FROM tbl_representante WHERE nombre = '" + sbd.getNombre_representante_sbd()+ " ;");
 
             while (rs.next()) {
                 sbd.setId_representante_sbd(rs.getInt(0));
@@ -118,7 +114,7 @@ public class TablasBaseDatos implements InterfaceTablasBase {
             }
             c.desconectar();
         } catch (SQLException e) {
-            dvo.setError(e.getMessage());
+            System.out.println("Error " + e.getMessage());
         }
 
         return datos;
@@ -128,7 +124,6 @@ public class TablasBaseDatos implements InterfaceTablasBase {
     @Override
     public ArrayList<StringsBaseDatos> TablaRegistros(StringsBaseDatos sbd) {
         Conector c = new Conector();
-        DatosVO dvo = new DatosVO();
         ArrayList<StringsBaseDatos> datos = new ArrayList();
 
         try {
@@ -142,7 +137,7 @@ public class TablasBaseDatos implements InterfaceTablasBase {
             }
             c.desconectar();
         } catch (SQLException e) {
-            dvo.setError(e.getMessage());
+            System.out.println("Error " + e.getMessage());
         }
 
         return datos;
@@ -152,7 +147,6 @@ public class TablasBaseDatos implements InterfaceTablasBase {
     @Override
     public ArrayList<StringsBaseDatos> TablaEstado(StringsBaseDatos sbd) {
         Conector c = new Conector();
-        DatosVO dvo = new DatosVO();
         ArrayList<StringsBaseDatos> datos = new ArrayList();
 
         try {
@@ -165,7 +159,7 @@ public class TablasBaseDatos implements InterfaceTablasBase {
             }
             c.desconectar();
         } catch (SQLException e) {
-            dvo.setError(e.getMessage());
+            System.out.println("Error " + e.getMessage());
         }
 
         return datos;
@@ -175,7 +169,6 @@ public class TablasBaseDatos implements InterfaceTablasBase {
     @Override
     public ArrayList<StringsBaseDatos> TablaClientes(StringsBaseDatos sbd) {
         Conector c = new Conector();
-        DatosVO dvo = new DatosVO();
         ArrayList<StringsBaseDatos> datos = new ArrayList();
 
         try {
@@ -206,7 +199,7 @@ public class TablasBaseDatos implements InterfaceTablasBase {
             }
             c.desconectar();
         } catch (SQLException e) {
-            dvo.setError(e.getMessage());
+            System.out.println("Error " + e.getMessage());
         }
 
         return datos;
@@ -216,7 +209,6 @@ public class TablasBaseDatos implements InterfaceTablasBase {
     @Override
     public ArrayList<StringsBaseDatos> TablaCasos(StringsBaseDatos sbd) {
         Conector c = new Conector();
-        DatosVO dvo = new DatosVO();
         ArrayList<StringsBaseDatos> datos = new ArrayList();
 
         try {
@@ -237,7 +229,7 @@ public class TablasBaseDatos implements InterfaceTablasBase {
             }
             c.desconectar();
         } catch (SQLException e) {
-            dvo.setError(e.getMessage());
+            System.out.println("Error " + e.getMessage());
         }
 
         return datos;
@@ -246,7 +238,6 @@ public class TablasBaseDatos implements InterfaceTablasBase {
     @Override
     public ArrayList<StringsBaseDatos> CasosAsignados(StringsBaseDatos sbd) {
         Conector c = new Conector();
-        DatosVO dvo = new DatosVO();
         ArrayList<StringsBaseDatos> datos = new ArrayList();
 
         try {
@@ -279,9 +270,52 @@ public class TablasBaseDatos implements InterfaceTablasBase {
             c.desconectar();
 
         } catch (Exception e) {
-            dvo.setError(e.getMessage());
+            System.out.println("Error " + e.getMessage());
         }
         return datos;
     }
+
+    @Override
+    public ArrayList<StringsBaseDatos> RegistroDetallado(StringsBaseDatos sbd) {
+        Conector c = new Conector();
+        ArrayList<StringsBaseDatos> datos = new ArrayList();
+        
+        
+        try {
+            ResultSet rs = c.obtener_datos("SELECT u.username, r.fecha, r.notas \n"
+                    + "FROM tbl_registros AS r \n"
+                    + "INNER JOIN tbl_casos AS c ON r.id_casos = c.id\n"
+                    + "INNER JOIN tbl_clientes as cl ON c.id_cliente = cl.id\n"
+                    + "INNER JOIN tbl_usuarios AS u ON r.id_usuario = u.id\n"
+                    + "where cl.nombre = '"+sbd.getNombre_clientes_sbd()+";");
+        
+        while (rs.next()) {
+                StringsBaseDatos sbd1 = new StringsBaseDatos();
+                sbd1.setId_casos_sbd(rs.getInt(1));
+                sbd1.setNombre_clientes_sbd(rs.getString(2));
+                sbd1.setNombre_vendedor_sbd(rs.getString(3));
+                sbd1.setUsername_usuario_sbd(rs.getString(4));
+                sbd1.setHonorario_casos_sbd(rs.getDouble(5));
+                sbd1.setSalario_casos_sbd(rs.getDouble(6));
+                sbd1.setNotas_casos_sbd(rs.getString(7));
+                sbd1.setEstatus_clientes_sbd(rs.getString(8));
+                sbd1.setDescripcion_propiedad_sbd(rs.getString(9));
+                sbd1.setNombre_representante_sbd(rs.getString(10));
+
+                datos.add(sbd1);
+            }
+        
+        c.desconectar();
+        
+        } catch (Exception e) {
+            
+            System.out.println("Error " + e.getMessage());
+        }
+        
+        return datos;
+    
+    }
+    
+    
 
 }

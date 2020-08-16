@@ -87,7 +87,6 @@ public class Usuario extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         f_txt_nombreCliente = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        f_txt_tipoPropiedad = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         f_txt_telefonoCliente = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
@@ -95,9 +94,7 @@ public class Usuario extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         f_txt_estadoResidencia = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
-        f_txt_estadoCivil = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
-        f_txt_estadoMigratorio = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         f_txt_profesion = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
@@ -106,6 +103,9 @@ public class Usuario extends javax.swing.JFrame {
         f_cb_nit = new javax.swing.JComboBox<>();
         jLabel20 = new javax.swing.JLabel();
         f_cb_id = new javax.swing.JComboBox<>();
+        f_txt_estadoMigratorio = new javax.swing.JComboBox<>();
+        f_txt_tipoPropiedad = new javax.swing.JComboBox<>();
+        f_txt_estadoCivil = new javax.swing.JComboBox<>();
         repLegal = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
@@ -193,7 +193,7 @@ public class Usuario extends javax.swing.JFrame {
                     .addComponent(jLabel27)
                     .addComponent(bc_txt_valorBuscado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 398, Short.MAX_VALUE))
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 466, Short.MAX_VALUE))
         );
 
         if_buscarAsesor.setClosable(true);
@@ -268,7 +268,7 @@ public class Usuario extends javax.swing.JFrame {
         );
         if_baseAsoresLayout.setVerticalGroup(
             if_baseAsoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)
         );
 
         if_formulario.setClosable(true);
@@ -439,8 +439,6 @@ public class Usuario extends javax.swing.JFrame {
 
         jLabel11.setText("Tipo de Propiedad");
 
-        f_txt_tipoPropiedad.setEditable(false);
-
         jLabel12.setText("Telefonos");
 
         f_txt_telefonoCliente.setEditable(false);
@@ -455,11 +453,7 @@ public class Usuario extends javax.swing.JFrame {
 
         jLabel15.setText("Estado Civil");
 
-        f_txt_estadoCivil.setEditable(false);
-
         jLabel16.setText("Estado Migratorio");
-
-        f_txt_estadoMigratorio.setEditable(false);
 
         jLabel17.setText("Profesion");
 
@@ -477,6 +471,12 @@ public class Usuario extends javax.swing.JFrame {
 
         f_cb_id.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Si", "No" }));
 
+        f_txt_estadoMigratorio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Residente", "Ciudadano", "Regular" }));
+
+        f_txt_tipoPropiedad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Apartamento", "Casa Oficina", "Terreno" }));
+
+        f_txt_estadoCivil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Casado (a)", "Divorlciado (a)", "Soltero (a)", "Viudo (a)" }));
+
         javax.swing.GroupLayout datosLayout = new javax.swing.GroupLayout(datos);
         datos.setLayout(datosLayout);
         datosLayout.setHorizontalGroup(
@@ -493,10 +493,10 @@ public class Usuario extends javax.swing.JFrame {
                 .addGroup(datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(datosLayout.createSequentialGroup()
                         .addGroup(datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(f_txt_nombreCliente)
+                            .addComponent(f_txt_nombreCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
                             .addComponent(f_txt_telefonoCliente)
                             .addComponent(f_txt_estadoResidencia)
-                            .addComponent(f_txt_estadoMigratorio, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE))
+                            .addComponent(f_txt_estadoMigratorio, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -507,9 +507,9 @@ public class Usuario extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(f_txt_correoCliente)
-                            .addComponent(f_txt_tipoPropiedad)
-                            .addComponent(f_txt_estadoCivil)
-                            .addComponent(f_txt_profesion)))
+                            .addComponent(f_txt_profesion)
+                            .addComponent(f_txt_tipoPropiedad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(f_txt_estadoCivil, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(datosLayout.createSequentialGroup()
                         .addComponent(f_cb_dpi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -547,9 +547,9 @@ public class Usuario extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
-                    .addComponent(f_txt_estadoMigratorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel17)
-                    .addComponent(f_txt_profesion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(f_txt_profesion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(f_txt_estadoMigratorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel18)
@@ -558,7 +558,7 @@ public class Usuario extends javax.swing.JFrame {
                     .addComponent(f_cb_nit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel20)
                     .addComponent(f_cb_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout negociacionLayout = new javax.swing.GroupLayout(negociacion);
@@ -779,7 +779,7 @@ public class Usuario extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE))
         );
 
         if_baseClientes.setClosable(true);
@@ -1015,8 +1015,8 @@ public class Usuario extends javax.swing.JFrame {
     public javax.swing.JTextField f_txt_buscarCliente;
     public javax.swing.JTextField f_txt_correoCliente;
     public javax.swing.JTextField f_txt_direccionUSA;
-    public javax.swing.JTextField f_txt_estadoCivil;
-    public javax.swing.JTextField f_txt_estadoMigratorio;
+    public javax.swing.JComboBox<String> f_txt_estadoCivil;
+    public javax.swing.JComboBox<String> f_txt_estadoMigratorio;
     public javax.swing.JTextField f_txt_estadoResidencia;
     public javax.swing.JTextField f_txt_honorarios;
     public javax.swing.JTextField f_txt_nombreCliente;
@@ -1029,7 +1029,7 @@ public class Usuario extends javax.swing.JFrame {
     public javax.swing.JTextField f_txt_repTelefono;
     public javax.swing.JTextField f_txt_salario;
     public javax.swing.JTextField f_txt_telefonoCliente;
-    public javax.swing.JTextField f_txt_tipoPropiedad;
+    public javax.swing.JComboBox<String> f_txt_tipoPropiedad;
     public javax.swing.JTextField f_txt_tramite;
     public javax.swing.JTextField f_txt_vendedorContructora;
     public javax.swing.JTextField f_txt_vendedorCorreo;

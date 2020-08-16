@@ -77,17 +77,17 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
               <SubComponents>
-                <MenuItem class="javax.swing.JMenuItem" name="f_casosAsignados">
+                <MenuItem class="javax.swing.JMenuItem" name="f_AbrirFormulario">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Casos asignados"/>
+                    <Property name="text" type="java.lang.String" value="Abrir Formulario"/>
                   </Properties>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                   </AuxValues>
                 </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="f_AbrirFormulario">
+                <MenuItem class="javax.swing.JMenuItem" name="f_casosAsignados">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Abrir Formulario"/>
+                    <Property name="text" type="java.lang.String" value="Casos asignados"/>
                   </Properties>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -254,7 +254,7 @@
                           <Component id="bc_txt_valorBuscado" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane6" pref="466" max="32767" attributes="0"/>
+                      <Component id="jScrollPane6" pref="474" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -403,7 +403,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane2" alignment="0" pref="368" max="32767" attributes="0"/>
+                  <Component id="jScrollPane2" alignment="0" pref="360" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -480,7 +480,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jScrollPane3" pref="430" max="32767" attributes="0"/>
+                      <Component id="jScrollPane3" pref="438" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1464,7 +1464,6 @@
                 <Component class="javax.swing.JCheckBox" name="f_cb_editar">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Editar"/>
-                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>

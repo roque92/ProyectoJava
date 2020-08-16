@@ -12,6 +12,8 @@ import Modelo.TablasBaseDatos;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import javax.swing.table.DefaultTableModel;
 import proyecto.Vista.Login;
 import proyecto.Vista.Usuario;
@@ -20,7 +22,7 @@ import proyecto.Vista.Usuario;
  *
  * @author Jose Roque
  */
-public class ControllerFormulario implements ActionListener {
+public class ControllerFormulario implements ActionListener, ChangeListener {
 
     Usuario usuario = new Usuario();
     Login login = new Login();
@@ -38,6 +40,8 @@ public class ControllerFormulario implements ActionListener {
         this.tbd = tbd;
 
         usuario.f_btn_buscarCliente.addActionListener(this);
+        usuario.f_cb_editar.addChangeListener(this);
+        usuario.f_cb_nuevo.addChangeListener(this);
     }
 
     private void buscarCliente() {
@@ -67,6 +71,7 @@ public class ControllerFormulario implements ActionListener {
 
     private void buscarNombre() {
         dvo.setBuscar_nombre(usuario.f_txt_buscarCliente.getText().trim());
+        usuario.f_txt_buscarCliente.setText("");
         ddao.mostrar_datos_nombre(dvo);
 //Asignacion de datos Clase Tramite
         usuario.f_txt_tramite.setText(dvo.getClaseTramite_cliente());
@@ -103,6 +108,7 @@ public class ControllerFormulario implements ActionListener {
 
     private void buscarTelefono() {
         dvo.setBuscar_telefono(usuario.f_txt_buscarCliente.getText());
+        usuario.f_txt_buscarCliente.setText("");
         ddao.mostrar_datos_telefono(dvo);
 //Asignacion de datos Clase Tramite
         usuario.f_txt_tramite.setText(dvo.getClaseTramite_cliente());
@@ -139,6 +145,7 @@ public class ControllerFormulario implements ActionListener {
 
     private void buscarCorreo() {
         dvo.setBuscar_correo(usuario.f_txt_buscarCliente.getText().trim());
+        usuario.f_txt_buscarCliente.setText("");
         ddao.mostrar_datos_correo(dvo);
 //Asignacion de datos Clase Tramite
         usuario.f_txt_tramite.setText(dvo.getClaseTramite_cliente());
@@ -194,6 +201,75 @@ public class ControllerFormulario implements ActionListener {
         }
 
     }
+    
+    private void enableText(){
+        //Asignacion de datos Clase Tramite
+        usuario.f_txt_tramite.setEditable(true);
+//Asignacino de datos del Asesor/Vendedor
+        usuario.f_txt_vendedorNombre.setEditable(true);
+        usuario.f_txt_vendedorTelefono.setEditable(true);
+        usuario.f_txt_vendedorContructora.setEditable(true);
+        usuario.f_txt_vendedorCorreo.setEditable(true);
+//Asignacion de datos Financieros
+        usuario.f_txt_honorarios.setEditable(true);
+        usuario.f_txt_salario.setEditable(true);
+        usuario.f_txt_direccionUSA.setEditable(true);
+//Asignacion de datos Negociacion
+        usuario.f_txt_nombreCliente.setEditable(true);
+        usuario.f_txt_telefonoCliente.setEditable(true);
+        usuario.f_txt_estadoResidencia.setEditable(true);
+        usuario.f_txt_estadoMigratorio.setEditable(true);
+        usuario.f_txt_tipoPropiedad.setEditable(true);
+        usuario.f_txt_correoCliente.setEditable(true);
+        usuario.f_txt_estadoCivil.setEditable(true);
+        usuario.f_txt_profesion.setEditable(true);
+        usuario.f_cb_dpi.setEditable(true);
+        usuario.f_cb_nit.setEditable(true);
+        usuario.f_cb_id.setEditable(true);
+//Asignacion de datos Representante Legal
+        usuario.f_txt_repNombre.setEditable(true);
+        usuario.f_txt_repDireccion.setEditable(true);
+        usuario.f_txt_repTelefono.setEditable(true);
+        usuario.f_txt_repParentezco.setEditable(true);
+        usuario.f_txt_repBanco.setEditable(true);
+//Asignacion de datos Notas
+        usuario.f_txt_notas.setEditable(true);
+        
+    }
+    
+    private void disableText(){
+        //Asignacion de datos Clase Tramite
+        usuario.f_txt_tramite.setEditable(false);
+//Asignacino de datos del Asesor/Vendedor
+        usuario.f_txt_vendedorNombre.setEditable(false);
+        usuario.f_txt_vendedorTelefono.setEditable(false);
+        usuario.f_txt_vendedorContructora.setEditable(false);
+        usuario.f_txt_vendedorCorreo.setEditable(false);
+//Asignacion de datos Financieros
+        usuario.f_txt_honorarios.setEditable(false);
+        usuario.f_txt_salario.setEditable(false);
+        usuario.f_txt_direccionUSA.setEditable(false);
+//Asignacion de datos Negociacion
+        usuario.f_txt_nombreCliente.setEditable(false);
+        usuario.f_txt_telefonoCliente.setEditable(false);
+        usuario.f_txt_estadoResidencia.setEditable(false);
+        usuario.f_txt_estadoMigratorio.setEditable(false);
+        usuario.f_txt_tipoPropiedad.setEditable(false);
+        usuario.f_txt_correoCliente.setEditable(false);
+        usuario.f_txt_estadoCivil.setEditable(false);
+        usuario.f_txt_profesion.setEditable(false);
+        usuario.f_cb_dpi.setEditable(false);
+        usuario.f_cb_nit.setEditable(false);
+        usuario.f_cb_id.setEditable(false);
+//Asignacion de datos Representante Legal
+        usuario.f_txt_repNombre.setEditable(false);
+        usuario.f_txt_repDireccion.setEditable(false);
+        usuario.f_txt_repTelefono.setEditable(false);
+        usuario.f_txt_repParentezco.setEditable(false);
+        usuario.f_txt_repBanco.setEditable(false);
+//Asignacion de datos Notas
+        usuario.f_txt_notas.setEditable(false);
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -201,6 +277,21 @@ public class ControllerFormulario implements ActionListener {
             buscarCliente();
         }
 
+    }
+
+    @Override
+    public void stateChanged(ChangeEvent e) {
+        if(usuario.f_cb_editar.isSelected() == true){
+            enableText();
+        } else {
+            disableText();
+        }
+        
+        if(usuario.f_cb_nuevo.isSelected() == true){
+            enableText();
+        } else {
+            disableText();
+        }
     }
 
 }

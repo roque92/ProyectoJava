@@ -140,8 +140,8 @@ public class Usuario extends javax.swing.JFrame {
         a_buscarAsesores = new javax.swing.JMenuItem();
         a_baseGeneral = new javax.swing.JMenuItem();
         formulario = new javax.swing.JMenu();
-        f_casosAsignados = new javax.swing.JMenuItem();
         f_AbrirFormulario = new javax.swing.JMenuItem();
+        f_casosAsignados = new javax.swing.JMenuItem();
         opciones = new javax.swing.JMenu();
         o_Salir = new javax.swing.JMenuItem();
 
@@ -193,7 +193,7 @@ public class Usuario extends javax.swing.JFrame {
                     .addComponent(jLabel27)
                     .addComponent(bc_txt_valorBuscado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 466, Short.MAX_VALUE))
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 474, Short.MAX_VALUE))
         );
 
         if_buscarAsesor.setClosable(true);
@@ -268,7 +268,7 @@ public class Usuario extends javax.swing.JFrame {
         );
         if_baseAsoresLayout.setVerticalGroup(
             if_baseAsoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
         );
 
         if_formulario.setClosable(true);
@@ -709,7 +709,6 @@ public class Usuario extends javax.swing.JFrame {
         f_cb_nuevo.setEnabled(false);
 
         f_cb_editar.setText("Editar");
-        f_cb_editar.setEnabled(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -779,7 +778,7 @@ public class Usuario extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 438, Short.MAX_VALUE))
         );
 
         if_baseClientes.setClosable(true);
@@ -919,11 +918,11 @@ public class Usuario extends javax.swing.JFrame {
 
         formulario.setText("Formulario");
 
-        f_casosAsignados.setText("Casos asignados");
-        formulario.add(f_casosAsignados);
-
         f_AbrirFormulario.setText("Abrir Formulario");
         formulario.add(f_AbrirFormulario);
+
+        f_casosAsignados.setText("Casos asignados");
+        formulario.add(f_casosAsignados);
 
         archivo.add(formulario);
 

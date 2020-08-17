@@ -41,6 +41,7 @@ public class Usuario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane8 = new javax.swing.JScrollPane();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         if_buscarCliente = new javax.swing.JInternalFrame();
         jLabel27 = new javax.swing.JLabel();
@@ -158,6 +159,7 @@ public class Usuario extends javax.swing.JFrame {
 
         jDesktopPane1.setBackground(new java.awt.Color(77, 208, 225));
         jDesktopPane1.setAutoscrolls(true);
+        jDesktopPane1.setPreferredSize(new java.awt.Dimension(1000, 1000));
 
         if_buscarCliente.setClosable(true);
         if_buscarCliente.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
@@ -201,7 +203,7 @@ public class Usuario extends javax.swing.JFrame {
                     .addComponent(jLabel27)
                     .addComponent(bc_txt_valorBuscado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE))
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
         );
 
         if_buscarAsesor.setClosable(true);
@@ -246,7 +248,7 @@ public class Usuario extends javax.swing.JFrame {
                     .addComponent(jLabel26)
                     .addComponent(ba_txt_valorBuscado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE))
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE))
         );
 
         if_baseAsores.setClosable(true);
@@ -276,7 +278,7 @@ public class Usuario extends javax.swing.JFrame {
         );
         if_baseAsoresLayout.setVerticalGroup(
             if_baseAsoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
         );
 
         if_formulario.setClosable(true);
@@ -528,7 +530,7 @@ public class Usuario extends javax.swing.JFrame {
                         .addComponent(jLabel20)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(f_cb_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 124, Short.MAX_VALUE)))
+                        .addGap(0, 105, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         datosLayout.setVerticalGroup(
@@ -687,7 +689,7 @@ public class Usuario extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 536, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 517, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -714,7 +716,6 @@ public class Usuario extends javax.swing.JFrame {
         jTabbedPane1.addTab("Notas", notas);
 
         f_cb_nuevo.setText("Nuevo");
-        f_cb_nuevo.setEnabled(false);
 
         f_cb_editar.setText("Editar");
 
@@ -786,7 +787,7 @@ public class Usuario extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 498, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE))
         );
 
         if_baseClientes.setClosable(true);
@@ -817,7 +818,7 @@ public class Usuario extends javax.swing.JFrame {
         );
         if_baseClientesLayout.setVerticalGroup(
             if_baseClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
         );
 
         if_casosAsignados.setClosable(true);
@@ -846,10 +847,11 @@ public class Usuario extends javax.swing.JFrame {
         );
         if_casosAsignadosLayout.setVerticalGroup(
             if_casosAsignadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
+            .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
         );
 
         if_RegistroDetallado.setClosable(true);
+        if_RegistroDetallado.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
         if_RegistroDetallado.setIconifiable(true);
         if_RegistroDetallado.setResizable(true);
         if_RegistroDetallado.setTitle("Registro Detallado");
@@ -875,8 +877,8 @@ public class Usuario extends javax.swing.JFrame {
                 .addGroup(if_RegistroDetalladoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(rd_txt_informacion)
                     .addComponent(rd_txt_usuario)
-                    .addComponent(rd_txt_fecha, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE))
-                .addContainerGap(90, Short.MAX_VALUE))
+                    .addComponent(rd_txt_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         if_RegistroDetalladoLayout.setVerticalGroup(
             if_RegistroDetalladoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -893,7 +895,7 @@ public class Usuario extends javax.swing.JFrame {
                 .addGroup(if_RegistroDetalladoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel30)
                     .addComponent(rd_txt_informacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
         jDesktopPane1.setLayer(if_buscarCliente, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -910,41 +912,42 @@ public class Usuario extends javax.swing.JFrame {
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(if_casosAsignados)
-                    .addComponent(if_buscarAsesor, javax.swing.GroupLayout.DEFAULT_SIZE, 613, Short.MAX_VALUE)
-                    .addComponent(if_formulario))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(if_baseClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(if_buscarCliente)
-                        .addComponent(if_RegistroDetallado))
-                    .addComponent(if_baseAsores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(48, 48, 48))
+                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(if_formulario)
+                            .addComponent(if_buscarAsesor, javax.swing.GroupLayout.DEFAULT_SIZE, 594, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(if_baseAsores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(if_baseClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(if_buscarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(if_RegistroDetallado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addComponent(if_RegistroDetallado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(if_baseAsores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(25, 25, 25)
-                        .addComponent(if_baseClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(if_buscarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(if_RegistroDetallado)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addComponent(if_formulario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(if_buscarAsesor, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(if_casosAsignados)
-                        .addGap(46, 46, 46))))
+                        .addComponent(if_baseClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE))
+                    .addComponent(if_formulario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(if_buscarCliente)
+                    .addComponent(if_buscarAsesor, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(if_casosAsignados)
+                .addContainerGap())
         );
+
+        jScrollPane8.setViewportView(jDesktopPane1);
 
         jMenuBar1.setMaximumSize(new java.awt.Dimension(114, 769));
 
@@ -995,11 +998,11 @@ public class Usuario extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 1113, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 1425, Short.MAX_VALUE)
         );
 
         pack();
@@ -1141,6 +1144,7 @@ public class Usuario extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
     public javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JPanel negociacion;
     private javax.swing.JPanel notas;

@@ -40,6 +40,7 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
         this.tbd = tbd;
 
         usuario.f_btn_buscarCliente.addActionListener(this);
+        usuario.f_btn_guardar.addActionListener(this);
         usuario.f_cb_editar.addChangeListener(this);
         usuario.f_cb_nuevo.addChangeListener(this);
     }
@@ -72,6 +73,7 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
     private void buscarNombre() {
         dvo.setBuscar_nombre(usuario.f_txt_buscarCliente.getText().trim());
         usuario.f_txt_buscarCliente.setText("");
+        usuario.f_valor_buscado.setSelectedItem("Seleccionar");
         ddao.mostrar_datos_nombre(dvo);
 //Asignacion de datos Clase Tramite
         usuario.f_txt_tramite.setText(dvo.getClaseTramite_cliente());
@@ -109,6 +111,7 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
     private void buscarTelefono() {
         dvo.setBuscar_telefono(usuario.f_txt_buscarCliente.getText());
         usuario.f_txt_buscarCliente.setText("");
+         usuario.f_valor_buscado.setSelectedItem("Seleccionar");
         ddao.mostrar_datos_telefono(dvo);
 //Asignacion de datos Clase Tramite
         usuario.f_txt_tramite.setText(dvo.getClaseTramite_cliente());
@@ -146,6 +149,7 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
     private void buscarCorreo() {
         dvo.setBuscar_correo(usuario.f_txt_buscarCliente.getText().trim());
         usuario.f_txt_buscarCliente.setText("");
+         usuario.f_valor_buscado.setSelectedItem("Seleccionar");
         ddao.mostrar_datos_correo(dvo);
 //Asignacion de datos Clase Tramite
         usuario.f_txt_tramite.setText(dvo.getClaseTramite_cliente());
@@ -235,6 +239,8 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
 //Asignacion de datos Notas
         usuario.f_txt_notas.setEditable(true);
         
+        
+        usuario.if_RegistroDetallado.setVisible(true);
     }
     
     private void disableText(){
@@ -269,12 +275,32 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
         usuario.f_txt_repBanco.setEditable(false);
 //Asignacion de datos Notas
         usuario.f_txt_notas.setEditable(false);
+        
+        usuario.if_RegistroDetallado.setVisible(false);
+    }
+    
+    private void editarCaso(){
+        login.mensaje.showMessageDialog(null, "Editar Caso");
+    }
+    
+    private void nuevoCaso(){
+         login.mensaje.showMessageDialog(null, "Nuevo Caso");
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == usuario.f_btn_buscarCliente) {
             buscarCliente();
+        } 
+        
+        if(e.getSource() == usuario.f_btn_guardar){
+            if(usuario.f_cb_editar.isSelected() == true){
+                editarCaso();
+            } 
+            
+            if(usuario.f_cb_nuevo.isSelected() == true){
+                nuevoCaso();
+            }
         }
 
     }
@@ -283,14 +309,17 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
     public void stateChanged(ChangeEvent e) {
         if(usuario.f_cb_editar.isSelected() == true){
             enableText();
-        } else {
-            disableText();
-        }
-        
-        if(usuario.f_cb_nuevo.isSelected() == true){
+            usuario.f_btn_guardar.setEnabled(true);
+            usuario.f_cb_nuevo.setEnabled(false);
+        } else if(usuario.f_cb_nuevo.isSelected() == true){
             enableText();
+            usuario.f_btn_guardar.setEnabled(true);
+            usuario.f_cb_editar.setEnabled(false);
         } else {
             disableText();
+            usuario.f_btn_guardar.setEnabled(false);
+            usuario.f_cb_nuevo.setEnabled(true);
+            usuario.f_cb_editar.setEnabled(true);
         }
     }
 

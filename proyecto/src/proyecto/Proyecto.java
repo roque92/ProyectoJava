@@ -53,8 +53,8 @@ public class Proyecto {
         ControllerFormulario controllerFormulario = new ControllerFormulario(usuario, login, dvo, ddao, sbd, tbd);
         
         //login.setVisible(true);
-        //usuario.setVisible(true);
-        admin.setVisible(true);
+        usuario.setVisible(true);
+        //admin.setVisible(true);
     }
     
 }

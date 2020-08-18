@@ -11,6 +11,8 @@ import Modelo.StringsBaseDatos;
 import Modelo.TablasBaseDatos;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import javax.swing.JOptionPane;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -279,7 +281,242 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
     }
 
     private void editarCaso() {
-        login.mensaje.showMessageDialog(null, "Editar Caso");
+        if (usuario.f_txt_tramite.getText().isEmpty()) {
+            dvo.setToClientes_ClaseTraite("pendiente");
+        } else {
+            dvo.setToClientes_ClaseTraite(usuario.f_txt_tramite.getText());
+        }
+
+        if (usuario.f_txt_vendedorNombre.getText().isEmpty()) {
+            dvo.setToVendedor_nombre("pendiente");
+        } else {
+            dvo.setToVendedor_nombre(usuario.f_txt_vendedorNombre.getText());
+        }
+
+        if (usuario.f_txt_vendedorTelefono.getText().isEmpty()) {
+            dvo.setToVendedor_telefono("pendiente");
+        } else {
+            dvo.setToVendedor_telefono(usuario.f_txt_vendedorTelefono.getText());
+        }
+
+        if (usuario.f_txt_vendedorContructora.getText().isEmpty()) {
+            dvo.setToVendedor_constructora("pendiente");
+        } else {
+            dvo.setToVendedor_constructora(usuario.f_txt_vendedorContructora.getText());
+        }
+
+        if (usuario.f_txt_vendedorCorreo.getText().isEmpty()) {
+            dvo.setToVendedor_correo("pendiente");
+        } else {
+            dvo.setToVendedor_correo(usuario.f_txt_vendedorCorreo.getText());
+        }
+
+        if (usuario.f_txt_honorarios.getText().isEmpty()) {
+            dvo.setToCasos_honorarios(0.00);
+        } else {
+            dvo.setToCasos_honorarios(Double.parseDouble(usuario.f_txt_honorarios.getText()));
+        }
+
+        if (usuario.f_txt_salario.getText().isEmpty()) {
+            dvo.setToCasos_salario(0.00);
+        } else {
+            dvo.setToCasos_salario(Double.parseDouble(usuario.f_txt_salario.getText()));
+        }
+
+        if (usuario.f_txt_direccionUSA.getText().isEmpty()) {
+            dvo.setToClientes_direccion("pendiente");
+        } else {
+            dvo.setToClientes_direccion(usuario.f_txt_direccionUSA.getText());
+        }
+
+        if (usuario.f_txt_nombreCliente.getText().isEmpty()) {
+            dvo.setToClientes_nombre("pendiente");
+        } else {
+            dvo.setToClientes_nombre(usuario.f_txt_nombreCliente.getText());
+        }
+
+        if (usuario.f_txt_telefonoCliente.getText().isEmpty()) {
+            dvo.setToClientes_telefono("pendente");
+        } else {
+            dvo.setToClientes_telefono(usuario.f_txt_telefonoCliente.getText());
+        }
+
+        if (usuario.f_txt_estadoResidencia.getText().isEmpty()) {
+            dvo.setToClientes_EstadoResidencia("pendiente");
+        } else {
+            dvo.setToClientes_EstadoResidencia(usuario.f_txt_estadoResidencia.getText());
+        }
+
+        if (usuario.f_txt_estadoCivil.getSelectedItem().equals("Seleccionar")) {
+            dvo.setToClientes_id_EstadoCivil(5);
+        } else {
+            String estadoCivil = (String) usuario.f_txt_estadoMigratorio.getSelectedItem();
+            switch (estadoCivil) {
+
+                case "Soltero (a)":
+                    dvo.setToClientes_id_EstadoCivil(1);
+                    break;
+                case "Casado (a)":
+                    dvo.setToClientes_id_EstadoCivil(2);
+                    break;
+                case "Divorciado (a)":
+                    dvo.setToClientes_id_EstadoCivil(3);
+                    break;
+                case "Viudo (a)":
+                    dvo.setToClientes_id_EstadoCivil(4);
+                    break;
+                default:
+                    break;
+            }
+
+        }
+
+        if (usuario.f_txt_tipoPropiedad.getSelectedItem().equals("Seleccionar")) {
+            dvo.setToPropiedad_id(5);
+        } else {
+            String tipoPropiedad = (String) usuario.f_txt_tipoPropiedad.getSelectedItem();
+            switch (tipoPropiedad) {
+
+                case "Terreno":
+                    dvo.setToPropiedad_id(1);
+                    break;
+                case "Casa":
+                    dvo.setToPropiedad_id(2);
+                    break;
+                case "Divorciado (a)":
+                    dvo.setToPropiedad_id(3);
+                    break;
+                case "Oficina":
+                    dvo.setToPropiedad_id(4);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        if (usuario.f_txt_correoCliente.getText().isEmpty()) {
+            dvo.setToClientes_correo("pendiente");
+        } else {
+            dvo.setToClientes_correo(usuario.f_txt_correoCliente.getText());
+        }
+
+        if (usuario.f_txt_estadoMigratorio.getSelectedItem().equals("Seleccionar")) {
+            dvo.setToClientes_id_migratorio(4);
+        } else {
+            String estadoMigratorio = (String) usuario.f_txt_tipoPropiedad.getSelectedItem();
+            switch (estadoMigratorio) {
+
+                case "Residente":
+                    dvo.setToClientes_id_migratorio(1);
+                    break;
+                case "Ciudadano":
+                    dvo.setToClientes_id_migratorio(2);
+                    break;
+                case "Regular (a)":
+                    dvo.setToClientes_id_migratorio(3);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        if (usuario.f_txt_profesion.getText().isEmpty()) {
+            dvo.setToClientes_profesion("Pendiente");
+        } else {
+            dvo.setToClientes_profesion(usuario.f_txt_profesion.getText());
+        }
+
+        if (usuario.f_cb_dpi.getSelectedItem().equals("Seleccionar")) {
+            dvo.setToClientes_dpi("Seleccionar");
+        } else {
+            String DPI = (String) usuario.f_cb_dpi.getSelectedItem();
+            dvo.setToClientes_dpi(DPI);
+        }
+
+        if (usuario.f_cb_nit.getSelectedItem().equals("Seleccionar")) {
+            dvo.setToClientes_nit("Seleccionar");
+        } else {
+            String Nit = (String) usuario.f_cb_nit.getSelectedItem();
+            dvo.setToClientes_nit(Nit);
+        }
+
+        if (usuario.f_cb_id.getSelectedItem().equals("Seleccionar")) {
+            dvo.setToClientes_UsaId("Seleccionar");
+        } else {
+            String UsID = (String) usuario.f_cb_id.getSelectedItem();
+            dvo.setToClientes_UsaId(UsID);
+        }
+
+        if (usuario.f_txt_repNombre.getText().isEmpty()) {
+            dvo.setToRepresentante_nombre("pendiente");
+        } else {
+            dvo.setToRepresentante_nombre(usuario.f_txt_repNombre.getText());
+        }
+
+        if (usuario.f_txt_repDireccion.getText().isEmpty()) {
+            dvo.setToRepresentante_direccion("pendiente");
+        } else {
+            dvo.setToRepresentante_direccion(usuario.f_txt_repDireccion.getText());
+        }
+
+        if (usuario.f_txt_repTelefono.getText().isEmpty()) {
+            dvo.setToRepresentante_telefono("pendiente");
+        } else {
+            dvo.setToRepresentante_telefono(usuario.f_txt_repTelefono.getText());
+        }
+
+        if (usuario.f_txt_repParentezco.getText().isEmpty()) {
+            dvo.setToRepresentante_parentezco("pendiente");
+        } else {
+            dvo.setToRepresentante_parentezco("pendiente");
+        }
+
+        if (usuario.f_txt_repBanco.getText().isEmpty()) {
+            dvo.setToRepresentante_banco("Pendiente");
+        } else {
+
+        }
+
+        if (usuario.f_txt_notas.getText().isEmpty()) {
+            dvo.setToCasos_notas("No Hay Notas");
+        } else {
+            dvo.setToCasos_notas(usuario.f_txt_notas.getText());
+        }
+
+        if (usuario.rd_txt_fecha.getText().isEmpty()) {
+            GregorianCalendar c = new GregorianCalendar();
+            int year, month, day;
+            String date;
+            year = c.get(Calendar.YEAR);
+            month = c.get(Calendar.MONTH);
+            day = c.get(Calendar.DAY_OF_MONTH);
+            date = year + "/" + month + "/" + day;
+            usuario.rd_txt_fecha.setText(date);
+            dvo.setToRegistros_fecha(date);
+        }
+
+        if (usuario.rd_txt_usuario.getText().isEmpty()) {
+            usuario.rd_txt_usuario.setText(dvo.getUser_login());
+            switch (usuario.rd_txt_usuario.getText()) {
+                case "gsandoval":
+                    dvo.setToRegistros_id_usuarios("2");
+                    break;
+                case "ssoto":
+                    dvo.setToRegistros_id_usuarios("3");
+                    break;
+                case "ririarte":
+                    dvo.setToRegistros_id_usuarios("4");
+                    break;
+                default:
+                    break;
+            }
+        }
+        
+        if(usuario.rd_txt_informacion.getText().isEmpty()){
+            dvo.setToRegistros_notas("");
+        } else {
+            dvo.setToRegistros_notas(usuario.rd_txt_informacion.getText());
+        }
     }
 
     private void nuevoCaso() {
@@ -349,7 +586,7 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
             dvo.setToClientes_EstadoResidencia(usuario.f_txt_estadoResidencia.getText());
         }
 
-        if (usuario.f_txt_estadoMigratorio.getSelectedItem().equals("Seleccionar")) {
+        if (usuario.f_txt_estadoCivil.getSelectedItem().equals("Seleccionar")) {
             dvo.setToClientes_id_EstadoCivil(5);
         } else {
             String estadoCivil = (String) usuario.f_txt_estadoMigratorio.getSelectedItem();
@@ -372,28 +609,152 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
             }
 
         }
-        
-        if(usuario.f_txt_tipoPropiedad.getSelectedItem().equals("Seleccionar")){
+
+        if (usuario.f_txt_tipoPropiedad.getSelectedItem().equals("Seleccionar")) {
             dvo.setToPropiedad_id(5);
         } else {
-            String estadoCivil = (String) usuario.f_txt_tipoPropiedad.getSelectedItem();
-            switch (estadoCivil) {
+            String tipoPropiedad = (String) usuario.f_txt_tipoPropiedad.getSelectedItem();
+            switch (tipoPropiedad) {
 
                 case "Terreno":
-                    dvo.setToClientes_id_EstadoCivil(1);
+                    dvo.setToPropiedad_id(1);
                     break;
                 case "Casa":
-                    dvo.setToClientes_id_EstadoCivil(2);
+                    dvo.setToPropiedad_id(2);
                     break;
                 case "Divorciado (a)":
-                    dvo.setToClientes_id_EstadoCivil(3);
+                    dvo.setToPropiedad_id(3);
                     break;
                 case "Oficina":
-                    dvo.setToClientes_id_EstadoCivil(4);
+                    dvo.setToPropiedad_id(4);
                     break;
                 default:
                     break;
             }
+        }
+
+        if (usuario.f_txt_correoCliente.getText().isEmpty()) {
+            dvo.setToClientes_correo("pendiente");
+        } else {
+            dvo.setToClientes_correo(usuario.f_txt_correoCliente.getText());
+        }
+
+        if (usuario.f_txt_estadoMigratorio.getSelectedItem().equals("Seleccionar")) {
+            dvo.setToClientes_id_migratorio(4);
+        } else {
+            String estadoMigratorio = (String) usuario.f_txt_tipoPropiedad.getSelectedItem();
+            switch (estadoMigratorio) {
+
+                case "Residente":
+                    dvo.setToClientes_id_migratorio(1);
+                    break;
+                case "Ciudadano":
+                    dvo.setToClientes_id_migratorio(2);
+                    break;
+                case "Regular (a)":
+                    dvo.setToClientes_id_migratorio(3);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        if (usuario.f_txt_profesion.getText().isEmpty()) {
+            dvo.setToClientes_profesion("Pendiente");
+        } else {
+            dvo.setToClientes_profesion(usuario.f_txt_profesion.getText());
+        }
+
+        if (usuario.f_cb_dpi.getSelectedItem().equals("Seleccionar")) {
+            dvo.setToClientes_dpi("Seleccionar");
+        } else {
+            String DPI = (String) usuario.f_cb_dpi.getSelectedItem();
+            dvo.setToClientes_dpi(DPI);
+        }
+
+        if (usuario.f_cb_nit.getSelectedItem().equals("Seleccionar")) {
+            dvo.setToClientes_nit("Seleccionar");
+        } else {
+            String Nit = (String) usuario.f_cb_nit.getSelectedItem();
+            dvo.setToClientes_nit(Nit);
+        }
+
+        if (usuario.f_cb_id.getSelectedItem().equals("Seleccionar")) {
+            dvo.setToClientes_UsaId("Seleccionar");
+        } else {
+            String UsID = (String) usuario.f_cb_id.getSelectedItem();
+            dvo.setToClientes_UsaId(UsID);
+        }
+
+        if (usuario.f_txt_repNombre.getText().isEmpty()) {
+            dvo.setToRepresentante_nombre("pendiente");
+        } else {
+            dvo.setToRepresentante_nombre(usuario.f_txt_repNombre.getText());
+        }
+
+        if (usuario.f_txt_repDireccion.getText().isEmpty()) {
+            dvo.setToRepresentante_direccion("pendiente");
+        } else {
+            dvo.setToRepresentante_direccion(usuario.f_txt_repDireccion.getText());
+        }
+
+        if (usuario.f_txt_repTelefono.getText().isEmpty()) {
+            dvo.setToRepresentante_telefono("pendiente");
+        } else {
+            dvo.setToRepresentante_telefono(usuario.f_txt_repTelefono.getText());
+        }
+
+        if (usuario.f_txt_repParentezco.getText().isEmpty()) {
+            dvo.setToRepresentante_parentezco("pendiente");
+        } else {
+            dvo.setToRepresentante_parentezco("pendiente");
+        }
+
+        if (usuario.f_txt_repBanco.getText().isEmpty()) {
+            dvo.setToRepresentante_banco("Pendiente");
+        } else {
+
+        }
+
+        if (usuario.f_txt_notas.getText().isEmpty()) {
+            dvo.setToCasos_notas("No Hay Notas");
+        } else {
+            dvo.setToCasos_notas(usuario.f_txt_notas.getText());
+        }
+
+        if (usuario.rd_txt_fecha.getText().isEmpty()) {
+            GregorianCalendar c = new GregorianCalendar();
+            int year, month, day;
+            String date;
+            year = c.get(Calendar.YEAR);
+            month = c.get(Calendar.MONTH);
+            day = c.get(Calendar.DAY_OF_MONTH);
+            date = year + "/" + month + "/" + day;
+            usuario.rd_txt_fecha.setText(date);
+            dvo.setToRegistros_fecha(date);
+        }
+
+        if (usuario.rd_txt_usuario.getText().isEmpty()) {
+            usuario.rd_txt_usuario.setText(dvo.getUser_login());
+            switch (usuario.rd_txt_usuario.getText()) {
+                case "gsandoval":
+                    dvo.setToRegistros_id_usuarios("2");
+                    break;
+                case "ssoto":
+                    dvo.setToRegistros_id_usuarios("3");
+                    break;
+                case "ririarte":
+                    dvo.setToRegistros_id_usuarios("4");
+                    break;
+                default:
+                    break;
+            }
+        }
+        
+        if(usuario.rd_txt_informacion.getText().isEmpty()){
+            dvo.setToRegistros_notas("");
+        } else {
+            dvo.setToRegistros_notas(usuario.rd_txt_informacion.getText());
         }
     }
 

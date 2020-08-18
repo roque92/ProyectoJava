@@ -895,6 +895,10 @@ public class Usuario extends javax.swing.JFrame {
 
         jLabel30.setText("Informacion");
 
+        rd_txt_usuario.setEnabled(false);
+
+        rd_txt_fecha.setEnabled(false);
+
         javax.swing.GroupLayout if_RegistroDetalladoLayout = new javax.swing.GroupLayout(if_RegistroDetallado.getContentPane());
         if_RegistroDetallado.getContentPane().setLayout(if_RegistroDetalladoLayout);
         if_RegistroDetalladoLayout.setHorizontalGroup(

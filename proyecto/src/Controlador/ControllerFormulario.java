@@ -111,7 +111,7 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
     private void buscarTelefono() {
         dvo.setBuscar_telefono(usuario.f_txt_buscarCliente.getText());
         usuario.f_txt_buscarCliente.setText("");
-         usuario.f_valor_buscado.setSelectedItem("Seleccionar");
+        usuario.f_valor_buscado.setSelectedItem("Seleccionar");
         ddao.mostrar_datos_telefono(dvo);
 //Asignacion de datos Clase Tramite
         usuario.f_txt_tramite.setText(dvo.getClaseTramite_cliente());
@@ -149,7 +149,7 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
     private void buscarCorreo() {
         dvo.setBuscar_correo(usuario.f_txt_buscarCliente.getText().trim());
         usuario.f_txt_buscarCliente.setText("");
-         usuario.f_valor_buscado.setSelectedItem("Seleccionar");
+        usuario.f_valor_buscado.setSelectedItem("Seleccionar");
         ddao.mostrar_datos_correo(dvo);
 //Asignacion de datos Clase Tramite
         usuario.f_txt_tramite.setText(dvo.getClaseTramite_cliente());
@@ -199,14 +199,14 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
             }
 
             usuario.f_tbl_seguimiento.setModel(m);
- 
+
         } catch (Exception e) {
             login.mensaje.showMessageDialog(null, "No se puede conectar con la base de datos Contacte con su Administrador", "Problemas de Conexion", JOptionPane.ERROR_MESSAGE);
         }
 
     }
-    
-    private void enableText(){
+
+    private void enableText() {
         //Asignacion de datos Clase Tramite
         usuario.f_txt_tramite.setEditable(true);
 //Asignacino de datos del Asesor/Vendedor
@@ -238,12 +238,11 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
         usuario.f_txt_repBanco.setEditable(true);
 //Asignacion de datos Notas
         usuario.f_txt_notas.setEditable(true);
-        
-        
+
         usuario.if_RegistroDetallado.setVisible(true);
     }
-    
-    private void disableText(){
+
+    private void disableText() {
         //Asignacion de datos Clase Tramite
         usuario.f_txt_tramite.setEditable(false);
 //Asignacino de datos del Asesor/Vendedor
@@ -275,30 +274,141 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
         usuario.f_txt_repBanco.setEditable(false);
 //Asignacion de datos Notas
         usuario.f_txt_notas.setEditable(false);
-        
+
         usuario.if_RegistroDetallado.setVisible(false);
     }
-    
-    private void editarCaso(){
+
+    private void editarCaso() {
         login.mensaje.showMessageDialog(null, "Editar Caso");
     }
-    
-    private void nuevoCaso(){
-         login.mensaje.showMessageDialog(null, "Nuevo Caso");
+
+    private void nuevoCaso() {
+        if (usuario.f_txt_tramite.getText().isEmpty()) {
+            dvo.setToClientes_ClaseTraite("pendiente");
+        } else {
+            dvo.setToClientes_ClaseTraite(usuario.f_txt_tramite.getText());
+        }
+
+        if (usuario.f_txt_vendedorNombre.getText().isEmpty()) {
+            dvo.setToVendedor_nombre("pendiente");
+        } else {
+            dvo.setToVendedor_nombre(usuario.f_txt_vendedorNombre.getText());
+        }
+
+        if (usuario.f_txt_vendedorTelefono.getText().isEmpty()) {
+            dvo.setToVendedor_telefono("pendiente");
+        } else {
+            dvo.setToVendedor_telefono(usuario.f_txt_vendedorTelefono.getText());
+        }
+
+        if (usuario.f_txt_vendedorContructora.getText().isEmpty()) {
+            dvo.setToVendedor_constructora("pendiente");
+        } else {
+            dvo.setToVendedor_constructora(usuario.f_txt_vendedorContructora.getText());
+        }
+
+        if (usuario.f_txt_vendedorCorreo.getText().isEmpty()) {
+            dvo.setToVendedor_correo("pendiente");
+        } else {
+            dvo.setToVendedor_correo(usuario.f_txt_vendedorCorreo.getText());
+        }
+
+        if (usuario.f_txt_honorarios.getText().isEmpty()) {
+            dvo.setToCasos_honorarios(0.00);
+        } else {
+            dvo.setToCasos_honorarios(Double.parseDouble(usuario.f_txt_honorarios.getText()));
+        }
+
+        if (usuario.f_txt_salario.getText().isEmpty()) {
+            dvo.setToCasos_salario(0.00);
+        } else {
+            dvo.setToCasos_salario(Double.parseDouble(usuario.f_txt_salario.getText()));
+        }
+
+        if (usuario.f_txt_direccionUSA.getText().isEmpty()) {
+            dvo.setToClientes_direccion("pendiente");
+        } else {
+            dvo.setToClientes_direccion(usuario.f_txt_direccionUSA.getText());
+        }
+
+        if (usuario.f_txt_nombreCliente.getText().isEmpty()) {
+            dvo.setToClientes_nombre("pendiente");
+        } else {
+            dvo.setToClientes_nombre(usuario.f_txt_nombreCliente.getText());
+        }
+
+        if (usuario.f_txt_telefonoCliente.getText().isEmpty()) {
+            dvo.setToClientes_telefono("pendente");
+        } else {
+            dvo.setToClientes_telefono(usuario.f_txt_telefonoCliente.getText());
+        }
+
+        if (usuario.f_txt_estadoResidencia.getText().isEmpty()) {
+            dvo.setToClientes_EstadoResidencia("pendiente");
+        } else {
+            dvo.setToClientes_EstadoResidencia(usuario.f_txt_estadoResidencia.getText());
+        }
+
+        if (usuario.f_txt_estadoMigratorio.getSelectedItem().equals("Seleccionar")) {
+            dvo.setToClientes_id_EstadoCivil(5);
+        } else {
+            String estadoCivil = (String) usuario.f_txt_estadoMigratorio.getSelectedItem();
+            switch (estadoCivil) {
+
+                case "Soltero (a)":
+                    dvo.setToClientes_id_EstadoCivil(1);
+                    break;
+                case "Casado (a)":
+                    dvo.setToClientes_id_EstadoCivil(2);
+                    break;
+                case "Divorciado (a)":
+                    dvo.setToClientes_id_EstadoCivil(3);
+                    break;
+                case "Viudo (a)":
+                    dvo.setToClientes_id_EstadoCivil(4);
+                    break;
+                default:
+                    break;
+            }
+
+        }
+        
+        if(usuario.f_txt_tipoPropiedad.getSelectedItem().equals("Seleccionar")){
+            dvo.setToPropiedad_id(5);
+        } else {
+            String estadoCivil = (String) usuario.f_txt_tipoPropiedad.getSelectedItem();
+            switch (estadoCivil) {
+
+                case "Terreno":
+                    dvo.setToClientes_id_EstadoCivil(1);
+                    break;
+                case "Casa":
+                    dvo.setToClientes_id_EstadoCivil(2);
+                    break;
+                case "Divorciado (a)":
+                    dvo.setToClientes_id_EstadoCivil(3);
+                    break;
+                case "Oficina":
+                    dvo.setToClientes_id_EstadoCivil(4);
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == usuario.f_btn_buscarCliente) {
             buscarCliente();
-        } 
-        
-        if(e.getSource() == usuario.f_btn_guardar){
-            if(usuario.f_cb_editar.isSelected() == true){
+        }
+
+        if (e.getSource() == usuario.f_btn_guardar) {
+            if (usuario.f_cb_editar.isSelected() == true) {
                 editarCaso();
-            } 
-            
-            if(usuario.f_cb_nuevo.isSelected() == true){
+            }
+
+            if (usuario.f_cb_nuevo.isSelected() == true) {
                 nuevoCaso();
             }
         }
@@ -307,11 +417,11 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
 
     @Override
     public void stateChanged(ChangeEvent e) {
-        if(usuario.f_cb_editar.isSelected() == true){
+        if (usuario.f_cb_editar.isSelected() == true) {
             enableText();
             usuario.f_btn_guardar.setEnabled(true);
             usuario.f_cb_nuevo.setEnabled(false);
-        } else if(usuario.f_cb_nuevo.isSelected() == true){
+        } else if (usuario.f_cb_nuevo.isSelected() == true) {
             enableText();
             usuario.f_btn_guardar.setEnabled(true);
             usuario.f_cb_editar.setEnabled(false);

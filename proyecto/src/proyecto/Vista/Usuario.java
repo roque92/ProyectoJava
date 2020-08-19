@@ -142,12 +142,12 @@ public class Usuario extends javax.swing.JFrame {
         rd_txt_fecha = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         archivo = new javax.swing.JMenu();
-        clientes = new javax.swing.JMenu();
-        c_buscarCliente = new javax.swing.JMenuItem();
-        c_baseGeneral = new javax.swing.JMenuItem();
         asesores = new javax.swing.JMenu();
         a_buscarAsesores = new javax.swing.JMenuItem();
         a_baseGeneral = new javax.swing.JMenuItem();
+        clientes = new javax.swing.JMenu();
+        c_buscarCliente = new javax.swing.JMenuItem();
+        c_baseGeneral = new javax.swing.JMenuItem();
         formulario = new javax.swing.JMenu();
         f_AbrirFormulario = new javax.swing.JMenuItem();
         f_casosAsignados = new javax.swing.JMenuItem();
@@ -244,7 +244,7 @@ public class Usuario extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(ba_txt_valorBuscado, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE)
+            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 598, Short.MAX_VALUE)
         );
         if_buscarAsesorLayout.setVerticalGroup(
             if_buscarAsesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -493,7 +493,7 @@ public class Usuario extends javax.swing.JFrame {
 
         f_txt_estadoMigratorio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Residente", "Ciudadano", "Regular" }));
 
-        f_txt_tipoPropiedad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Apartamento", "Casa Oficina", "Terreno" }));
+        f_txt_tipoPropiedad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Apartamento", "Casa", "Oficina", "Terreno" }));
 
         f_txt_estadoCivil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Casado (a)", "Divorlciado (a)", "Soltero (a)", "Viudo (a)" }));
 
@@ -842,13 +842,11 @@ public class Usuario extends javax.swing.JFrame {
         if_baseClientes.getContentPane().setLayout(if_baseClientesLayout);
         if_baseClientesLayout.setHorizontalGroup(
             if_baseClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 584, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 584, Short.MAX_VALUE)
         );
         if_baseClientesLayout.setVerticalGroup(
             if_baseClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(if_baseClientesLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
 
         if_casosAsignados.setClosable(true);
@@ -964,17 +962,17 @@ public class Usuario extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addComponent(if_formulario, javax.swing.GroupLayout.PREFERRED_SIZE, 629, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(48, 48, 48)
+                        .addGap(33, 33, 33)
                         .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(if_buscarAsesor, javax.swing.GroupLayout.DEFAULT_SIZE, 609, Short.MAX_VALUE)
-                                    .addComponent(if_buscarCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 609, Short.MAX_VALUE))
+                                    .addComponent(if_buscarAsesor, javax.swing.GroupLayout.DEFAULT_SIZE, 614, Short.MAX_VALUE)
+                                    .addComponent(if_buscarCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 614, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
                                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(if_baseClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(if_baseAsores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addContainerGap(86, Short.MAX_VALUE))
+                                .addContainerGap(96, Short.MAX_VALUE))
                             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                                 .addComponent(if_RegistroDetallado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
@@ -1006,16 +1004,6 @@ public class Usuario extends javax.swing.JFrame {
 
         archivo.setText("Archivos");
 
-        clientes.setText("Clientes");
-
-        c_buscarCliente.setText("Buscar Cliente");
-        clientes.add(c_buscarCliente);
-
-        c_baseGeneral.setText("Base General");
-        clientes.add(c_baseGeneral);
-
-        archivo.add(clientes);
-
         asesores.setText("Asesores");
 
         a_buscarAsesores.setText("Buscar Asesor");
@@ -1025,6 +1013,16 @@ public class Usuario extends javax.swing.JFrame {
         asesores.add(a_baseGeneral);
 
         archivo.add(asesores);
+
+        clientes.setText("Clientes");
+
+        c_buscarCliente.setText("Buscar Cliente");
+        clientes.add(c_buscarCliente);
+
+        c_baseGeneral.setText("Base General");
+        clientes.add(c_baseGeneral);
+
+        archivo.add(clientes);
 
         formulario.setText("Formulario");
 

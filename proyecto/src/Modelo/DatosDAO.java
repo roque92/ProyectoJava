@@ -14,36 +14,36 @@ import java.util.ArrayList;
  * @author jroque
  */
 public class DatosDAO implements InterfaceMetodos {
-    
+
     @Override
     public ArrayList<DatosVO> validar_login(DatosVO dvo) {
         Conector c = new Conector();
         ArrayList<DatosVO> datos = new ArrayList();
-        
+
         try {
             c.connect();
             ResultSet rs = c.obtener_datos("SELECT u.username, u.pass, u.telefono, u.correo, r.tipo\n"
                     + " FROM tbl_usuarios AS u INNER JOIN tbl_roles AS r ON u.id_roles = r.id WHERE username = '" + dvo.getUser_login() + "';");
-            
+
             while (rs.next()) {
                 dvo.setLogin_user(rs.getString(1));
                 dvo.setLogin_pass(rs.getString(2));
                 dvo.setLogin_telefono(rs.getString(3));
                 dvo.setLogin_correo(rs.getString(4));
                 dvo.setLogin_tipo(rs.getString(5));
-                
+
                 datos.add(dvo);
             }
-            
+
             c.desconectar();
-            
+
         } catch (SQLException e) {
             dvo.setError(e.getMessage());
         }
-        
+
         return datos;
     }
-    
+
     @Override
     public void insertar_datos_vendedor(DatosVO dvo) {
         Conector c = new Conector();
@@ -56,9 +56,9 @@ public class DatosDAO implements InterfaceMetodos {
         } catch (Exception e) {
             dvo.setError(e.getMessage());
         }
-        
+
     }
-    
+
     @Override
     public void insertar_datos_representante(DatosVO dvo) {
         Conector c = new Conector();
@@ -71,9 +71,9 @@ public class DatosDAO implements InterfaceMetodos {
         } catch (Exception e) {
             dvo.setError(e.getMessage());
         }
-        
+
     }
-    
+
     @Override
     public void insertar_datos_registros(DatosVO dvo) {
         Conector c = new Conector();
@@ -86,9 +86,9 @@ public class DatosDAO implements InterfaceMetodos {
         } catch (Exception e) {
             dvo.setError(e.getMessage());
         }
-        
+
     }
-    
+
     @Override
     public void insertar_datos_clientes(DatosVO dvo) {
         Conector c = new Conector();
@@ -101,9 +101,9 @@ public class DatosDAO implements InterfaceMetodos {
         } catch (Exception e) {
             dvo.setError(e.getMessage());
         }
-        
+
     }
-    
+
     @Override
     public void insertar_datos_casos(DatosVO dvo) {
         Conector c = new Conector();
@@ -117,65 +117,118 @@ public class DatosDAO implements InterfaceMetodos {
             dvo.setError(e.getMessage());
         }
     }
-    
+
     @Override
     public void modificar_datos_vendedor(DatosVO dvo) {
         Conector c = new Conector();
         try {
             c.connect();
-            c.consulta_general("UPDATE tbl_vendedor SET nombre = '" + dvo.getToVendedor_nombre() + "', telefono = '" + dvo.getToVendedor_telefono() + "', constructora ='" + dvo.getToVendedor_constructora() + "', correo = '" + dvo.getToVendedor_correo() + "' WHERE nombre = '" + dvo.getNombre_vendedor() + "';");
-            
+            c.consulta_general("UPDATE tbl_vendedor\n"
+                    + "SET nombre = '" + dvo.getToVendedor_nombre() + "',\n"
+                    + "		telefono = " + dvo.getToVendedor_telefono() + ",\n"
+                    + "		constructora = '" + dvo.getToVendedor_constructora() + "',\n"
+                    + "		correo = '" + dvo.getToVendedor_correo() + "'\n"
+                    + "WHERE tbl_vendedor.nombre = '" + dvo.getNombre_vendedor() + "';");
+
             c.desconectar();
         } catch (Exception e) {
             dvo.setError(e.getMessage());
         }
     }
-    
+
     @Override
     public void modificar_datos_representante(DatosVO dvo) {
         Conector c = new Conector();
-        StringsBaseDatos sbd = new StringsBaseDatos();
         try {
             c.connect();
-            c.consulta_general("UPDATE tbl_representante SET nombre = '" + dvo.getToRepresentante_nombre() + "', parentezco = '" + dvo.getToRepresentante_parentezco() + "', direccion ='" + dvo.getToRepresentante_direccion() + "', telefono = '" + dvo.getToRepresentante_telefono() + "', banco = '" + dvo.getToRepresentante_banco() + "' WHERE id = '" + sbd.getId_representante_sbd() + "';");
-            
+            c.consulta_general("UPDATE tbl_representante\n"
+                    + "SET tbl_representante.nombre = '" + dvo.getToRepresentante_nombre() + "',\n"
+                    + "		tbl_representante.parentezco = '" + dvo.getToRepresentante_parentezco() + "',\n"
+                    + "		tbl_representante.telefono = " + dvo.getToRepresentante_telefono() + ",\n"
+                    + "		tbl_representante.direccion = '" + dvo.getToRepresentante_direccion() + "',\n"
+                    + "		tbl_representante.banco = '" + dvo.getToRepresentante_banco() + "'\n"
+                    + "WHERE tbl_representante.nombre ='" + dvo.getNombre_representante() + "';");
+
             c.desconectar();
         } catch (Exception e) {
             dvo.setError(e.getMessage());
         }
     }
-    
+
     @Override
     public void modificar_datos_clientes(DatosVO dvo) {
         Conector c = new Conector();
         try {
             c.connect();
-            c.consulta_general("UPDATE tbl_clientes SET nombre = '" + dvo.getToClientes_nombre() + "', telefono = '" + dvo.getToClientes_telefono() + "', correo = '" + dvo.getToClientes_correo() + "', direccion = '" + dvo.getToClientes_direccion() + "', id_estado_civil = " + dvo.getToClientes_id_EstadoCivil() + ", id_migratorio = " + dvo.getToClientes_id_migratorio() + ", profesion = '" + dvo.getToClientes_profesion() + "', estado_residencia = '" + dvo.getToClientes_EstadoResidencia() + "', dpi = '" + dvo.getToClientes_dpi() + "', nit = '" + dvo.getToClientes_nit() + "', usa_id ='" + dvo.getToClientes_UsaId() + "' WHERE nombre = '" + dvo.getNombre_cliente() + "';");
-            
+            c.consulta_general("UPDATE tbl_clientes\n"
+                    + "SET tbl_clientes.nombre = '" + dvo.getToClientes_nombre() + "',\n"
+                    + "		tbl_clientes.telefono = " + dvo.getToClientes_telefono() + ",\n"
+                    + "		tbl_clientes.correo = '" + dvo.getToClientes_correo() + "',\n"
+                    + "		tbl_clientes.direccion = '" + dvo.getToClientes_direccion() + "',\n"
+                    + "		tbl_clientes.id_estado_civil = " + dvo.getToClientes_id_EstadoCivil() + ",\n"
+                    + "		tbl_clientes.id_migratorio = " + dvo.getToClientes_id_migratorio() + ",\n"
+                    + "		tbl_clientes.profesion = '" + dvo.getToClientes_profesion() + "',\n"
+                    + "		tbl_clientes.estado_residencia = '" + dvo.getToClientes_EstadoResidencia() + "',\n"
+                    + "		tbl_clientes.clase_tramite = '" + dvo.getToClientes_ClaseTraite() + "',\n"
+                    + "		tbl_clientes.dpi = '" + dvo.getToClientes_dpi() + "',\n"
+                    + "		tbl_clientes.nit = '" + dvo.getToClientes_nit() + "',\n"
+                    + "		tbl_clientes.usa_id = '" + dvo.getToClientes_UsaId() + "'\n"
+                    + "WHERE tbl_clientes.nombre = '" + dvo.getNombre_cliente() + "';");
+
             c.desconectar();
         } catch (Exception e) {
             dvo.setError(e.getMessage());
         }
     }
-    
+
+    @Override
+    public ArrayList<DatosVO> idCliente(DatosVO dvo) {
+        Conector c = new Conector();
+        ArrayList<DatosVO> datos = new ArrayList();
+
+        try {
+            c.connect();
+            ResultSet rs = c.obtener_datos("SELECT id FROM tbl_clientes WHERE nombre = '" + dvo.getNombre_cliente() + "';");
+
+            while (rs.next()) {
+
+                dvo.setId_cliente(rs.getString(1));
+
+                datos.add(dvo);
+            }
+
+            c.desconectar();
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return datos;
+    }
+
     @Override
     public void modificar_datos_casos(DatosVO dvo) {
         Conector c = new Conector();
         try {
             c.connect();
-            c.consulta_general("UPDATE tbl_casos SET id_cliente = " + dvo.getToCasos_idCliente() + ", id_vendedor = " + dvo.getToCasos_idVendedor() + ", id_usuario = " + dvo.getToCasos_idUsuario() + ", honorarios = " + dvo.getToCasos_honorarios() + ", salarios = " + dvo.getToCasos_salario() + ", notas = '" + dvo.getToCasos_notas() + "', id_estado = " + dvo.getToCasos_idEstado() + ", id_tipo_propiedad = " + dvo.getToCasos_idPropiedad() + ", id_representante = " + dvo.getToCasos_idRepresentante() + " WHERE id_cliente = 1;");
-            
+            c.consulta_general("UPDATE tbl_casos\n"
+                    + "SET tbl_casos.honorarios = "+dvo.getToCasos_honorarios()+",\n"
+                    + "		tbl_casos.salarios = "+dvo.getToCasos_salario()+",\n"
+                    + "		tbl_casos.notas = '"+dvo.getToCasos_notas()+"',\n"
+                    + "		tbl_casos.id_tipo_propiedad = "+dvo.getToCasos_idPropiedad()+"\n"
+                    + "WHERE tbl_casos.id_cliente = "+dvo.getId_cliente()+";");
+
             c.desconectar();
         } catch (Exception e) {
             dvo.setError(e.getMessage());
         }
     }
-    
+
     @Override
     public ArrayList<DatosVO> mostrar_datos_nombre(DatosVO dvo) {
         Conector c = new Conector();
         ArrayList<DatosVO> datos = new ArrayList();
-        
+
         try {
             c.connect();
             ResultSet rs = c.obtener_datos("SELECT v.nombre, v.telefono, v.constructora, v.correo, \n"
@@ -191,9 +244,9 @@ public class DatosDAO implements InterfaceMetodos {
                     + "INNER JOIN tbl_representante AS r ON c.id_representante = r.id\n"
                     + "INNER JOIN tbl_tipo_propiedad AS tp ON c.id_tipo_propiedad = tp.id\n"
                     + "WHERE cl.nombre = '" + dvo.getBuscar_nombre() + "';");
-            
+
             while (rs.next()) {
-                
+
                 dvo.setNombre_vendedor(rs.getString(1));
                 dvo.setTelefono_vendedor(rs.getString(2));
                 dvo.setConstructora_vendedor(rs.getString(3));
@@ -219,24 +272,24 @@ public class DatosDAO implements InterfaceMetodos {
                 dvo.setBanco_representante(rs.getString(23));
                 dvo.setNotas_casos(rs.getString(24));
                 dvo.setClaseTramite_cliente(rs.getString(25));
-                
+
                 datos.add(dvo);
             }
-            
+
             c.desconectar();
-            
+
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        
+
         return datos;
     }
-    
+
     @Override
     public ArrayList<DatosVO> mostrar_datos_telefono(DatosVO dvo) {
         Conector c = new Conector();
         ArrayList<DatosVO> datos = new ArrayList();
-        
+
         try {
             c.connect();
             ResultSet rs = c.obtener_datos("SELECT v.nombre, v.telefono, v.constructora, v.correo, \n"
@@ -252,7 +305,7 @@ public class DatosDAO implements InterfaceMetodos {
                     + "INNER JOIN tbl_representante AS r ON c.id_representante = r.id\n"
                     + "INNER JOIN tbl_tipo_propiedad AS tp ON c.id_tipo_propiedad = tp.id\n"
                     + "WHERE cl.telefono = '" + dvo.getBuscar_telefono() + "';");
-            
+
             while (rs.next()) {
                 dvo.setNombre_vendedor(rs.getString(1));
                 dvo.setTelefono_vendedor(rs.getString(2));
@@ -279,24 +332,24 @@ public class DatosDAO implements InterfaceMetodos {
                 dvo.setBanco_representante(rs.getString(23));
                 dvo.setNotas_casos(rs.getString(24));
                 dvo.setClaseTramite_cliente(rs.getString(25));
-                
+
                 datos.add(dvo);
             }
-            
+
             c.desconectar();
-            
+
         } catch (SQLException e) {
             dvo.setError(e.getMessage());
         }
-        
+
         return datos;
     }
-    
+
     @Override
     public ArrayList<DatosVO> mostrar_datos_correo(DatosVO dvo) {
         Conector c = new Conector();
         ArrayList<DatosVO> datos = new ArrayList();
-        
+
         try {
             c.connect();
             ResultSet rs = c.obtener_datos("SELECT v.nombre, v.telefono, v.constructora, v.correo, \n"
@@ -312,7 +365,7 @@ public class DatosDAO implements InterfaceMetodos {
                     + "INNER JOIN tbl_representante AS r ON c.id_representante = r.id\n"
                     + "INNER JOIN tbl_tipo_propiedad AS tp ON c.id_tipo_propiedad = tp.id\n"
                     + "WHERE cl.correo = '" + dvo.getBuscar_correo() + "';");
-            
+
             while (rs.next()) {
                 dvo.setNombre_vendedor(rs.getString(1));
                 dvo.setTelefono_vendedor(rs.getString(2));
@@ -339,22 +392,22 @@ public class DatosDAO implements InterfaceMetodos {
                 dvo.setBanco_representante(rs.getString(23));
                 dvo.setNotas_casos(rs.getString(24));
                 dvo.setClaseTramite_cliente(rs.getString(25));
-                
+
                 datos.add(dvo);
             }
-            
+
             c.desconectar();
-            
+
         } catch (SQLException e) {
             dvo.setError(e.getMessage());
         }
-        
+
         return datos;
     }
-       
+
     @Override
     public void borrar_datos(DatosVO dvo) {
-        
+
     }
-    
+
 }

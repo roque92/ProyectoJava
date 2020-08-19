@@ -282,31 +282,31 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
 
     private void editarCaso() {
         if (usuario.f_txt_tramite.getText().isEmpty()) {
-            dvo.setToClientes_ClaseTraite("pendiente");
+            dvo.setToClientes_ClaseTraite("");
         } else {
             dvo.setToClientes_ClaseTraite(usuario.f_txt_tramite.getText());
         }
 
         if (usuario.f_txt_vendedorNombre.getText().isEmpty()) {
-            dvo.setToVendedor_nombre("pendiente");
+            dvo.setToVendedor_nombre("");
         } else {
             dvo.setToVendedor_nombre(usuario.f_txt_vendedorNombre.getText());
         }
 
         if (usuario.f_txt_vendedorTelefono.getText().isEmpty()) {
-            dvo.setToVendedor_telefono("pendiente");
+            dvo.setToVendedor_telefono("");
         } else {
             dvo.setToVendedor_telefono(usuario.f_txt_vendedorTelefono.getText());
         }
 
         if (usuario.f_txt_vendedorContructora.getText().isEmpty()) {
-            dvo.setToVendedor_constructora("pendiente");
+            dvo.setToVendedor_constructora("");
         } else {
             dvo.setToVendedor_constructora(usuario.f_txt_vendedorContructora.getText());
         }
 
         if (usuario.f_txt_vendedorCorreo.getText().isEmpty()) {
-            dvo.setToVendedor_correo("pendiente");
+            dvo.setToVendedor_correo("");
         } else {
             dvo.setToVendedor_correo(usuario.f_txt_vendedorCorreo.getText());
         }
@@ -324,25 +324,25 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
         }
 
         if (usuario.f_txt_direccionUSA.getText().isEmpty()) {
-            dvo.setToClientes_direccion("pendiente");
+            dvo.setToClientes_direccion("");
         } else {
             dvo.setToClientes_direccion(usuario.f_txt_direccionUSA.getText());
         }
 
         if (usuario.f_txt_nombreCliente.getText().isEmpty()) {
-            dvo.setToClientes_nombre("pendiente");
+            dvo.setToClientes_nombre("");
         } else {
             dvo.setToClientes_nombre(usuario.f_txt_nombreCliente.getText());
         }
 
         if (usuario.f_txt_telefonoCliente.getText().isEmpty()) {
-            dvo.setToClientes_telefono("pendente");
+            dvo.setToClientes_telefono("");
         } else {
             dvo.setToClientes_telefono(usuario.f_txt_telefonoCliente.getText());
         }
 
         if (usuario.f_txt_estadoResidencia.getText().isEmpty()) {
-            dvo.setToClientes_EstadoResidencia("pendiente");
+            dvo.setToClientes_EstadoResidencia("");
         } else {
             dvo.setToClientes_EstadoResidencia(usuario.f_txt_estadoResidencia.getText());
         }
@@ -383,7 +383,7 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
                 case "Casa":
                     dvo.setToPropiedad_id(2);
                     break;
-                case "Divorciado (a)":
+                case "Apartamento":
                     dvo.setToPropiedad_id(3);
                     break;
                 case "Oficina":
@@ -395,7 +395,7 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
         }
 
         if (usuario.f_txt_correoCliente.getText().isEmpty()) {
-            dvo.setToClientes_correo("pendiente");
+            dvo.setToClientes_correo("");
         } else {
             dvo.setToClientes_correo(usuario.f_txt_correoCliente.getText());
         }
@@ -421,7 +421,7 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
         }
 
         if (usuario.f_txt_profesion.getText().isEmpty()) {
-            dvo.setToClientes_profesion("Pendiente");
+            dvo.setToClientes_profesion("");
         } else {
             dvo.setToClientes_profesion(usuario.f_txt_profesion.getText());
         }
@@ -448,75 +448,63 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
         }
 
         if (usuario.f_txt_repNombre.getText().isEmpty()) {
-            dvo.setToRepresentante_nombre("pendiente");
+            dvo.setToRepresentante_nombre("");
         } else {
             dvo.setToRepresentante_nombre(usuario.f_txt_repNombre.getText());
         }
 
         if (usuario.f_txt_repDireccion.getText().isEmpty()) {
-            dvo.setToRepresentante_direccion("pendiente");
+            dvo.setToRepresentante_direccion("");
         } else {
             dvo.setToRepresentante_direccion(usuario.f_txt_repDireccion.getText());
         }
 
         if (usuario.f_txt_repTelefono.getText().isEmpty()) {
-            dvo.setToRepresentante_telefono("pendiente");
+            dvo.setToRepresentante_telefono("");
         } else {
             dvo.setToRepresentante_telefono(usuario.f_txt_repTelefono.getText());
         }
 
         if (usuario.f_txt_repParentezco.getText().isEmpty()) {
-            dvo.setToRepresentante_parentezco("pendiente");
+            dvo.setToRepresentante_parentezco("");
         } else {
-            dvo.setToRepresentante_parentezco("pendiente");
+            dvo.setToRepresentante_parentezco("");
         }
 
         if (usuario.f_txt_repBanco.getText().isEmpty()) {
-            dvo.setToRepresentante_banco("Pendiente");
+            dvo.setToRepresentante_banco("");
         } else {
 
         }
 
         if (usuario.f_txt_notas.getText().isEmpty()) {
-            dvo.setToCasos_notas("No Hay Notas");
+            dvo.setToCasos_notas("");
         } else {
             dvo.setToCasos_notas(usuario.f_txt_notas.getText());
         }
 
-        if (usuario.rd_txt_fecha.getText().isEmpty()) {
-            GregorianCalendar c = new GregorianCalendar();
-            int year, month, day;
-            String date;
-            year = c.get(Calendar.YEAR);
-            month = c.get(Calendar.MONTH);
-            day = c.get(Calendar.DAY_OF_MONTH);
-            date = year + "/" + month + "/" + day;
-            usuario.rd_txt_fecha.setText(date);
-            dvo.setToRegistros_fecha(date);
-        }
-
-        if (usuario.rd_txt_usuario.getText().isEmpty()) {
-            usuario.rd_txt_usuario.setText(dvo.getUser_login());
-            switch (usuario.rd_txt_usuario.getText()) {
-                case "gsandoval":
-                    dvo.setToRegistros_id_usuarios("2");
-                    break;
-                case "ssoto":
-                    dvo.setToRegistros_id_usuarios("3");
-                    break;
-                case "ririarte":
-                    dvo.setToRegistros_id_usuarios("4");
-                    break;
-                default:
-                    break;
-            }
-        }
-        
-        if(usuario.rd_txt_informacion.getText().isEmpty()){
+        if (usuario.rd_txt_informacion.getText().isEmpty()) {
             dvo.setToRegistros_notas("");
         } else {
             dvo.setToRegistros_notas(usuario.rd_txt_informacion.getText());
         }
+
+        try {
+
+            ddao.modificar_datos_vendedor(dvo);
+            ddao.modificar_datos_representante(dvo);
+            ddao.modificar_datos_clientes(dvo);
+            ddao.idCliente(dvo);
+            ddao.modificar_datos_casos(dvo);
+            login.mensaje.showMessageDialog(null, "Datos modificados exitosamente");
+            
+            usuario.f_cb_editar.setSelected(false);
+            usuario.f_btn_guardar.setEnabled(false);
+        } catch (Exception e) {
+            System.out.println("----- Error " + e.getMessage());
+            login.mensaje.showMessageDialog(null, "A ocurrido un error Contacte a su administrador de Servicio");
+        }
+
     }
 
     private void nuevoCaso() {
@@ -722,36 +710,7 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
             dvo.setToCasos_notas(usuario.f_txt_notas.getText());
         }
 
-        if (usuario.rd_txt_fecha.getText().isEmpty()) {
-            GregorianCalendar c = new GregorianCalendar();
-            int year, month, day;
-            String date;
-            year = c.get(Calendar.YEAR);
-            month = c.get(Calendar.MONTH);
-            day = c.get(Calendar.DAY_OF_MONTH);
-            date = year + "/" + month + "/" + day;
-            usuario.rd_txt_fecha.setText(date);
-            dvo.setToRegistros_fecha(date);
-        }
-
-        if (usuario.rd_txt_usuario.getText().isEmpty()) {
-            usuario.rd_txt_usuario.setText(dvo.getUser_login());
-            switch (usuario.rd_txt_usuario.getText()) {
-                case "gsandoval":
-                    dvo.setToRegistros_id_usuarios("2");
-                    break;
-                case "ssoto":
-                    dvo.setToRegistros_id_usuarios("3");
-                    break;
-                case "ririarte":
-                    dvo.setToRegistros_id_usuarios("4");
-                    break;
-                default:
-                    break;
-            }
-        }
-        
-        if(usuario.rd_txt_informacion.getText().isEmpty()){
+        if (usuario.rd_txt_informacion.getText().isEmpty()) {
             dvo.setToRegistros_notas("");
         } else {
             dvo.setToRegistros_notas(usuario.rd_txt_informacion.getText());
@@ -782,10 +741,68 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
             enableText();
             usuario.f_btn_guardar.setEnabled(true);
             usuario.f_cb_nuevo.setEnabled(false);
+
+            if (usuario.rd_txt_fecha.getText().isEmpty()) {
+                GregorianCalendar c = new GregorianCalendar();
+                int year, month, day;
+                String date;
+                year = c.get(Calendar.YEAR);
+                month = c.get(Calendar.MONTH);
+                day = c.get(Calendar.DAY_OF_MONTH);
+                date = year + "/" + month + "/" + day;
+                usuario.rd_txt_fecha.setText(date);
+                dvo.setToRegistros_fecha(date);
+            }
+
+            if (usuario.rd_txt_usuario.getText().isEmpty()) {
+                usuario.rd_txt_usuario.setText(dvo.getUser_login());
+                switch (usuario.rd_txt_usuario.getText()) {
+                    case "gsandoval":
+                        dvo.setToRegistros_id_usuarios("2");
+                        break;
+                    case "ssoto":
+                        dvo.setToRegistros_id_usuarios("3");
+                        break;
+                    case "ririarte":
+                        dvo.setToRegistros_id_usuarios("4");
+                        break;
+                    default:
+                        break;
+                }
+            }
+
         } else if (usuario.f_cb_nuevo.isSelected() == true) {
             enableText();
             usuario.f_btn_guardar.setEnabled(true);
             usuario.f_cb_editar.setEnabled(false);
+            if (usuario.rd_txt_fecha.getText().isEmpty()) {
+            GregorianCalendar c = new GregorianCalendar();
+            int year, month, day;
+            String date;
+            year = c.get(Calendar.YEAR);
+            month = c.get(Calendar.MONTH);
+            day = c.get(Calendar.DAY_OF_MONTH);
+            date = year + "/" + month + "/" + day;
+            usuario.rd_txt_fecha.setText(date);
+            dvo.setToRegistros_fecha(date);
+        }
+
+        if (usuario.rd_txt_usuario.getText().isEmpty()) {
+            usuario.rd_txt_usuario.setText(dvo.getUser_login());
+            switch (usuario.rd_txt_usuario.getText()) {
+                case "gsandoval":
+                    dvo.setToRegistros_id_usuarios("2");
+                    break;
+                case "ssoto":
+                    dvo.setToRegistros_id_usuarios("3");
+                    break;
+                case "ririarte":
+                    dvo.setToRegistros_id_usuarios("4");
+                    break;
+                default:
+                    break;
+            }
+        }
         } else {
             disableText();
             usuario.f_btn_guardar.setEnabled(false);

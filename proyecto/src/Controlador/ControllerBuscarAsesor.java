@@ -10,7 +10,12 @@ import Modelo.StringsBaseDatos;
 import Modelo.TablasBaseDatos;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.beans.PropertyVetoException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.event.InternalFrameEvent;
+import javax.swing.event.InternalFrameListener;
 import javax.swing.table.DefaultTableModel;
 import proyecto.Vista.Login;
 import proyecto.Vista.Usuario;
@@ -75,5 +80,6 @@ public class ControllerBuscarAsesor implements KeyListener {
     public void keyReleased(KeyEvent e) {
         buscarAsesor();
     }
+
 
 }

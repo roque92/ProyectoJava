@@ -14,7 +14,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -58,7 +57,7 @@ public class ControllerUsuario extends Controllers implements ActionListener, Wi
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == usuario.c_buscarCliente){
-            usuario.if_buscarCliente.setVisible(true);
+            usuario.if_buscarCliente.show();
         }
         
         if(e.getSource() == usuario.c_baseGeneral){

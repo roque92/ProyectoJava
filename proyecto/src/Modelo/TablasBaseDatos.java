@@ -16,7 +16,6 @@ import java.util.ArrayList;
 //---------------- Aqui se encuentan los metodo que traen toda la informcion de las tablas
 public class TablasBaseDatos implements InterfaceTablasBase {
 
-    ///------------ORDEN DE EJECUCION 8
     @Override
     public ArrayList<StringsBaseDatos> TablaVendedor(StringsBaseDatos sbd) {
         Conector c = new Conector();
@@ -45,7 +44,6 @@ public class TablasBaseDatos implements InterfaceTablasBase {
 
         return datos;
     }
-///------------ORDEN DE EJECUCION 1
 
     @Override
     public ArrayList<StringsBaseDatos> TablaUsuario(StringsBaseDatos sbd) {
@@ -71,9 +69,8 @@ public class TablasBaseDatos implements InterfaceTablasBase {
 
         return datos;
     }
-///------------ORDEN DE EJECUCION 2
 
-    @Override
+    @Override //Validar si se usa y si no borrar
     public ArrayList<StringsBaseDatos> TablaPropiedad(StringsBaseDatos sbd) {
         Conector c = new Conector();
         ArrayList<StringsBaseDatos> datos = new ArrayList();
@@ -93,9 +90,8 @@ public class TablasBaseDatos implements InterfaceTablasBase {
 
         return datos;
     }
-///------------ORDEN DE EJECUCION 3
 
-    @Override
+    @Override //Validar si se usa y si no borrar
     public ArrayList<StringsBaseDatos> TablaRepresentante(StringsBaseDatos sbd) {
         Conector c = new Conector();
         ArrayList<StringsBaseDatos> datos = new ArrayList();
@@ -119,9 +115,8 @@ public class TablasBaseDatos implements InterfaceTablasBase {
 
         return datos;
     }
-///------------ORDEN DE EJECUCION 6
 
-    @Override
+    @Override //Validar si se usa y si no borrar
     public ArrayList<StringsBaseDatos> TablaEstado(StringsBaseDatos sbd) {
         Conector c = new Conector();
         ArrayList<StringsBaseDatos> datos = new ArrayList();
@@ -141,7 +136,6 @@ public class TablasBaseDatos implements InterfaceTablasBase {
 
         return datos;
     }
-///------------ORDEN DE EJECUCION 7
 
     @Override
     public ArrayList<StringsBaseDatos> TablaClientes(StringsBaseDatos sbd) {
@@ -181,9 +175,8 @@ public class TablasBaseDatos implements InterfaceTablasBase {
 
         return datos;
     }
-///------------ORDEN DE EJECUCION 9
 
-    @Override
+    @Override //Validar si se usa y si no borrar
     public ArrayList<StringsBaseDatos> TablaCasos(StringsBaseDatos sbd) {
         Conector c = new Conector();
         ArrayList<StringsBaseDatos> datos = new ArrayList();

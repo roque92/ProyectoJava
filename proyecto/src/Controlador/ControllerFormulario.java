@@ -750,7 +750,7 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
                 year = c.get(Calendar.YEAR);
                 month = c.get(Calendar.MONTH);
                 day = c.get(Calendar.DAY_OF_MONTH);
-                date = year + "/" + month + "/" + day;
+                date = year + "-" + month + "-" + day;
                 usuario.rd_txt_fecha.setText(date);
                 dvo.setToRegistros_fecha(date);
             }
@@ -783,7 +783,7 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
                 year = c.get(Calendar.YEAR);
                 month = c.get(Calendar.MONTH);
                 day = c.get(Calendar.DAY_OF_MONTH);
-                date = year + "/" + month + "/" + day;
+                date = year + "-" + month + "-" + day;
                 usuario.rd_txt_fecha.setText(date);
                 dvo.setToRegistros_fecha(date);
             }

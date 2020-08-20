@@ -3,7 +3,7 @@ package com.example.gctcompanion.modelos;
 public class Casos {
     private double honorarios, salarios;
     private String cliente, vendedor, usuario, notas, estado, propiedad, representante;
-    private int id, clieteId, vendedorId, usuarioId, estadoId, propiedadId, representateId;
+    private int id, clienteId, vendedorId, usuarioId, estadoId, propiedadId, representateId;
 
     public int getId() {
         return id;
@@ -13,12 +13,12 @@ public class Casos {
         this.id = id;
     }
 
-    public int getClieteId() {
-        return clieteId;
+    public int getClienteId() {
+        return clienteId;
     }
 
-    public void setClieteId(int clieteId) {
-        this.clieteId = clieteId;
+    public void setClienteId(int clienteId) {
+        this.clienteId = clienteId;
     }
 
     public int getVendedorId() {

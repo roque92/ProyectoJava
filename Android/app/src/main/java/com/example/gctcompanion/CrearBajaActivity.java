@@ -1,8 +1,8 @@
 package com.example.gctcompanion;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class CrearBajaActivity extends AppCompatActivity {
 

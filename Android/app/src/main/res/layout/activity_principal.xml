@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -64,23 +63,25 @@
             style="@style/btnMain" />
 
         <Button
+            android:id="@+id/buttonCrearVendedor"
             android:layout_gravity="center"
             android:text="@string/PrincipalTexto4"
             android:onClick="onClick"
             style="@style/btnMain" />
 
         <Button
+            android:id="@+id/buttonCrearRepresentante"
             android:layout_gravity="center"
             android:text="@string/PrincipalTexto5"
             android:onClick="onClick"
             style="@style/btnMain" />
-
+<!--
         <Button
             android:layout_gravity="center"
             android:text="@string/PrincipalTexto6"
             android:onClick="onClick"
             style="@style/btnMain" />
-
+-->
 
     </LinearLayout>
     </ScrollView>

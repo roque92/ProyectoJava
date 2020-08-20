@@ -4,8 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".CrearBajaActivity">
+    tools:context=".ActualizarCasoActivity">
 
+<!--    <include layout="@layout/logo"/> -->
 
     <LinearLayout
         android:layout_marginHorizontal="20sp"
@@ -18,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:gravity="center"
-            android:text="Crear Baja"
+            android:text="Actualizar Caso"
             android:textSize="25dp"
             android:textStyle="bold"/>
 
@@ -45,10 +46,11 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/BajaTexto1"
+                    android:text="Honorarios"
                     style="@style/TextViewTittle"/>
 
                 <EditText
+                    android:id="@+id/editTextHonorarios"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/InputCrearCaso"/>
@@ -56,10 +58,11 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/BajaTexto2"
+                    android:text="Salarios"
                     style="@style/TextViewTittle"/>
 
                 <EditText
+                    android:id="@+id/editTextSalarios"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/InputCrearCaso"/>
@@ -67,21 +70,11 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/BajaTexto3"
+                    android:text="Notas Principales"
                     style="@style/TextViewTittle"/>
 
                 <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    style="@style/InputCrearCaso"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/BajaTexto4"
-                    style="@style/TextViewTittle"/>
-
-                <EditText
+                    android:id="@+id/editTextNotas"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/InputCrearCaso"/>
@@ -90,7 +83,7 @@
                 <Button
                     android:id="@+id/buttonEditar"
                     android:layout_gravity="center"
-                    android:text="Guardar"
+                    android:text="Actualizar"
                     android:layout_marginTop="25sp"
                     android:onClick="onClick"
                     style="@style/btnMain" />

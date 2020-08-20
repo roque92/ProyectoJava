@@ -10,18 +10,14 @@
     <string name="PrincipalTexto5">Crear Representate</string>
     <string name="PrincipalTexto6">Nueva Baja</string>
 
-
-
+    <!--Vsita Clientes-->
+    <string name="clienteTexto1">Nombre</string>
+    <string name="clienteTexto2">Telefonos</string>
     <string name="clienteTexto3">Correo Electronico</string>
     <string name="clienteTexto4">Estatus</string>
     <string name="clienteTexto5">Direccion</string>
     <string name="clienteTexto6">Estado Civil</string>
     <string name="clienteTexto7">Estado Migratorio</string>
-    <string name="clienteTexto8">Profesion</string>
-    <string name="clienteTexto9">Estado de Residencia</string>
-    <string name="clienteTexto10">DPI</string>
-    <string name="clienteTexto11">NIT</string>
-    <string name="clienteTexto12">USA</string>
 
 
     <!-- Vista Vendedor -->

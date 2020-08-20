@@ -2,12 +2,11 @@ package com.example.gctcompanion;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
-import android.util.Log;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -47,9 +46,10 @@ public class LoginActivity extends ActivityDefault {
                 {"method","show"},
                 {"table","tbl_usuarios"},
                 {"wh_username",editTextUsername.getText().toString().trim()},
-                {"wh_password",editTextPassword.getText().toString().trim()}
+                {"wh_pass",editTextPassword.getText().toString().trim()}
         };
         String url = URL  + getParams(parametros);
+        System.out.println(url);
         RequestQueue queue = Volley.newRequestQueue(this);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
             new Response.Listener<String>() {

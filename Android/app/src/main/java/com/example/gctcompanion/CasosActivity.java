@@ -57,7 +57,6 @@ public class CasosActivity extends ActivityDefault {
                         intent.putExtra("estado",       arrayListCasos.get(position).getEstado() );
                         intent.putExtra("propiedad",    arrayListCasos.get(position).getPropiedad() );
                         intent.putExtra("representante",arrayListCasos.get(position).getRepresentante() );
-                        System.out.println(                    arrayListCasos.get(position).getRepresentante() );
                         startActivity(intent);
                     }
                 }

@@ -1,5 +1,6 @@
 package com.example.gctcompanion;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,7 +18,6 @@ import com.example.gctcompanion.modelos.Casos;
 
 public class DetalleCasosActivity extends ActivityDefault {
     private Casos casos = new Casos();
-    private Button buttonEditar;
     private EditText editTextCliente, editTextVendedor, editTextUsuario, editTextHonorarios, editTextSalarios, editTextNotas, editTextEstado, editTextPropiedad, editTextRepresentante;
 
     @Override
@@ -60,60 +60,16 @@ public class DetalleCasosActivity extends ActivityDefault {
         editTextRepresentante.setText(datos.getString("representante"));
     }
 
-    private void actualizar(){
-        if(verificarEditText(editTextCliente) && verificarEditText(editTextVendedor) && verificarEditText(editTextUsuario) && verificarEditText(editTextHonorarios) && verificarEditText(editTextSalarios)
-                && verificarEditText(editTextNotas) && verificarEditText(editTextEstado) && verificarEditText(editTextPropiedad) && verificarEditText(editTextRepresentante)){
-            String[][] parametros = {
-                    {"method","update"},
-                    {"table","tbl_casos"},
-                    {"id", String.valueOf(casos.getId())},
-                    {"cliente",editTextCliente.getText().toString()},
-                    {"vendedor",editTextVendedor.getText().toString()},
-                    {"usuario",editTextUsuario.getText().toString()},
-                    {"honorarios",editTextHonorarios.getText().toString()},
-                    {"salarios",editTextSalarios.getText().toString()},
-                    {"notas",editTextNotas.getText().toString()},
-                    {"estado",editTextEstado.getText().toString()},
-                    {"propiedad",editTextPropiedad.getText().toString()},
-                    {"representante",editTextRepresentante.getText().toString()}
-            };
-            String url = URL  + getParams(parametros);
-            System.out.println(url);
-            RequestQueue queue = Volley.newRequestQueue(this);
-            StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                    new Response.Listener<String>() {
-                        @Override
-                        public void onResponse(String response) {
-                            Toast.makeText(getApplicationContext(),"Caso Actualizado con exito",Toast.LENGTH_SHORT).show();
-                        }
-                    }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError e) {
-                    Log.e("Connect Error", e.getMessage());
-                }
-            });
-            queue.add(stringRequest);
-        }else{
-            Toast.makeText(getApplicationContext(),"Campos incompletos, rellene toda la informacion",Toast.LENGTH_SHORT).show();
-        }
-    }
+
 
     public void onClick(View view) {
-        String texto = buttonEditar.getText().toString().trim();
-        if (texto.equals("Editar")){
-            desbloquear(editTextCliente,true);
-            desbloquear(editTextVendedor,true);
-            desbloquear(editTextUsuario,true);
-            desbloquear(editTextHonorarios,true);
-            desbloquear(editTextSalarios,true);
-            desbloquear(editTextNotas,true);
-            desbloquear(editTextEstado,true);
-            desbloquear(editTextPropiedad,true);
-            desbloquear(editTextRepresentante,true);
-        }else{
-            buttonEditar.setText("Guardar");
-            actualizar();
-        }
+        Intent intent = new Intent(getApplicationContext(), ActualizarCasoActivity.class);
+        intent.putExtra("id",         casos.getId());
+        intent.putExtra("honorarios", casos.getHonorarios());
+        intent.putExtra("salarios",   casos.getSalarios());
+        intent.putExtra("notas",      casos.getNotas());
+        startActivity(intent);
+
     }
 
 

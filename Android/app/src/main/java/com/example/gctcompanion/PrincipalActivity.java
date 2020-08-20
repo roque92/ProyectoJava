@@ -9,7 +9,7 @@ public class PrincipalActivity extends ActivityDefault {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_Principal);
+        setContentView(R.layout.activity_principal);
     }
 
     public void onClick(View view) {
@@ -19,12 +19,20 @@ public class PrincipalActivity extends ActivityDefault {
                 startActivity(casos);
                 break;
             case R.id.buttonCrearCaso:
-                Intent clientes = new Intent(getApplicationContext(), CrearCasoActivity.class);
-                startActivity(clientes);
+                Intent casosC = new Intent(getApplicationContext(), CrearCasoActivity.class);
+                startActivity(casosC);
                 break;
             case R.id.buttonCrearCliente:
-                Intent vendedores = new Intent(getApplicationContext(),CrearClienteActivity.class);
+                Intent clientes = new Intent(getApplicationContext(),CrearClienteActivity.class);
+                startActivity(clientes);
+                break;
+            case R.id.buttonCrearVendedor:
+                Intent vendedores = new Intent(getApplicationContext(),CrearVendedorActivity.class);
                 startActivity(vendedores);
+                break;
+            case R.id.buttonCrearRepresentante:
+                Intent representante = new Intent(getApplicationContext(),CrearRepresentateActivity.class);
+                startActivity(representante);
                 break;
         }
     }

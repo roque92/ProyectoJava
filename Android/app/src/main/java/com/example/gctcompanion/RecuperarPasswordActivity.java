@@ -1,9 +1,5 @@
 package com.example.gctcompanion;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -44,8 +40,7 @@ public class RecuperarPasswordActivity extends ActivityDefault {
                     {"wh_correo",editTextEmailRecuperar.getText().toString().trim()},
                     {"wh_username",editTextUsernameRecuperar.getText().toString().trim()}
             };
-            String url = URL  + getParams(parametros);
-            System.out.println(url);
+            String url = URL + getParams(parametros);
             RequestQueue queue = Volley.newRequestQueue(this);
             StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
@@ -54,7 +49,7 @@ public class RecuperarPasswordActivity extends ActivityDefault {
                         setJson(response);
                         System.out.println(jsonString);
                         if(!jsonString.equals("[]")){
-                            String password = jsonObject.optString("password");
+                            String password = jsonObject.optString("pass");
                             Toast.makeText(getApplicationContext(), "Su contraseña es: "+password,Toast.LENGTH_LONG).show();
                             textViewPasswordRecuperar.setText("Tu contrasema es: "+password);
                         }else{

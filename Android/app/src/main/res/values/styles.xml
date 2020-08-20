@@ -15,7 +15,7 @@
         <item name="android:gravity">center_horizontal</item>
         <item name="android:padding">8dp</item>
         <item name="android:background">#e6e6e6</item>
-        <item name="android:textSize">32sp</item>
+        <item name="android:textSize">20sp</item>
         <item name="android:textColor">#727272</item>
     </style>
 
@@ -30,7 +30,7 @@
         <item name="android:elevation">10dp</item>
         <item name="android:translationZ">10dp</item>
         <item name="android:gravity">center_horizontal</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">15dp</item>
         <item name="android:background">@drawable/rounded_shape</item>
     </style>
 
@@ -43,7 +43,7 @@
         <item name="android:elevation">10dp</item>
         <item name="android:translationZ">15dp</item>
         <item name="android:gravity">center</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">15dp</item>
         <item name="android:background">@drawable/rounded_shape</item>
         <item name="android:textStyle">bold</item>
     </style>
@@ -61,7 +61,7 @@
         <item name="android:padding">5dp</item>
         <item name="android:layout_margin">3dp</item>
         <item name="android:gravity">center</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">15dp</item>
     </style>
 
     <style name="InputCrearCaso">
@@ -71,7 +71,7 @@
         <item name="android:padding">5dp</item>
         <item name="android:layout_margin">3dp</item>
         <item name="android:gravity">center</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">15dp</item>
     </style>
 
 </resources>

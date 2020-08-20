@@ -1,7 +1,6 @@
 package com.example.gctcompanion;
 
 import android.app.Activity;
-import android.content.Context;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -13,6 +12,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.gctcompanion.modelos.Casos;
 import com.example.gctcompanion.modelos.Clientes;
 import com.example.gctcompanion.modelos.Estados;
 import com.example.gctcompanion.modelos.Propiedades;
@@ -23,23 +23,28 @@ import com.example.gctcompanion.modelos.Vendedores;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.lang.invoke.MethodHandle;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ActivityDefault extends Activity {
-    protected final String URL = "http://192.168.0.28/intecap";
+    //    protected final String URL = "http://192.168.5.106/intecap";
+    protected final String URL = "http://prueba.divisagt.com/";
     protected JSONObject jsonObject = null;
     protected JSONArray jsonArray = null;
     protected String jsonString = "[]";
-    private Estados estados = new Estados();
-    private Clientes clientes = new Clientes();
-    private Usuarios usuarios = new Usuarios();
-    private Vendedores vendedores = new Vendedores();
-    private Propiedades propiedades = new Propiedades();
-    private Representantes representantes = new Representantes();
 
+    protected Casos casos = new Casos();
+    protected Estados estados = new Estados();
+    protected Clientes clientes = new Clientes();
+    protected Usuarios usuarios = new Usuarios();
+    protected Vendedores vendedores = new Vendedores();
+    protected Propiedades propiedades = new Propiedades();
+    protected Representantes representantes = new Representantes();
 
+    protected String setUrlFornat(String texto){
+        texto.toUpperCase();
+        return  texto.replace(' ','+');
+    }
 
     protected String getParams(String[][] parametros) {
         try {
@@ -47,7 +52,9 @@ public class ActivityDefault extends Activity {
             for (int i = 0; i < parametros.length; i++) {
                 cadena += parametros[i][0] + "=" + parametros[i][1] + "&";
             }
-            return cadena.substring(0, cadena.length() - 1);
+            String retorno = cadena.substring(0, cadena.length() - 1);
+            Log.e("URL string server", URL + retorno);
+            return retorno;
         } catch (Exception e) {
             return "";
         }
@@ -89,25 +96,47 @@ public class ActivityDefault extends Activity {
         editText.setFocusableInTouchMode(mode);
     }
 
-
-
-    protected void llenarSpinner(Spinner spinner, String campo, List<String> modelo){
+    protected void llenarSpinner(Spinner spinner, String campo, List<Integer> modelo){
 
         try {
             List<String> valores = new ArrayList<String>();
-            valores.add("Seleccione");
+            valores.add("Seleccione: ");
+            modelo.add(0);
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObject = null;
                 jsonObject = jsonArray.getJSONObject(i);
                 valores.add(jsonObject.optString(campo));
-                modelo.add(jsonObject.optString("id"));
+                modelo.add(jsonObject.optInt("id"));
             }
-            System.out.println(campo + modelo.size());
             spinner.setAdapter(new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, valores));
         }catch (Exception e){
-            System.out.println(e.getMessage());
+            Log.e("Llenar Spinner",e.getMessage());
         }
     }
 
 
+    protected void cargarSpinner(String table, final Spinner spinner, final String campo, final List<Integer> modelo){
+        String[][] parametros = {
+                {"method","show"},
+                {"id",""},
+                {campo,""},
+                {"table",table},
+        };
+        String url = URL  + getParams(parametros);
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        setJson(response);
+                        llenarSpinner(spinner,campo,modelo);
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError e) {
+                Log.e("Connect Error", e.getMessage());
+            }
+        });
+        requestQueue.add(stringRequest);
+    }
 }

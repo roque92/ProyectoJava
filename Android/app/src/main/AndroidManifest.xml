@@ -12,22 +12,43 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".CrearBajaActivity"></activity>
-        <activity android:name=".CrearRepresentateActivity" />
-        <activity android:name=".CrearVendedorActivity" />
-        <activity android:name=".CrearClienteActivity" />
+        <activity android:name=".ActualizarCasoActivity">
+
+        </activity>
+        <activity android:name=".CrearBajaActivity">
+
+        </activity>
+        <activity android:name=".CrearRepresentateActivity">
+
+        </activity>
+        <activity android:name=".CrearVendedorActivity">
+
+        </activity>
+        <activity android:name=".CrearClienteActivity">
+
+        </activity>
         <activity android:name=".CrearCasoActivity">
+
+        </activity>
+        <activity android:name=".DetalleCasosActivity">
+
+        </activity>
+        <activity android:name=".CasosActivity">
+
+        </activity>
+        <activity android:name=".PrincipalActivity">
+
+        </activity>
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DetalleCasosActivity" />
-        <activity android:name=".CasosActivity" />
-        <activity android:name=".PrincipalActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".RecuperarPasswordActivity" />
+        <activity android:name=".RecuperarPasswordActivity">
+
+        </activity>
     </application>
 
 </manifest>

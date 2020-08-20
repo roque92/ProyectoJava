@@ -303,6 +303,7 @@ public class Usuario extends javax.swing.JFrame {
         f_btn_buscarCliente.setText("Buscar");
 
         DefaultTableModel modelSeguimiento = new DefaultTableModel();
+        f_tbl_seguimiento.setAutoCreateRowSorter(true);
         f_tbl_seguimiento.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -311,6 +312,7 @@ public class Usuario extends javax.swing.JFrame {
 
             }
         ));
+        f_tbl_seguimiento.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
         jScrollPane3.setViewportView(f_tbl_seguimiento);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());

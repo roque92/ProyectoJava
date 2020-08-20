@@ -85,8 +85,8 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
         usuario.f_txt_vendedorContructora.setText(dvo.getConstructora_vendedor());
         usuario.f_txt_vendedorCorreo.setText(dvo.getCorreo_vendedor());
 //Asignacion de datos Financieros
-        usuario.f_txt_honorarios.setText("$/Q " + String.valueOf(dvo.getHonorarios_casos()));
-        usuario.f_txt_salario.setText("$ " + String.valueOf(dvo.getSalario_casos()));
+        usuario.f_txt_honorarios.setText(String.valueOf(dvo.getHonorarios_casos()));
+        usuario.f_txt_salario.setText(String.valueOf(dvo.getSalario_casos()));
         usuario.f_txt_direccionUSA.setText(dvo.getDireccion_cliente());
 //Asignacion de datos Negociacion
         usuario.f_txt_nombreCliente.setText(dvo.getNombre_cliente());
@@ -123,8 +123,8 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
         usuario.f_txt_vendedorContructora.setText(dvo.getConstructora_vendedor());
         usuario.f_txt_vendedorCorreo.setText(dvo.getCorreo_vendedor());
 //Asignacion de datos Financieros
-        usuario.f_txt_honorarios.setText("$/Q " + String.valueOf(dvo.getHonorarios_casos()));
-        usuario.f_txt_salario.setText("$ " + String.valueOf(dvo.getSalario_casos()));
+        usuario.f_txt_honorarios.setText(String.valueOf(dvo.getHonorarios_casos()));
+        usuario.f_txt_salario.setText(String.valueOf(dvo.getSalario_casos()));
         usuario.f_txt_direccionUSA.setText(dvo.getDireccion_cliente());
 //Asignacion de datos Negociacion
         usuario.f_txt_nombreCliente.setText(dvo.getNombre_cliente());
@@ -161,8 +161,8 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
         usuario.f_txt_vendedorContructora.setText(dvo.getConstructora_vendedor());
         usuario.f_txt_vendedorCorreo.setText(dvo.getCorreo_vendedor());
 //Asignacion de datos Financieros
-        usuario.f_txt_honorarios.setText("$/Q " + String.valueOf(dvo.getHonorarios_casos()));
-        usuario.f_txt_salario.setText("$ " + String.valueOf(dvo.getSalario_casos()));
+        usuario.f_txt_honorarios.setText(String.valueOf(dvo.getHonorarios_casos()));
+        usuario.f_txt_salario.setText(String.valueOf(dvo.getSalario_casos()));
         usuario.f_txt_direccionUSA.setText(dvo.getDireccion_cliente());
 //Asignacion de datos Negociacion
         usuario.f_txt_nombreCliente.setText(dvo.getNombre_cliente());
@@ -281,12 +281,7 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
     }
 
     private void editarCaso() {
-        if (usuario.f_txt_tramite.getText().isEmpty()) {
-            dvo.setToClientes_ClaseTraite("");
-        } else {
-            dvo.setToClientes_ClaseTraite(usuario.f_txt_tramite.getText());
-        }
-
+        
         if (usuario.f_txt_vendedorNombre.getText().isEmpty()) {
             dvo.setToVendedor_nombre("");
         } else {
@@ -310,17 +305,11 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
         } else {
             dvo.setToVendedor_correo(usuario.f_txt_vendedorCorreo.getText());
         }
-
-        if (usuario.f_txt_honorarios.getText().isEmpty()) {
-            dvo.setToCasos_honorarios(0.00);
+        
+        if (usuario.f_txt_tramite.getText().isEmpty()) {
+            dvo.setToClientes_ClaseTraite("");
         } else {
-            dvo.setToCasos_honorarios(Double.parseDouble(usuario.f_txt_honorarios.getText()));
-        }
-
-        if (usuario.f_txt_salario.getText().isEmpty()) {
-            dvo.setToCasos_salario(0.00);
-        } else {
-            dvo.setToCasos_salario(Double.parseDouble(usuario.f_txt_salario.getText()));
+            dvo.setToClientes_ClaseTraite(usuario.f_txt_tramite.getText());
         }
 
         if (usuario.f_txt_direccionUSA.getText().isEmpty()) {
@@ -350,7 +339,7 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
         if (usuario.f_txt_estadoCivil.getSelectedItem().equals("Seleccionar")) {
             dvo.setToClientes_id_EstadoCivil(5);
         } else {
-            String estadoCivil = (String) usuario.f_txt_estadoMigratorio.getSelectedItem();
+            String estadoCivil = (String) usuario.f_txt_estadoCivil.getSelectedItem();
             switch (estadoCivil) {
 
                 case "Soltero (a)":
@@ -371,29 +360,6 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
 
         }
 
-        if (usuario.f_txt_tipoPropiedad.getSelectedItem().equals("Seleccionar")) {
-            dvo.setToPropiedad_id(5);
-        } else {
-            String tipoPropiedad = (String) usuario.f_txt_tipoPropiedad.getSelectedItem();
-            switch (tipoPropiedad) {
-
-                case "Terreno":
-                    dvo.setToPropiedad_id(1);
-                    break;
-                case "Casa":
-                    dvo.setToPropiedad_id(2);
-                    break;
-                case "Apartamento":
-                    dvo.setToPropiedad_id(3);
-                    break;
-                case "Oficina":
-                    dvo.setToPropiedad_id(4);
-                    break;
-                default:
-                    break;
-            }
-        }
-
         if (usuario.f_txt_correoCliente.getText().isEmpty()) {
             dvo.setToClientes_correo("");
         } else {
@@ -403,7 +369,7 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
         if (usuario.f_txt_estadoMigratorio.getSelectedItem().equals("Seleccionar")) {
             dvo.setToClientes_id_migratorio(4);
         } else {
-            String estadoMigratorio = (String) usuario.f_txt_tipoPropiedad.getSelectedItem();
+            String estadoMigratorio = (String) usuario.f_txt_estadoMigratorio.getSelectedItem();
             switch (estadoMigratorio) {
 
                 case "Residente":
@@ -468,19 +434,54 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
         if (usuario.f_txt_repParentezco.getText().isEmpty()) {
             dvo.setToRepresentante_parentezco("");
         } else {
-            dvo.setToRepresentante_parentezco("");
+            dvo.setToRepresentante_parentezco(usuario.f_txt_repParentezco.getText());
         }
 
         if (usuario.f_txt_repBanco.getText().isEmpty()) {
             dvo.setToRepresentante_banco("");
         } else {
+            dvo.setToRepresentante_banco(usuario.f_txt_repBanco.getText());
+        }
 
+        if (usuario.f_txt_honorarios.getText().isEmpty()) {
+            dvo.setToCasos_honorarios(0.00);
+        } else {
+            dvo.setToCasos_honorarios(Double.parseDouble(usuario.f_txt_honorarios.getText()));
+        }
+
+        if (usuario.f_txt_salario.getText().isEmpty()) {
+            dvo.setToCasos_salario(0.00);
+        } else {
+            dvo.setToCasos_salario(Double.parseDouble(usuario.f_txt_salario.getText()));
         }
 
         if (usuario.f_txt_notas.getText().isEmpty()) {
             dvo.setToCasos_notas("");
         } else {
             dvo.setToCasos_notas(usuario.f_txt_notas.getText());
+        }
+        
+        if (usuario.f_txt_tipoPropiedad.getSelectedItem().equals("Seleccionar")) {
+            dvo.setToCasos_idPropiedad(5);
+        } else {
+            String tipoPropiedad = (String) usuario.f_txt_tipoPropiedad.getSelectedItem();
+            switch (tipoPropiedad) {
+
+                case "Terreno":
+                    dvo.setToCasos_idPropiedad(1);
+                    break;
+                case "Casa":
+                    dvo.setToCasos_idPropiedad(2);
+                    break;
+                case "Apartamento":
+                    dvo.setToCasos_idPropiedad(3);
+                    break;
+                case "Oficina":
+                    dvo.setToCasos_idPropiedad(4);
+                    break;
+                default:
+                    break;
+            }
         }
 
         if (usuario.rd_txt_informacion.getText().isEmpty()) {
@@ -497,7 +498,7 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
             ddao.idCliente(dvo);
             ddao.modificar_datos_casos(dvo);
             login.mensaje.showMessageDialog(null, "Datos modificados exitosamente");
-            
+
             usuario.f_cb_editar.setSelected(false);
             usuario.f_btn_guardar.setEnabled(false);
         } catch (Exception e) {
@@ -776,33 +777,33 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
             usuario.f_btn_guardar.setEnabled(true);
             usuario.f_cb_editar.setEnabled(false);
             if (usuario.rd_txt_fecha.getText().isEmpty()) {
-            GregorianCalendar c = new GregorianCalendar();
-            int year, month, day;
-            String date;
-            year = c.get(Calendar.YEAR);
-            month = c.get(Calendar.MONTH);
-            day = c.get(Calendar.DAY_OF_MONTH);
-            date = year + "/" + month + "/" + day;
-            usuario.rd_txt_fecha.setText(date);
-            dvo.setToRegistros_fecha(date);
-        }
-
-        if (usuario.rd_txt_usuario.getText().isEmpty()) {
-            usuario.rd_txt_usuario.setText(dvo.getUser_login());
-            switch (usuario.rd_txt_usuario.getText()) {
-                case "gsandoval":
-                    dvo.setToRegistros_id_usuarios("2");
-                    break;
-                case "ssoto":
-                    dvo.setToRegistros_id_usuarios("3");
-                    break;
-                case "ririarte":
-                    dvo.setToRegistros_id_usuarios("4");
-                    break;
-                default:
-                    break;
+                GregorianCalendar c = new GregorianCalendar();
+                int year, month, day;
+                String date;
+                year = c.get(Calendar.YEAR);
+                month = c.get(Calendar.MONTH);
+                day = c.get(Calendar.DAY_OF_MONTH);
+                date = year + "/" + month + "/" + day;
+                usuario.rd_txt_fecha.setText(date);
+                dvo.setToRegistros_fecha(date);
             }
-        }
+
+            if (usuario.rd_txt_usuario.getText().isEmpty()) {
+                usuario.rd_txt_usuario.setText(dvo.getUser_login());
+                switch (usuario.rd_txt_usuario.getText()) {
+                    case "gsandoval":
+                        dvo.setToRegistros_id_usuarios("2");
+                        break;
+                    case "ssoto":
+                        dvo.setToRegistros_id_usuarios("3");
+                        break;
+                    case "ririarte":
+                        dvo.setToRegistros_id_usuarios("4");
+                        break;
+                    default:
+                        break;
+                }
+            }
         } else {
             disableText();
             usuario.f_btn_guardar.setEnabled(false);

@@ -161,19 +161,19 @@ public class DatosDAO implements InterfaceMetodos {
         try {
             c.connect();
             c.consulta_general("UPDATE tbl_clientes\n"
-                    + "SET tbl_clientes.nombre = '" + dvo.getToClientes_nombre() + "',\n"
-                    + "		tbl_clientes.telefono = " + dvo.getToClientes_telefono() + ",\n"
-                    + "		tbl_clientes.correo = '" + dvo.getToClientes_correo() + "',\n"
-                    + "		tbl_clientes.direccion = '" + dvo.getToClientes_direccion() + "',\n"
-                    + "		tbl_clientes.id_estado_civil = " + dvo.getToClientes_id_EstadoCivil() + ",\n"
-                    + "		tbl_clientes.id_migratorio = " + dvo.getToClientes_id_migratorio() + ",\n"
-                    + "		tbl_clientes.profesion = '" + dvo.getToClientes_profesion() + "',\n"
-                    + "		tbl_clientes.estado_residencia = '" + dvo.getToClientes_EstadoResidencia() + "',\n"
-                    + "		tbl_clientes.clase_tramite = '" + dvo.getToClientes_ClaseTraite() + "',\n"
-                    + "		tbl_clientes.dpi = '" + dvo.getToClientes_dpi() + "',\n"
-                    + "		tbl_clientes.nit = '" + dvo.getToClientes_nit() + "',\n"
-                    + "		tbl_clientes.usa_id = '" + dvo.getToClientes_UsaId() + "'\n"
-                    + "WHERE tbl_clientes.nombre = '" + dvo.getNombre_cliente() + "';");
+                    + "SET tbl_clientes.nombre = '"+dvo.getToClientes_nombre()+"',\n"
+                    + "		tbl_clientes.telefono = '"+dvo.getToClientes_telefono()+"',\n"
+                    + "		tbl_clientes.correo = '"+dvo.getToClientes_correo()+"',\n"
+                    + "		tbl_clientes.direccion = '"+dvo.getToClientes_direccion()+"',\n"
+                    + "		tbl_clientes.id_estado_civil = "+dvo.getToClientes_id_EstadoCivil()+",\n"
+                    + "		tbl_clientes.id_migratorio = "+dvo.getToClientes_id_migratorio()+",\n"
+                    + "		tbl_clientes.profesion = '"+dvo.getToClientes_profesion()+"',\n"
+                    + "		tbl_clientes.estado_residencia = '"+dvo.getToClientes_EstadoResidencia()+"',\n"
+                    + "		tbl_clientes.clase_tramite = '"+dvo.getToClientes_ClaseTraite()+"',\n"
+                    + "		tbl_clientes.dpi = '"+dvo.getToClientes_dpi()+"',\n"
+                    + "		tbl_clientes.nit = '"+dvo.getToClientes_nit()+"',\n"
+                    + "		tbl_clientes.usa_id = '"+dvo.getToClientes_UsaId()+"'\n"
+                    + "WHERE tbl_clientes.nombre = '"+dvo.getNombre_cliente()+"';");
 
             c.desconectar();
         } catch (Exception e) {
@@ -212,11 +212,11 @@ public class DatosDAO implements InterfaceMetodos {
         try {
             c.connect();
             c.consulta_general("UPDATE tbl_casos\n"
-                    + "SET tbl_casos.honorarios = "+dvo.getToCasos_honorarios()+",\n"
-                    + "		tbl_casos.salarios = "+dvo.getToCasos_salario()+",\n"
-                    + "		tbl_casos.notas = '"+dvo.getToCasos_notas()+"',\n"
-                    + "		tbl_casos.id_tipo_propiedad = "+dvo.getToCasos_idPropiedad()+"\n"
-                    + "WHERE tbl_casos.id_cliente = "+dvo.getId_cliente()+";");
+                    + "SET honorarios = " + dvo.getToCasos_honorarios() + ",\n"
+                    + "		salarios = " + dvo.getToCasos_salario() + ",\n"
+                    + "		notas = '" + dvo.getToCasos_notas() + "',\n"
+                    + "		id_tipo_propiedad = " + dvo.getToCasos_idPropiedad() + "\n"
+                    + "WHERE id_cliente = " + dvo.getId_cliente() + ";");
 
             c.desconectar();
         } catch (Exception e) {

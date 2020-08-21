@@ -20,7 +20,6 @@ public interface InterfaceMetodos {
     //Insertar
     public void insertar_datos_vendedor(DatosVO dvo);
     public void insertar_datos_representante(DatosVO dvo);
-    public void insertar_datos_registros(DatosVO dvo);
     public void insertar_datos_clientes(DatosVO dvo);
     public void insertar_datos_casos(DatosVO dvo);
     public void insertar_datos_registro(DatosVO dvo);

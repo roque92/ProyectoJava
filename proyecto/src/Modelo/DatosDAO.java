@@ -22,7 +22,7 @@ public class DatosDAO implements InterfaceMetodos {
 
         try {
             c.connect();
-            ResultSet rs = c.obtener_datos("SELECT u.username, u.pass, u.telefono, u.correo, r.tipo\n"
+            ResultSet rs = c.obtener_datos("SELECT u.username, u.pass, u.telefono, u.correo, r.tipo, u.id\n"
                     + " FROM tbl_usuarios AS u INNER JOIN tbl_roles AS r ON u.id_roles = r.id WHERE username = '" + dvo.getUser_login() + "';");
 
             while (rs.next()) {
@@ -31,6 +31,7 @@ public class DatosDAO implements InterfaceMetodos {
                 dvo.setLogin_telefono(rs.getString(3));
                 dvo.setLogin_correo(rs.getString(4));
                 dvo.setLogin_tipo(rs.getString(5));
+                dvo.setLogin_id(rs.getInt(6));
 
                 datos.add(dvo);
             }
@@ -75,21 +76,6 @@ public class DatosDAO implements InterfaceMetodos {
     }
 
     @Override
-    public void insertar_datos_registros(DatosVO dvo) {
-        Conector c = new Conector();
-        //-----------Tabla Registros
-        try {
-            c.connect();
-            c.consulta_general("INSERT INTO tbl_registros (id_usuario, fecha, notas, id_casos)\n"
-                    + "VALUES (" + dvo.getToRegistros_id_usuarios() + ",'" + dvo.getToRegistros_fecha() + "','" + dvo.getToRegistros_notas() + "'," + dvo.getToRegistros_id_casos() + ");");
-            c.desconectar();
-        } catch (Exception e) {
-            dvo.setError(e.getMessage());
-        }
-
-    }
-
-    @Override
     public void insertar_datos_clientes(DatosVO dvo) {
         Conector c = new Conector();
         //-----------Tabla Clientes
@@ -121,11 +107,11 @@ public class DatosDAO implements InterfaceMetodos {
     @Override
     public void insertar_datos_registro(DatosVO dvo) {
         Conector c = new Conector();
-
+        
         try {
             c.connect();
             c.consulta_general("INSERT INTO tbl_registros (id_usuario, fecha, notas, id_casos)\n"
-                    + "VALUES ("+dvo.getIdUsuario_registro()+", '"+dvo.getFecha_registro()+"', '"+dvo.getInformacion_registro()+"', "+dvo.getIdCaso_registro()+");");
+                    + "VALUES ("+dvo.getLogin_id()+", '"+dvo.getToRegistros_fecha()+"', '"+dvo.getToRegistros_notas()+"', "+dvo.getIdCaso_registro()+");");
             c.desconectar();
         } catch (Exception e) {
             dvo.setError(e.getMessage());

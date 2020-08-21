@@ -46,98 +46,6 @@ public class TablasBaseDatos implements InterfaceTablasBase {
     }
 
     @Override
-    public ArrayList<StringsBaseDatos> TablaUsuario(StringsBaseDatos sbd) {
-        Conector c = new Conector();
-        ArrayList<StringsBaseDatos> datos = new ArrayList();
-
-        try {
-            c.connect();
-            ResultSet rs = c.obtener_datos("SELECT id, nombre, telefono, correo FROM tbl_usuarios WHERE nombre = '" + sbd.getUsername_login_sbd() + ";");
-
-            while (rs.next()) {
-                sbd.setId_usuario_sbd(rs.getInt(1));
-                sbd.setNombre_usuario_sbd(rs.getString(2));
-                sbd.setTelefono_usuario_sbd(rs.getString(3));
-                sbd.setCorreo_usuario_sbd(rs.getString(4));
-
-                datos.add(sbd);
-            }
-            c.desconectar();
-        } catch (SQLException e) {
-            System.out.println("Error " + e.getMessage());
-        }
-
-        return datos;
-    }
-
-    @Override //Validar si se usa y si no borrar
-    public ArrayList<StringsBaseDatos> TablaPropiedad(StringsBaseDatos sbd) {
-        Conector c = new Conector();
-        ArrayList<StringsBaseDatos> datos = new ArrayList();
-
-        try {
-            c.connect();
-            ResultSet rs = c.obtener_datos("SELECT * FROM tbl_tipo_propiedad;");
-
-            while (rs.next()) {
-                sbd.setId_propiedad_sbd(rs.getInt(0));
-                sbd.setDescripcion_propiedad_sbd(rs.getString(1));
-            }
-            c.desconectar();
-        } catch (SQLException e) {
-            System.out.println("Error " + e.getMessage());
-        }
-
-        return datos;
-    }
-
-    @Override //Validar si se usa y si no borrar
-    public ArrayList<StringsBaseDatos> TablaRepresentante(StringsBaseDatos sbd) {
-        Conector c = new Conector();
-        ArrayList<StringsBaseDatos> datos = new ArrayList();
-
-        try {
-            c.connect();
-            ResultSet rs = c.obtener_datos("SELECT * FROM tbl_representante WHERE nombre = '" + sbd.getNombre_representante_sbd() + " ;");
-
-            while (rs.next()) {
-                sbd.setId_representante_sbd(rs.getInt(0));
-                sbd.setNombre_representante_sbd(rs.getString(1));
-                sbd.setParentezco_representante_sbd(rs.getString(2));
-                sbd.setDireccion_representante_sbd(rs.getString(3));
-                sbd.setTelefono_representante_sbd(rs.getString(4));
-                sbd.setBanco_representante_sbd(rs.getString(5));
-            }
-            c.desconectar();
-        } catch (SQLException e) {
-            System.out.println("Error " + e.getMessage());
-        }
-
-        return datos;
-    }
-
-    @Override //Validar si se usa y si no borrar
-    public ArrayList<StringsBaseDatos> TablaEstado(StringsBaseDatos sbd) {
-        Conector c = new Conector();
-        ArrayList<StringsBaseDatos> datos = new ArrayList();
-
-        try {
-            c.connect();
-            ResultSet rs = c.obtener_datos("SELECT * FROM tbl_estado;");
-
-            while (rs.next()) {
-                sbd.setId_estado_sbd(rs.getInt(0));
-                sbd.setDescripcion_estdo_sbd(rs.getString(1));
-            }
-            c.desconectar();
-        } catch (SQLException e) {
-            System.out.println("Error " + e.getMessage());
-        }
-
-        return datos;
-    }
-
-    @Override
     public ArrayList<StringsBaseDatos> TablaClientes(StringsBaseDatos sbd) {
         Conector c = new Conector();
         ArrayList<StringsBaseDatos> datos = new ArrayList();
@@ -167,35 +75,6 @@ public class TablasBaseDatos implements InterfaceTablasBase {
                 sbd1.setDescripcion_migratorio_sbd(rs.getString(18));
 
                 datos.add(sbd1);
-            }
-            c.desconectar();
-        } catch (SQLException e) {
-            System.out.println("Error " + e.getMessage());
-        }
-
-        return datos;
-    }
-
-    @Override //Validar si se usa y si no borrar
-    public ArrayList<StringsBaseDatos> TablaCasos(StringsBaseDatos sbd) {
-        Conector c = new Conector();
-        ArrayList<StringsBaseDatos> datos = new ArrayList();
-
-        try {
-            c.connect();
-            ResultSet rs = c.obtener_datos("SELECT * FROM tbl_casos WHERE id_cliente = " + sbd.getId_clientes_sbd() + ";");
-
-            while (rs.next()) {
-                sbd.setId_casos_sbd(rs.getInt(0));
-                sbd.setId_clientes_casos_sbd(rs.getInt(1));
-                sbd.setId_vendedor_casos_sbd(rs.getInt(2));
-                sbd.setId_usuario_casos_sbd(rs.getInt(3));
-                sbd.setHonorario_casos_sbd(rs.getDouble(4));
-                sbd.setSalario_casos_sbd(rs.getDouble(5));
-                sbd.setNotas_casos_sbd(rs.getString(6));
-                sbd.setId_estado_casos_sbd(rs.getInt(7));
-                sbd.setId_propiedad_casos_sbd(rs.getInt(8));
-                sbd.setId_representante_casos_sbd(rs.getInt(9));
             }
             c.desconectar();
         } catch (SQLException e) {

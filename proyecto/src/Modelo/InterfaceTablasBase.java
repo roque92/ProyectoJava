@@ -16,12 +16,7 @@ public interface InterfaceTablasBase {
     //--------------------CRUD
     
      public ArrayList<StringsBaseDatos> TablaVendedor(StringsBaseDatos sbd);
-     public ArrayList<StringsBaseDatos> TablaUsuario(StringsBaseDatos sbd);
-     public ArrayList<StringsBaseDatos> TablaPropiedad(StringsBaseDatos sbd);
-     public ArrayList<StringsBaseDatos> TablaRepresentante(StringsBaseDatos sbd);
-     public ArrayList<StringsBaseDatos> TablaEstado(StringsBaseDatos sbd);
      public ArrayList<StringsBaseDatos> TablaClientes(StringsBaseDatos sbd);
-     public ArrayList<StringsBaseDatos> TablaCasos(StringsBaseDatos sbd);
      public ArrayList<StringsBaseDatos> CasosAsignados(StringsBaseDatos sbd);
      public ArrayList<StringsBaseDatos> RegistroDetallado(StringsBaseDatos sbd);
     

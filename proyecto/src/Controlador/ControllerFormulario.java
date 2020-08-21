@@ -16,6 +16,8 @@ import java.util.GregorianCalendar;
 import javax.swing.JOptionPane;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import javax.swing.event.InternalFrameEvent;
+import javax.swing.event.InternalFrameListener;
 import javax.swing.table.DefaultTableModel;
 import proyecto.Vista.Login;
 import proyecto.Vista.Usuario;
@@ -24,7 +26,7 @@ import proyecto.Vista.Usuario;
  *
  * @author Jose Roque
  */
-public class ControllerFormulario implements ActionListener, ChangeListener {
+public class ControllerFormulario implements ActionListener, ChangeListener, InternalFrameListener {
 
     Usuario usuario = new Usuario();
     Login login = new Login();
@@ -45,6 +47,7 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
         usuario.f_btn_guardar.addActionListener(this);
         usuario.f_cb_editar.addChangeListener(this);
         usuario.f_cb_nuevo.addChangeListener(this);
+        usuario.if_formulario.addInternalFrameListener(this);
     }
 
     private void buscarCliente() {
@@ -53,14 +56,17 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
 
         switch (valorBuscado) {
             case "Nombre":
+                dvo.setBuscar_nombre(usuario.f_txt_buscarCliente.getText().trim());
                 buscarNombre();
                 registroDetallado();
                 break;
             case "Telefono":
+                dvo.setBuscar_telefono(usuario.f_txt_buscarCliente.getText());
                 buscarTelefono();
                 registroDetallado();
                 break;
             case "Correo":
+                dvo.setBuscar_correo(usuario.f_txt_buscarCliente.getText().trim());
                 buscarCorreo();
                 registroDetallado();
                 break;
@@ -73,7 +79,6 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
     }
 
     private void buscarNombre() {
-        dvo.setBuscar_nombre(usuario.f_txt_buscarCliente.getText().trim());
         usuario.f_txt_buscarCliente.setText("");
         usuario.f_valor_buscado.setSelectedItem("Seleccionar");
         ddao.mostrar_datos_nombre(dvo);
@@ -111,7 +116,6 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
     }
 
     private void buscarTelefono() {
-        dvo.setBuscar_telefono(usuario.f_txt_buscarCliente.getText());
         usuario.f_txt_buscarCliente.setText("");
         usuario.f_valor_buscado.setSelectedItem("Seleccionar");
         ddao.mostrar_datos_telefono(dvo);
@@ -149,7 +153,7 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
     }
 
     private void buscarCorreo() {
-        dvo.setBuscar_correo(usuario.f_txt_buscarCliente.getText().trim());
+
         usuario.f_txt_buscarCliente.setText("");
         usuario.f_valor_buscado.setSelectedItem("Seleccionar");
         ddao.mostrar_datos_correo(dvo);
@@ -209,7 +213,7 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
     }
 
     private void enableText() {
-        //Asignacion de datos Clase Tramite
+//Asignacion de datos Clase Tramite
         usuario.f_txt_tramite.setEditable(true);
 //Asignacino de datos del Asesor/Vendedor
         usuario.f_txt_vendedorNombre.setEditable(true);
@@ -280,8 +284,49 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
         usuario.if_RegistroDetallado.setVisible(false);
     }
 
+    private void cleanText() {
+        //Asignacion de datos Clase Tramite
+        usuario.f_txt_tramite.setText("");
+//Asignacino de datos del Asesor/Vendedor
+        usuario.f_txt_vendedorNombre.setText("");
+        usuario.f_txt_vendedorTelefono.setText("");
+        usuario.f_txt_vendedorContructora.setText("");
+        usuario.f_txt_vendedorCorreo.setText("");
+//Asignacion de datos Financieros
+        usuario.f_txt_honorarios.setText("");
+        usuario.f_txt_salario.setText("");
+        usuario.f_txt_direccionUSA.setText("");
+//Asignacion de datos Negociacion
+        usuario.f_txt_nombreCliente.setText("");
+        usuario.f_txt_telefonoCliente.setText("");
+        usuario.f_txt_estadoResidencia.setText("");
+        usuario.f_txt_estadoMigratorio.setSelectedItem("Seleccionar");
+        usuario.f_txt_tipoPropiedad.setSelectedItem("Seleccionar");
+        usuario.f_txt_correoCliente.setText("");
+        usuario.f_txt_estadoCivil.setSelectedItem("Seleccionar");
+        usuario.f_txt_profesion.setText("");
+        usuario.f_cb_dpi.setSelectedItem("Seleccionar");
+        usuario.f_cb_nit.setSelectedItem("Seleccionar");
+        usuario.f_cb_id.setSelectedItem("Seleccionar");
+//Asignacion de datos Representante Legal
+        usuario.f_txt_repNombre.setText("");
+        usuario.f_txt_repDireccion.setText("");
+        usuario.f_txt_repTelefono.setText("");
+        usuario.f_txt_repParentezco.setText("");
+        usuario.f_txt_repBanco.setText("");
+//Asignacion de datos Notas
+        usuario.f_txt_notas.setText("");
+
+        usuario.f_cb_editar.setSelected(false);
+        usuario.f_cb_nuevo.setSelected(false);
+
+        DefaultTableModel tMOdel = (DefaultTableModel) usuario.f_tbl_seguimiento.getModel();
+        tMOdel.setRowCount(0);
+
+    }
+
     private void editarCaso() {
-        
+
         if (usuario.f_txt_vendedorNombre.getText().isEmpty()) {
             dvo.setToVendedor_nombre("");
         } else {
@@ -305,7 +350,7 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
         } else {
             dvo.setToVendedor_correo(usuario.f_txt_vendedorCorreo.getText());
         }
-        
+
         if (usuario.f_txt_tramite.getText().isEmpty()) {
             dvo.setToClientes_ClaseTraite("");
         } else {
@@ -460,7 +505,7 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
         } else {
             dvo.setToCasos_notas(usuario.f_txt_notas.getText());
         }
-        
+
         if (usuario.f_txt_tipoPropiedad.getSelectedItem().equals("Seleccionar")) {
             dvo.setToCasos_idPropiedad(5);
         } else {
@@ -489,7 +534,6 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
         } else {
             dvo.setToRegistros_notas(usuario.rd_txt_informacion.getText());
         }
-
         try {
 
             ddao.modificar_datos_vendedor(dvo);
@@ -497,13 +541,31 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
             ddao.modificar_datos_clientes(dvo);
             ddao.idCliente(dvo);
             ddao.modificar_datos_casos(dvo);
+            if (!usuario.rd_txt_informacion.getText().isEmpty()) {
+                ddao.idCaso(dvo);
+                ddao.insertar_datos_registro(dvo);
+            }
             login.mensaje.showMessageDialog(null, "Datos modificados exitosamente");
 
             usuario.f_cb_editar.setSelected(false);
             usuario.f_btn_guardar.setEnabled(false);
+            usuario.rd_txt_informacion.setText("");
         } catch (Exception e) {
             System.out.println("----- Error " + e.getMessage());
             login.mensaje.showMessageDialog(null, "A ocurrido un error Contacte a su administrador de Servicio");
+        }
+
+        if (!dvo.getBuscar_nombre().isEmpty()) {
+            buscarNombre();
+            registroDetallado();
+        } else if (!dvo.getBuscar_telefono().isEmpty()) {
+            buscarTelefono();
+            registroDetallado();
+        } else if (!dvo.getBuscar_correo().isEmpty()) {
+            buscarCorreo();
+            registroDetallado();
+        } else {
+
         }
 
     }
@@ -810,6 +872,35 @@ public class ControllerFormulario implements ActionListener, ChangeListener {
             usuario.f_cb_nuevo.setEnabled(true);
             usuario.f_cb_editar.setEnabled(true);
         }
+    }
+
+    @Override
+    public void internalFrameOpened(InternalFrameEvent e) {
+    }
+
+    @Override
+    public void internalFrameClosing(InternalFrameEvent e) {
+        cleanText();
+    }
+
+    @Override
+    public void internalFrameClosed(InternalFrameEvent e) {
+    }
+
+    @Override
+    public void internalFrameIconified(InternalFrameEvent e) {
+    }
+
+    @Override
+    public void internalFrameDeiconified(InternalFrameEvent e) {
+    }
+
+    @Override
+    public void internalFrameActivated(InternalFrameEvent e) {
+    }
+
+    @Override
+    public void internalFrameDeactivated(InternalFrameEvent e) {
     }
 
 }

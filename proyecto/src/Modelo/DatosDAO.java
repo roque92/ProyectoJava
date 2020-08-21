@@ -120,7 +120,16 @@ public class DatosDAO implements InterfaceMetodos {
 
     @Override
     public void insertar_datos_registro(DatosVO dvo) {
+        Conector c = new Conector();
 
+        try {
+            c.connect();
+            c.consulta_general("INSERT INTO tbl_registros (id_usuario, fecha, notas, id_casos)\n"
+                    + "VALUES ("+dvo.getIdUsuario_registro()+", '"+dvo.getFecha_registro()+"', '"+dvo.getInformacion_registro()+"', "+dvo.getIdCaso_registro()+");");
+            c.desconectar();
+        } catch (Exception e) {
+            dvo.setError(e.getMessage());
+        }
     }
 
     @Override
@@ -384,7 +393,7 @@ public class DatosDAO implements InterfaceMetodos {
 
         return datos;
     }
-    
+
     @Override
     public ArrayList<DatosVO> idCliente(DatosVO dvo) {
         Conector c = new Conector();
@@ -414,10 +423,10 @@ public class DatosDAO implements InterfaceMetodos {
     public ArrayList<DatosVO> idCaso(DatosVO dvo) {
         Conector c = new Conector();
         ArrayList<DatosVO> datos = new ArrayList();
-        
+
         try {
             c.connect();
-            ResultSet rs = c.obtener_datos("SELECT id FROM tbl_casos WHERE id_cliente = "+dvo.getId_cliente()+";");
+            ResultSet rs = c.obtener_datos("SELECT id FROM tbl_casos WHERE id_cliente = " + dvo.getId_cliente() + ";");
 
             while (rs.next()) {
                 dvo.setIdCaso_registro(rs.getInt(1));

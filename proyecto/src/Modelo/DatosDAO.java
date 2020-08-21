@@ -26,6 +26,7 @@ public class DatosDAO implements InterfaceMetodos {
                     + " FROM tbl_usuarios AS u INNER JOIN tbl_roles AS r ON u.id_roles = r.id WHERE username = '" + dvo.getUser_login() + "';");
 
             while (rs.next()) {
+               
                 dvo.setLogin_user(rs.getString(1));
                 dvo.setLogin_pass(rs.getString(2));
                 dvo.setLogin_telefono(rs.getString(3));
@@ -34,6 +35,8 @@ public class DatosDAO implements InterfaceMetodos {
                 dvo.setLogin_id(rs.getInt(6));
 
                 datos.add(dvo);
+                
+ 
             }
 
             c.desconectar();

@@ -14,7 +14,10 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.Timer;
 import proyecto.Vista.Administrador;
 import proyecto.Vista.Forgot;
 import proyecto.Vista.Login;
@@ -34,6 +37,9 @@ public class ControllerLogin implements ActionListener, MouseListener, WindowLis
     StringsBaseDatos sbd = new StringsBaseDatos();
     DatosDAO ddao = new DatosDAO();
 
+    private Timer timer;
+    private int cont = -1;
+
     public ControllerLogin(Login login, Usuario usuario, Administrador admin, Forgot forgot, DatosVO dvo, StringsBaseDatos sbd, DatosDAO ddao) {
         this.login = login;
         this.usuario = usuario;
@@ -45,41 +51,77 @@ public class ControllerLogin implements ActionListener, MouseListener, WindowLis
 
         login.btn_ingresar.addActionListener(this);
         login.jl_forgot.addMouseListener(this);
-        
+
         login.addWindowListener(this);
     }
 
     private void validarLogin() {
-        String username = login.txt_username.getText();
-        String password = "";
-        char[] pass = login.txt_password.getPassword();
+        Thread th = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                login.btn_ingresar.setEnabled(false);
+                login.progressLogin.setVisible(true);
+                login.progressLogin.setValue(0);
+
+                try {
+                    String username = login.txt_username.getText();
+                    String password = "";
+                    char[] pass = login.txt_password.getPassword();
+
+                    dvo.setUser_login(username);
+                    sbd.setUsername_login_sbd(username);
+
+                    for (int i = 0; i < pass.length; i++) {
+                        password += pass[i];
+                    }
+
+                    ddao.validar_login(dvo);
+                    login.progressLogin.setValue(50);
+                    
+                    Thread.sleep(1000);
+                    
+                    if (login.txt_username.getText().isEmpty() || password.equals("")) {
+                        Thread.sleep(1000);
+                        login.mensaje.showMessageDialog(null, "Por favor ingresar usuario y/o contraseña", "Atencion", JOptionPane.WARNING_MESSAGE);
+                        login.progressLogin.setValue(0);
+                        login.progressLogin.setVisible(false);
+                        login.btn_ingresar.setEnabled(true);
+                    } else if (dvo.getUser_login().equals(dvo.getLogin_user()) && dvo.getLogin_tipo().equals("administrador")) {
+                        login.progressLogin.setValue(100);
+                        Thread.sleep(1000);
+                        login.setVisible(false);
+                        admin.setVisible(true);
+                        login.progressLogin.setValue(0);
+                        login.progressLogin.setVisible(false);
+                        login.btn_ingresar.setEnabled(true);
+                        clearText();
+
+                    } else if (dvo.getUser_login().equals(dvo.getLogin_user()) && dvo.getLogin_tipo().equals("usuario")) {
+                        login.progressLogin.setValue(100);
+                        Thread.sleep(1000);
+                        login.setVisible(false);
+                        usuario.setVisible(true);
+                        login.progressLogin.setValue(0);
+                        login.progressLogin.setVisible(false);
+                        login.btn_ingresar.setEnabled(true);
+                        clearText();
+
+                    } else {
+                        Thread.sleep(1000);
+                        login.progressLogin.setValue(0);
+                        login.progressLogin.setVisible(false);
+                        login.mensaje.showMessageDialog(null, "Usuario y/o contraseña no existen", "Error", JOptionPane.ERROR_MESSAGE);
+                        clearText();
+                        login.btn_ingresar.setEnabled(true);
+
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
         
-        dvo.setUser_login(username);
-        sbd.setUsername_login_sbd(username);
-
-        for (int i = 0; i < pass.length; i++) {
-            password += pass[i];
-        }
-        
-        ddao.validar_login(dvo);
-
-        if (login.txt_username.getText().isEmpty() || password.equals("")) {
-            login.mensaje.showMessageDialog(null, "Por favor ingresar usuario y/o contraseña", "Atencion", JOptionPane.WARNING_MESSAGE);
-        } else if (dvo.getUser_login().equals(dvo.getLogin_user()) && dvo.getLogin_tipo().equals("administrador")) {
-            login.setVisible(false);
-            admin.setVisible(true);
-            clearText();
-
-        } else if (dvo.getUser_login().equals(dvo.getLogin_user()) && dvo.getLogin_tipo().equals("usuario")) {
-            login.setVisible(false);
-            usuario.setVisible(true);
-            clearText();
-
-        } else {
-            login.mensaje.showMessageDialog(null, "Usuario y/o contraseña no existen", "Error", JOptionPane.ERROR_MESSAGE);
-            clearText();
-
-        }
+        th.start();
     }
 
     private void clearText() {

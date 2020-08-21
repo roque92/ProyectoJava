@@ -17,6 +17,7 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.progressLogin.setVisible(false);
         
     }
 
@@ -36,6 +37,7 @@ public class Login extends javax.swing.JFrame {
         txt_password = new javax.swing.JPasswordField();
         btn_ingresar = new javax.swing.JButton();
         jl_forgot = new javax.swing.JLabel();
+        progressLogin = new javax.swing.JProgressBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Inicio de Sesion");
@@ -49,6 +51,9 @@ public class Login extends javax.swing.JFrame {
         btn_ingresar.setText("Ingresar");
 
         jl_forgot.setText("Olvidaste la contraseña?");
+
+        progressLogin.setBackground(new java.awt.Color(204, 204, 204));
+        progressLogin.setStringPainted(true);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -73,6 +78,7 @@ public class Login extends javax.swing.JFrame {
                 .addGap(62, 62, 62)
                 .addComponent(jl_forgot)
                 .addGap(0, 65, Short.MAX_VALUE))
+            .addComponent(progressLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -89,7 +95,8 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(btn_ingresar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jl_forgot)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addComponent(progressLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -136,6 +143,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     public javax.swing.JLabel jl_forgot;
     public javax.swing.JOptionPane mensaje;
+    public javax.swing.JProgressBar progressLogin;
     public javax.swing.JPasswordField txt_password;
     public javax.swing.JTextField txt_username;
     // End of variables declaration//GEN-END:variables

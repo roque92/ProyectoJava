@@ -30,6 +30,8 @@ public class Usuario extends javax.swing.JFrame {
         this.if_formulario.setVisible(false);
         this.if_casosAsignados.setVisible(false);
         this.if_RegistroDetallado.setVisible(false);
+        
+        this.progressUser.setVisible(false);
     }
 
     /**
@@ -127,6 +129,7 @@ public class Usuario extends javax.swing.JFrame {
         f_cb_nuevo = new javax.swing.JCheckBox();
         f_cb_editar = new javax.swing.JCheckBox();
         f_valor_buscado = new javax.swing.JComboBox<>();
+        progressUser = new javax.swing.JProgressBar();
         if_baseClientes = new javax.swing.JInternalFrame();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbl_baseGeneralClientes = new javax.swing.JTable();
@@ -786,6 +789,8 @@ public class Usuario extends javax.swing.JFrame {
 
         f_valor_buscado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Nombre", "Telefono", "Correo" }));
 
+        progressUser.setStringPainted(true);
+
         javax.swing.GroupLayout if_formularioLayout = new javax.swing.GroupLayout(if_formulario.getContentPane());
         if_formulario.getContentPane().setLayout(if_formularioLayout);
         if_formularioLayout.setHorizontalGroup(
@@ -800,24 +805,28 @@ public class Usuario extends javax.swing.JFrame {
                 .addComponent(f_txt_buscarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
                 .addComponent(f_btn_buscarCliente)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(progressUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         if_formularioLayout.setVerticalGroup(
             if_formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(if_formularioLayout.createSequentialGroup()
-                .addGap(11, 11, 11)
-                .addGroup(if_formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(if_formularioLayout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(jLabel1))
-                    .addGroup(if_formularioLayout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(f_valor_buscado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(if_formularioLayout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(f_txt_buscarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(f_btn_buscarCliente))
+                .addContainerGap()
+                .addGroup(if_formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(if_formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(if_formularioLayout.createSequentialGroup()
+                            .addGap(4, 4, 4)
+                            .addComponent(jLabel1))
+                        .addGroup(if_formularioLayout.createSequentialGroup()
+                            .addGap(1, 1, 1)
+                            .addComponent(f_valor_buscado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(if_formularioLayout.createSequentialGroup()
+                            .addGap(1, 1, 1)
+                            .addComponent(f_txt_buscarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(f_btn_buscarCliente))
+                    .addComponent(progressUser, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1211,6 +1220,7 @@ public class Usuario extends javax.swing.JFrame {
     private javax.swing.JPanel notas;
     public javax.swing.JMenuItem o_Salir;
     public javax.swing.JMenu opciones;
+    public javax.swing.JProgressBar progressUser;
     public javax.swing.JTextField rd_txt_fecha;
     public javax.swing.JTextField rd_txt_informacion;
     public javax.swing.JTextField rd_txt_usuario;

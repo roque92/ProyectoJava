@@ -119,6 +119,11 @@ public class DatosDAO implements InterfaceMetodos {
     }
 
     @Override
+    public void insertar_datos_registro(DatosVO dvo) {
+
+    }
+
+    @Override
     public void modificar_datos_vendedor(DatosVO dvo) {
         Conector c = new Conector();
         try {
@@ -161,49 +166,24 @@ public class DatosDAO implements InterfaceMetodos {
         try {
             c.connect();
             c.consulta_general("UPDATE tbl_clientes\n"
-                    + "SET tbl_clientes.nombre = '"+dvo.getToClientes_nombre()+"',\n"
-                    + "		tbl_clientes.telefono = '"+dvo.getToClientes_telefono()+"',\n"
-                    + "		tbl_clientes.correo = '"+dvo.getToClientes_correo()+"',\n"
-                    + "		tbl_clientes.direccion = '"+dvo.getToClientes_direccion()+"',\n"
-                    + "		tbl_clientes.id_estado_civil = "+dvo.getToClientes_id_EstadoCivil()+",\n"
-                    + "		tbl_clientes.id_migratorio = "+dvo.getToClientes_id_migratorio()+",\n"
-                    + "		tbl_clientes.profesion = '"+dvo.getToClientes_profesion()+"',\n"
-                    + "		tbl_clientes.estado_residencia = '"+dvo.getToClientes_EstadoResidencia()+"',\n"
-                    + "		tbl_clientes.clase_tramite = '"+dvo.getToClientes_ClaseTraite()+"',\n"
-                    + "		tbl_clientes.dpi = '"+dvo.getToClientes_dpi()+"',\n"
-                    + "		tbl_clientes.nit = '"+dvo.getToClientes_nit()+"',\n"
-                    + "		tbl_clientes.usa_id = '"+dvo.getToClientes_UsaId()+"'\n"
-                    + "WHERE tbl_clientes.nombre = '"+dvo.getNombre_cliente()+"';");
+                    + "SET tbl_clientes.nombre = '" + dvo.getToClientes_nombre() + "',\n"
+                    + "		tbl_clientes.telefono = '" + dvo.getToClientes_telefono() + "',\n"
+                    + "		tbl_clientes.correo = '" + dvo.getToClientes_correo() + "',\n"
+                    + "		tbl_clientes.direccion = '" + dvo.getToClientes_direccion() + "',\n"
+                    + "		tbl_clientes.id_estado_civil = " + dvo.getToClientes_id_EstadoCivil() + ",\n"
+                    + "		tbl_clientes.id_migratorio = " + dvo.getToClientes_id_migratorio() + ",\n"
+                    + "		tbl_clientes.profesion = '" + dvo.getToClientes_profesion() + "',\n"
+                    + "		tbl_clientes.estado_residencia = '" + dvo.getToClientes_EstadoResidencia() + "',\n"
+                    + "		tbl_clientes.clase_tramite = '" + dvo.getToClientes_ClaseTraite() + "',\n"
+                    + "		tbl_clientes.dpi = '" + dvo.getToClientes_dpi() + "',\n"
+                    + "		tbl_clientes.nit = '" + dvo.getToClientes_nit() + "',\n"
+                    + "		tbl_clientes.usa_id = '" + dvo.getToClientes_UsaId() + "'\n"
+                    + "WHERE tbl_clientes.nombre = '" + dvo.getNombre_cliente() + "';");
 
             c.desconectar();
         } catch (Exception e) {
             dvo.setError(e.getMessage());
         }
-    }
-
-    @Override
-    public ArrayList<DatosVO> idCliente(DatosVO dvo) {
-        Conector c = new Conector();
-        ArrayList<DatosVO> datos = new ArrayList();
-
-        try {
-            c.connect();
-            ResultSet rs = c.obtener_datos("SELECT id FROM tbl_clientes WHERE nombre = '" + dvo.getNombre_cliente() + "';");
-
-            while (rs.next()) {
-
-                dvo.setId_cliente(rs.getString(1));
-
-                datos.add(dvo);
-            }
-
-            c.desconectar();
-
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-
-        return datos;
     }
 
     @Override
@@ -403,6 +383,56 @@ public class DatosDAO implements InterfaceMetodos {
         }
 
         return datos;
+    }
+    
+    @Override
+    public ArrayList<DatosVO> idCliente(DatosVO dvo) {
+        Conector c = new Conector();
+        ArrayList<DatosVO> datos = new ArrayList();
+
+        try {
+            c.connect();
+            ResultSet rs = c.obtener_datos("SELECT id FROM tbl_clientes WHERE nombre = '" + dvo.getNombre_cliente() + "';");
+
+            while (rs.next()) {
+
+                dvo.setId_cliente(rs.getString(1));
+
+                datos.add(dvo);
+            }
+
+            c.desconectar();
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return datos;
+    }
+
+    @Override
+    public ArrayList<DatosVO> idCaso(DatosVO dvo) {
+        Conector c = new Conector();
+        ArrayList<DatosVO> datos = new ArrayList();
+        
+        try {
+            c.connect();
+            ResultSet rs = c.obtener_datos("SELECT id FROM tbl_casos WHERE id_cliente = "+dvo.getId_cliente()+";");
+
+            while (rs.next()) {
+                dvo.setIdCaso_registro(rs.getInt(1));
+
+                datos.add(dvo);
+            }
+
+            c.desconectar();
+
+        } catch (SQLException e) {
+            dvo.setError(e.getMessage());
+        }
+
+        return datos;
+
     }
 
     @Override

@@ -23,6 +23,7 @@ public interface InterfaceMetodos {
     public void insertar_datos_registros(DatosVO dvo);
     public void insertar_datos_clientes(DatosVO dvo);
     public void insertar_datos_casos(DatosVO dvo);
+    public void insertar_datos_registro(DatosVO dvo);
 
     //Modificar
     public void modificar_datos_vendedor(DatosVO dvo);
@@ -35,6 +36,7 @@ public interface InterfaceMetodos {
     public ArrayList<DatosVO> mostrar_datos_telefono(DatosVO dvo);
     public ArrayList<DatosVO> mostrar_datos_correo(DatosVO dvo);
     public ArrayList<DatosVO> idCliente(DatosVO dvo);
+    public ArrayList<DatosVO> idCaso(DatosVO dvo);
 
     //Eliminar
     public void borrar_datos(DatosVO dvo);    

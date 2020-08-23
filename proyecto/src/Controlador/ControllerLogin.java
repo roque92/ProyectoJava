@@ -110,7 +110,7 @@ public class ControllerLogin implements ActionListener, MouseListener, WindowLis
                         Thread.sleep(1000);
                         login.progressLogin.setValue(0);
                         login.progressLogin.setVisible(false);
-                        login.mensaje.showMessageDialog(null, "Usuario y/o contraseña no existen", "Error", JOptionPane.ERROR_MESSAGE);
+                        login.mensaje.showMessageDialog(null, "Usuario y/o contraseña no existen " + dvo.getError(), "Error", JOptionPane.ERROR_MESSAGE);
                         clearText();
                         login.btn_ingresar.setEnabled(true);
 

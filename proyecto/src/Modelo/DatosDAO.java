@@ -25,18 +25,23 @@ public class DatosDAO implements InterfaceMetodos {
             ResultSet rs = c.obtener_datos("SELECT u.username, u.pass, u.telefono, u.correo, r.tipo, u.id\n"
                     + " FROM tbl_usuarios AS u INNER JOIN tbl_roles AS r ON u.id_roles = r.id WHERE username = '" + dvo.getUser_login() + "';");
 
-            while (rs.next()) {
-               
-                dvo.setLogin_user(rs.getString(1));
-                dvo.setLogin_pass(rs.getString(2));
-                dvo.setLogin_telefono(rs.getString(3));
-                dvo.setLogin_correo(rs.getString(4));
-                dvo.setLogin_tipo(rs.getString(5));
-                dvo.setLogin_id(rs.getInt(6));
+            if (rs.next()) {
 
-                datos.add(dvo);
-                
- 
+                do {
+                    dvo.setLogin_user(rs.getString(1));
+                    dvo.setLogin_pass(rs.getString(2));
+                    dvo.setLogin_telefono(rs.getString(3));
+                    dvo.setLogin_correo(rs.getString(4));
+                    dvo.setLogin_tipo(rs.getString(5));
+                    dvo.setLogin_id(rs.getInt(6));
+
+                    datos.add(dvo);
+                } while (rs.next());
+
+            } else {
+
+                dvo.setError("No Existe Usuario en Base de Datos");
+
             }
 
             c.desconectar();
@@ -110,11 +115,11 @@ public class DatosDAO implements InterfaceMetodos {
     @Override
     public void insertar_datos_registro(DatosVO dvo) {
         Conector c = new Conector();
-        
+
         try {
             c.connect();
             c.consulta_general("INSERT INTO tbl_registros (id_usuario, fecha, notas, id_casos)\n"
-                    + "VALUES ("+dvo.getLogin_id()+", '"+dvo.getToRegistros_fecha()+"', '"+dvo.getToRegistros_notas()+"', "+dvo.getIdCaso_registro()+");");
+                    + "VALUES (" + dvo.getLogin_id() + ", '" + dvo.getToRegistros_fecha() + "', '" + dvo.getToRegistros_notas() + "', " + dvo.getIdCaso_registro() + ");");
             c.desconectar();
         } catch (Exception e) {
             dvo.setError(e.getMessage());
@@ -184,7 +189,7 @@ public class DatosDAO implements InterfaceMetodos {
         }
     }
 
-    @Override  
+    @Override
     public void modificar_datos_casos(DatosVO dvo) {
         Conector c = new Conector();
         try {
@@ -223,41 +228,46 @@ public class DatosDAO implements InterfaceMetodos {
                     + "INNER JOIN tbl_tipo_propiedad AS tp ON c.id_tipo_propiedad = tp.id\n"
                     + "WHERE cl.nombre = '" + dvo.getBuscar_nombre() + "';");
 
-            while (rs.next()) {
+            if (rs.next()) {
+             
+                do {
+                    dvo.setNombre_vendedor(rs.getString(1));
+                    dvo.setTelefono_vendedor(rs.getString(2));
+                    dvo.setConstructora_vendedor(rs.getString(3));
+                    dvo.setCorreo_vendedor(rs.getString(4));
+                    dvo.setHonorarios_casos(rs.getDouble(5));
+                    dvo.setSalario_casos(rs.getDouble(6));
+                    dvo.setDireccion_cliente(rs.getString(7));
+                    dvo.setNombre_cliente(rs.getString(8));
+                    dvo.setTelefono_cliente(rs.getString(9));
+                    dvo.setCorreo_cliente(rs.getString(10));
+                    dvo.setProfecion_cliente(rs.getString(11));
+                    dvo.setEstadoCivil_cliente(rs.getString(12));
+                    dvo.setEstadoMigratorio_cliente(rs.getString(13));
+                    dvo.setEstadoResidencia_cliente(rs.getString(14));
+                    dvo.setDpi_cliente(rs.getString(15));
+                    dvo.setNit_cliente(rs.getString(16));
+                    dvo.setUsaId_cliente(rs.getString(17));
+                    dvo.setTipo_propiedad(rs.getString(18));
+                    dvo.setNombre_representante(rs.getString(19));
+                    dvo.setParentezco_representante(rs.getString(20));
+                    dvo.setDireccion_representante(rs.getString(21));
+                    dvo.setTelefono_representante(rs.getString(22));
+                    dvo.setBanco_representante(rs.getString(23));
+                    dvo.setNotas_casos(rs.getString(24));
+                    dvo.setClaseTramite_cliente(rs.getString(25));
 
-                dvo.setNombre_vendedor(rs.getString(1));
-                dvo.setTelefono_vendedor(rs.getString(2));
-                dvo.setConstructora_vendedor(rs.getString(3));
-                dvo.setCorreo_vendedor(rs.getString(4));
-                dvo.setHonorarios_casos(rs.getDouble(5));
-                dvo.setSalario_casos(rs.getDouble(6));
-                dvo.setDireccion_cliente(rs.getString(7));
-                dvo.setNombre_cliente(rs.getString(8));
-                dvo.setTelefono_cliente(rs.getString(9));
-                dvo.setCorreo_cliente(rs.getString(10));
-                dvo.setProfecion_cliente(rs.getString(11));
-                dvo.setEstadoCivil_cliente(rs.getString(12));
-                dvo.setEstadoMigratorio_cliente(rs.getString(13));
-                dvo.setEstadoResidencia_cliente(rs.getString(14));
-                dvo.setDpi_cliente(rs.getString(15));
-                dvo.setNit_cliente(rs.getString(16));
-                dvo.setUsaId_cliente(rs.getString(17));
-                dvo.setTipo_propiedad(rs.getString(18));
-                dvo.setNombre_representante(rs.getString(19));
-                dvo.setParentezco_representante(rs.getString(20));
-                dvo.setDireccion_representante(rs.getString(21));
-                dvo.setTelefono_representante(rs.getString(22));
-                dvo.setBanco_representante(rs.getString(23));
-                dvo.setNotas_casos(rs.getString(24));
-                dvo.setClaseTramite_cliente(rs.getString(25));
-
-                datos.add(dvo);
+                    datos.add(dvo);
+                } while (rs.next());
+            } else {
+                c.desconectar();
+                dvo.setError("No Existe Cliente");
             }
 
             c.desconectar();
 
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            dvo.setError(e.getMessage());
         }
 
         return datos;

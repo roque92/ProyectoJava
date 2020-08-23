@@ -52,8 +52,8 @@ public class Proyecto {
         ControllerCasosAsignados controllerCasosAsignados = new ControllerCasosAsignados(usuario, login, sbd, tbd, dvo);
         ControllerFormulario controllerFormulario = new ControllerFormulario(usuario, login, dvo, ddao, sbd, tbd);
         
-        //login.setVisible(true);
-        usuario.setVisible(true);
+        login.setVisible(true);
+        //usuario.setVisible(true);
         //admin.setVisible(true);
     }
     

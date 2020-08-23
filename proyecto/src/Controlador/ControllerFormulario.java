@@ -222,7 +222,7 @@ public class ControllerFormulario implements ActionListener, ChangeListener, Int
     }
 
     private void buscarCorreo() {
-Thread th = new Thread(new Runnable() {
+        Thread th = new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
@@ -316,246 +316,276 @@ Thread th = new Thread(new Runnable() {
 
     private void editarCaso() {
 
-        if (usuario.f_txt_vendedorNombre.getText().isEmpty()) {
-            dvo.setToVendedor_nombre("");
-        } else {
-            dvo.setToVendedor_nombre(usuario.f_txt_vendedorNombre.getText());
-        }
+        Thread th = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                usuario.progressUser.setValue(0);
+                usuario.progressUser.setVisible(true);
+                try {
+                    if (usuario.f_txt_vendedorNombre.getText().isEmpty()) {
+                        dvo.setToVendedor_nombre("");
+                    } else {
+                        dvo.setToVendedor_nombre(usuario.f_txt_vendedorNombre.getText());
+                    }
 
-        if (usuario.f_txt_vendedorTelefono.getText().isEmpty()) {
-            dvo.setToVendedor_telefono("");
-        } else {
-            dvo.setToVendedor_telefono(usuario.f_txt_vendedorTelefono.getText());
-        }
+                    if (usuario.f_txt_vendedorTelefono.getText().isEmpty()) {
+                        dvo.setToVendedor_telefono("");
+                    } else {
+                        dvo.setToVendedor_telefono(usuario.f_txt_vendedorTelefono.getText());
+                    }
 
-        if (usuario.f_txt_vendedorContructora.getText().isEmpty()) {
-            dvo.setToVendedor_constructora("");
-        } else {
-            dvo.setToVendedor_constructora(usuario.f_txt_vendedorContructora.getText());
-        }
+                    if (usuario.f_txt_vendedorContructora.getText().isEmpty()) {
+                        dvo.setToVendedor_constructora("");
+                    } else {
+                        dvo.setToVendedor_constructora(usuario.f_txt_vendedorContructora.getText());
+                    }
 
-        if (usuario.f_txt_vendedorCorreo.getText().isEmpty()) {
-            dvo.setToVendedor_correo("");
-        } else {
-            dvo.setToVendedor_correo(usuario.f_txt_vendedorCorreo.getText());
-        }
+                    if (usuario.f_txt_vendedorCorreo.getText().isEmpty()) {
+                        dvo.setToVendedor_correo("");
+                    } else {
+                        dvo.setToVendedor_correo(usuario.f_txt_vendedorCorreo.getText());
+                    }
 
-        if (usuario.f_txt_tramite.getText().isEmpty()) {
-            dvo.setToClientes_ClaseTraite("");
-        } else {
-            dvo.setToClientes_ClaseTraite(usuario.f_txt_tramite.getText());
-        }
+                    if (usuario.f_txt_tramite.getText().isEmpty()) {
+                        dvo.setToClientes_ClaseTraite("");
+                    } else {
+                        dvo.setToClientes_ClaseTraite(usuario.f_txt_tramite.getText());
+                    }
 
-        if (usuario.f_txt_direccionUSA.getText().isEmpty()) {
-            dvo.setToClientes_direccion("");
-        } else {
-            dvo.setToClientes_direccion(usuario.f_txt_direccionUSA.getText());
-        }
+                    if (usuario.f_txt_direccionUSA.getText().isEmpty()) {
+                        dvo.setToClientes_direccion("");
+                    } else {
+                        dvo.setToClientes_direccion(usuario.f_txt_direccionUSA.getText());
+                    }
 
-        if (usuario.f_txt_nombreCliente.getText().isEmpty()) {
-            dvo.setToClientes_nombre("");
-        } else {
-            dvo.setToClientes_nombre(usuario.f_txt_nombreCliente.getText());
-        }
+                    if (usuario.f_txt_nombreCliente.getText().isEmpty()) {
+                        dvo.setToClientes_nombre("");
+                    } else {
+                        dvo.setToClientes_nombre(usuario.f_txt_nombreCliente.getText());
+                    }
 
-        if (usuario.f_txt_telefonoCliente.getText().isEmpty()) {
-            dvo.setToClientes_telefono("");
-        } else {
-            dvo.setToClientes_telefono(usuario.f_txt_telefonoCliente.getText());
-        }
+                    if (usuario.f_txt_telefonoCliente.getText().isEmpty()) {
+                        dvo.setToClientes_telefono("");
+                    } else {
+                        dvo.setToClientes_telefono(usuario.f_txt_telefonoCliente.getText());
+                    }
 
-        if (usuario.f_txt_estadoResidencia.getText().isEmpty()) {
-            dvo.setToClientes_EstadoResidencia("");
-        } else {
-            dvo.setToClientes_EstadoResidencia(usuario.f_txt_estadoResidencia.getText());
-        }
+                    if (usuario.f_txt_estadoResidencia.getText().isEmpty()) {
+                        dvo.setToClientes_EstadoResidencia("");
+                    } else {
+                        dvo.setToClientes_EstadoResidencia(usuario.f_txt_estadoResidencia.getText());
+                    }
+                    
+                    usuario.progressUser.setValue(10);
+                     Thread.sleep(1000);
 
-        if (usuario.f_txt_estadoCivil.getSelectedItem().equals("Seleccionar")) {
-            dvo.setToClientes_id_EstadoCivil(5);
-        } else {
-            String estadoCivil = (String) usuario.f_txt_estadoCivil.getSelectedItem();
-            switch (estadoCivil) {
+                    if (usuario.f_txt_estadoCivil.getSelectedItem().equals("Seleccionar")) {
+                        dvo.setToClientes_id_EstadoCivil(5);
+                    } else {
+                        String estadoCivil = (String) usuario.f_txt_estadoCivil.getSelectedItem();
+                        switch (estadoCivil) {
 
-                case "Soltero (a)":
-                    dvo.setToClientes_id_EstadoCivil(1);
-                    break;
-                case "Casado (a)":
-                    dvo.setToClientes_id_EstadoCivil(2);
-                    break;
-                case "Divorciado (a)":
-                    dvo.setToClientes_id_EstadoCivil(3);
-                    break;
-                case "Viudo (a)":
-                    dvo.setToClientes_id_EstadoCivil(4);
-                    break;
-                default:
-                    break;
+                            case "Soltero (a)":
+                                dvo.setToClientes_id_EstadoCivil(1);
+                                break;
+                            case "Casado (a)":
+                                dvo.setToClientes_id_EstadoCivil(2);
+                                break;
+                            case "Divorciado (a)":
+                                dvo.setToClientes_id_EstadoCivil(3);
+                                break;
+                            case "Viudo (a)":
+                                dvo.setToClientes_id_EstadoCivil(4);
+                                break;
+                            default:
+                                break;
+                        }
+
+                    }
+
+                    if (usuario.f_txt_correoCliente.getText().isEmpty()) {
+                        dvo.setToClientes_correo("");
+                    } else {
+                        dvo.setToClientes_correo(usuario.f_txt_correoCliente.getText());
+                    }
+
+                    if (usuario.f_txt_estadoMigratorio.getSelectedItem().equals("Seleccionar")) {
+                        dvo.setToClientes_id_migratorio(4);
+                    } else {
+                        String estadoMigratorio = (String) usuario.f_txt_estadoMigratorio.getSelectedItem();
+                        switch (estadoMigratorio) {
+
+                            case "Residente":
+                                dvo.setToClientes_id_migratorio(1);
+                                break;
+                            case "Ciudadano":
+                                dvo.setToClientes_id_migratorio(2);
+                                break;
+                            case "Regular (a)":
+                                dvo.setToClientes_id_migratorio(3);
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+
+                    if (usuario.f_txt_profesion.getText().isEmpty()) {
+                        dvo.setToClientes_profesion("");
+                    } else {
+                        dvo.setToClientes_profesion(usuario.f_txt_profesion.getText());
+                    }
+
+                    if (usuario.f_cb_dpi.getSelectedItem().equals("Seleccionar")) {
+                        dvo.setToClientes_dpi("Seleccionar");
+                    } else {
+                        String DPI = (String) usuario.f_cb_dpi.getSelectedItem();
+                        dvo.setToClientes_dpi(DPI);
+                    }
+
+                    if (usuario.f_cb_nit.getSelectedItem().equals("Seleccionar")) {
+                        dvo.setToClientes_nit("Seleccionar");
+                    } else {
+                        String Nit = (String) usuario.f_cb_nit.getSelectedItem();
+                        dvo.setToClientes_nit(Nit);
+                    }
+
+                    if (usuario.f_cb_id.getSelectedItem().equals("Seleccionar")) {
+                        dvo.setToClientes_UsaId("Seleccionar");
+                    } else {
+                        String UsID = (String) usuario.f_cb_id.getSelectedItem();
+                        dvo.setToClientes_UsaId(UsID);
+                    }
+                    
+                    usuario.progressUser.setValue(20);
+                     Thread.sleep(1000);
+
+                    if (usuario.f_txt_repNombre.getText().isEmpty()) {
+                        dvo.setToRepresentante_nombre("");
+                    } else {
+                        dvo.setToRepresentante_nombre(usuario.f_txt_repNombre.getText());
+                    }
+
+                    if (usuario.f_txt_repDireccion.getText().isEmpty()) {
+                        dvo.setToRepresentante_direccion("");
+                    } else {
+                        dvo.setToRepresentante_direccion(usuario.f_txt_repDireccion.getText());
+                    }
+
+                    if (usuario.f_txt_repTelefono.getText().isEmpty()) {
+                        dvo.setToRepresentante_telefono("");
+                    } else {
+                        dvo.setToRepresentante_telefono(usuario.f_txt_repTelefono.getText());
+                    }
+
+                    if (usuario.f_txt_repParentezco.getText().isEmpty()) {
+                        dvo.setToRepresentante_parentezco("");
+                    } else {
+                        dvo.setToRepresentante_parentezco(usuario.f_txt_repParentezco.getText());
+                    }
+
+                    if (usuario.f_txt_repBanco.getText().isEmpty()) {
+                        dvo.setToRepresentante_banco("");
+                    } else {
+                        dvo.setToRepresentante_banco(usuario.f_txt_repBanco.getText());
+                    }
+                    
+                    usuario.progressUser.setValue(40);
+                     Thread.sleep(1000);
+
+                    if (usuario.f_txt_honorarios.getText().isEmpty()) {
+                        dvo.setToCasos_honorarios(0.00);
+                    } else {
+                        dvo.setToCasos_honorarios(Double.parseDouble(usuario.f_txt_honorarios.getText()));
+                    }
+
+                    if (usuario.f_txt_salario.getText().isEmpty()) {
+                        dvo.setToCasos_salario(0.00);
+                    } else {
+                        dvo.setToCasos_salario(Double.parseDouble(usuario.f_txt_salario.getText()));
+                    }
+
+                    if (usuario.f_txt_notas.getText().isEmpty()) {
+                        dvo.setToCasos_notas("");
+                    } else {
+                        dvo.setToCasos_notas(usuario.f_txt_notas.getText());
+                    }
+
+                    if (usuario.f_txt_tipoPropiedad.getSelectedItem().equals("Seleccionar")) {
+                        dvo.setToCasos_idPropiedad(5);
+                    } else {
+                        String tipoPropiedad = (String) usuario.f_txt_tipoPropiedad.getSelectedItem();
+                        switch (tipoPropiedad) {
+
+                            case "Terreno":
+                                dvo.setToCasos_idPropiedad(1);
+                                break;
+                            case "Casa":
+                                dvo.setToCasos_idPropiedad(2);
+                                break;
+                            case "Apartamento":
+                                dvo.setToCasos_idPropiedad(3);
+                                break;
+                            case "Oficina":
+                                dvo.setToCasos_idPropiedad(4);
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    
+                    usuario.progressUser.setValue(60);
+                     Thread.sleep(1000);
+
+                    if (usuario.rd_txt_informacion.getText().isEmpty()) {
+                        dvo.setToRegistros_notas("");
+                    } else {
+                        dvo.setToRegistros_notas(usuario.rd_txt_informacion.getText());
+                    }
+                    try {
+
+                        ddao.modificar_datos_vendedor(dvo);
+                        ddao.modificar_datos_representante(dvo);
+                        ddao.modificar_datos_clientes(dvo);
+                        ddao.idCliente(dvo);
+                        ddao.modificar_datos_casos(dvo);
+                        if (!usuario.rd_txt_informacion.getText().isEmpty()) {
+                            ddao.idCaso(dvo);
+                            ddao.insertar_datos_registro(dvo);
+                        }
+                        login.mensaje.showMessageDialog(null, "Datos modificados exitosamente");
+
+                        usuario.f_cb_editar.setSelected(false);
+                        usuario.f_btn_guardar.setEnabled(false);
+                        usuario.rd_txt_informacion.setText("");
+                    } catch (Exception e) {
+                        System.out.println("----- Error " + e.getMessage());
+                        login.mensaje.showMessageDialog(null, "A ocurrido un error Contacte a su administrador de Servicio");
+                    }
+                    
+                    usuario.progressUser.setValue(80);
+                     Thread.sleep(1000);
+
+                    if (!dvo.getBuscar_nombre().isEmpty()) {
+                        buscarNombre();
+                    } else if (!dvo.getBuscar_telefono().isEmpty()) {
+                        buscarTelefono();
+                    } else if (!dvo.getBuscar_correo().isEmpty()) {
+                        buscarCorreo();
+                    } else {
+
+                    }
+                    
+                     usuario.progressUser.setValue(100);
+                     Thread.sleep(1000);
+                     usuario.progressUser.setVisible(false);
+                     
+                } catch (Exception e) {
+                    login.mensaje.showMessageDialog(null, e.getMessage());
+                }
             }
+        });
 
-        }
-
-        if (usuario.f_txt_correoCliente.getText().isEmpty()) {
-            dvo.setToClientes_correo("");
-        } else {
-            dvo.setToClientes_correo(usuario.f_txt_correoCliente.getText());
-        }
-
-        if (usuario.f_txt_estadoMigratorio.getSelectedItem().equals("Seleccionar")) {
-            dvo.setToClientes_id_migratorio(4);
-        } else {
-            String estadoMigratorio = (String) usuario.f_txt_estadoMigratorio.getSelectedItem();
-            switch (estadoMigratorio) {
-
-                case "Residente":
-                    dvo.setToClientes_id_migratorio(1);
-                    break;
-                case "Ciudadano":
-                    dvo.setToClientes_id_migratorio(2);
-                    break;
-                case "Regular (a)":
-                    dvo.setToClientes_id_migratorio(3);
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        if (usuario.f_txt_profesion.getText().isEmpty()) {
-            dvo.setToClientes_profesion("");
-        } else {
-            dvo.setToClientes_profesion(usuario.f_txt_profesion.getText());
-        }
-
-        if (usuario.f_cb_dpi.getSelectedItem().equals("Seleccionar")) {
-            dvo.setToClientes_dpi("Seleccionar");
-        } else {
-            String DPI = (String) usuario.f_cb_dpi.getSelectedItem();
-            dvo.setToClientes_dpi(DPI);
-        }
-
-        if (usuario.f_cb_nit.getSelectedItem().equals("Seleccionar")) {
-            dvo.setToClientes_nit("Seleccionar");
-        } else {
-            String Nit = (String) usuario.f_cb_nit.getSelectedItem();
-            dvo.setToClientes_nit(Nit);
-        }
-
-        if (usuario.f_cb_id.getSelectedItem().equals("Seleccionar")) {
-            dvo.setToClientes_UsaId("Seleccionar");
-        } else {
-            String UsID = (String) usuario.f_cb_id.getSelectedItem();
-            dvo.setToClientes_UsaId(UsID);
-        }
-
-        if (usuario.f_txt_repNombre.getText().isEmpty()) {
-            dvo.setToRepresentante_nombre("");
-        } else {
-            dvo.setToRepresentante_nombre(usuario.f_txt_repNombre.getText());
-        }
-
-        if (usuario.f_txt_repDireccion.getText().isEmpty()) {
-            dvo.setToRepresentante_direccion("");
-        } else {
-            dvo.setToRepresentante_direccion(usuario.f_txt_repDireccion.getText());
-        }
-
-        if (usuario.f_txt_repTelefono.getText().isEmpty()) {
-            dvo.setToRepresentante_telefono("");
-        } else {
-            dvo.setToRepresentante_telefono(usuario.f_txt_repTelefono.getText());
-        }
-
-        if (usuario.f_txt_repParentezco.getText().isEmpty()) {
-            dvo.setToRepresentante_parentezco("");
-        } else {
-            dvo.setToRepresentante_parentezco(usuario.f_txt_repParentezco.getText());
-        }
-
-        if (usuario.f_txt_repBanco.getText().isEmpty()) {
-            dvo.setToRepresentante_banco("");
-        } else {
-            dvo.setToRepresentante_banco(usuario.f_txt_repBanco.getText());
-        }
-
-        if (usuario.f_txt_honorarios.getText().isEmpty()) {
-            dvo.setToCasos_honorarios(0.00);
-        } else {
-            dvo.setToCasos_honorarios(Double.parseDouble(usuario.f_txt_honorarios.getText()));
-        }
-
-        if (usuario.f_txt_salario.getText().isEmpty()) {
-            dvo.setToCasos_salario(0.00);
-        } else {
-            dvo.setToCasos_salario(Double.parseDouble(usuario.f_txt_salario.getText()));
-        }
-
-        if (usuario.f_txt_notas.getText().isEmpty()) {
-            dvo.setToCasos_notas("");
-        } else {
-            dvo.setToCasos_notas(usuario.f_txt_notas.getText());
-        }
-
-        if (usuario.f_txt_tipoPropiedad.getSelectedItem().equals("Seleccionar")) {
-            dvo.setToCasos_idPropiedad(5);
-        } else {
-            String tipoPropiedad = (String) usuario.f_txt_tipoPropiedad.getSelectedItem();
-            switch (tipoPropiedad) {
-
-                case "Terreno":
-                    dvo.setToCasos_idPropiedad(1);
-                    break;
-                case "Casa":
-                    dvo.setToCasos_idPropiedad(2);
-                    break;
-                case "Apartamento":
-                    dvo.setToCasos_idPropiedad(3);
-                    break;
-                case "Oficina":
-                    dvo.setToCasos_idPropiedad(4);
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        if (usuario.rd_txt_informacion.getText().isEmpty()) {
-            dvo.setToRegistros_notas("");
-        } else {
-            dvo.setToRegistros_notas(usuario.rd_txt_informacion.getText());
-        }
-        try {
-
-            ddao.modificar_datos_vendedor(dvo);
-            ddao.modificar_datos_representante(dvo);
-            ddao.modificar_datos_clientes(dvo);
-            ddao.idCliente(dvo);
-            ddao.modificar_datos_casos(dvo);
-            if (!usuario.rd_txt_informacion.getText().isEmpty()) {
-                ddao.idCaso(dvo);
-                ddao.insertar_datos_registro(dvo);
-            }
-            login.mensaje.showMessageDialog(null, "Datos modificados exitosamente");
-
-            usuario.f_cb_editar.setSelected(false);
-            usuario.f_btn_guardar.setEnabled(false);
-            usuario.rd_txt_informacion.setText("");
-        } catch (Exception e) {
-            System.out.println("----- Error " + e.getMessage());
-            login.mensaje.showMessageDialog(null, "A ocurrido un error Contacte a su administrador de Servicio");
-        }
-
-        if (!dvo.getBuscar_nombre().isEmpty()) {
-            buscarNombre();
-            registroDetallado();
-        } else if (!dvo.getBuscar_telefono().isEmpty()) {
-            buscarTelefono();
-            registroDetallado();
-        } else if (!dvo.getBuscar_correo().isEmpty()) {
-            buscarCorreo();
-            registroDetallado();
-        } else {
-
-        }
+        th.start();
 
     } // pendiente cargar ayuda visual progressBar
 

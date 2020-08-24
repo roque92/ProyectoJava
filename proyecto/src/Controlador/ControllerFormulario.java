@@ -931,15 +931,50 @@ public class ControllerFormulario implements ActionListener, ChangeListener, Int
 
     }
 
+    private void cleanDVO() {
+        dvo.setClaseTramite_cliente("");
+//Asignacino de datos del Asesor/Vendedor
+        dvo.setNombre_vendedor("");
+        dvo.setTelefono_vendedor("");
+        dvo.setConstructora_vendedor("");
+        dvo.setCorreo_vendedor("");
+//Asignacion de datos Financieros
+        dvo.setHonorarios_casos(0.00f);
+        dvo.setSalario_casos(0.00f);
+        dvo.setDireccion_cliente("");
+//Asignacion de datos Negociacion
+        dvo.setNombre_cliente("");
+        dvo.setTelefono_cliente("");
+        dvo.setEstadoResidencia_cliente("");
+        dvo.setEstadoMigratorio_cliente("");
+        dvo.setTipo_propiedad("Seleccionar");
+        dvo.setCorreo_cliente("");
+        dvo.setEstadoCivil_cliente("Seleccionar");
+        dvo.setProfecion_cliente("");
+        dvo.setDpi_cliente("Seleccionar");
+        dvo.setNit_cliente("Seleccionar");
+        dvo.setUsaId_cliente("Seleccionar");
+//Asignacion de datos Representante Legal
+        dvo.setNombre_representante("");
+        dvo.setDireccion_representante("");
+        dvo.setTelefono_representante("");
+        dvo.setParentezco_representante("");
+        dvo.setBanco_representante("");
+//Asignacion de datos Notas
+        dvo.setNotas_casos("");
+    }
+
     //----------------------------Metodos de implementacion 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == usuario.f_btn_buscarCliente) {
+            cleanDVO();
             buscarCliente();
         }
 
         if (e.getSource() == usuario.f_btn_guardar) {
             if (usuario.f_cb_editar.isSelected() == true) {
+                cleanDVO();
                 editarCaso();
             }
 

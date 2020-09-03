@@ -475,10 +475,6 @@ public class DatosDAO implements InterfaceMetodos {
     }
 
     @Override
-    public void insertar_nuevo_vendedor(DatosVO dvo) {
-    }
-
-    @Override
     public void insertar_nuevo_representante(DatosVO dvo) {
     }
 
@@ -488,10 +484,6 @@ public class DatosDAO implements InterfaceMetodos {
 
     @Override
     public void insertar_nuevo_cliente(DatosVO dvo) {
-    }
-
-    @Override
-    public ArrayList<DatosVO> buscar_id_cliente(DatosVO dvo) {
     }
 
     @Override

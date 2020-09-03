@@ -229,7 +229,7 @@ public class DatosDAO implements InterfaceMetodos {
                     + "WHERE cl.nombre = '" + dvo.getBuscar_nombre() + "';");
 
             if (rs.next()) {
-             
+
                 do {
                     dvo.setNombre_vendedor(rs.getString(1));
                     dvo.setTelefono_vendedor(rs.getString(2));
@@ -455,7 +455,7 @@ public class DatosDAO implements InterfaceMetodos {
 
         try {
             c.connect();
-            ResultSet rs = c.obtener_datos("Select id FROM tbl_vendedor where nombre = '"+dvo.getNombre_vendedor()+"' OR telefono = "+dvo.getTelefono_vendedor()+" or correo = '"+dvo.getCorreo_vendedor()+"';");
+            ResultSet rs = c.obtener_datos("Select id FROM tbl_vendedor where nombre = '" + dvo.getNombre_vendedor() + "' OR telefono = " + dvo.getTelefono_vendedor() + " or correo = '" + dvo.getCorreo_vendedor() + "';");
 
             while (rs.next()) {
 
@@ -471,23 +471,32 @@ public class DatosDAO implements InterfaceMetodos {
         }
 
         return datos;
-        
-    }
 
-    @Override
-    public void insertar_nuevo_representante(DatosVO dvo) {
     }
 
     @Override
     public ArrayList<DatosVO> buscar_id_representante(DatosVO dvo) {
-    }
+        Conector c = new Conector();
+        ArrayList<DatosVO> datos = new ArrayList();
 
-    @Override
-    public void insertar_nuevo_cliente(DatosVO dvo) {
-    }
+        try {
+            c.connect();
+            ResultSet rs = c.obtener_datos("Select id FROM tbl_representante where nombre = '"+dvo.getNombre_representante()+"';");
 
-    @Override
-    public void insertar_nuevo_caso(DatosVO dvo) {
+            while (rs.next()) {
+
+                dvo.setId_vendedor(rs.getString(1));
+
+                datos.add(dvo);
+            }
+
+            c.desconectar();
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return datos;
     }
 
 }

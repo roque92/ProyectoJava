@@ -45,14 +45,7 @@ public interface InterfaceMetodos {
     public ArrayList<DatosVO> buscar_id_vendedor(DatosVO dvo);
     
     //representante
-    public void insertar_nuevo_representante(DatosVO dvo);
     public ArrayList<DatosVO> buscar_id_representante(DatosVO dvo);
-    
-    //cliente
-   
-    public void insertar_nuevo_cliente(DatosVO dvo);
-    
-    //caso
-    public void insertar_nuevo_caso(DatosVO dvo);
+
     
 }

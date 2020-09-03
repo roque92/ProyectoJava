@@ -455,11 +455,11 @@ public class DatosDAO implements InterfaceMetodos {
 
         try {
             c.connect();
-            ResultSet rs = c.obtener_datos("Select id FROM tbl_vendedor where nombre = '" + dvo.getNombre_vendedor() + "' OR telefono = " + dvo.getTelefono_vendedor() + " or correo = '" + dvo.getCorreo_vendedor() + "';");
+            ResultSet rs = c.obtener_datos("SELECT id FROM tbl_vendedor WHERE nombre = '" + dvo.getToVendedor_nombre()+ "' OR telefono = " + dvo.getToVendedor_telefono()+ " or correo = '" + dvo.getToVendedor_correo()+ "';");
 
             while (rs.next()) {
 
-                dvo.setId_vendedor(rs.getString(1));
+                dvo.setId_vendedor(String.valueOf(rs.getInt(1)));
 
                 datos.add(dvo);
             }
@@ -481,11 +481,36 @@ public class DatosDAO implements InterfaceMetodos {
 
         try {
             c.connect();
-            ResultSet rs = c.obtener_datos("Select id FROM tbl_representante where nombre = '"+dvo.getNombre_representante()+"';");
+            ResultSet rs = c.obtener_datos("Select id FROM tbl_representante where nombre = '"+dvo.getToRepresentante_nombre()+"';");
 
             while (rs.next()) {
 
-                dvo.setId_vendedor(rs.getString(1));
+                dvo.setId_representante(String.valueOf(rs.getInt(1)));
+
+                datos.add(dvo);
+            }
+
+            c.desconectar();
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return datos;
+    }
+    
+    @Override
+    public ArrayList<DatosVO> idCliente2(DatosVO dvo) {
+        Conector c = new Conector();
+        ArrayList<DatosVO> datos = new ArrayList();
+
+        try {
+            c.connect();
+            ResultSet rs = c.obtener_datos("SELECT id FROM tbl_clientes WHERE nombre = '" + dvo.getToClientes_nombre() + "';");
+
+            while (rs.next()) {
+
+                dvo.setId_cliente(rs.getString(1));
 
                 datos.add(dvo);
             }

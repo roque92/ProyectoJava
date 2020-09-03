@@ -38,5 +38,23 @@ public interface InterfaceMetodos {
     public ArrayList<DatosVO> idCaso(DatosVO dvo);
 
     //Eliminar
-    public void borrar_datos(DatosVO dvo);    
+    public void borrar_datos(DatosVO dvo); 
+    
+    //Para craear Casos
+    //vendedor
+    public ArrayList<DatosVO> buscar_id_vendedor(DatosVO dvo);
+    public void insertar_nuevo_vendedor(DatosVO dvo);
+    
+    //representante
+    public void insertar_nuevo_representante(DatosVO dvo);
+    public ArrayList<DatosVO> buscar_id_representante(DatosVO dvo);
+    
+    //cliente
+   
+    public void insertar_nuevo_cliente(DatosVO dvo);
+    public ArrayList<DatosVO> buscar_id_cliente(DatosVO dvo);
+    
+    //caso
+    public void insertar_nuevo_caso(DatosVO dvo);
+    
 }

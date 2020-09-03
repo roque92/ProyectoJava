@@ -448,4 +448,54 @@ public class DatosDAO implements InterfaceMetodos {
 
     }
 
+    @Override
+    public ArrayList<DatosVO> buscar_id_vendedor(DatosVO dvo) {
+        Conector c = new Conector();
+        ArrayList<DatosVO> datos = new ArrayList();
+
+        try {
+            c.connect();
+            ResultSet rs = c.obtener_datos("Select id FROM tbl_vendedor where nombre = '"+dvo.getNombre_vendedor()+"' OR telefono = "+dvo.getTelefono_vendedor()+" or correo = '"+dvo.getCorreo_vendedor()+"';");
+
+            while (rs.next()) {
+
+                dvo.setId_vendedor(rs.getString(1));
+
+                datos.add(dvo);
+            }
+
+            c.desconectar();
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return datos;
+        
+    }
+
+    @Override
+    public void insertar_nuevo_vendedor(DatosVO dvo) {
+    }
+
+    @Override
+    public void insertar_nuevo_representante(DatosVO dvo) {
+    }
+
+    @Override
+    public ArrayList<DatosVO> buscar_id_representante(DatosVO dvo) {
+    }
+
+    @Override
+    public void insertar_nuevo_cliente(DatosVO dvo) {
+    }
+
+    @Override
+    public ArrayList<DatosVO> buscar_id_cliente(DatosVO dvo) {
+    }
+
+    @Override
+    public void insertar_nuevo_caso(DatosVO dvo) {
+    }
+
 }

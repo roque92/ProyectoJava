@@ -341,55 +341,55 @@ public class ControllerFormulario implements ActionListener, ChangeListener, Int
                 usuario.progressUser.setVisible(true);
                 try {
                     if (usuario.f_txt_vendedorNombre.getText().isEmpty()) {
-                        dvo.setToVendedor_nombre("");
+                        dvo.setToVendedor_nombre(" ");
                     } else {
                         dvo.setToVendedor_nombre(usuario.f_txt_vendedorNombre.getText());
                     }
 
                     if (usuario.f_txt_vendedorTelefono.getText().isEmpty()) {
-                        dvo.setToVendedor_telefono("");
+                        dvo.setToVendedor_telefono(" ");
                     } else {
                         dvo.setToVendedor_telefono(usuario.f_txt_vendedorTelefono.getText());
                     }
 
                     if (usuario.f_txt_vendedorContructora.getText().isEmpty()) {
-                        dvo.setToVendedor_constructora("");
+                        dvo.setToVendedor_constructora(" ");
                     } else {
                         dvo.setToVendedor_constructora(usuario.f_txt_vendedorContructora.getText());
                     }
 
                     if (usuario.f_txt_vendedorCorreo.getText().isEmpty()) {
-                        dvo.setToVendedor_correo("");
+                        dvo.setToVendedor_correo(" ");
                     } else {
                         dvo.setToVendedor_correo(usuario.f_txt_vendedorCorreo.getText());
                     }
 
                     if (usuario.f_txt_tramite.getText().isEmpty()) {
-                        dvo.setToClientes_ClaseTraite("");
+                        dvo.setToClientes_ClaseTraite(" ");
                     } else {
                         dvo.setToClientes_ClaseTraite(usuario.f_txt_tramite.getText());
                     }
 
                     if (usuario.f_txt_direccionUSA.getText().isEmpty()) {
-                        dvo.setToClientes_direccion("");
+                        dvo.setToClientes_direccion(" ");
                     } else {
                         dvo.setToClientes_direccion(usuario.f_txt_direccionUSA.getText());
                     }
 
                     if (usuario.f_txt_nombreCliente.getText().isEmpty()) {
-                        dvo.setToClientes_nombre("");
+                        dvo.setToClientes_nombre(" ");
                     } else {
                         dvo.setToClientes_nombre(usuario.f_txt_nombreCliente.getText());
                     }
 
                     if (usuario.f_txt_telefonoCliente.getText().isEmpty()) {
-                        dvo.setToClientes_telefono("");
+                        dvo.setToClientes_telefono(" ");
                     } else {
                         dvo.setToClientes_telefono(usuario.f_txt_telefonoCliente.getText());
                     }
 
                     if (usuario.f_txt_estadoResidencia.getText().isEmpty()) {
-                        dvo.setToClientes_EstadoResidencia("");
+                        dvo.setToClientes_EstadoResidencia(" ");
                     } else {
                         dvo.setToClientes_EstadoResidencia(usuario.f_txt_estadoResidencia.getText());
                     }
@@ -422,7 +422,7 @@ public class ControllerFormulario implements ActionListener, ChangeListener, Int
                     }
 
                     if (usuario.f_txt_correoCliente.getText().isEmpty()) {
-                        dvo.setToClientes_correo("");
+                        dvo.setToClientes_correo(" ");
                     } else {
                         dvo.setToClientes_correo(usuario.f_txt_correoCliente.getText());
                     }
@@ -448,7 +448,7 @@ public class ControllerFormulario implements ActionListener, ChangeListener, Int
                     }
 
                     if (usuario.f_txt_profesion.getText().isEmpty()) {
-                        dvo.setToClientes_profesion("");
+                        dvo.setToClientes_profesion(" ");
                     } else {
                         dvo.setToClientes_profesion(usuario.f_txt_profesion.getText());
                     }
@@ -478,31 +478,31 @@ public class ControllerFormulario implements ActionListener, ChangeListener, Int
                     Thread.sleep(1000);
 
                     if (usuario.f_txt_repNombre.getText().isEmpty()) {
-                        dvo.setToRepresentante_nombre("");
+                        dvo.setToRepresentante_nombre(" ");
                     } else {
                         dvo.setToRepresentante_nombre(usuario.f_txt_repNombre.getText());
                     }
 
                     if (usuario.f_txt_repDireccion.getText().isEmpty()) {
-                        dvo.setToRepresentante_direccion("");
+                        dvo.setToRepresentante_direccion(" ");
                     } else {
                         dvo.setToRepresentante_direccion(usuario.f_txt_repDireccion.getText());
                     }
 
                     if (usuario.f_txt_repTelefono.getText().isEmpty()) {
-                        dvo.setToRepresentante_telefono("");
+                        dvo.setToRepresentante_telefono(" ");
                     } else {
                         dvo.setToRepresentante_telefono(usuario.f_txt_repTelefono.getText());
                     }
 
                     if (usuario.f_txt_repParentezco.getText().isEmpty()) {
-                        dvo.setToRepresentante_parentezco("");
+                        dvo.setToRepresentante_parentezco(" ");
                     } else {
                         dvo.setToRepresentante_parentezco(usuario.f_txt_repParentezco.getText());
                     }
 
                     if (usuario.f_txt_repBanco.getText().isEmpty()) {
-                        dvo.setToRepresentante_banco("");
+                        dvo.setToRepresentante_banco(" ");
                     } else {
                         dvo.setToRepresentante_banco(usuario.f_txt_repBanco.getText());
                     }
@@ -523,7 +523,7 @@ public class ControllerFormulario implements ActionListener, ChangeListener, Int
                     }
 
                     if (usuario.f_txt_notas.getText().isEmpty()) {
-                        dvo.setToCasos_notas("");
+                        dvo.setToCasos_notas(" ");
                     } else {
                         dvo.setToCasos_notas(usuario.f_txt_notas.getText());
                     }
@@ -555,21 +555,21 @@ public class ControllerFormulario implements ActionListener, ChangeListener, Int
                     Thread.sleep(1000);
 
                     if (usuario.rd_txt_informacion.getText().isEmpty()) {
-                        dvo.setToRegistros_notas("");
+                        dvo.setToRegistros_notas(" ");
                     } else {
                         dvo.setToRegistros_notas(usuario.rd_txt_informacion.getText());
                     }
                     try {
 
                         ddao.modificar_datos_vendedor(dvo);
-                        ddao.modificar_datos_representante(dvo);
+//                        ddao.modificar_datos_representante(dvo);
                         ddao.modificar_datos_clientes(dvo);
-                        ddao.idCliente(dvo);
-                        ddao.modificar_datos_casos(dvo);
-                        if (!usuario.rd_txt_informacion.getText().isEmpty()) {
-                            ddao.idCaso(dvo);
-                            ddao.insertar_datos_registro(dvo);
-                        }
+//                        ddao.idCliente(dvo);
+//                        ddao.modificar_datos_casos(dvo);
+//                        if (!usuario.rd_txt_informacion.getText().isEmpty()) {
+//                            ddao.idCaso(dvo);
+//                            ddao.insertar_datos_registro(dvo);
+//                        }
                         login.mensaje.showMessageDialog(null, "Datos modificados exitosamente");
 
                         usuario.f_cb_editar.setSelected(false);
@@ -583,16 +583,15 @@ public class ControllerFormulario implements ActionListener, ChangeListener, Int
                     usuario.progressUser.setValue(80);
                     Thread.sleep(1000);
 
-                    if (!dvo.getBuscar_nombre().isEmpty()) {
-                        buscarNombre();
-                    } else if (!dvo.getBuscar_telefono().isEmpty()) {
-                        buscarTelefono();
-                    } else if (!dvo.getBuscar_correo().isEmpty()) {
-                        buscarCorreo();
-                    } else {
-
-                    }
-
+//                    if (!dvo.getBuscar_nombre().isEmpty()) {
+//                        buscarNombre();
+//                    } else if (!dvo.getBuscar_telefono().isEmpty()) {
+//                        buscarTelefono();
+//                    } else if (!dvo.getBuscar_correo().isEmpty()) {
+//                        buscarCorreo();
+//                    } else {
+//
+//                    }
                     usuario.progressUser.setValue(100);
                     Thread.sleep(1000);
                     usuario.progressUser.setVisible(false);
@@ -621,49 +620,49 @@ public class ControllerFormulario implements ActionListener, ChangeListener, Int
                     }
 
                     if (usuario.f_txt_vendedorTelefono.getText().isEmpty()) {
-                        dvo.setToVendedor_telefono("");
+                        dvo.setToVendedor_telefono(" ");
                     } else {
                         dvo.setToVendedor_telefono(usuario.f_txt_vendedorTelefono.getText());
                     }
 
                     if (usuario.f_txt_vendedorContructora.getText().isEmpty()) {
-                        dvo.setToVendedor_constructora("");
+                        dvo.setToVendedor_constructora(" ");
                     } else {
                         dvo.setToVendedor_constructora(usuario.f_txt_vendedorContructora.getText());
                     }
 
                     if (usuario.f_txt_vendedorCorreo.getText().isEmpty()) {
-                        dvo.setToVendedor_correo("");
+                        dvo.setToVendedor_correo(" ");
                     } else {
                         dvo.setToVendedor_correo(usuario.f_txt_vendedorCorreo.getText());
                     }
 
                     if (usuario.f_txt_tramite.getText().isEmpty()) {
-                        dvo.setToClientes_ClaseTraite("");
+                        dvo.setToClientes_ClaseTraite(" ");
                     } else {
                         dvo.setToClientes_ClaseTraite(usuario.f_txt_tramite.getText());
                     }
 
                     if (usuario.f_txt_direccionUSA.getText().isEmpty()) {
-                        dvo.setToClientes_direccion("");
+                        dvo.setToClientes_direccion(" ");
                     } else {
                         dvo.setToClientes_direccion(usuario.f_txt_direccionUSA.getText());
                     }
 
                     if (usuario.f_txt_nombreCliente.getText().isEmpty()) {
-                        dvo.setToClientes_nombre("");
+                        dvo.setToClientes_nombre(" ");
                     } else {
                         dvo.setToClientes_nombre(usuario.f_txt_nombreCliente.getText());
                     }
 
                     if (usuario.f_txt_telefonoCliente.getText().isEmpty()) {
-                        dvo.setToClientes_telefono("");
+                        dvo.setToClientes_telefono(" ");
                     } else {
                         dvo.setToClientes_telefono(usuario.f_txt_telefonoCliente.getText());
                     }
 
                     if (usuario.f_txt_estadoResidencia.getText().isEmpty()) {
-                        dvo.setToClientes_EstadoResidencia("");
+                        dvo.setToClientes_EstadoResidencia(" ");
                     } else {
                         dvo.setToClientes_EstadoResidencia(usuario.f_txt_estadoResidencia.getText());
                     }
@@ -696,7 +695,7 @@ public class ControllerFormulario implements ActionListener, ChangeListener, Int
                     }
 
                     if (usuario.f_txt_correoCliente.getText().isEmpty()) {
-                        dvo.setToClientes_correo("");
+                        dvo.setToClientes_correo(" ");
                     } else {
                         dvo.setToClientes_correo(usuario.f_txt_correoCliente.getText());
                     }
@@ -722,7 +721,7 @@ public class ControllerFormulario implements ActionListener, ChangeListener, Int
                     }
 
                     if (usuario.f_txt_profesion.getText().isEmpty()) {
-                        dvo.setToClientes_profesion("");
+                        dvo.setToClientes_profesion(" ");
                     } else {
                         dvo.setToClientes_profesion(usuario.f_txt_profesion.getText());
                     }
@@ -752,31 +751,31 @@ public class ControllerFormulario implements ActionListener, ChangeListener, Int
                     Thread.sleep(1000);
 
                     if (usuario.f_txt_repNombre.getText().isEmpty()) {
-                        dvo.setToRepresentante_nombre("");
+                        dvo.setToRepresentante_nombre(" ");
                     } else {
                         dvo.setToRepresentante_nombre(usuario.f_txt_repNombre.getText());
                     }
 
                     if (usuario.f_txt_repDireccion.getText().isEmpty()) {
-                        dvo.setToRepresentante_direccion("");
+                        dvo.setToRepresentante_direccion(" ");
                     } else {
                         dvo.setToRepresentante_direccion(usuario.f_txt_repDireccion.getText());
                     }
 
                     if (usuario.f_txt_repTelefono.getText().isEmpty()) {
-                        dvo.setToRepresentante_telefono("");
+                        dvo.setToRepresentante_telefono(" ");
                     } else {
                         dvo.setToRepresentante_telefono(usuario.f_txt_repTelefono.getText());
                     }
 
                     if (usuario.f_txt_repParentezco.getText().isEmpty()) {
-                        dvo.setToRepresentante_parentezco("");
+                        dvo.setToRepresentante_parentezco(" ");
                     } else {
                         dvo.setToRepresentante_parentezco(usuario.f_txt_repParentezco.getText());
                     }
 
                     if (usuario.f_txt_repBanco.getText().isEmpty()) {
-                        dvo.setToRepresentante_banco("");
+                        dvo.setToRepresentante_banco(" ");
                     } else {
                         dvo.setToRepresentante_banco(usuario.f_txt_repBanco.getText());
                     }
@@ -797,7 +796,7 @@ public class ControllerFormulario implements ActionListener, ChangeListener, Int
                     }
 
                     if (usuario.f_txt_notas.getText().isEmpty()) {
-                        dvo.setToCasos_notas("");
+                        dvo.setToCasos_notas(" ");
                     } else {
                         dvo.setToCasos_notas(usuario.f_txt_notas.getText());
                     }
@@ -829,7 +828,7 @@ public class ControllerFormulario implements ActionListener, ChangeListener, Int
                     Thread.sleep(1000);
 
                     if (usuario.rd_txt_informacion.getText().isEmpty()) {
-                        dvo.setToRegistros_notas("");
+                        dvo.setToRegistros_notas(" ");
                     } else {
                         dvo.setToRegistros_notas(usuario.rd_txt_informacion.getText());
                     }
@@ -839,18 +838,25 @@ public class ControllerFormulario implements ActionListener, ChangeListener, Int
                         ddao.buscar_id_vendedor(dvo);
                         if (dvo.getId_vendedor().equals("0")) {
                             ddao.insertar_datos_vendedor(dvo);
+                            ddao.buscar_id_vendedor(dvo);
                         }
-                        ddao.buscar_id_vendedor(dvo);
                         ddao.insertar_datos_representante(dvo);
                         ddao.buscar_id_representante(dvo);
                         ddao.insertar_datos_clientes(dvo);
                         ddao.idCliente2(dvo);
-                        
+                        //asignacion de ID's
+                        dvo.setToCasos_idCliente(Integer.parseInt(dvo.getId_cliente()));
+                        dvo.setToCasos_idVendedor(Integer.parseInt(dvo.getId_vendedor()));
+                        dvo.setToCasos_idRepresentante(Integer.parseInt(dvo.getId_representante()));
+                        dvo.setToCasos_idUsuario(dvo.getLogin_id());
+                        dvo.setToCasos_idEstado(1);
+                        //pendiente creacion caso                        
+                        ddao.insertar_datos_casos(dvo);
                         if (!usuario.rd_txt_informacion.getText().isEmpty()) {
                             ddao.idCaso(dvo);
                             ddao.insertar_datos_registro(dvo);
                         }
-//                        login.mensaje.showMessageDialog(null, "Datos modificados exitosamente");
+                        login.mensaje.showMessageDialog(null, "Nuevo Caso creado exitosamente");
 
                         usuario.f_cb_editar.setSelected(false);
                         usuario.f_btn_guardar.setEnabled(false);
@@ -862,21 +868,14 @@ public class ControllerFormulario implements ActionListener, ChangeListener, Int
 
                     usuario.progressUser.setValue(80);
                     Thread.sleep(1000);
+                    cleanText();
 
-//                    if (!dvo.getBuscar_nombre().isEmpty()) {
-//                        buscarNombre();
-//                    } else if (!dvo.getBuscar_telefono().isEmpty()) {
-//                        buscarTelefono();
-//                    } else if (!dvo.getBuscar_correo().isEmpty()) {
-//                        buscarCorreo();
-//                    } else {
-//
-//                    }
+                    dvo.setBuscar_nombre(dvo.getToClientes_nombre());
+                    buscarNombre();
+
                     usuario.progressUser.setValue(100);
                     Thread.sleep(1000);
                     usuario.progressUser.setVisible(false);
-
-                    System.out.println(dvo.getId_vendedor());
 
                 } catch (Exception e) {
                     login.mensaje.showMessageDialog(null, e.getMessage());

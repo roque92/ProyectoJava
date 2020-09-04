@@ -107,6 +107,7 @@ public class ControllerFormulario implements ActionListener, ChangeListener, Int
             @Override
             public void run() {
                 try {
+                    cleanText();
                     usuario.progressUser.setValue(25);
                     Thread.sleep(1000);
                     usuario.f_txt_buscarCliente.setText("");
@@ -175,6 +176,7 @@ public class ControllerFormulario implements ActionListener, ChangeListener, Int
             @Override
             public void run() {
                 try {
+                    cleanText();
                     usuario.progressUser.setValue(25);
                     Thread.sleep(1000);
                     usuario.f_txt_buscarCliente.setText("");
@@ -239,6 +241,7 @@ public class ControllerFormulario implements ActionListener, ChangeListener, Int
             @Override
             public void run() {
                 try {
+                    cleanText();
                     usuario.progressUser.setValue(25);
                     Thread.sleep(1000);
                     usuario.f_txt_buscarCliente.setText("");
@@ -337,6 +340,7 @@ public class ControllerFormulario implements ActionListener, ChangeListener, Int
         Thread th = new Thread(new Runnable() {
             @Override
             public void run() {
+                cleanDVO();
                 usuario.progressUser.setValue(0);
                 usuario.progressUser.setVisible(true);
                 try {
@@ -562,9 +566,9 @@ public class ControllerFormulario implements ActionListener, ChangeListener, Int
                     try {
 
                         ddao.modificar_datos_vendedor(dvo);
-//                        ddao.modificar_datos_representante(dvo);
+                        ddao.modificar_datos_representante(dvo);
                         ddao.modificar_datos_clientes(dvo);
-//                        ddao.idCliente(dvo);
+                        ddao.idCliente(dvo);
 //                        ddao.modificar_datos_casos(dvo);
 //                        if (!usuario.rd_txt_informacion.getText().isEmpty()) {
 //                            ddao.idCaso(dvo);
@@ -583,15 +587,15 @@ public class ControllerFormulario implements ActionListener, ChangeListener, Int
                     usuario.progressUser.setValue(80);
                     Thread.sleep(1000);
 
-//                    if (!dvo.getBuscar_nombre().isEmpty()) {
-//                        buscarNombre();
-//                    } else if (!dvo.getBuscar_telefono().isEmpty()) {
-//                        buscarTelefono();
-//                    } else if (!dvo.getBuscar_correo().isEmpty()) {
-//                        buscarCorreo();
-//                    } else {
-//
-//                    }
+                    if (!dvo.getBuscar_nombre().isEmpty()) {
+                        buscarNombre();
+                    } else if (!dvo.getBuscar_telefono().isEmpty()) {
+                        buscarTelefono();
+                    } else if (!dvo.getBuscar_correo().isEmpty()) {
+                        buscarCorreo();
+                    } else {
+
+                    }
                     usuario.progressUser.setValue(100);
                     Thread.sleep(1000);
                     usuario.progressUser.setVisible(false);
@@ -610,6 +614,7 @@ public class ControllerFormulario implements ActionListener, ChangeListener, Int
         Thread th = new Thread(new Runnable() {
             @Override
             public void run() {
+                cleanDVO();
                 usuario.progressUser.setValue(0);
                 usuario.progressUser.setVisible(true);
                 try {

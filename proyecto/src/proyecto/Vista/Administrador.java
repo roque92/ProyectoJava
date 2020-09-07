@@ -24,6 +24,7 @@ public class Administrador extends javax.swing.JFrame {
         this.if_Asesores.setVisible(false);
         this.if_Clientes.setVisible(false);
         this.if_formulario.setVisible(false);
+        this.if_RegistroDetallado.setVisible(false);
     }
 
     /**

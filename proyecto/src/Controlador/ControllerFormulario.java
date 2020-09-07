@@ -340,7 +340,6 @@ public class ControllerFormulario implements ActionListener, ChangeListener, Int
         Thread th = new Thread(new Runnable() {
             @Override
             public void run() {
-                cleanDVO();
                 usuario.progressUser.setValue(0);
                 usuario.progressUser.setVisible(true);
                 try {
@@ -569,11 +568,11 @@ public class ControllerFormulario implements ActionListener, ChangeListener, Int
                         ddao.modificar_datos_representante(dvo);
                         ddao.modificar_datos_clientes(dvo);
                         ddao.idCliente(dvo);
-//                        ddao.modificar_datos_casos(dvo);
-//                        if (!usuario.rd_txt_informacion.getText().isEmpty()) {
-//                            ddao.idCaso(dvo);
-//                            ddao.insertar_datos_registro(dvo);
-//                        }
+                        ddao.modificar_datos_casos(dvo);
+                        if (!usuario.rd_txt_informacion.getText().isEmpty()) {
+                            ddao.idCaso(dvo);
+                            ddao.insertar_datos_registro(dvo);
+                        }
                         login.mensaje.showMessageDialog(null, "Datos modificados exitosamente");
 
                         usuario.f_cb_editar.setSelected(false);
@@ -596,9 +595,6 @@ public class ControllerFormulario implements ActionListener, ChangeListener, Int
                     } else {
 
                     }
-                    usuario.progressUser.setValue(100);
-                    Thread.sleep(1000);
-                    usuario.progressUser.setVisible(false);
 
                 } catch (Exception e) {
                     login.mensaje.showMessageDialog(null, e.getMessage());
@@ -1049,7 +1045,7 @@ public class ControllerFormulario implements ActionListener, ChangeListener, Int
 
         if (e.getSource() == usuario.f_btn_guardar) {
             if (usuario.f_cb_editar.isSelected() == true) {
-                cleanDVO();
+                //cleanDVO();
                 editarCaso();
             }
 
@@ -1066,6 +1062,8 @@ public class ControllerFormulario implements ActionListener, ChangeListener, Int
             enableText();
             usuario.f_btn_guardar.setEnabled(true);
             usuario.f_cb_nuevo.setEnabled(false);
+
+            dvo.setNombre_representante(usuario.f_txt_repNombre.getText());
 
             if (usuario.rd_txt_fecha.getText().isEmpty()) {
                 GregorianCalendar c = new GregorianCalendar();

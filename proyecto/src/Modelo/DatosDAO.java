@@ -152,7 +152,7 @@ public class DatosDAO implements InterfaceMetodos {
             c.consulta_general("UPDATE tbl_representante\n"
                     + "SET tbl_representante.nombre = '" + dvo.getToRepresentante_nombre() + "',\n"
                     + "		tbl_representante.parentezco = '" + dvo.getToRepresentante_parentezco() + "',\n"
-                    + "		tbl_representante.telefono = " + dvo.getToRepresentante_telefono() + ",\n"
+                    + "		tbl_representante.telefono = '" + dvo.getToRepresentante_telefono() + "',\n"
                     + "		tbl_representante.direccion = '" + dvo.getToRepresentante_direccion() + "',\n"
                     + "		tbl_representante.banco = '" + dvo.getToRepresentante_banco() + "'\n"
                     + "WHERE tbl_representante.nombre ='" + dvo.getNombre_representante() + "';");

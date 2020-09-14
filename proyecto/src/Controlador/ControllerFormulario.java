@@ -303,6 +303,8 @@ public class ControllerFormulario implements ActionListener, ChangeListener, Int
 
     private void registroDetallado() {
         Thread th = new Thread(new Runnable() {
+            TablasBaseDatos tbd = new TablasBaseDatos();
+
             @Override
             public void run() {
                 try {
@@ -329,7 +331,6 @@ public class ControllerFormulario implements ActionListener, ChangeListener, Int
                 }
             }
 
-            TablasBaseDatos tbd = new TablasBaseDatos();
         });
         th.start();
 

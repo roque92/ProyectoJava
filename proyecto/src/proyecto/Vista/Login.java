@@ -18,6 +18,7 @@ public class Login extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         this.progressLogin.setVisible(false);
+        this.jl_forgot.setVisible(false);
         
     }
 
@@ -41,6 +42,7 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Inicio de Sesion");
+        setResizable(false);
 
         jLabel1.setText("Usuario");
         jLabel1.setToolTipText("");

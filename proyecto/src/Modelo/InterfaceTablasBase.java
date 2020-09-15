@@ -19,5 +19,8 @@ public interface InterfaceTablasBase {
      public ArrayList<StringsBaseDatos> TablaClientes(StringsBaseDatos sbd);
      public ArrayList<StringsBaseDatos> CasosAsignados(StringsBaseDatos sbd);
      public ArrayList<StringsBaseDatos> RegistroDetallado(StringsBaseDatos sbd);
+     public ArrayList<StringsBaseDatos> mostrarClientes (StringsBaseDatos sbd);
+     public ArrayList<StringsBaseDatos> mostrarAsesores (StringsBaseDatos sbd);
+     public void modificarAsignado(StringsBaseDatos sbd);
     
 }

@@ -8,6 +8,7 @@ package Modelo;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -78,6 +79,10 @@ public class TablasBaseDatos implements InterfaceTablasBase {
             }
             c.desconectar();
         } catch (SQLException e) {
+            JOptionPane mensaje = new JOptionPane();
+            mensaje.showMessageDialog(null, "error " + e.getMessage());
+            mensaje.show();
+
             System.out.println("Error " + e.getMessage());
         }
 
@@ -156,6 +161,102 @@ public class TablasBaseDatos implements InterfaceTablasBase {
 
         return datos;
 
+    }
+
+    @Override
+    public ArrayList<StringsBaseDatos> mostrarClientes(StringsBaseDatos sbd) {
+        Conector c = new Conector();
+        ArrayList<StringsBaseDatos> datos = new ArrayList();
+
+        try {
+            c.connect();
+            ResultSet rs = c.obtener_datos("SELECT "
+                    + " tbl_clientes.id                  AS id, "
+                    + " tbl_clientes.nombre              AS nombre, "
+                    + " tbl_clientes.telefono            AS telefono, "
+                    + " tbl_clientes.correo              AS correo, "
+                    + " tbl_clientes.estatus             AS estatus, "
+                    + " tbl_clientes.direccion           AS direccion, "
+                    + " tbl_estado_civil.descripcion     AS estado, "
+                    + " tbl_migratorio.descripcion       AS migratorio, "
+                    + " tbl_clientes.profesion           AS profesion, "
+                    + " tbl_clientes.estado_residencia   AS residencia, "
+                    + " tbl_clientes.dpi                 AS dpi, "
+                    + " tbl_clientes.nit                 AS nit, "
+                    + " tbl_clientes.usa_id              AS usa, "
+                    + " tbl_clientes.clase_tramite       AS tramite,"
+                    + " tbl_usuarios.nombre              AS Usuario"
+                    + " FROM tbl_clientes "
+                    + " INNER JOIN tbl_estado_civil ON tbl_clientes.id_estado_civil = tbl_estado_civil.id "
+                    + " INNER JOIN tbl_migratorio ON tbl_clientes.id_migratorio   = tbl_migratorio.id"
+                    + " INNER JOIN tbl_casos ON tbl_clientes.id = tbl_casos.id_cliente"
+                    + " INNER JOIN tbl_usuarios ON tbl_casos.id_usuario = tbl_usuarios.id ORDER BY tbl_clientes.id ASC;");
+
+            while (rs.next()) {
+                StringsBaseDatos sbd1 = new StringsBaseDatos();
+                sbd1.setId_clientes_sbd(rs.getInt(1));
+                sbd1.setNombre_clientes_sbd(rs.getString(2));
+                sbd1.setTelefono_clientes_sbd(rs.getString(3));
+                sbd1.setCorreo_clientes_sbd(rs.getString(4));
+                sbd1.setEstatus_clientes_sbd(rs.getString(5));
+                sbd1.setDireccion_clientes_sbd(rs.getString(6));
+                sbd1.setDescripcion_EstadoCivil_sbd(rs.getString(7));
+                sbd1.setDescripcion_migratorio_sbd(rs.getString(8));
+                sbd1.setProfecion_clientes_sbd(rs.getString(9));
+                sbd1.setEstadoResidencia_clientes_sbd(rs.getString(10));
+                sbd1.setDpi_clientes_sbd(rs.getString(11));
+                sbd1.setNit_clientes_sbd(rs.getString(12));
+                sbd1.setUsaId_clientes_sbd(rs.getString(13));
+                sbd1.setTramite_clientes_sbd(rs.getString(14));
+                sbd1.setUsuario_clientes_sbd(rs.getString(15));
+
+                datos.add(sbd1);
+            }
+            c.desconectar();
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al obener datos ");
+        }
+        return datos;
+    }
+
+    @Override
+    public ArrayList<StringsBaseDatos> mostrarAsesores(StringsBaseDatos sbd) {
+        Conector c = new Conector();
+        ArrayList<StringsBaseDatos> datos = new ArrayList();
+
+        try {
+            ResultSet rs = c.obtener_datos("SELECT * FROM tbl_vendedor;");
+
+            while (rs.next()) {
+                StringsBaseDatos sbd1 = new StringsBaseDatos();
+                sbd1.setId_vendedor_sbd(rs.getInt(1));
+                sbd1.setNombre_vendedor_sbd(rs.getString(2));
+                sbd1.setTelefono_vendedor_sbd(rs.getString(3));
+                sbd1.setConstructora_vendedor_sbd(rs.getString(4));
+                sbd1.setCorreo_vendedor_sbd(rs.getString(5));
+
+                datos.add(sbd1);
+            }
+            c.desconectar();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al obener datos ");
+        }
+        return datos;
+    }
+
+    @Override
+    public void modificarAsignado(StringsBaseDatos sbd) {
+        Conector c = new Conector();
+        
+        try {
+            c.connect();
+            c.consulta_general("UPDATE tbl_casos SET id_usuario = "+sbd.getToCasos_idUser()+" WHERE id_cliente = "+sbd.getValidacion_toCasos()+";");
+            
+            c.desconectar();
+        } catch (Exception e) {
+             JOptionPane.showMessageDialog(null, "Error al actualizar la informacion");
+        }
     }
 
 }

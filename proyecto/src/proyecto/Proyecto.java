@@ -11,6 +11,7 @@ import Controlador.ControllerBuscarCliente;
 import Controlador.ControllerCasosAsignados;
 import Controlador.ControllerForgot;
 import Controlador.ControllerFormulario;
+import Controlador.ControllerFormularioAdmin;
 import Controlador.ControllerLogin;
 import Controlador.ControllerUsuario;
 import Modelo.DatosDAO;
@@ -46,15 +47,15 @@ public class Proyecto {
         ControllerLogin controllerLogin = new ControllerLogin(login, usuario, admin, forgot, dvo, sbd, ddao);
         ControllerForgot controllerForgot = new ControllerForgot(login, forgot);
         ControllerUsuario controllerUsuario = new ControllerUsuario(usuario, login);
-        ControllerAdmin controllerAdmin = new ControllerAdmin(login, admin, usuario);
+        ControllerAdmin controllerAdmin = new ControllerAdmin(login, admin, usuario, sbd, tbd);
         ControllerBuscarAsesor controllerBuscarAsesor = new ControllerBuscarAsesor(usuario, login, sbd, tbd, dvo);
         ControllerBuscarCliente controllerBuscarCliente = new ControllerBuscarCliente(usuario, login, sbd, tbd, dvo);
         ControllerCasosAsignados controllerCasosAsignados = new ControllerCasosAsignados(usuario, login, sbd, tbd, dvo);
         ControllerFormulario controllerFormulario = new ControllerFormulario(usuario, login, dvo, ddao, sbd, tbd);
+        ControllerFormularioAdmin controllerFormularioAdmin = new ControllerFormularioAdmin(admin, login, dvo, ddao, sbd, tbd);
         
         login.setVisible(true);
-        //usuario.setVisible(true);
-        //admin.setVisible(true);
+        
     }
     
 }

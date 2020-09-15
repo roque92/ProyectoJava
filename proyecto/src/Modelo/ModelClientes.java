@@ -18,7 +18,7 @@ public class ModelClientes extends Models{
     private String columna1 = "nombre";
     private String columna2 = "telefono";
     private String columna3 = "correo";
-    private String columna4 = "estatus";
+    //private String columna4 = "estatus";
     private String columna5 = "direccion";
     private String columna6 = "estado";
     private String columna7 = "migratorio";
@@ -44,7 +44,7 @@ public class ModelClientes extends Models{
         + " tbl_clientes.nombre              AS nombre, "
         + " tbl_clientes.telefono            AS telefono, "
         + " tbl_clientes.correo              AS correo, "
-        + " tbl_clientes.estatus             AS estatus, "
+        //+ " tbl_clientes.estatus             AS estatus, "
         + " tbl_clientes.direccion           AS direccion, "
         + " tbl_estado_civil.descripcion     AS estado, "
         + " tbl_migratorio.descripcion       AS migratorio, "
@@ -67,7 +67,7 @@ public class ModelClientes extends Models{
             columna1, 
             columna2, 
             columna3, 
-            columna4, 
+            //columna4, 
             columna5, 
             columna6, 
             columna7, 
@@ -83,7 +83,7 @@ public class ModelClientes extends Models{
                     resultSet.getString(columna1),
                     resultSet.getString(columna2),
                     resultSet.getString(columna3),
-                    resultSet.getString(columna4),
+                    //resultSet.getString(columna4),
                     resultSet.getString(columna5),
                     resultSet.getString(columna6),
                     resultSet.getString(columna7),

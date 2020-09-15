@@ -46,7 +46,6 @@ public class ControllerBuscarCliente implements KeyListener {
             m.addColumn("Nombe");
             m.addColumn("Telefono");
             m.addColumn("Correo");
-            m.addColumn("EStatus Caso");
             m.addColumn("Direccion USA");
             m.addColumn("Estado Civil");
             m.addColumn("Estado Migratorio");
@@ -57,7 +56,7 @@ public class ControllerBuscarCliente implements KeyListener {
             m.addColumn("ID USA");
 
             for (StringsBaseDatos sbd : this.tbd.TablaClientes(sbd)) {
-                m.addRow(new Object[]{sbd.getNombre_clientes_sbd(), sbd.getTelefono_clientes_sbd(), sbd.getCorreo_clientes_sbd(), sbd.getEstatus_clientes_sbd(),
+                m.addRow(new Object[]{sbd.getNombre_clientes_sbd(), sbd.getTelefono_clientes_sbd(), sbd.getCorreo_clientes_sbd(),
                     sbd.getDireccion_clientes_sbd(), sbd.getDescripcion_EstadoCivil_sbd(), sbd.getDescripcion_migratorio_sbd(), sbd.getProfecion_clientes_sbd(), sbd.getEstadoResidencia_clientes_sbd(),
                     sbd.getDpi_clientes_sbd(), sbd.getNit_clientes_sbd(), sbd.getUsaId_clientes_sbd()});
             }

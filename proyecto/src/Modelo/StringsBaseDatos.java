@@ -47,7 +47,8 @@ public class StringsBaseDatos {
     
     //----Tabla clientes
     private int id_clientes_sbd, id_EstadoCivil_clientes_sbd, id_migratorio_clientes_sbd;
-    private String nombre_clientes_sbd, telefono_clientes_sbd, correo_clientes_sbd, estatus_clientes_sbd, direccion_clientes_sbd, profecion_clientes_sbd,
+    private String nombre_clientes_sbd, telefono_clientes_sbd, correo_clientes_sbd, estatus_clientes_sbd, 
+            direccion_clientes_sbd, profecion_clientes_sbd, tramite_clientes_sbd, usuario_clientes_sbd,
             EstadoResidencia_clientes_sbd, dpi_clientes_sbd, nit_clientes_sbd, usaId_clientes_sbd;
     private String nombre_cliente_buscador_sbd;
     
@@ -58,8 +59,13 @@ public class StringsBaseDatos {
     
     //----Variable de login
     private String username_login_sbd;
+    
+    //-----para base de datos
+    
+    private int toCasos_idUser;
+    private int validacion_toCasos;
 
-    public StringsBaseDatos(int id_vendedor_sbd, String nombre_vendedor_sbd, String telefono_vendedor_sbd, String constructora_vendedor_sbd, String correo_vendedor_sbd, String nombre_vendedor_buscador_sbd, int id_usuario_sbd, String nombre_usuario_sbd, String username_usuario_sbd, String telefono_usuario_sbd, String correo_usuario_sbd, int id_propiedad_sbd, String descripcion_propiedad_sbd, int id_representante_sbd, String nombre_representante_sbd, String parentezco_representante_sbd, String direccion_representante_sbd, String telefono_representante_sbd, String banco_representante_sbd, int id_registros_sbd, int id_casos_registros_sbd, String fecha_registros_sbd, String usuario_registros_sbd, String notas_registros_sbd, String buscar_cliente_registros_sbd, int id_migratorio_sbd, String descripcion_migratorio_sbd, int id_EstadoCivil_sbd, String descripcion_EstadoCivil_sbd, int id_estado_sbd, String tipo_estdo_sbd, String descripcion_estdo_sbd, int id_clientes_sbd, int id_EstadoCivil_clientes_sbd, int id_migratorio_clientes_sbd, String nombre_clientes_sbd, String telefono_clientes_sbd, String correo_clientes_sbd, String estatus_clientes_sbd, String direccion_clientes_sbd, String profecion_clientes_sbd, String EstadoResidencia_clientes_sbd, String dpi_clientes_sbd, String nit_clientes_sbd, String usaId_clientes_sbd, String nombre_cliente_buscador_sbd, int id_casos_sbd, int id_clientes_casos_sbd, int id_vendedor_casos_sbd, int id_usuario_casos_sbd, int id_estado_casos_sbd, int id_propiedad_casos_sbd, int id_representante_casos_sbd, double honorario_casos_sbd, double salario_casos_sbd, String notas_casos_sbd, String username_login_sbd) {
+    public StringsBaseDatos(int id_vendedor_sbd, String nombre_vendedor_sbd, String telefono_vendedor_sbd, String constructora_vendedor_sbd, String correo_vendedor_sbd, String nombre_vendedor_buscador_sbd, int id_usuario_sbd, String nombre_usuario_sbd, String username_usuario_sbd, String telefono_usuario_sbd, String correo_usuario_sbd, int id_propiedad_sbd, String descripcion_propiedad_sbd, int id_representante_sbd, String nombre_representante_sbd, String parentezco_representante_sbd, String direccion_representante_sbd, String telefono_representante_sbd, String banco_representante_sbd, int id_registros_sbd, int id_casos_registros_sbd, String fecha_registros_sbd, String usuario_registros_sbd, String notas_registros_sbd, String buscar_cliente_registros_sbd, int id_migratorio_sbd, String descripcion_migratorio_sbd, int id_EstadoCivil_sbd, String descripcion_EstadoCivil_sbd, int id_estado_sbd, String tipo_estdo_sbd, String descripcion_estdo_sbd, int id_clientes_sbd, int id_EstadoCivil_clientes_sbd, int id_migratorio_clientes_sbd, String nombre_clientes_sbd, String telefono_clientes_sbd, String correo_clientes_sbd, String estatus_clientes_sbd, String direccion_clientes_sbd, String profecion_clientes_sbd, String tramite_clientes_sbd, String usuario_clientes_sbd, String EstadoResidencia_clientes_sbd, String dpi_clientes_sbd, String nit_clientes_sbd, String usaId_clientes_sbd, String nombre_cliente_buscador_sbd, int id_casos_sbd, int id_clientes_casos_sbd, int id_vendedor_casos_sbd, int id_usuario_casos_sbd, int id_estado_casos_sbd, int id_propiedad_casos_sbd, int id_representante_casos_sbd, double honorario_casos_sbd, double salario_casos_sbd, String notas_casos_sbd, String username_login_sbd, int toCasos_idUser, int validacion_toCasos) {
         this.id_vendedor_sbd = id_vendedor_sbd;
         this.nombre_vendedor_sbd = nombre_vendedor_sbd;
         this.telefono_vendedor_sbd = telefono_vendedor_sbd;
@@ -101,6 +107,8 @@ public class StringsBaseDatos {
         this.estatus_clientes_sbd = estatus_clientes_sbd;
         this.direccion_clientes_sbd = direccion_clientes_sbd;
         this.profecion_clientes_sbd = profecion_clientes_sbd;
+        this.tramite_clientes_sbd = tramite_clientes_sbd;
+        this.usuario_clientes_sbd = usuario_clientes_sbd;
         this.EstadoResidencia_clientes_sbd = EstadoResidencia_clientes_sbd;
         this.dpi_clientes_sbd = dpi_clientes_sbd;
         this.nit_clientes_sbd = nit_clientes_sbd;
@@ -117,10 +125,11 @@ public class StringsBaseDatos {
         this.salario_casos_sbd = salario_casos_sbd;
         this.notas_casos_sbd = notas_casos_sbd;
         this.username_login_sbd = username_login_sbd;
+        this.toCasos_idUser = toCasos_idUser;
+        this.validacion_toCasos = validacion_toCasos;
     }
 
-      
-
+        
     public StringsBaseDatos() {
     }
     
@@ -578,6 +587,38 @@ public class StringsBaseDatos {
 
     public void setBuscar_cliente_registros_sbd(String buscar_cliente_registros_sbd) {
         this.buscar_cliente_registros_sbd = buscar_cliente_registros_sbd;
+    }
+
+    public String getTramite_clientes_sbd() {
+        return tramite_clientes_sbd;
+    }
+
+    public void setTramite_clientes_sbd(String tramite_clientes_sbd) {
+        this.tramite_clientes_sbd = tramite_clientes_sbd;
+    }
+
+    public String getUsuario_clientes_sbd() {
+        return usuario_clientes_sbd;
+    }
+
+    public void setUsuario_clientes_sbd(String usuario_clientes_sbd) {
+        this.usuario_clientes_sbd = usuario_clientes_sbd;
+    }
+
+    public int getToCasos_idUser() {
+        return toCasos_idUser;
+    }
+
+    public void setToCasos_idUser(int toCasos_idUser) {
+        this.toCasos_idUser = toCasos_idUser;
+    }
+
+    public int getValidacion_toCasos() {
+        return validacion_toCasos;
+    }
+
+    public void setValidacion_toCasos(int validacion_toCasos) {
+        this.validacion_toCasos = validacion_toCasos;
     }
     
     

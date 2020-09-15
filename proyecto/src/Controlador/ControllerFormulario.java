@@ -605,7 +605,7 @@ public class ControllerFormulario implements ActionListener, ChangeListener, Int
 
         th.start();
 
-    } // pendiente cargar ayuda visual progressBar
+    } 
 
     private void nuevoCaso() {
         Thread th = new Thread(new Runnable() {

@@ -1,0 +1,77 @@
+
+<resources>
+    <style name="AppTheme" parent="android:Theme.Material.Light">
+        <item name="android:colorPrimary">@color/primary</item>
+        <item name="android:colorPrimaryDark">@color/primary_dark</item>
+        <item name="android:colorAccent">@color/accent</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+
+    <style name="miEstilo">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:elevation">4dp</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:background">#e6e6e6</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#727272</item>
+    </style>
+
+    <style name="btnMain">
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:minWidth">88dp</item>
+        <item name="android:minHeight">36dp</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:elevation">10dp</item>
+        <item name="android:translationZ">10dp</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:background">@drawable/rounded_shape</item>
+    </style>
+
+    <style name="TextViewTittle">
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:elevation">10dp</item>
+        <item name="android:translationZ">15dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:background">@drawable/rounded_shape</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="EditTextContent">
+        <item name="android:backgroundTint">@android:color/transparent</item>
+        <item name="android:clickable">false</item>
+        <item name="android:cursorVisible">false</item>
+        <item name="android:focusable">false</item>
+        <item name="android:focusableInTouchMode">false</item>
+
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">15dp</item>
+    </style>
+
+    <style name="InputCrearCaso">
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">15dp</item>
+    </style>
+
+</resources>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CrearCasoActivity">
+
+
+    <LinearLayout
+        android:layout_marginHorizontal="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:text="Crear Casos"
+            android:textSize="25dp"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:id="@+id/imageViewSeparator"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_marginVertical="5dp"
+            android:src="@android:drawable/divider_horizontal_bright"
+            android:scaleType="fitXY"/>
+
+        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_marginBottom="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre del cliente"
+                    style="@style/TextViewTittle"/>
+
+                <Spinner
+                    android:id="@+id/spinnerCliente"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/InputCrearCaso"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="vendedor a cargo"
+                    style="@style/TextViewTittle"/>
+
+                <Spinner
+                    android:id="@+id/spinnerVendedor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/InputCrearCaso"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Usuario a cargo"
+                    style="@style/TextViewTittle"/>
+
+                <Spinner
+                    android:id="@+id/spinnerUsuario"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/InputCrearCaso"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Honorarios"
+                    style="@style/TextViewTittle"/>
+
+                <EditText
+                    android:id="@+id/editTextHonorarios"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/InputCrearCaso"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Salarios"
+                    style="@style/TextViewTittle"/>
+
+                <EditText
+                    android:id="@+id/editTextSalarios"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/InputCrearCaso"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Notas Principales"
+                    style="@style/TextViewTittle"/>
+
+                <EditText
+                    android:id="@+id/editTextNotas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/InputCrearCaso"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Estado del caso"
+                    style="@style/TextViewTittle"/>
+                <Spinner
+                    android:id="@+id/spinnerEstado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/InputCrearCaso"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tipo Propiedad"
+                    style="@style/TextViewTittle"/>
+
+                <Spinner
+                    android:id="@+id/spinnerPropiedad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/InputCrearCaso"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Representante en el caso"
+                    style="@style/TextViewTittle"/>
+
+                <Spinner
+                    android:id="@+id/spinnerRepresentante"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/InputCrearCaso"/>
+
+                <Button
+                    android:id="@+id/buttonEditar"
+                    android:layout_gravity="center"
+                    android:text="Guardar"
+                    android:layout_marginTop="25sp"
+                    android:onClick="onClick"
+                    style="@style/btnMain" />
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</LinearLayout>
